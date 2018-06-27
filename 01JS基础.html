@@ -877,33 +877,34 @@
                 构造函数的首字母大写，构造函数是特殊的函数，类似java的类名
                 不是必须大写，只是约定俗成
          */
-        function Person(name ,age){
+        function Person(name, age) {
             this.name = name;
             this.age = age;
             this.work = function () {
-                console.log("自定义构造函数：我叫"+this.name+",今年"+this.age+"岁，我会工作！");
+                console.log("自定义构造函数：我叫" + this.name + ",今年" + this.age + "岁，我会工作！");
             };
         }
-        var person1 = new Person("张三",29);
+
+        var person1 = new Person("张三", 29);
         person1.work();
-        var person2 = new Person("李四",32);
+        var person2 = new Person("李四", 32);
         person2.work();
 
-        function Dog(pinzhong,sex){
+        function Dog(pinzhong, sex) {
             this.pz = pinzhong;
             this.sex = sex;
             this.play = function () {
-                console.log("自定义构造函数，我是"+this.pz+",我是"+this.sex+"狗，我爱玩。");
+                console.log("自定义构造函数，我是" + this.pz + ",我是" + this.sex + "狗，我爱玩。");
             };
         }
-        var hsq = new Dog("哈士奇","公");
+
+        var hsq = new Dog("哈士奇", "公");
         hsq.play();
-        var bm = new Dog("边牧","母");
+        var bm = new Dog("边牧", "母");
         bm.play();
         console.log(person1 instanceof Person);//true
         console.log(hsq instanceof Person);//false
         console.log(hsq instanceof Object);//true 同样Object是所有类的基类
-
 
 
         /*
@@ -913,14 +914,14 @@
         //先创建空对象，再分别写出属性和方法
         var zobj = {};//空的{}等价于new Object();
         zobj.name = "字面量方式创建对象";
-        zobj.print = function (){
-          console.log("当前："+this.name);
+        zobj.print = function () {
+            console.log("当前：" + this.name);
         };
         zobj.print();
 
         //直接写出属性和方法，可用for-in遍历该对象，该对象也可以理解成json对象
         var zobj2 = {
-            name : "字面量方式创建对象，直接写出属性和方法",
+            name: "字面量方式创建对象，直接写出属性和方法",
             print: function () {
                 console.log(this.name);
             }
@@ -934,12 +935,13 @@
         console.log("\n\nNum27开始：设置和获取属性的另一种方式：中括号");
 
 
-        function OtherWay(){
+        function OtherWay() {
             this.name = "通过中括号访问属性和方法";
             this.visit = function () {
-              console.log(this.name);
+                console.log(this.name);
             };
         }
+
         var otherWay = new OtherWay();
         otherWay.visit();
         otherWay["name"] = "$通过中括号访问属性和方法$";//[]
@@ -986,18 +988,167 @@
 
         /*
         直接看看文档就行了
-         Math.ceil()---向上取整
-         Math.floor()---向下取整
+         Math.ceil(4.3)---向数轴右侧取整
+         Math.floor(4.3)---向数轴左侧取整
          Math.Pi----圆周率的值
-         Math.Max()---一组数字中的最大值
-         Math.Min()---一组数字中的最小值
-         Math.abs()----绝对值
-         Math.random---随机数字
+         Math.max(1,2,3)---一组数字中的最大值
+         Math.Min(1,2,3)---一组数字中的最小值
+         Math.abs(-9)----绝对值
+         Math.random()---[0,1)的随机数，包括0，不包括1,根据此可得到任意范围的随机数
          Math.sqrt()----开平方
          Math.pow()----一个数字的多少次幂
+         Math.fround() ---- 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。
          */
+        /*
+            Math.random()
+         */
+        console.log(Math.random());//[0,1)
+        console.log(Math.random() * 5);//[0,5)
+        console.log(Math.random() * 100);//[0,100)
+        /*
+            Math.fround() ---- 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。
+         */
+        console.log(Math.fround(2));//2
+        console.log(Math.fround(2.1));//2.0999999046325684
+        console.log(Math.fround(2.9));//2.9000000953674316
 
         console.log("Num30结束");
+    </script>
+
+
+    <script>
+        //Num31 Date对象
+        console.log("\n\nNum31开始：Date对象");
+
+        var curDt = new Date();
+        console.log("直接new Date():"+curDt);//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+        console.log("直接new Date():"+curDt.toString());//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+
+        var curDt2 = new Date("2017-08-12");
+        console.log("传入字符串格式的时间："+curDt2);//Sat Aug 12 2017 08:00:00 GMT+0800 (中国标准时间)
+
+        var curDt3 = Date.now();//Date的valueOf()也可以
+        console.log("获取当前时间的毫秒数，从1970.1.1 00:00开始算起："+curDt3);//1530100310542
+
+        /*
+            获取年 月 日 时 分 秒 星期
+            有了这些值就可以想java的format一样随意格式化日期了
+         */
+            var currentDate = new Date();
+           console.log(currentDate.getFullYear());//获取年份
+           console.log(currentDate.getMonth()+1);//获取月份，是0开始的 中国的月份是需要加1的
+           console.log(currentDate.getDate());//获取日期
+           console.log(currentDate.getHours());//获取时 24小时制
+           console.log(currentDate.getMinutes());//获取分
+           console.log(currentDate.getSeconds());//获取秒
+           console.log(currentDate.getDay());//获取星期 0是周日 1是周一。。。
+
+        /*
+            输出日期
+         */
+        var outDate = new Date();
+        console.log(outDate.toDateString());//Wed Jun 27 2018
+        console.log(outDate.toLocaleDateString());//2018/6/27
+
+        /*
+            输出时间
+         */
+        var outTime = new Date();
+        console.log(outTime.toTimeString());//20:16:39 GMT+0800 (中国标准时间)
+        console.log(outTime.toLocaleTimeString());//下午8:16:39
+
+        /*
+            输出当前毫秒值：从1970-1-1 00:00开始算
+         */
+        var millDate = new Date();
+        console.log(millDate.valueOf());//1530101913003 Date.now()也可以
+
+        console.log("Num31结束：Date对象");
+    </script>
+
+
+    <script>
+        //Num32 String对象
+        console.log("\n\nNum32开始：String对象");
+
+        /*
+            字符串
+            js中的字符串可以用单引号也可用双引号；
+            js中虽然没有字符的概念，但是js中的字符串仍然可以看成是一组字符组成的数组；
+            因此可以像遍历数组一样遍历字符串，for循环；
+
+            字符串的特性：不可变性，即字符串的对象在堆中是不可变的，你不能改变它的任何一个字符；
+
+            有时你看到某个字符串变量的值变了，只是它指向堆中字符串对象的位置发生变化，并没有改变原来的字符串，而是指向了新的字符串；
+         */
+        //像遍历数组一样，遍历字符串
+        var blstr = 'hello';
+        for (var i = 0; i < blstr.length; i++) {
+            console.log(blstr[i]);
+        }
+
+        var exampleStr = "hello";
+        console.log("length:"+exampleStr.length);//获取字符串的长度
+
+        console.log("charAt():"+exampleStr.charAt(1));//获取字符串中指定位置的字符，超出索引返回空的
+
+        //A ,可以多参数例如：String.fromCharCode(65,66)返回ASCII码对应的字符,参考：ASCII表.png
+        console.log("fromCharCode():"+String.fromCharCode(65));
+
+        console.log("concat："+exampleStr.concat("我","爱","你"));//hello我爱你 字符串拼接
+
+        //str.indexOf(searchValue[, fromIndex])
+        // 某个字符在字符串中的位置，第二个参数可省略，指从哪个索引开始找，找到第一个即结束，找不到返回-1
+        var indexstr = "good morning";
+        console.log("indexOf():"+indexstr.indexOf("o"));//1
+        console.log("indexOf():"+indexstr.indexOf("o",3));//1
+
+        /*
+            str.lastIndexOf(searchValue[, fromIndex])
+            从后向前找,但是索引仍然是从左向右的方式,找不到则返回-1
+            参考indexOf()
+         */
+
+        /*
+            replace("原来的字符串","新的字符串");用来替换字符串的
+         */
+        var repStr = "hello";
+        console.log("replace():"+repStr.replace("el","你好"));
+
+        /*
+            slice(开始的索引,结束的索引);
+            从字符串中提取子串
+            从索引5的位置开始提取,到索引为10的前一个结束,没有10，并返回这个提取后的字符串
+         */
+        var sliceStr = "我今天非常高兴因为我是一个大帅哥";
+        console.log("slice():"+sliceStr.slice(5,10));//高兴因为我
+
+        /*
+            substr(开始的位置,个数);返回的是截取后的新的字符串
+            对比slice()第二个参数 一个时截取结束的索引，一个时截取的个数
+         */
+        console.log("substr():"+sliceStr.substr(5,10));//高兴因为我是一个大帅
+        /*
+            split("要干掉的字符串",切割后留下的个数);切割字符串
+            返回分割出的字符串组成的数组,第二个参数可有可无，表示分割后保留几个子串组成数组，也就是分割后数组的长度
+         */
+        var splitStr = "我|今天非|常高|兴|你|知|道为|什么|吗";
+        var arrSplit = splitStr.split("|");//返回分割出的字符串组成的数组
+        console.log("split():"+arrSplit);//我,今天非,常高,兴,你,知,道为,什么,吗
+        var arrSplit2 = splitStr.split("|",3);
+        console.log("split():"+arrSplit2);//我,今天非,常高
+
+        /*
+            toLocaleLowerCase();转小写
+            toLowerCase();转小写
+            toLocaleUpperCase()转大写
+            toUpperCase();转大写
+            trim();干掉字符串两端的空格
+         */
+
+
+
+        console.log("Num32结束：String对象");
     </script>
 </head>
 <body>

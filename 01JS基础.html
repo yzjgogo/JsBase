@@ -1356,42 +1356,30 @@
         var reSpArr3 = spArr3.splice(1,2,"b","c","d");//第2个参数不是0说明要删除2个元素，有第三个参数说明新增元素
         console.log(reSpArr3+"|"+spArr3);//22,33|11,b,c,d,44,55
 
+        console.log("Num33结束：Array对象");
+    </script>
 
-
-
-
-
+    <script>
         /*
-         *
-         * Array.isArray(对象)---->判断这个对象是不是数组
-         * Array.from():方法从一个类似数组或可迭代对象中创建一个新的数组实例
-         * instanceof关键字
-         * .concat(数组,数组,数组,...) 组合一个新的数组
-         * .every(函数)--返回值是布尔类型,函数作为参数使用,函数中有三个参数,第一个参数是元素的值，第二个参数是索引值,第三个参数是原来的数组(没用)
-         * 如果这个数组中的每个元素的值都符合条件,最后才返回的是true
-         *
-         * .filter(函数);返回的是数组中每一个元素都复合条件的元素,组成了一个新的数组
-         *
-         * .push(值);--->把值追加到数组中,加到最后了---返回值也是追加数据之后的数组长度
-         * .pop();--->删除数组中最后一个元素,返回值就是删除的这个值
-         * .shift();--->删除数组中第一个元素,返回值就是删除的这个值
-         * .unshift();--->向数组的第一个元素前面插入一个新的元素,----返回值是插入后的程度
-         * .forEach(函数)方法---遍历数组用---相当于for循环
-         * .indexOf(元素值);返回的是索引,没有则是-1
-         * .join("字符串");----返回的是一个字符串
-         * .map(函数);--->数组中的每个元素都要执行这个函数,把执行后的结果重新的全部的放在一个新的数组中
-         * .reverse();----->反转数组
-         * .sort();---排序的,可能不稳定,如果不稳定,请写MDN中的那个固定的代码
-         * .arr.slice(开始的索引,结束的索引);把截取的数组的值放在一个新的数组中,但是不包含结束的索引对应的元素值
-         * .splice(开始的位置,要删除的个数,替换的元素的值);一般是用于删除数组中的元素,或者是替换元素,或者是插入元素
-         *
-         *
-         * */
-        /*
-
+            基本类型 ： 基本包装类型
+            number   ： Number
+            string   :  String
+            boolean  :  Boolean
+            undefined
+            object/null
          */
 
-        console.log("Num33结束：Array对象");
+        //下面是Boolean毁三观的案例
+        //如果是一个对象&&true,那么结果是true
+        //如果是一个true&&对象,那么结果是对象
+
+        var flagBoo = new Boolean(false);
+        var resultBoo = flagBoo&&true;
+        console.log(resultBoo);//true
+
+        var flagBoo2=new Boolean(false);
+        var resultObj=true&&flagBoo2;
+        console.log(resultObj);//Boolean {false}
     </script>
 </head>
 <body>

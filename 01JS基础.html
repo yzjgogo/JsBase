@@ -1021,27 +1021,27 @@
         console.log("\n\nNum31开始：Date对象");
 
         var curDt = new Date();
-        console.log("直接new Date():"+curDt);//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
-        console.log("直接new Date():"+curDt.toString());//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+        console.log("直接new Date():" + curDt);//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+        console.log("直接new Date():" + curDt.toString());//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
 
         var curDt2 = new Date("2017-08-12");
-        console.log("传入字符串格式的时间："+curDt2);//Sat Aug 12 2017 08:00:00 GMT+0800 (中国标准时间)
+        console.log("传入字符串格式的时间：" + curDt2);//Sat Aug 12 2017 08:00:00 GMT+0800 (中国标准时间)
 
         var curDt3 = Date.now();//Date的valueOf()也可以
-        console.log("获取当前时间的毫秒数，从1970.1.1 00:00开始算起："+curDt3);//1530100310542
+        console.log("获取当前时间的毫秒数，从1970.1.1 00:00开始算起：" + curDt3);//1530100310542
 
         /*
             获取年 月 日 时 分 秒 星期
             有了这些值就可以想java的format一样随意格式化日期了
          */
-            var currentDate = new Date();
-           console.log(currentDate.getFullYear());//获取年份
-           console.log(currentDate.getMonth()+1);//获取月份，是0开始的 中国的月份是需要加1的
-           console.log(currentDate.getDate());//获取日期
-           console.log(currentDate.getHours());//获取时 24小时制
-           console.log(currentDate.getMinutes());//获取分
-           console.log(currentDate.getSeconds());//获取秒
-           console.log(currentDate.getDay());//获取星期 0是周日 1是周一。。。
+        var currentDate = new Date();
+        console.log(currentDate.getFullYear());//获取年份
+        console.log(currentDate.getMonth() + 1);//获取月份，是0开始的 中国的月份是需要加1的
+        console.log(currentDate.getDate());//获取日期
+        console.log(currentDate.getHours());//获取时 24小时制
+        console.log(currentDate.getMinutes());//获取分
+        console.log(currentDate.getSeconds());//获取秒
+        console.log(currentDate.getDay());//获取星期 0是周日 1是周一。。。
 
         /*
             输出日期
@@ -1077,7 +1077,7 @@
             js中虽然没有字符的概念，但是js中的字符串仍然可以看成是一组字符组成的数组；
             因此可以像遍历数组一样遍历字符串，for循环；
 
-            字符串的特性：不可变性，即字符串的对象在堆中是不可变的，你不能改变它的任何一个字符；
+            字符串的特性：不可变性，即字符串的对象在堆中是不可变的，你不能改变它的任何一个字符；str[i]可读不可写
 
             有时你看到某个字符串变量的值变了，只是它指向堆中字符串对象的位置发生变化，并没有改变原来的字符串，而是指向了新的字符串；
          */
@@ -1088,20 +1088,20 @@
         }
 
         var exampleStr = "hello";
-        console.log("length:"+exampleStr.length);//获取字符串的长度
+        console.log("length:" + exampleStr.length);//获取字符串的长度
 
-        console.log("charAt():"+exampleStr.charAt(1));//获取字符串中指定位置的字符，超出索引返回空的
+        console.log("charAt():" + exampleStr.charAt(1));//获取字符串中指定位置的字符，超出索引返回空的
 
         //A ,可以多参数例如：String.fromCharCode(65,66)返回ASCII码对应的字符,参考：ASCII表.png
-        console.log("fromCharCode():"+String.fromCharCode(65));
+        console.log("fromCharCode():" + String.fromCharCode(65));
 
-        console.log("concat："+exampleStr.concat("我","爱","你"));//hello我爱你 字符串拼接
+        console.log("concat：" + exampleStr.concat("我", "爱", "你"));//hello我爱你 字符串拼接
 
         //str.indexOf(searchValue[, fromIndex])
         // 某个字符在字符串中的位置，第二个参数可省略，指从哪个索引开始找，找到第一个即结束，找不到返回-1
         var indexstr = "good morning";
-        console.log("indexOf():"+indexstr.indexOf("o"));//1
-        console.log("indexOf():"+indexstr.indexOf("o",3));//1
+        console.log("indexOf():" + indexstr.indexOf("o"));//1
+        console.log("indexOf():" + indexstr.indexOf("o", 3));//1
 
         /*
             str.lastIndexOf(searchValue[, fromIndex])
@@ -1113,7 +1113,7 @@
             replace("原来的字符串","新的字符串");用来替换字符串的
          */
         var repStr = "hello";
-        console.log("replace():"+repStr.replace("el","你好"));
+        console.log("replace():" + repStr.replace("el", "你好"));
 
         /*
             slice(开始的索引,结束的索引);
@@ -1121,22 +1121,22 @@
             从索引5的位置开始提取,到索引为10的前一个结束,没有10，并返回这个提取后的字符串
          */
         var sliceStr = "我今天非常高兴因为我是一个大帅哥";
-        console.log("slice():"+sliceStr.slice(5,10));//高兴因为我
+        console.log("slice():" + sliceStr.slice(5, 10));//高兴因为我
 
         /*
             substr(开始的位置,个数);返回的是截取后的新的字符串
             对比slice()第二个参数 一个时截取结束的索引，一个时截取的个数
          */
-        console.log("substr():"+sliceStr.substr(5,10));//高兴因为我是一个大帅
+        console.log("substr():" + sliceStr.substr(5, 10));//高兴因为我是一个大帅
         /*
             split("要干掉的字符串",切割后留下的个数);切割字符串
             返回分割出的字符串组成的数组,第二个参数可有可无，表示分割后保留几个子串组成数组，也就是分割后数组的长度
          */
         var splitStr = "我|今天非|常高|兴|你|知|道为|什么|吗";
         var arrSplit = splitStr.split("|");//返回分割出的字符串组成的数组
-        console.log("split():"+arrSplit);//我,今天非,常高,兴,你,知,道为,什么,吗
-        var arrSplit2 = splitStr.split("|",3);
-        console.log("split():"+arrSplit2);//我,今天非,常高
+        console.log("split():" + arrSplit);//我,今天非,常高,兴,你,知,道为,什么,吗
+        var arrSplit2 = splitStr.split("|", 3);
+        console.log("split():" + arrSplit2);//我,今天非,常高
 
         /*
             toLocaleLowerCase();转小写
@@ -1147,8 +1147,251 @@
          */
 
 
-
         console.log("Num32结束：String对象");
+    </script>
+    <script>
+        //Num33 Array对象
+        console.log("\n\nNum33开始：Array对象");
+
+
+        /*
+            Array.isArray(对象)---->判断这个对象是不是数组
+         */
+        var arrOr = new Array();
+        var arrOr2 = [];
+        var arrOr3 = "";
+        console.log(Array.isArray(arrOr) + "," + Array.isArray(arrOr2) + "," + Array.isArray(arrOr3));//true,true,false
+
+        /*
+            Array.from(类似数组的对象,[数组中每个元素都执行的函数]):方法从一个类似数组或可迭代对象中创建一个新的数组实例
+            第一个参数是类似数组的对象，例如字符串等
+
+            第二个参数可选，如果写，就表示数组的每个元素都会执行这个函数
+        */
+        var frArr = [11, 22, 33];
+        var reFrArr = Array.from(frArr);
+        console.log(Array.isArray(reFrArr) + "," + reFrArr);
+
+        //等价于 var reFrArr2 = Array.from(frArr,x=>x+1);ES6标准新增的一种函数：Arrow Function（箭头函数）
+        var reFrArr2 = Array.from(frArr, function (x) {
+            return (x + 1);
+        });
+        console.log(reFrArr2);
+
+        var frArr2 = "hello";
+        console.log(Array.from(frArr2));//字符串被转换成数组["h", "e", "l", "l", "o"]
+
+        /*
+            arr.concat(arr2,arr3....) 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+        */
+        var conArr1 = [1, 2];
+        var conArr2 = [3, 4, 5];
+        var conArr3 = [6, 7, 8, 9];
+        var conArr4 = conArr1.concat(conArr2, conArr3);
+        console.log(conArr4);//[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        /*
+            every(func) 方法测试数组的所有元素是否都通过了指定函数的测试,有一个没通过都返回false，只有所有都通过才返回true，即一假全假
+            返回值是布尔类型
+            其中func一般可以有三个参数，第一个参数是当前要测试的元素，第二个参数是当前要测试的元素的索引，第三个参数是当前整个数组
+            但是，我们可以只保留一个元素、或两个元素
+        */
+        var eveArr = [1, 2, 3];
+        var booArr = eveArr.every(function (element, index, arr) {
+            console.log("element:" + element + ",index:" + index + ",arr" + arr);
+            // return element>3;//false
+            return element < 4;//true
+        });
+        console.log(booArr);
+        var booArr1 = eveArr.every(function (element, index) {
+            console.log("element:" + element + ",index:" + index);
+            // return element>3;//false
+            return element < 4;//true
+        });
+        var booArr2 = eveArr.every(function (element) {
+            console.log("element:" + element);
+            // return element>3;//false
+            return element < 4;//true
+        });
+
+        /*
+            filter(func) 返回一个新数组, 所有满足func测试的元素组成一个新的数组
+            过滤，取的满足条件的所有元素，并组成新的数组返回
+
+            与every()类似的是func一般可以有三个参数，第一个参数是当前要测试的元素，第二个参数是当前要测试的元素的索引，第三个参数是当前整个数组
+            但是，我们可以只保留一个元素、或两个元素
+        */
+        var filArr = [1, 2, 3];
+        var reFilArr = filArr.filter(function (element, index, arr) {
+            console.log(element + "|" + index + "|" + arr);
+            return element > 1;//这就是判断条件，大于1的元素都满足，放到新的数组里
+        });
+        console.log(reFilArr);
+
+        /*
+            push(element...) 方法将一个或多个元素添加到数组的末尾，并返回新数组的长度。
+            注意改变的是原数组，不会产生新的数组
+        */
+        var pushArr = [1, 2, 3];
+        var rePushArrLength = pushArr.push(4, 5, 6);
+        console.log(rePushArrLength + "|" + pushArr);//6|1,2,3,4,5,6
+        /*
+            unshift(element...) 方法将一个或多个元素添加到数组的开头，并返回新数组的长度。
+            注意改变的是原数组，不会产生新的数组
+        */
+        var unsArr = [1, 2, 3];
+        var reUnsArrLength = unsArr.unshift(4, 5, 6);
+        console.log(reUnsArrLength + "|" + unsArr);//6|4,5,6,1,2,3
+
+        /*
+            pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度,但是不会产生新的数组。
+        */
+        var popArr = [1, 2, 3];
+        var popElement = popArr.pop();
+        console.log(popElement + "|" + popArr);//3|1,2
+        /*
+            shift()方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度,但是不会产生新的数组。
+        */
+        var shiftArr = [1, 2, 3];
+        var shiftElement = shiftArr.shift();
+        console.log(shiftElement + "|" + shiftArr);//1|2,3
+
+        /*
+            forEach(func)方法---遍历数组用---相当于for循环
+            func里可以有两个参数，第一个是当前遍历到的元素值，第二个是当前遍历到的元素索引
+
+            注意低版本无效，但是有解决方案
+            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+            里面的兼容旧环境（Polyfill）章节，将那段代码进入就行了
+        */
+        var feArr = [1, 2, 3];
+        feArr.forEach(function (element, index) {
+            console.log("element：" + element + ",index：" + index);
+        });
+
+        /*
+            indexOf(元素值);返回的是元素在数组中的索引,没有则返回-1
+        */
+        var ioArr = [11, 22, 33];
+        console.log(ioArr.indexOf(33));//2
+        console.log(ioArr.indexOf(44));//-1
+
+        /*
+            join("字符串");用指定的字符串连接各个元素，组成一个整体字符串返回
+        */
+        var jiArr = [1, 2, 3];
+        var reJiArrStr = jiArr.join("fuck");
+        console.log(reJiArrStr);//1fuck2fuck3
+
+        /*
+            map(func) 数组中的每个元素都会通过func得到新的元素，这些新的元素组成新的数组返回
+            该方法并返回新的数组
+        */
+        var mapArr = [1, 4, 9];
+        var remArr = mapArr.map(Math.sqrt);//不要奇怪，其实就是传入Math.sqrt(x),相当于传入了一个函数名，也就代表传入了函数
+        console.log(remArr + "|" + mapArr);//1,2,3|1,4,9 原数组不变，返回新的数组
+
+        var mapArr2 = [1,2,3];
+        var remArr2 = mapArr2.map(function (element, index, array) {
+            console.log(element+"|"+index+"|"+array);
+            return element*2;
+        });
+        console.log(remArr2);//[2, 4, 6]
+
+        /*
+            reverse() 方法将数组中元素的位置颠倒。
+            不创建新的数组，但是有返回值，返回的是原数组的引用，也就是颠倒后改变的是原数组
+        */
+        var revArr = [1,2,3];
+        var retrevArr = revArr.reverse();
+        console.log(revArr+"|"+retrevArr);//3,2,1|3,2,1 改变原数组，返回原数组的引用
+
+        /*
+            sort() sort排序不一定是稳定的。默认排序顺序是根据字符串Unicode码点。
+             可以有参数sort(compareFunction),参数是排序规则函数
+             如果没有参数就默认按照Unicode码排序
+            不创建新的数组，而是改变原数组，但是有返回值，返回的是原数组的引用
+        */
+        var monthsSort = ['March', 'Jan', 'Feb', 'Dec'];
+        var reMSort = monthsSort.sort();
+        console.log(reMSort+"|"+monthsSort);//Dec,Feb,Jan,March|Dec,Feb,Jan,March 改变原数组，返回原数组的引用
+
+        //可见默认排序规则不是我们想要的，因此我们要自定义排序规则了
+        var sortArr = [1, 30, 4, 21];
+        var reSortArr = sortArr.sort();
+        console.log(reSortArr +"|"+ sortArr);//1,21,30,4|1,21,30,4 改变原数组，返回原数组的引用
+        //自定义排序规则
+        var diysort = [1, 30, 4, 21];
+        var reDiySort = diysort.sort(function (pre,after) {
+            if (pre < after) {
+                return -1;
+            }else if(pre > after){
+                return 1;
+            }
+            return 0;
+        });
+        console.log(reDiySort+"|"+diysort);//1,4,21,30|1,4,21,30
+
+        /*
+            slice(开始索引，[结束索引]) 截取一段数组，组成新的数组返回，原数组不变
+            可以没有结束索引，如果没有就截取到最后一个元素
+        */
+        var sliceArr = [11,22,33,44,55,66];
+        var reSliceArr = sliceArr.slice(1,4);
+        console.log(reSliceArr);//[22, 33, 44]
+
+        /*
+            splice(开始操作的索引，删除几个元素，增加的元素...)
+            如果即删除又添加，则先删除后添加
+        */
+        var spArr = [11,22,33,44,55];
+        var reSpArr = spArr.splice(1,0,"a");//第2个参数是0，说明不删除元素，有第三个参数说明新增元素
+        console.log(reSpArr+"|"+spArr);//|11,a,22,33,44,55
+
+        var spArr2 = [11,22,33,44,55];
+        var reSpArr2 = spArr2.splice(1,2);//第2个参数不是0说明要删除2个元素，没有第三个参数说明不新增元素
+        console.log(reSpArr2+"|"+spArr2);//22,33|11,44,55
+
+        var spArr3 = [11,22,33,44,55];
+        var reSpArr3 = spArr3.splice(1,2,"b","c","d");//第2个参数不是0说明要删除2个元素，有第三个参数说明新增元素
+        console.log(reSpArr3+"|"+spArr3);//22,33|11,b,c,d,44,55
+
+
+
+
+
+
+        /*
+         *
+         * Array.isArray(对象)---->判断这个对象是不是数组
+         * Array.from():方法从一个类似数组或可迭代对象中创建一个新的数组实例
+         * instanceof关键字
+         * .concat(数组,数组,数组,...) 组合一个新的数组
+         * .every(函数)--返回值是布尔类型,函数作为参数使用,函数中有三个参数,第一个参数是元素的值，第二个参数是索引值,第三个参数是原来的数组(没用)
+         * 如果这个数组中的每个元素的值都符合条件,最后才返回的是true
+         *
+         * .filter(函数);返回的是数组中每一个元素都复合条件的元素,组成了一个新的数组
+         *
+         * .push(值);--->把值追加到数组中,加到最后了---返回值也是追加数据之后的数组长度
+         * .pop();--->删除数组中最后一个元素,返回值就是删除的这个值
+         * .shift();--->删除数组中第一个元素,返回值就是删除的这个值
+         * .unshift();--->向数组的第一个元素前面插入一个新的元素,----返回值是插入后的程度
+         * .forEach(函数)方法---遍历数组用---相当于for循环
+         * .indexOf(元素值);返回的是索引,没有则是-1
+         * .join("字符串");----返回的是一个字符串
+         * .map(函数);--->数组中的每个元素都要执行这个函数,把执行后的结果重新的全部的放在一个新的数组中
+         * .reverse();----->反转数组
+         * .sort();---排序的,可能不稳定,如果不稳定,请写MDN中的那个固定的代码
+         * .arr.slice(开始的索引,结束的索引);把截取的数组的值放在一个新的数组中,但是不包含结束的索引对应的元素值
+         * .splice(开始的位置,要删除的个数,替换的元素的值);一般是用于删除数组中的元素,或者是替换元素,或者是插入元素
+         *
+         *
+         * */
+        /*
+
+         */
+
+        console.log("Num33结束：Array对象");
     </script>
 </head>
 <body>

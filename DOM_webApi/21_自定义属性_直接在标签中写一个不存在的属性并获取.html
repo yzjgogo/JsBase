@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="uu">
+    <!--直接写了不存在的属性score-->
+    <li score="10">助教的数学成绩</li>
+    <li score="20">班主任的成绩</li>
+    <li score="30">小苏的成绩</li>
+    <li score="40">小杰老师成绩</li>
+    <li score="50">乔峰成绩</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    //获取所有的li标签
+    var list=document.getElementsByTagName("li");
+    for(var i=0;i<list.length;i++){
+        list[i].onclick=function () {
+            // alert(this.score);//不能，undefined
+            //获取自定义属性的方式
+            alert(this.getAttribute("score"));
+        };
+    }
+</script>
+</body>
+</html>

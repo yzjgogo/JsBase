@@ -9,42 +9,104 @@
 <a href="04_1属性引用规律_双标签的文本内容_p标签举例.html" target="_blank">
     1、js中设置DOM对象的文本内容时，双标签的文本值可通过innerText属性设置<br/>
     例如：document.getElementById("p1").innerText="这是一个p";
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="04_2属性引用规律_引用带连接符的属性只保留单词且驼峰格式.html" target="_blank">
     2、凡是css中这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可<br/>
     例如html中本来background-color有连接符，但是在js中直接写成backgroundColor
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
     3、在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
     在写js代码,DOM操作的时候,这个属性值,是布尔类型就可以了<br/>
     例如：my$("ck2").checked=true;
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
     4、js中的DOM对象引用标签属性时要遵循驼峰命名法，<br/>
     例如：html中readonly都是小写，但是js中readOnly的O要大写
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="11_DOM设置标签的类样式选择器.html" target="_blank">
     5、在js代码中DOM操作的时候,设置元素的类样式,不用class关键字,应该使用className<br/>
     例如：my$("dv").className = "cls";
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="12_DOM中引用body标签.html" target="_blank">
     6、document可直接获取body标签<br/>
     例如：document.body
-</a><br><br>
+</a><br><br><br><br>
 
 
 <a href="10_通过DOM设置标签的css样式其实就是操作style属性.html" target="_blank">
     7、通过DOM设置标签的css样式其实就是操作标签的style属性
+</a><br><br><br><br>
+
+
+<a href="13_onclick单击事件拦截.html" target="_blank">
+    8、onclick单击事件拦截
+</a><br><br><br><br>
+
+
+<a href="14_鼠标事件.html" target="_blank">
+    9、鼠标事件
+</a><br><br><br><br>
+
+
+<h2 style="color: red;">10、获取元素的几种方式</h2>
+<a href="02_1DOM对象执行函数问题.html" target="_blank">
+    document.getElementById("btn")：传入元素的id，返回单个标签对象
 </a><br><br>
+<a href="06_getElementsByTagName返回数组.html" target="_blank">
+    document.getElementsByTagName("div"):传入标签名，返回多个标签对象数组
+</a><br><br>
+<a href="15_表单标签getElementsByName.html" target="_blank">
+    document.getElementsByName("name1"):适用于标签控件，传入标签控件的name属性值，返回多个表单标签对象数组
+</a><br><br>
+<a href="16_通过类样式获取标签getElementsByClassName.html" target="_blank">
+    document.getElementsByClassName("cls"):传入标签的class属性值，返回标签对象数组，h5才有，有浏览器版本问题，IE8就用不了
+</a><br><br>
+<a href="17_querySelector和querySelectorAll.html" target="_blank">
+    document.querySelector("#btn"):如果传入id需加#,返回单个标签对象，H5C3才有，因此有浏览器版本问题
+</a><br><br>
+<a href="17_querySelector和querySelectorAll.html" target="_blank">
+    document.querySelectorAll(".cls"):如果传入class需加.,返回多个元素组成的数组，适用于类选择器，H5C3才有，因此有浏览器版本问题
+</a><br><br><br><br>
+
+
+<a href="18_焦点事件.html" target="_blank">
+    11、焦点事件
+</a><br><br><br><br>
+
+
+<a href="19_兼容代码innerText和textContent.html" target="_blank">
+    12、浏览器兼容代码举例：innerText和textContent<br/>
+    关键点：如果浏览器不支持某个属性，那么typeof该属性返回undefined
+</a><br><br><br><br>
+
+
+<a href="20_innerText和innerHTML的区别.html" target="_blank">
+    13、innerText和innerHTML的区别
+</a><br><br><br><br>
+
+
+<h2 style="color: red;">14、自定义属性</h2>
+<a href="21_自定义属性_直接在标签中写一个不存在的属性并获取.html" target="_blank">
+    直接在标签中写一个不存在的属性并获取
+</a><br><br>
+<a href="22_自定义属性_js中设置自定义属性并获取.html" target="_blank">
+    js中设置自定义属性并获取
+</a><br><br>
+<a href="23_移除元素的自定义属性和自带属性.html" target="_blank">
+    移除元素的自定义属性和自带属性
+</a><br><br><br><br>
+
+
+
 </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<!--
+在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
+在写js代码,DOM操作的时候,这个属性值,是布尔类型就可以了
+但是在js中引用属性时要遵循驼峰命名法，例如html中readonly都是小写，但是js中readOnly的O要大写
+-->
+
+<body>
+<!--radio案例-->
+<input type="button" value="修改性别" id="btn1"/>
+<input type="radio" value="1" name="sex"/>男
+<input type="radio" value="2" name="sex" id="rad1"/>女
+<input type="radio" value="3" name="sex"/>保密
+<script>
+
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    //规律:在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
+    //在写js代码,DOM操作的时候,这个属性值,是布尔类型就可以了
+    my$("btn1").onclick = function () {
+        my$("rad1").checked = true;
+    };
+</script>
+<br /><br><br>
+
+
+
+<!--checkbox案例-->
+<input type="button" value="选择兴趣" id="btn2"/>
+<input type="checkbox" value="1" name="xingqu" />吃饭
+<input type="checkbox" value="2" name="xingqu" />睡觉
+<input type="checkbox" value="3" name="xingqu" id="ck1" />打豆豆
+<input type="checkbox" value="4" name="xingqu" />打篮球
+<input type="checkbox" value="5" name="xingqu" />打足球
+<input type="checkbox" value="6" name="xingqu" id="ck2" />打铅球
+<script>
+    my$("btn2").onclick=function () {
+        my$("ck1").checked=true;
+        my$("ck2").checked=true;
+    };
+</script>
+<br><br><br>
+
+
+
+
+<!--select-option案例-->
+<input type="button" value="点菜" id="btn3"/>
+<select name="" id="ss">
+    <option value="1">油炸榴莲</option>
+    <option value="2">爆炒臭豆腐</option>
+    <option value="3">清蒸助教</option>
+    <option value="4" id="op1">凉拌班主任</option>
+    <option value="5">红烧小苏</option>
+</select>
+<script src="common.js"></script>
+<script>
+    my$("btn3").onclick=function () {
+        //点击按钮选择菜
+        my$("op1").selected=true;
+    };
+</script>
+<br><br><br>
+
+
+
+
+<textarea name="" id="tt" cols="30" rows="10" readonly = "readonly">
+  注册用户的协议:
+
+  某人问智者,
+  大师:您觉得怎么做才是最快乐的?
+  回答说:不要和愚者辩论
+  这个人说:我不这么认为!
+  大师说:您说的对,
+  我就是这么帅
+
+</textarea>
+<input type="button" value="注册" id="btn4"/>
+<script>
+    //disabled ：禁用，禁用某个标签,
+
+    my$("btn4").onclick=function () {
+        //readOnly要遵循驼峰命名法，O要大写
+        my$("tt").readOnly = false;
+        my$("tt").value="嘎嘎";//推荐用value,因为看成了是表单的标签
+        //my$("tt").innerText="哈哈";
+    };
+</script>
+</body>
+</html>

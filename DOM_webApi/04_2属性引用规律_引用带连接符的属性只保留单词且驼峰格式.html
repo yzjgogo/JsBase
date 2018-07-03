@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="设置样式" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    //凡是css中这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可
+    //例如html中本来background-color有连接符，但是在js中直接写成backgroundColor
+
+    //点击按钮,修改div的宽,高,背景颜色
+    my$("btn").onclick = function () {
+        my$("dv").style.width = "300px";
+        my$("dv").style.height = "200px";
+        my$("dv").style.backgroundColor = "pink";
+    };
+</script>
+</body>
+</html>

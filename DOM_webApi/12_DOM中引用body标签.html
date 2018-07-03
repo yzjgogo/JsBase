@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <style>
+        .cls {
+            background-color: black;
+        }
+    </style>
+</head>
+<body id="bd">
+<input type="button" value="开/关灯" id="btn"/>
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick = function () {
+        //获取body标签
+        document.body.className = document.body.className != "cls" ? "cls" : "";
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="显示图片" id="btn"/>
+<img src="" alt="" id="im" />
+<script>
+    /*
+        html标签的dom对象，可引用该标签的各个属性
+     */
+    var btnObj=document.getElementById("btn");
+    btnObj.onclick=function () {
+        //img也是一个DOM对象，可通过该DOM对象引用img属性src，width，height等等
+        var imObj=document.getElementById("im");
+        imObj.src="../img/ASCII表.png";
+        //设置图片的大小
+        imObj.width="300";
+        imObj.height="400";
+    };
+</script>
+</body>
+</html>

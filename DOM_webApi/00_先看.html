@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="04_1属性引用规律_双标签的文本内容_p标签举例.html" target="_blank">
+    1、js中设置DOM对象的文本内容时，双标签的文本值可通过innerText属性设置<br/>
+    例如：document.getElementById("p1").innerText="这是一个p";
+</a><br><br>
+
+
+<a href="04_2属性引用规律_引用带连接符的属性只保留单词且驼峰格式.html" target="_blank">
+    2、凡是css中这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可<br/>
+    例如html中本来background-color有连接符，但是在js中直接写成backgroundColor
+</a><br><br>
+
+
+<a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
+    3、在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
+    在写js代码,DOM操作的时候,这个属性值,是布尔类型就可以了<br/>
+    例如：my$("ck2").checked=true;
+</a><br><br>
+
+
+<a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
+    4、js中的DOM对象引用标签属性时要遵循驼峰命名法，<br/>
+    例如：html中readonly都是小写，但是js中readOnly的O要大写
+</a><br><br>
+
+
+<a href="11_DOM设置标签的类样式选择器.html" target="_blank">
+    5、在js代码中DOM操作的时候,设置元素的类样式,不用class关键字,应该使用className<br/>
+    例如：my$("dv").className = "cls";
+</a><br><br>
+
+
+<a href="12_DOM中引用body标签.html" target="_blank">
+    6、document可直接获取body标签<br/>
+    例如：document.body
+</a><br><br>
+
+
+<a href="10_通过DOM设置标签的css样式其实就是操作style属性.html" target="_blank">
+    7、通过DOM设置标签的css样式其实就是操作标签的style属性
+</a><br><br>
+</body>
+</html>

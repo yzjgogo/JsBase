@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="直接调用匿名函数" id="btn"/>
+<input type="button" value="调用其它函数不需要加括号()" id="btn2"/>
+
+<script>
+    //最终极的点击按钮弹出对话框的代码
+    document.getElementById("btn").onclick = function () {
+        alert("哈哈,我又变帅了");
+    };
+</script>
+
+<script>
+    function f(){
+        alert("我在函数里");
+    }
+    document.getElementById("btn2").onclick = f;//不需要加括号f(),因为点击时才调用，如果加括号就表示执行这行代码时就执行了函数f
+</script>
+</body>
+</html>

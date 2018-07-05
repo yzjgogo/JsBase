@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value=".on事件绑定" id="onBind"/>
+<input type="button" value=".on事件解绑" id="onUnBind"/><br><br>
+
+<input type="button" value="addEvent绑定" id="addId"/>
+<input type="button" value="addEvent解绑" id="unAddId"/><br><br>
+
+<input type="button" value="attachEvent绑定" id="attachId"/>
+<input type="button" value="attachEvent解绑" id="unAttachId"/>
+
+<script src="common.js"></script>
+<script>
+    /*
+        第一、on事件绑定和解绑
+        解绑只需置空即可
+     */
+    my$("onBind").onclick = function () {
+        console.log("我是绑定的on事件");
+    };
+    my$("onUnBind").onclick = function () {
+        my$("onBind").onclick = null;
+        console.log("解绑on事件成功");
+    };
+
+
+    /*
+        第二、addEventListener事件绑定和解绑
+
+        要解绑某个事件，绑定的时候需要使用命名函数，因为解绑时需要指定解绑哪个函数
+
+        解绑函数是removeEventListener("click", addFun1, false)，如果绑定了多个事件，一次只能解绑一个函数
+        第一个参数是解绑事件的类型，没有on；
+        第二个参数是要解绑的时间函数名；
+        第三个参数后面讲；
+     */
+    /*
+    function addFun1() {
+        console.log("第一个addEvent");
+    }
+
+    function addFun2() {
+        console.log("第二个addEvent");
+    }
+
+    my$("addId").addEventListener("click", addFun1, false);
+    my$("addId").addEventListener("click", addFun2, false);
+
+    //点击解绑
+    my$("unAddId").onclick = function () {
+        //解绑事件的时候,需要在绑定事件的时候,使用命名函数，且指定要解绑的函数
+        my$("addId").removeEventListener("click", addFun1, false);
+        console.log("解绑addFun1成功");
+    };
+    */
+
+
+    /*
+        第三、attachEvent事件解绑 IE8
+
+        要解绑某个事件，绑定的时候需要使用命名函数，因为解绑时需要指定解绑哪个函数
+
+        解绑函数是detachEvent("onclick", attachFun1)，如果绑定了多个事件，一次只能解绑一个事件
+        第一个参数是要解绑的事件类型，带on
+        第二个参数是要解绑的事件函数
+     */
+    function attachFun1() {
+        console.log("第一个attachEvent");
+    }
+
+    function attachFun2() {
+        console.log("第二个attachEvent");
+    }
+
+    my$("attachId").attachEvent("onclick", attachFun1);
+    my$("attachId").attachEvent("onclick", attachFun2);
+
+    my$("unAttachId").onclick = function () {
+        my$("attachId").detachEvent("onclick", attachFun1);
+        console.log("解绑attachFun1成功");
+    };
+
+
+    /*
+        解绑事件的兼容代码
+        这里没写绑定事件的兼容代码，参考：29_元素事件_为元素添加多个事件.html
+     */
+    //为任意的一个元素,解绑对应的事件
+    function removeEventListener(element, type, fnName) {
+        if (element.removeEventListener) {
+            element.removeEventListener(type, fnName, false);
+        } else if (element.detachEvent) {
+            element.detachEvent("on" + type, fnName);
+        } else {
+            element["on" + type] = null;
+        }
+    }
+</script>
+</body>
+</html>

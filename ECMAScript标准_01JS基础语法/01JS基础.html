@@ -228,6 +228,15 @@
         //对于数字0为false，非0位true
         //空字符串、null、undefined、NaN都是false
         console.log("Num12开始");
+        function booFun(){
+
+        }
+        var booObj = {
+            booName: "字面量方式创建对象，直接写出属性和方法",
+            booMethod: function () {
+                console.log(this.booName);
+            }
+        };
 
         console.log(Boolean(1));//true
         console.log(Boolean(0));//false
@@ -238,6 +247,14 @@
         console.log(Boolean(null));//false
         console.log(Boolean(undefined));//false
         console.log(Boolean(NaN));//false
+        console.log(Boolean(booFun));//true
+        console.log(Boolean(booObj.booName));//true booObj对象中有该属性
+        console.log(Boolean(booObj.booMethod));//true booObj对象中有该方法
+        console.log(Boolean(booObj.booName1));//false booObj对象中没有该属性
+        console.log(Boolean(booObj.booMethod1));//false booObj对象中没有该方法
+        var dvObj = document.getElementById("dv");//body在下面html从上往下解析，还没获取到dv，所以null
+        console.log(Boolean(dvObj));//false
+
         console.log("Num12结束");
     </script>
 
@@ -1387,5 +1404,7 @@
 <!--引用外部的js文件的script应该写在body标签里面的最底部，也就是body表中所有其它html标签的后面，
 当然你写在别的地方也是可以的，只是这样最合适，你写到别的地方，浏览器执行后也会帮你挪到这里。-->
 <script id="outLink" src="01JS基础.js"></script>
+
+<div id="dv"></div>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #imgId2{
+            width: 330px;
+            height: 440px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="设置和获取元素的属性值：直接引用属性、通过Attribute引用属性" id="bt"/><br><br>
+<input type="button" value="获取元素style属性的样式值,例如style.width:注意这里获取的是style属性的样式值，即行内样式，不是外部样式" id="bt_style_attr"/><br><br>
+<input type="button" value="获取元素外部样式的样式值的错误方式，例如直接style.width：注意是非行内样式的样式值" id="bt_style_out"/><br><br>
+<input type="button" value="获取元素样式值的通用方式：offset+样式名，例如offsetWidth,无论是行内样式还是外部样式都适用,注意虽然这种方式用于获取样式值，但是根本用不到style关键字，而是直接标签对象.offset样式名，常见offset系列：offsetWidth，offsetHeight，offsetLeft，offsetTop" id="bt_style_all"/><br><br>
+<div>
+    我是一个div
+</div>
+<img src="img/bb.png" alt="我是alt" title="我是title" id="imgId" style="width: 300px;height: 400px;">
+<img src="img/bb.png" alt="我是alt" title="我是title" id="imgId2">
+<script>
+    var imgObj = document.getElementById("imgId");
+    var imgObj2 = document.getElementById("imgId2");
+    document.getElementById("bt").onclick = function () {
+        //获取属性
+        console.log("图片信息：alt:" + imgObj.alt + ",title:" + imgObj.getAttribute("title"));
+
+        //重新设置属性
+        imgObj.alt = "我是alt2";
+        imgObj.setAttribute("title","我是title2");
+        //重新获取属性
+        console.log("图片信息2：alt:" + imgObj.alt + ",title:" + imgObj.getAttribute("title"));
+    }
+
+
+    document.getElementById("bt_style_attr").onclick = function () {
+        //获取行内样式style属性的样式值
+        //imgObj.getAttribute("style")返回width: 300px;height: 400px;
+        //imgObj.getAttribute("style").getAttribute("height") 报错
+        //imgObj.getAttribute("style").height undefined
+        console.log("获取样式，宽："+imgObj.style.width+",高："+imgObj.style.height);
+    }
+
+    document.getElementById("bt_style_out").onclick = function () {
+        console.log("外部样式：宽："+imgObj2.style.width+"，高："+imgObj2.style.height+",很明显没获取到");
+    }
+
+    document.getElementById("bt_style_all").onclick = function () {
+        //获取行内样式值
+        console.log("行内样式值：宽："+imgObj.offsetWidth+",高："+imgObj.offsetHeight);
+        //获取外部样式值
+        console.log("外部样式值：宽："+imgObj2.offsetWidth+",高："+imgObj2.offsetHeight);
+    }
+</script>
+</body>
+</html>

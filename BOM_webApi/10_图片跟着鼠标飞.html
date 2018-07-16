@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="img/tianshi.gif" alt="" id="im">
+<script src="common.js"></script>
+<script>
+    //鼠标在页面中移动,图片跟着鼠标移动
+    //事件处理函数默认都有一个事件处理参数对象，参考阻止事件冒泡相关
+    document.onmousemove=function (e) {
+        //鼠标的移动的横纵坐标
+        //可视区域的横坐标
+        //可视区域的纵坐标
+        my$("im").style.left=e.clientX+"px";
+        my$("im").style.top=e.clientY+"px";
+    };
+</script>
+</body>
+</html>

@@ -7,6 +7,10 @@
         #imgId2{
             width: 330px;
             height: 440px;
+            /*padding: 20px;*/
+            /*border: 10px solid orange;*/
+            /*box-sizing: content-box;*/
+            /*position: absolute;*/
         }
     </style>
 </head>
@@ -48,10 +52,16 @@
     }
 
     document.getElementById("bt_style_all").onclick = function () {
+        /*
+            offsetWidth和offsetHeight：
+            对于box-sizing:border-box,就直接是width和height的值；
+            对于box-sizing:content-box,offsetWidth=width+padding两边+border两边 , offsetHeight=height+padding两边+border两边
+         */
+
         //获取行内样式值
         console.log("行内样式值：宽："+imgObj.offsetWidth+",高："+imgObj.offsetHeight);
         //获取外部样式值
-        console.log("外部样式值：宽："+imgObj2.offsetWidth+",高："+imgObj2.offsetHeight);
+        console.log("外部样式值：宽："+imgObj2.offsetWidth+",高："+imgObj2.offsetHeight+",左："+imgObj2.offsetLeft+",顶："+imgObj2.offsetTop);
     }
 </script>
 </body>

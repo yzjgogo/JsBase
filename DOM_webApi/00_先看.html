@@ -3,58 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        a:visited{
+            color: blue;
+        }
+        a:link{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 
-<a href="04_1属性引用规律_双标签的文本内容_p标签举例.html" target="_blank">
-    1、js中设置DOM对象的文本内容时，双标签的文本值可通过innerText属性设置<br/>
-    例如：document.getElementById("p1").innerText="这是一个p";
-</a><br><br><br><br>
+<h2 style="color: red;">document操作标签属性和CSS样式属性</h2>
+<a href="03_DOM对象操作img标签.html" target="_blank">
+    直接 对象.属性名 的方式获取和设置属性，例如imgObj.src，imgObj.style
+</a><br><br>
 
+<a href="04_1属性引用规律_双标签的文本内容_p标签举例.html" target="_blank">
+    js中设置DOM对象的文本内容时，双标签的文本值可通过innerText属性设置<br/>
+    例如：document.getElementById("p1").innerText="这是一个p";
+</a><br><br>
+
+<a href="19_兼容代码innerText和textContent.html" target="_blank">
+    innerText和textContent的区别，textContent也可以设置双标签的文本值
+</a><br><br>
 
 <a href="04_2属性引用规律_引用带连接符的属性只保留单词且驼峰格式.html" target="_blank">
-    2、凡是css中这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可<br/>
+    凡是css中这个属性是多个单词用“-”连接的写法,在js代码中DOM操作的时候.把“-”干掉,后面的单词的首字母大写即可<br/>
     例如html中本来background-color有连接符，但是在js中直接写成backgroundColor
-</a><br><br><br><br>
-
+</a><br><br>
 
 <a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
-    3、在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
+    在表单标签中,如果属性和值只有一个,并且值是这个属性本身,那么
     在写js代码,DOM操作的时候,这个属性值,是布尔类型就可以了<br/>
     例如：my$("ck2").checked=true;
-</a><br><br><br><br>
-
+</a><br><br>
 
 <a href="04_3属性引用规律_标签属性单值且值就是属性名.html" target="_blank">
-    4、js中的DOM对象引用标签属性时要遵循驼峰命名法，<br/>
+    js中的DOM对象引用标签属性时要遵循驼峰命名法，<br/>
     例如：html中readonly都是小写，但是js中readOnly的O要大写
-</a><br><br><br><br>
-
-
-<a href="11_DOM设置标签的类样式选择器.html" target="_blank">
-    5、在js代码中DOM操作的时候,设置元素的类样式,不用class关键字,应该使用className<br/>
-    例如：my$("dv").className = "cls";
-</a><br><br><br><br>
-
-
-<a href="12_DOM中引用body标签、title、html标签.html" target="_blank">
-    6、document可直接获取body标签，title,html标签<br/>
-    例如：document.body
-</a><br><br><br><br>
-
+</a><br><br>
 
 <a href="10_通过DOM设置标签的css样式其实就是操作style属性.html" target="_blank">
-    7、通过DOM设置标签的css样式其实就是操作标签的style属性
+    通过DOM设置标签的css样式其实就是操作标签的style属性，例如：my$("dv").style.backgroundColor
+</a><br><br>
+
+<a href="11_DOM设置标签的类样式选择器.html" target="_blank">
+    设置标签的类名，指定类样式,不用class关键字,应该使用className<br/>
+    例如：my$("dv").className = "cls";
+</a><br><br>
+
+<a href="12_DOM中引用body标签、title、html标签.html" target="_blank">
+    document可直接获取body标签，title,html标签<br/>
+    例如：document.body
+</a><br><br>
+
+<a href="20_innerText和innerHTML的区别.html" target="_blank">
+    innerText和innerHTML的区别
 </a><br><br><br><br>
 
 
+
+
+
+
+
+
+
+
+
+
+<h2 style="color: red;">document中this关键字的使用</h2>
+<a href="07_DOM中this对象的使用.html" target="_blank">
+    this关键字在某个事件中指当前所在的标签对象
+</a><br><br>
+<a href="08_this_for循环中onclick注意的问题.html" target="_blank">
+    for循环中this关键字的好处
+</a><br><br><br><br>
+
+<h2 style="color: red;">onClick单击事件拦截与否</h2>
+<a href="09_onclick可以有返回值true或false.html" target="_blank">
+    onClick单击事件拦截与否的区别举例
+</a><br><br>
 <a href="13_onclick单击事件拦截.html" target="_blank">
-    8、onclick单击事件拦截
+    onclick单击事件拦截的三种写法
 </a><br><br><br><br>
 
 
 
-<h2 style="color: red;">9、鼠标事件</h2>
+<h2 style="color: red;">鼠标事件</h2>
 <a href="14_鼠标事件.html" target="_blank">
     鼠标进入、离开事件
 </a><br><br>
@@ -62,8 +102,13 @@
     鼠标移动事件
 </a><br><br><br><br>
 
+<h2 style="color: red;">光标焦点事件</h2>
+<a href="18_焦点事件.html" target="_blank">
+    光标焦点事件：获取焦点，失去焦点
+</a><br><br><br><br>
 
-<h2 style="color: red;">10、获取元素的几种方式</h2>
+
+<h2 style="color: red;">获取元素的几种方式</h2>
 <a href="02_1DOM对象执行函数问题.html" target="_blank">
     document.getElementById("btn")：传入元素的id，返回单个标签对象
 </a><br><br>
@@ -81,14 +126,12 @@
 </a><br><br>
 <a href="17_querySelector和querySelectorAll.html" target="_blank">
     document.querySelectorAll(".cls"):如果传入class需加.,返回多个元素组成的数组，适用于类选择器，H5C3才有，因此有浏览器版本问题
+</a><br><br>
+<a href="24_节点和元素.html" target="_blank">
+    元素和节点的获取方式
 </a><br><br><br><br>
 
-
-<a href="18_焦点事件.html" target="_blank">
-    11、焦点事件
-</a><br><br><br><br>
-
-<h2 style="color: red;">12、元素事件相关</h2>
+<h2 style="color: red;">兼容方案</h2>
 <a href="19_兼容代码innerText和textContent.html" target="_blank">
     浏览器兼容代码举例：innerText和textContent<br/>
     关键点：如果浏览器不支持某个属性，那么typeof该属性返回undefined
@@ -104,31 +147,28 @@
 </a><br><br><br><br>
 
 
-<a href="20_innerText和innerHTML的区别.html" target="_blank">
-    13、innerText和innerHTML的区别
-</a><br><br><br><br>
-
-
-<h2 style="color: red;">14、自定义属性</h2>
+<h2 style="color: red;">自定义属性</h2>
 <a href="21_自定义属性_直接在标签中写一个不存在的属性并获取.html" target="_blank">
-    直接在标签中写一个不存在的属性并获取
+    直接在标签中写一个不存在的属性并获取，getAttribute("diy")一般用于获取自定义的属性，但是自带属性应该也可以
+    <br>例如：this.getAttribute("score")
 </a><br><br>
 <a href="22_自定义属性_js中设置自定义属性并获取.html" target="_blank">
-    js中设置自定义属性并获取
+    js中设置自定义属性并获取，设置：setAttribute("score",10)，获取：getAttribute("score")<br>
+    setAttribute("score",10)：一般用于设置自定义属性的值，当然设置自带属性应该也可以
 </a><br><br>
 <a href="23_移除元素的自定义属性和自带属性.html" target="_blank">
-    移除元素的自定义属性和自带属性
+    移除元素的自定义属性和自带属性：注意是移除属性，而不是给属性重新赋值，例如：removeAttribute("score")
 </a><br><br><br><br>
 
 
-
+<h2 style="color: red;">节点和元素</h2>
 <a href="24_节点和元素.html" target="_blank">
-    15、元素和节点的获取方式
+    元素和节点的获取方式
 </a><br><br><br><br>
 
 
 
-<h2 style="color: red;">16、创建元素的三种方式</h2>
+<h2 style="color: red;">创建元素的三种方式</h2>
 <a href="25_创建元素的三种方式_document.write.html" target="_blank">
     document.write
 </a><br><br>
@@ -137,18 +177,21 @@
 </a><br><br>
 <a href="27_创建元素的三种方式_document.createElement.html" target="_blank">
     document.createElement
-</a><br><br><br><br>
-
-
-
-
+</a><br>
 <a href="28_操作元素相关的方法.html" target="_blank">
-    17、操作元素的相关方法
+    元素的追加、插入、替换、移除
 </a><br><br><br><br>
 
 
 
-<h2 style="color: red;">18、元素事件相关</h2>
+<h2 style="color: red;">元素的追加、插入、替换、移除</h2>
+<a href="28_操作元素相关的方法.html" target="_blank">
+    元素的追加、插入、替换、移除
+</a><br><br><br><br>
+
+
+
+<h2 style="color: red;">元素事件相关</h2>
 <span>包含onclick</span><br/>
 <a href="29_元素事件_为元素添加多个事件.html" target="_blank">
     为元素添加事件
@@ -167,7 +210,38 @@
 </a><br><br>
 <a href="../BOM_webApi/10_图片跟着鼠标飞.html" target="_blank">
     事件处理参数对象-鼠标移动时的横纵坐标
+</a><br><br><br><br>
+
+
+<h2 style="color: red;">BOM</h2>
+<a href="../BOM_webApi/01_BOM引入.html" target="_blank">
+    浏览器顶级对象window：页面中所有的内容都是属于浏览器的,也就是说页面中的所有内容都是属于window的
 </a><br><br>
+<a href="../BOM_webApi/02_系统对话框.html" target="_blank">
+    三种浏览器自带对话框：alert("")，prompt("")，confirm("")
+</a><br><br>
+<a href="../BOM_webApi/03_监听页面加载完成.html" target="_blank">
+    监听页面加载完成、页面关闭后，页面关闭前
+</a><br><br>
+<a href="../BOM_webApi/04_浏览器地址栏location对象.html" target="_blank">
+    location对象：浏览器地址栏的内容相关
+</a><br><br>
+<a href="../BOM_webApi/05_history对象.html" target="_blank">
+    history对象:模拟浏览器的前进和后退按钮
+</a><br><br>
+<a href="../BOM_webApi/06_navigator对象.html" target="_blank">
+    navigator对象：navigator.userAgent浏览器的版本信息；navigator.platform浏览器所在的系统信息
+</a><br><br><br><br>
+
+
+<h2 style="color: red;">定时器</h2>
+<a href="../BOM_webApi/07_定时器.html" target="_blank">
+    定时器
+</a><br><br>
+<a href="../BOM_webApi/08_一次性定时器.html" target="_blank">
+    一次性定时器
+</a><br><br>
+
 
 
 

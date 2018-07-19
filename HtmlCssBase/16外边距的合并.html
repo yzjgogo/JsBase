@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+		}
+		.top {
+			background-color: green;
+			margin-bottom: 30px;
+		}
+		.bottom {
+			background-color: pink;
+			margin-top:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		相邻块元素垂直外边距取值规则：上面的盒子有一个margin-bottom，下面的盒子有一个margin-top,则两个盒子垂直方向之间的距离并不是margin-bottom和margin-top的值，而是二者之间的最大值。<br>
+		 水平方向的margin没有该问题 ：值该是多少就是多少。
+	</div>
+	<div class="bottom"></div>
+</body>
+</html>

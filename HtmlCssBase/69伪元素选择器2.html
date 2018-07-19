@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div::before { 
+		/*before其实是个盒子，且是行内元素，其插入到div的前面，因此其父标签是其所属的div*/
+		content: "我";/*必须用到content,即使没有内容也要用空的，例如content:"";*/
+		width: 200px;
+		height: 200px;
+		/*设置了宽高，但是没有效果，说明是行内元素*/
+		background-color: pink;
+		/*display: block;把before这个行内元素转换为块元素*/
+	}
+	div::after {
+		/*after和before一个道理*/
+		content: "18岁";
+	}
+	</style>
+</head>
+<body>
+	<div>今年</div>
+
+	<br><br><img src="img/before_after.png" alt="">
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*body {*/
+			/*background-color: pink;*/
+			/*background-image: url(images/3.jpg);*/
+/*repeat : 　背景图像在纵向和横向上平铺
+no-repeat : 　背景图像不平铺
+repeat-x : 　背景图像在横向上平铺
+repeat-y : 　背景图像在纵向平铺 */
+			/*background-repeat: repeat-y;
+		} */
+		body {
+			background-color: yellow;
+		}
+
+		div {
+			width: 900px;
+			height: 900px;
+			background-color: blue;
+			background-image: url(img/qw.png);
+
+			/*
+			repeat : 　背景图像在纵向和横向上平铺
+			no-repeat : 　背景图像不平铺
+			repeat-x : 　背景图像在横向上平铺
+			repeat-y : 　背景图像在纵向平铺
+			*/
+			background-repeat: no-repeat;
+			/*background-repeat: repeat;*/
+			/*background-repeat: repeat-x;*/
+			/*background-repeat: repeat-y;*
+
+
+
+			/*
+			background-position: x  y ;
+			前提：背景图默认从盒子的左上角绘制，无论背景图比盒子大还是小都是如此，只不过如果背景图比盒子大则背景图有部分无法显示而已。
+			我们可以通过background-position改变背景图相对盒子的位置
+
+			1、x：代表x轴，取值有left、center、right;
+
+			2、y：代表y轴，取值有top、center、bottom;
+
+			3、x、y没有顺序，因此left bottom;bottom left;center left;left center;都是可以的;
+
+			4、如果只写一个方位名词，则另一个默认居中，例如：background-position: left;等价于background-position: left center;等价于background-position: center left;
+
+			5、x或y也可以是px值，如果是px值则必须是xy的顺序，顺序不能颠倒，例如background-position: 20px 40px;如果只写一个值则这个值是x方向距离左边的距离，另一个默认是y方向的center，例如background-position: 20px；等价于background-position: 20px center；
+
+			6、x和y也可以px值和方位名词混用，例如：background-position: left 40px;
+
+			7、x和y也可以是百分比值，例如background-position: 50%;(水平居中，100%水平靠右)等价于background-position: 50% center;
+			*/
+			/*background-position: bottom left;*/
+			/*background-position: left;*/
+			/*background-position: center 40px;*/
+			background-position: 20%;
+
+			
+			background-attachment: scroll;
+			/*background-attachment: fixed;
+				scroll:滚动时背景图跟随滚动；
+				fixed：滚动时背景图不动;
+			*/
+
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		
+		
+	</div>
+</body>
+</html>

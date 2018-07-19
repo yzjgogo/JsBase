@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		/*transition: width 0.5s ease 0s, height 0.3s; 多组属性用逗号分隔*/
+		/*transition: all 0.5s; */
+		/*  过渡写到本身上 谁做过渡动画，写到谁身上*/
+
+		/*
+		transition: 要过渡的属性  持续时间(s/ms)  运动曲线  何时开始(m/ms);
+		也可以分别指定：
+		transition-property:width;要过度的属性
+		transition-duration: 500ms;持续时间
+		transition-timing-function:ease;运动曲线，可省略，默认ease，具体查看手册
+		transition-delay:1s;延迟多久开始,可省略，默认0s
+		transition: width 1s ease 0s,height 0.3s ease 0s; 如果要过度多个属性，可用逗号分隔
+		*/
+		/*transition: width 1000ms,height 300ms;*/
+		transition: all 0.5s;/*all代表对所有变化的属性做过度*/
+	}
+	div:hover {
+		width: 800px;
+		height: 300px;
+
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

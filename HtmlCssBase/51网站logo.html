@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.logo {
+			width: 190px;
+			height: 170px;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			background-color: purple;
+			box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+		}
+		.logo h1 {
+			margin: 0;
+		}
+		.logo a {
+			display: block;
+			width: 190px;
+			height: 170px;
+			background: url(img/logo.jpg) no-repeat;
+			/*下面这两行，为了不省略a中的文字，向左缩进很多，且超出部分不显示*/
+			text-indent: -99999px;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body style="background-color: orange;">
+<!-- 网站logo结构：div包裹h1,h1包裹a,a的文字也不能省略，但是可以想办法不显示 -->
+	<div class="logo">
+		<h1>
+			<a href="#" title="京东网">京东</a>
+		</h1>
+	</div>
+
+	<!-- 淘宝的做法也是如此，其实很多网站做法都是如此 -->
+	<img src="img/taobao_logo.png" title="淘宝logo模式" style="margin-top: 200px;">
+</body>
+</html>

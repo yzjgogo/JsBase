@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body {
+		/*把高弄的很高，你会发现浏览器孙然可以上下滑动，但是相对定位的元素仍然以当前浏览器窗口为基准偏移，而不是以下拉后的窗口为基准*/
+		height: 2000px;
+	}
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+	}
+	.top {
+		position: absolute;  /*因为祖辈没有有定位的标签，所以以当前浏览器窗口为基准偏移，right:0;bottom:0说明在窗口的右下角*/
+		right: 0;
+		bottom: 0;
+
+	}
+	.bottom {
+		background-color: purple;
+		width: 110px;
+	}
+	</style>
+</head>
+<body>
+	<div class="top"></div>
+	<div class="bottom"></div>
+</body>
+</html>

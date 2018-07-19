@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+
+	div {
+		width: 200px;
+		height: 200px;
+	}
+
+	/*width,style,color分别设置*/
+	#one-by-one {
+		border-width: 2px;
+		border-style: dashed;
+		border-color: blue;
+		/*
+		border-style: solid; 实线
+		border-style: dashed;  虚线
+		border-style: dotted;  点线
+		border-style: none;   没有边框
+		*/
+	}
+	/*一次性设置width,style,color*/
+	#all {
+		border: 2px solid red;
+		/*border: 0; 去掉所有边框*/
+	}
+
+	#four {
+		border-top: 5px dotted black;
+		border-bottom: 1px dashed blue;
+		border-right: 3px solid pink;
+		border-left: 8px double orange;
+
+		/*
+		border-top-width: 
+		border-top-style:
+		border-top-color: 
+		.
+		.
+		.
+		*/
+	}
+	#round {
+		border: 2px solid red;
+		border-radius: 50%;
+		/*
+		其实border-radius后面可以跟四个值
+		border-radius:左上 右上 右下 左下;
+		border-radius: 50%;此时是个圆圈
+		border-radius有浏览器兼容问题
+		*/
+	}
+	input {
+		border: 0;/*去掉所有边框*/
+		border-bottom: 1px dashed red; 
+	}
+
+
+	button {
+		width: 50px;
+		height: 25px;
+		border: 1px solid purple;
+	}
+
+
+	table {
+		width: 500px;
+		height: 300px;
+		border: 1px solid red;
+	}
+	td {
+		text-align: center;
+		border: 1px solid red;
+	}
+	table,td{/*并集选择器*/
+		border-collapse: collapse;
+		/*合并相邻边框:如果不合并则两个相邻边框紧挨着粗细就是2倍，视觉不好，合并后相当于舍弃一个边框的粗细*/
+	}
+	</style>
+</head>
+<body>
+	<div id="one-by-one">
+	border-width、border-color、border-style分别设置
+	</div><br/>
+
+	<div id="all">
+		一次性设置width,style,color
+	</div><br/>
+
+	<div id="four">
+		分别设置上下左右边框
+	</div><br/>
+
+	<div id="round">
+		圆角边框:
+		其实border-radius后面可以跟四个值
+		border-radius:左上 右上 右下 左下;
+		border-radius: 50%;此时是个圆圈，border-radius有浏览器兼容问题
+	</div><br/>
+	<input type="text" value="设置输入框的边框"><br/><br/>
+	<button>按钮</button><br/>
+	<h2>设置表格的细线边框</h2>
+		<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>天王盖地虎</td>
+			<td>天王盖地虎</td>
+			<td>天王盖地虎</td>
+		</tr>
+		<tr>
+			<td>宝塔镇河妖</td>
+			<td>宝塔镇河妖</td>
+			<td>宝塔镇河妖</td>
+		</tr>
+		<tr>
+			<td>小鸡炖蘑菇</td>
+			<td>小鸡炖蘑菇</td>
+			<td>小鸡炖蘑菇</td>
+		</tr>
+	</table>
+</body>
+</html>

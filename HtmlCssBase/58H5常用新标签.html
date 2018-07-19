@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		header {
+			width: 200px;
+			height: 100px;
+			background-color: purple;
+		}
+		nav {
+			width: 300px;
+			height: 100px;
+			background-color: pink;
+		}
+
+	</style>
+</head>
+<body>
+
+	<p><br>
+		在H5中对于双标签，其实后半部分可省略不写，系统会自动添加，但是我们一般还是要写。
+		<br><br><br>
+	</p>
+
+
+	<h2>header、nav、footer、article、section、aside、time</h2>
+	<header> 语义 :定义页面的头部  页眉</header>
+	<nav>  语义 :定义导航栏 </nav> 
+	<footer> 语义: 定义 页面底部 页脚</footer>
+	<article> 语义:  定义文章</article>
+	<section> 语义： 定义区域，跟div差不多</section>
+	<aside> 语义： 定义其所处内容之外的内容 侧边，就是侧边栏</aside>
+	<time> 12:09 </time>
+
+	<h2>datalist</h2>
+		<!-- 
+		datalist可实现搜索过滤效果，需与input配合使用，datalist中要定义一个id，然后input引用这个id，二者就建立关系 -->
+	<input type="text" value="请输入明星" list="star"/>
+	<datalist id="star">
+		<option value="刘德华">刘德华</option>
+		<option value="刘若英">刘若英</option>
+		<option value="刘晓庆">刘晓庆</option>
+		<option value="戚薇">戚薇</option>
+		<option value="戚继光">戚继光</option>
+	</datalist>
+
+
+	<h2>fieldset</h2>
+	<!-- fieldset 元素可将表单内的相关元素分组，打包,legend 搭配使用 -->
+	<fieldset style="width: 300px;">
+		<legend>用户登录</legend>
+		用户名： <input type="text"> <br>
+		密码： <input type="password">
+	</fieldset>
+</body>
+</html>

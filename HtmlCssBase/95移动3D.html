@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body {
+		/*
+		Z轴的3D效果，要用perspective才能看到效果
+		*/
+		perspective: 800px;
+	}
+	img {
+		margin: 0 auto;
+		transition: all 3s;
+	}
+	img:hover {
+		/*transform: translateZ(800px);Z轴的3D效果，要用perspective才能看到效果*/
+
+		/*
+		综合移动X,Y,Z轴
+		translate3d()x和y可以是长度值，也可以是百分比，百分比是相对于其本身元素水平方向的宽度和垂直方向的高度和；z只能设置长度值
+		*/
+		transform: translate3d(800px,200px,200px);
+	}
+	</style>
+</head>
+<body>
+	<img src="img/x.jpg" alt="">
+</body>
+</html>

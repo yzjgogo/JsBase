@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		padding: 30px;
+	}
+	li {
+		list-style: none;
+		width: 200px;
+		height: 30px;
+		border: 1px solid pink;
+		/*white-space: normal;默认处理方式*/
+		white-space: nowrap;
+		/*1.white-space: nowrap;强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行*/
+		overflow: hidden;   /*2. 超出的部分 隐藏*/
+		/*text-overflow: clip;溢出部分直接剪裁掉，可能出现最后一个文字显示了一半的情况*/
+		text-overflow: ellipsis;   /*3. 溢出的部分用省略号替代，注意text-overflow好像没有代码提示*/
+		line-height: 30px;
+		/*
+		要想实现单行文本超出部分用省略号显示则必须
+		1：white-space: nowrap;
+		2：overflow: hidden;
+		3：text-overflow: ellipsis;
+		这三步全都有。*/
+	}
+	</style>
+</head>
+<body>
+	<ul>
+	<li>文字内容文字内容文字内容文字内容文字内容</li>
+	<li>文字内容文字内容文字内容文字内容文字内容</li>
+	<li>文字内容文字内容文字内容文字内容文字内容</li>
+	<li>文字内容文字内容文字内容文字内容文字内容</li>
+	<li>文字内容文字内容文字内容文字内容文字内容</li>
+	</ul>
+</body>
+</html>

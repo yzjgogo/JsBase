@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.grandpa {
+			width: 400px;
+			height: 400px;
+			background-color: pink;
+			border: 1px solid black;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+			/*下面这三种方案都可以解决该问题*/
+			/*border-top: 1px solid black;*/
+			/*padding-top: 1px;*/
+			overflow: hidden;
+		}
+		.son{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="grandpa">
+		<div class="father">
+			<div class="son">
+				嵌套块元素垂直外边距问题：<br>
+				子元素设置了margin-top,结果却不是子元素偏离父元素上边界一些距离，而是父元素跟着子元素一起偏离更加顶级元素的上边界一段距离。<br>
+				解决方案：<br>
+				1,给父元素设置border-top不为0;<br>
+				2,给父元素设置padding-top不为0;<br>
+				3,给父元素添加overflow:hidden；
+			</div>
+		</div>
+	</div>
+</body>
+</html>

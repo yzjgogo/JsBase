@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>myTest</title>
     <script>
+        //Num1 js简介
+        console.log("\n\nNum1开始：js简介");
         /*
          Num01
          JavaScript :简称:js
@@ -29,22 +31,29 @@
          JavaScript:用户和浏览器交互,
          */
 
+        console.log("Num1结束：js简介");
 
+        //Num2 alert介绍
+        console.log("\n\nNum2开始：alert介绍");
         //Num02 网页中弹出一个弹窗，可见弹窗显示过程中浏览器标题栏一直是转圈加载中，只有点击了确定浏览器才能继续执行
         // alert("我试试");
+        console.log("Num2结束：alert介绍");
 
-
+        //Num3 js代码的书写位置
+        console.log("\n\nNum3开始：js代码的书写位置");
         /*
              Num03 js代码的书写位置：
              1：在html的head标签中的script标签中写，例如本行所在的script标签；
              2：在html标签的事件中直接调用js，例如id="doClick"；
              3：引用外部的js文件,例如id="outLink",如果引用了外部的Js文件，则该script标签中就不要写任何js代码了；
          */
-
+        console.log("Num3结束：js代码的书写位置");
 
     </script>
 
     <script id="userType" type="text/javascript" language="JavaScript">
+        //Num4 script标签和js代码相关通用问题
+        console.log("\n\nNum4开始：script标签和js代码相关通用问题");
         /*
         Num04 script标签和js代码相关通用问题
         1：在一对script的标签中有错误的js代码,那么该错误的代码后面的js代码不会执行，也就是遇到错误就停止。
@@ -53,8 +62,11 @@
         也可以两者都不写,因为html是遵循h5的标准,参考id="useType"。
         4：script标签可以出现多对；
         */
+        console.log("Num4结束：script标签和js代码相关通用问题");
     </script>
     <script>
+        //Num5 js中声明变量
+        console.log("\n\nNum5开始：js中声明变量");
         /*
             Num05 变量，js中声明变量都用var,动态类型：变量的类型不必提前限定，后续赋值什么类型，会自动认为是什么类型
          */
@@ -67,19 +79,25 @@
         var j = null;
         var k = new Object();
         var l = {};
+        console.log("Num5结束：js中声明变量");
 
-        /*
-            Num06 浏览器控制台
-         */
+        //Num6 控制台输出log
+        console.log("\n\nNum6开始：控制台输出log");
+
         console.log(b);
 
+        console.log("Num6结束：控制台输出log");
+
+        //Num7 位运算
+        console.log("\n\nNum7开始：位运算");
         /*
             Num07 位运算，知道有这个就行
          */
+        console.log("Num7结束：位运算");
     </script>
 
     <script>
-        console.log("Num08-09开始");
+        console.log("\n\nNum08-09开始：数据类型和获取变量的数据类型");
         /*
             Num08 数据类型
             动态类型：变量的类型不必提前限定,全部用var声明，后续赋值什么类型，会自动认为是什么类型
@@ -118,12 +136,12 @@
         var nll = null;//null也是对象
         console.log("var nll = nul --> " + typeof nll);//object
 
-        console.log("Num08-09结束");
+        console.log("Num08-09结束：数据类型和获取变量的数据类型");
     </script>
 
     <script>
-        console.log("Num10开始");
         // Num10 number数字类型
+        console.log("\n\nNum10开始：number数字类型");
         /*
             八进制：0开头，例如var eight = 037；
             十六进制：0x开头，例如 var sixty = 0x37;
@@ -197,11 +215,11 @@
         console.log("试试：" + strb);
 
 
-        console.log("Num10结束");
+        console.log("Num10结束：number数字类型");
     </script>
     <script>
-        console.log("Num11开始");
         //Num11 字符串
+        console.log("\n\nNum11开始：字符串");
         //字符串的长度
         var strLength = " 12 345 ";//8
         console.log("长度：" + strLength.length);
@@ -220,14 +238,14 @@
         console.log("未定义的String()" + String(tostr1));//undefined
         console.log("为null的String()" + String(tostr2));//null
 
-        console.log("Num11结束");
+        console.log("Num11结束：字符串");
     </script>
 
     <script>
         //Num12 boolean
         //对于数字0为false，非0位true
         //空字符串、null、undefined、NaN都是false
-        console.log("Num12开始");
+        console.log("\n\nNum12开始：boolean类型");
         function booFun(){
 
         }
@@ -255,7 +273,7 @@
         var dvObj = document.getElementById("dv");//body在下面html从上往下解析，还没获取到dv，所以null
         console.log(Boolean(dvObj));//false
 
-        console.log("Num12结束");
+        console.log("Num12结束：boolean类型");
     </script>
 
     <script>
@@ -290,7 +308,7 @@
               三目运算符：var 变量=表达式1?表达式2:表达式3;
 
          */
-        console.log("Num13开始");
+        console.log("\n\nNum13开始：操作符");
         //==和===
         var yange1 = "23";
         var yange2 = 23;
@@ -301,70 +319,70 @@
         console.log((yange1 == yange4) + "," + (yange1 === yange4));//true false
         console.log((yange2 == yange4) + "," + (yange2 === yange4));//true true
 
-        console.log("Num13结束");
+        console.log("Num13结束：操作符");
     </script>
     <script>
         //Num14 prompt的用法
-        console.log("Num14开始");
+        console.log("\n\nNum14开始：prompt的用法");
 
         // var promptContent = prompt("请您输入：");
         // console.log(promptContent);
 
-        console.log("Num14结束");
+        console.log("Num14结束：prompt的用法");
 
         //Num15 分支语句
-        console.log("Num15");
+        console.log("\n\nNum15开始：分支语句");
         /*
             if else
 
             switch case ：注意js中switch-case用的是===严格相等的比较
          */
-        console.log("Num15结束");
+        console.log("Num15结束：分支语句");
 
         //Num16 循环语句
-        console.log("Num16开始：循环语句");
+        console.log("\n\nNum16开始：循环语句");
         /*
             while循环、do-while循环
             for循环
          */
-        console.log("Num16结束");
+        console.log("Num16结束：循环语句");
 
         //Num17 document.write()方法
-        console.log("Num17开始：document.write()方法");
+        console.log("\n\nNum17开始：document.write()方法");
         /*
             可以通过document.write()方法，在js代码中写入html标签，所写的标签会自动被添加到html的body标签中，可通过f12查看
          */
         document.write("<p>我是被加入的标签</p>")
-        console.log("Num17结束");
+        console.log("Num17结束：document.write()方法");
 
 
         //Num18 调试debug
-        console.log("Num18开始：调试debug");
+        console.log("\n\nNum18开始：调试debug");
         //暂时没看，以后有需要再看
-        console.log("Num18结束");
+        console.log("Num18结束：调试debug");
 
         //Num19 百度和京东的招聘
-        console.log("Num19开始：百度和京东的招聘");
+        console.log("\n\nNum19开始：百度和京东的招聘");
         /*
             在百度或京东的首页按F12可以看到百度或京东的招聘信息
          */
-        console.log("Num19结束");
+        console.log("Num19结束：百度和京东的招聘");
 
 
         //Num20 关键字break
-        console.log("Num20开始：关键字break");
+        console.log("\n\nNum20开始：关键字break");
 
-        console.log("Num20结束");
+        console.log("Num20结束：关键字break");
 
 
         //Num21 关键字continue
-        console.log("Num21开始：关键字continue");
+        console.log("\n\nNum21开始：关键字continue");
 
-        console.log("Num21结束");
+        console.log("Num21结束：关键字continue");
 
 
         //Num22 数组
-        console.log("Num22开始：数组");
+        console.log("\n\nNum22开始：数组");
         /*
             1:数组的创建
          */
@@ -415,7 +433,7 @@
          */
 
 
-        console.log("Num22结束");
+        console.log("Num22结束：数组");
     </script>
 
     <script>
@@ -527,7 +545,7 @@
         //函数表达式
         var funbds = function () {
             console.log("我是函数表达式的函数体")
-        };//作为函数表达式记得加分好
+        };//作为函数表达式记得加分号
         //回想一下命名函数的调用：函数名(),函数名就代表整个函数体，而函数表达式的变量就代表整个函数体，所以这个变量
         //就相当于这个匿名函数的函数名，所以可通过这个变量调用函数
         funbds();//我是函数表达式的函数体
@@ -617,7 +635,7 @@
         fun4();
 
 
-        console.log("Num23结束");
+        console.log("Num23结束：函数");
     </script>
 
 
@@ -628,7 +646,7 @@
             1,全局变量和局部变量
             全局变量：var定义，且在函数体以外的变量都是全局变量,全局变量可在程序的任何位置引用到，在其它script标签中也可引用到；
                     只要页面不关闭，全局变量就一直存在，就会持有内存.
-                    需要注意的是，js存在预编译，可能某个全局变量在代码上声明且初始化了，但是由于执行条件的显示，实际编译时只声明了
+                    需要注意的是，js存在预编译，可能某个全局变量在代码上声明且初始化了，但是由于执行条件的限制，实际编译时只声明了
                     而无法初始化，例如if语句中定义的全局变量，如果这个if条件为false即不执行if语句，则这个if语句中定义的全局变量在编译时
                     只声明无初始化，即使你在代码上定义且初始化了，也不行。
             局部变量：var定义，且在函数体以内的变量都是局部变量；只在函数体内有效，函数执行完就消失，就不持有内存了。
@@ -694,7 +712,7 @@
 
         findF1();
 
-        console.log("Num24结束");
+        console.log("Num24结束：变量及其作用域");
     </script>
 
     <script>
@@ -833,7 +851,7 @@
             console.log("案例3-函数内c:" + eg3c);//9
         }
 
-        console.log("Num25结束");
+        console.log("Num25结束：预解析");
     </script>
 
 
@@ -945,7 +963,7 @@
         };
         zobj2.print();
 
-        console.log("Num26结束");
+        console.log("Num26结束：创建对象的方式");
 
 
         //Num27 设置和获取属性和方法的另一种方式：中括号
@@ -964,7 +982,7 @@
         otherWay["name"] = "$通过中括号访问属性和方法$";//[]
         otherWay["visit"]();//[]
 
-        console.log("Num27结束");
+        console.log("Num27结束：设置和获取属性的另一种方式：中括号");
 
 
         //Num28 Json数据和for-in循环
@@ -984,7 +1002,7 @@
             console.log(key + "===========" + jsonD[key]);
         }
 
-        console.log("Num28结束");
+        console.log("Num28结束：Json数据和for-in循环");
     </script>
 
     <script>
@@ -996,7 +1014,7 @@
         //复杂类型(引用类型):object
         //空类型:undefined,null
 
-        console.log("Num29结束");
+        console.log("Num29结束：简单类型和复杂类型");
     </script>
 
     <script>
@@ -1029,7 +1047,7 @@
         console.log(Math.fround(2.1));//2.0999999046325684
         console.log(Math.fround(2.9));//2.9000000953674316
 
-        console.log("Num30结束");
+        console.log("Num30结束：Math对象");
     </script>
 
 
@@ -1049,7 +1067,7 @@
 
         /*
             获取年 月 日 时 分 秒 星期
-            有了这些值就可以想java的format一样随意格式化日期了
+            有了这些值就可以像java的format一样随意格式化日期了
          */
         var currentDate = new Date();
         console.log(currentDate.getFullYear());//获取年份

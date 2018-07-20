@@ -106,8 +106,12 @@
                     不是纯数字的需要先转为数字(parseInt,parseFloat)才能参与算术运算，，否则会NaN;
                     所有的字符串与任意表达式通过"+"相连，则都是字符串拼接而不是算术运算的加法
             boolean：true，false，
-                    对于数字0为false，非0位true；
-                    空字符串、null、undefined、NaN都是false；
+                    对于数字0为false，非0位true
+                    空字符串、null、undefined、NaN都是false
+                    对象的属性如果不存在则 对象.属性 为false，
+                    如果存在且属性值为0,"",null,undefined,NaN则 对象.属性 也为false
+                    如果存在且属性不为0,"",null,undefined,NaN则 对象.属性 为true
+                    如果对象的某个方法存在则 对象.方法名 为true ，否则为false
                     boolean只有参与算术运算时才会true转换为1，false转换0，
                     与字符串用“+”不会转换为数字而是直接拼接成字符串,
                     isNaN(boolean)会返回false即是数字，但parseInt(boolean)会返回NaN
@@ -245,6 +249,12 @@
         //Num12 boolean
         //对于数字0为false，非0位true
         //空字符串、null、undefined、NaN都是false
+
+        //对象的属性如果不存在则 对象.属性 为false，如果存在且属性值为0,"",null,undefined,NaN则 对象.属性 也为false
+        //如果存在且属性不为0,"",null,undefined,NaN则 对象.属性 为true
+
+        //如果对象的某个方法存在则 对象.方法名 为true ，否则为false
+
         console.log("\n\nNum12开始：boolean类型");
         function booFun(){
 
@@ -318,6 +328,12 @@
         console.log((yange1 == yange3) + "," + (yange1 === yange3));//true false
         console.log((yange1 == yange4) + "," + (yange1 === yange4));//true false
         console.log((yange2 == yange4) + "," + (yange2 === yange4));//true true
+
+
+        // 或运算||  多个表达式通过||连接，赋值给变量，则从第一个表达式开始，直到某个表达式结果为true为止，则取该为true表达式赋值
+        //如果都不为true，则取最后一个表达式赋值，因为我们一般把最后一个作为默认值处理
+        var huo = false || null || 1 ||"";
+        console.log("或运算赋值给变量，取第一个为真的表达式的结果："+huo);//1
 
         console.log("Num13结束：操作符");
     </script>

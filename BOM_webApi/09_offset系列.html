@@ -4,20 +4,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
         #grandfa{
-            width: 400px;
-            height: 400px;
+            width: 398px;
+            height: 398px;
             background-color: red;
+            border: 1px solid red;
+            margin: 10px;
+            /*padding: 15px;*/
+            /*margin: 10px;*/
+            position: relative;
         }
         #father{
             width: 300px;
             height: 300px;
             background-color: green;
+            /*border: 1px solid green;*/
         }
         #son{
             width: 200px;
             height: 200px;
             background-color: blue;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            margin: 10px;
+            /*position: fixed;*/
+            /*position: absolute;*/
+            /*border: 1px solid blue;*/
+            /*padding: 10px;*/
+            /*left: 10px;*/
+            /*top: 15px;*/
+            /*margin-left: 5px;*/
+            /*margin-top: 5px;*/
+            /*padding: 5px;*/
         }
     </style>
 </head>
@@ -47,11 +70,38 @@
             对于box-sizing:border-box,就直接是width和height的值；
             对于box-sizing:content-box,offsetWidth=width+padding两边+border两边 , offsetHeight=height+padding两边+border两边
          */
+        /*
+            首先
+            写了定位模式没写偏移量，等于没定位；
+            定位的left和margin-left并不冲突，定位的top和margin-top也不冲突，他们可以同时存在，作用累加；
+            无论定位情况如何，offsetLeft和offsetTop的意思是当前标签的border的外侧到offsetParent标签的border的内侧的距离
+            因此，这段距离里可能有当前标签的margin值。
+            如果offsetParent无border,测参考实际边界。
+            如果offsetParent无null，则一般是窗口的边界，例如当前定位是fixed时。
 
-        //获取行内样式值
-        console.log("行内样式值：宽："+sonObj.offsetWidth+",高："+sonObj.offsetHeight);
-        //获取外部样式值
-        console.log("外部样式值：宽："+sonObj.offsetWidth+",高："+sonObj.offsetHeight+",左："+sonObj.offsetLeft+",顶："+sonObj.offsetTop);
+            1：元素自身无fixed定位(static relative absolute)
+                如果某个祖辈元素有定位:
+                    offsetParent:就是这个有定位的祖辈；
+                    offsetLeft和offsetTop：就是相对这个有定位的祖辈的左偏移和顶偏移；
+                如果所有的祖辈元素都无定位：
+                    offsetParent：就是body标签；
+                    offsetLeft和offsetTop：就是相对body标签的左偏移和顶偏移
+
+           2：元素自身有fixed定位：
+            offsetLeft和offsetTop:无论祖辈标签有无定位，都是相对窗口的偏移距离；
+            offsetParent：此时是null；
+
+         */
+        if (sonObj.offsetParent===null) {
+            console.log("fixed时offsetParent为null");
+        }else{
+            console.log("fixed时offsetParent不是null")
+        }
+        console.log("外部样式值：" +
+            "宽："+sonObj.offsetWidth+
+            ",高："+sonObj.offsetHeight+
+            ",左："+sonObj.offsetLeft+
+            ",顶："+sonObj.offsetTop);
     }
 </script>
 </body>

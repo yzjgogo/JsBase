@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        01
+        如果在构造函数中通过匿名函数指定方法，那么同一个构造函数不同的实例其方法不相等
+        因此如果有一万个实例就有一万个不同的方法，这是很占内存的；
+
+        如果在构造函数中通过引用命名函数的方式指定方法，虽然解决了不同实例的方法相等的问题，也解决了内存占用问题
+        但是容易出现命名冲突的问题。例如我定义了一个跟方法名重名的变量。
+
+        由此引出通过原型对象来解决问题
+
+     */
+    function eat1() {
+        console.log("我会吃饭");
+    }
+    // var eat1 = "hh";签名定义了eat1方法，这里又定义了变量eat1,导致构造函数中的eat成为了变量而不是方法
+    function Person(age, sex) {
+        this.age = age;
+        this.sex = sex;
+        this.eat = eat1;//引用命名函数
+        this.play = function () {
+            console.log("我会玩耍");//使用匿名函数
+        }
+    }
+    var p1 = new Person(23,"女");
+    var p2 = new Person(23,"女");
+    console.log(p1.age === p2.age);//true
+    console.log(p1.sex === p2.sex);//true
+    console.log(p1.eat == p2.eat);//true
+    console.log(p1.play == p2.play);//false 不同实例的方法不同
+
+    /*
+        02
+        解决方案
+        在原型对象中定义共享数据
+        原型对象就是用于存放所有实例共有的数据的
+        而够赞函数一般只是用于存放某个实例特有的数据，由此想到，原型对象好像是父类，这应该就是JS中的继承
+     */
+    function Phone(width,height) {
+        this.width=width;
+        this.height=height;
+    }
+    //向原型对象中添加一个方法，这个方法所有实例都拥有，可被各个实例直接访问
+    Phone.prototype.use=function () {
+        console.log("打电话");
+    };
+    //向原型对象中添加属性，这个属性所有实例都有，且属性值所有实例都相同
+    Phone.prototype.color = "black";
+
+    var phone1=new Phone(30,40);
+    var phone2=new Phone(60,70);
+    console.log(phone1.color+","+phone2.color);//实例对象可直接访问原型对象中的属性和方法
+    phone1.use();
+    phone1.__proto__.use();//__proto__可省略
+    phone2.use();
+    phone2.__proto__.use();//__proto__可省略
+    console.log(phone1.use == phone2.use);//true
+
+    /*
+        03
+        向原型对象添加数据后
+        构造函数的prototype对象中多了新加的数据
+        实例对象的__proto__对象也多了新加的数据
+     */
+    console.dir(phone1);
+    console.dir(phone2);
+    console.dir(Phone);
+
+</script>
+</body>
+</html>

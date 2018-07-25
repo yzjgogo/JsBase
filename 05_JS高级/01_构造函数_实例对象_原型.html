@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+        //01构造函数
+        function Person(age, sex) {
+            this.age = age;
+            this.sex = sex;
+            this.eat = function () {
+                console.log("我今年" + this.age + "岁，我是" + this.sex + "的，我会吃饭");
+            };
+        }
+
+        //02实例对象
+        var per = new Person(38, "女");
+        per.eat();//吃
+
+        /*
+            03
+            console.dir()输出对象的所有属性和方法，也就是输出对象的结构
+            结论：
+            per输出：除了自己的属性和方法，还有__proto__，也就是指向原型对象，__proto__里面有constructor，也就是Person构造函数体
+            Person输出：看不到属性和方法，主要有prototype对象，也就是指向原型对象，prototype里面也有constructor，也就是Person构造函数体
+
+            实例对象的__proto__和构造函数的prototype是一样的，都指向原型对象
+
+            需要注意的是__proto__在IE8中是没有的
+        */
+        console.dir(per);
+        console.dir(Person);
+
+        /*
+            04
+            下面4个其实都一样，都是指向构造函数体
+        */
+        console.log(typeof Person);//function 下面三个都指向我
+        console.log(typeof per.constructor);//function 省略了__proto__
+        console.log(typeof per.__proto__.constructor);//function
+        console.log(typeof Person.prototype.constructor);//function
+
+        /*
+            05
+            Person、per.constructor、per.__proto__.constructor、Person.prototype.constructor
+            这四个是等价的都指向Person构造函数体
+
+            其中per.constructor是per.__proto__.constructor缩写形式
+        */
+        console.log(per.constructor == Person);//true
+        console.log(per.__proto__.constructor == Person);
+        console.log(per.__proto__.constructor == Person.prototype.constructor);
+
+        /*
+            06
+            下面2个一样
+        */
+        console.log(typeof Person.prototype);//object per.__proto__指向我
+        console.log(typeof per.__proto__);//object 指向Person.prototype
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

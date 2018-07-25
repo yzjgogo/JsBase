@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    /*
+        构造函数内部、原型对象内部、构造函数和原型对象之间
+        属性和方法是可以互相访问的，就跟一个类一样的。
+     */
+
+    function Person(sex,age) {
+        this.sex = sex;
+        this.age = age;
+        this.eat = function () {
+            console.log("人是会吃饭的,"+this.height);
+            this.play();
+        };
+        this.sing = function () {
+            console.log("人会唱歌");
+        }
+    }
+    Person.prototype.height = "170";
+    Person.prototype.play = function () {
+        console.log("人会玩耍,"+this.age);
+        this.run();
+    };
+    Person.prototype.run = function () {
+        console.log("人会跑步");
+        this.sing();
+    };
+
+    var person = new Person("男",29);
+    person.eat();
+    console.log("*********************");
+    person.play();
+</script>
+</body>
+</html>

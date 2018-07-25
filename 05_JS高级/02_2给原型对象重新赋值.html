@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+        function Student(age, sex) {
+            this.age = age;
+            this.sex = sex;
+        }
+
+        /*
+            给原型对象重新赋值，而不是向原型对象添加属性或方法
+            因为默认的原型对象默认有constructor属性，代表构造函数体，因此我们要给原型对象重新赋值别忘了添加constructor
+            这样我们自定义的原型对象就和默认的原型对象一样了，而且更方便
+         */
+        Student.prototype = {
+            //手动添加constructor
+            constructor: Student,
+            height: "188",
+            weight: "55kg",
+            study: function () {
+                console.log("学生会学习");
+            },
+            eat: function () {
+                console.log("学生也会吃饭");
+            }
+        };
+
+        var stu = new Student("郭德纲", 20, "男");
+        stu.eat();
+        stu.study();
+        console.dir(Student);
+        console.dir(stu);
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

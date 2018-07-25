@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+        了解了原型方法后，我们会想到，String、Math、Array、Date等内置对象可不可以通过原型对象添加我们自己的方法呢？
+        答案当然是可以的
+     */
+    String.prototype.myLog = function () {
+        console.log("我是自己添加的字符串对象的方法");
+    };
+    var str = "";
+    str.myLog();
+</script>
+</body>
+</html>

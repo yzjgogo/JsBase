@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="改变div显示" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    /**
+     *
+     * @param btnObj 触发的控件
+     * @param dvObj 被作用的控件
+     * @param json 作用数据
+     * @constructor
+     */
+    function ChangeStyle(btnObj, dvObj, json) {
+        this.btnObj = btnObj;
+        this.dvObj = dvObj;
+        this.json = json;
+    }
+    //向原型对象中添加具体的作用函数
+    ChangeStyle.prototype.init = function () {
+        //点击按钮,改变div多个样式属性值
+        var that = this;//这个this是当前ChangeStyle的某个实例
+        this.btnObj.onclick = function () {//按钮
+            //事件中的this指产生事件的所在控件，而不是ChangeStyle的某个实例，因此这里不能用this，引入ChangeStyle实例对象的this
+            for (var key in that.json) {
+                that.dvObj.style[key] = that.json[key];
+            }
+        };
+    };
+
+    //实例化对象
+    var json = {"width": "500px", "height": "800px", "backgroundColor": "blue", "opacity": "0.2"};
+    var cs = new ChangeStyle(my$("btn"), my$("dv"), json);
+    cs.init();//调用方法
+
+</script>
+
+</body>
+</html>

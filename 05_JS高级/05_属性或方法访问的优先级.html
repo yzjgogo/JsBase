@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+        访问某个对象的属性或方法的顺序是：
+        先从构造函数中找，如果找到了就是用构造函数中的，即使原型对象中也有，也不用原型对象中的；
+        如果构造函数没有找到，再从原型对象中找。
+
+        就好像构造函数继承了原型对象的属性和方法。如果构造函数重写了原型对象的属性或方法就以构造函数为准。
+     */
+
+    function Person(sex, age) {
+        this.sex = sex;//会覆盖原型对象中的sex属性
+        this.age = age;
+        this.eat = function () {//会覆盖原型对象中的eat方法
+            console.log("我是我是构造函数的eat方法");
+        };
+    }
+
+    Person.prototype.sex = "变态";
+    Person.prototype.eat = function () {
+        console.log("我是原型对象中的eat方法");
+    };
+    var p = new Person("男", 39);
+    console.log(p.sex);
+    p.eat();
+
+</script>
+</body>
+</html>

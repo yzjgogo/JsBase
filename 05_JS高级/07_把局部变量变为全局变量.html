@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+        局部变全局变量的核心：
+        window是全局的，因此我们可以给window定义一个属性接收某个局部变量即可；
+        例如:var num = 10;是局部变量，则我们可以window.num =num;
+        这样这个num就是全局的了
+
+        前提知识，一般来说js中的局部变量就是函数体内部的变量，因此我们说的局部变量变全局变量就是把函数体内部的变量变全局变量
+     */
+    (function (window) {//这个window是形参
+        var num = 10;
+        window.num = num;
+    })(window);//这个window是实参
+    console.log(num);
+</script>
+</body>
+</html>

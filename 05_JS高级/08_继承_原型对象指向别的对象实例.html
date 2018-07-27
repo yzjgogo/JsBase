@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+
+        //人的构造函数
+        function Person(age) {
+            this.age=10;
+        }
+        //人的原型对象方法
+        Person.prototype.eat=function () {
+            console.log("人的吃");
+        };
+
+
+        //学生的构造函数
+        function Student(banji) {
+            this.banji = banji;
+        }
+        Student.prototype.sayHi=function () {
+            console.log("嗨,小苏你好帅哦");
+        };
+        //学生的原型,指向了一个人的实例对象
+        Student.prototype=new Person(10);
+        var stu=new Student("二年级");
+        stu.eat();
+        //Student实例stu --> banji;__proto__(Student的原型对象也就是Person实例)
+        //Student实例指向的原型对象__proto__(Person实例) --> age;__proto__(Person原型对象)
+        //Person原型对象__proto__ --> eat;constructor:Person();__proto__(Person原型对象的原型对象,Object)
+        //Person原型对象的原型对象__proto__(Object) --> constructor:Object();
+        console.dir(stu);
+        console.dir(Student);
+        console.dir(Person);
+        //可以理解成Student继承(的原型是)Person实例,Person继承(的原型是)Person原型，Person原型继承(的原型是)Object，Object继承(的原型是)null
+        console.log(stu.__proto__);//Student继承(的原型是)Person实例
+        console.log(stu.__proto__.__proto__);//Person继承(的原型是)Person原型
+        console.log(stu.__proto__.__proto__.__proto__);//Person原型继承(的原型是)Object， 即Object
+        console.log(stu.__proto__.__proto__.__proto__.__proto__);//Object继承(的原型是)null
+
+        console.log("***************************原型最终指向哪里******************************************");
+
+        var per = new Person(39);
+        console.dir(per);
+        console.dir(Person);
+
+        console.log(per.__proto__==Person.prototype);//true
+        console.log(per.__proto__.__proto__==Person.prototype.__proto__);//true
+        console.log(Person.prototype.__proto__==Object.prototype);//true
+        console.log(Object.prototype.__proto__);//null
+        /*
+           参考图片：08_继承.png
+        */
+    </script>
+
+        
+</head>
+<body>
+
+<img src="img/08_继承.png" alt="">
+</body>
+</html>

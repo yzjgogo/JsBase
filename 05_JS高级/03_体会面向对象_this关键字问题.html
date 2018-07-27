@@ -28,7 +28,7 @@
         this.dvObj = dvObj;
         this.json = json;
     }
-    //向原型对象中添加具体的作用函数
+    //原型对象的this和构造函数中的this一样，都是指当前对象
     ChangeStyle.prototype.init = function () {
         //点击按钮,改变div多个样式属性值
         var that = this;//这个this是当前ChangeStyle的某个实例

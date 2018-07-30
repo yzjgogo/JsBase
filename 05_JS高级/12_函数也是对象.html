@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+        函数内部肯定有prototype属性；
+        对象内部肯定有__proto__属性；
+
+        又因为函数也是对象，因此函数内部既有prototype属性又有__proto__属性；
+        非函数的对象内部只有__proto__属性；
+     */
+
+    //证明函数也是对象；
+    //所有的函数实际上都是Function的构造函数创建出来的实例对象
+       var f1=new Function("num1","num2","return num1+num2");
+       console.log(f1(10,20));
+       console.log(f1.__proto__==Function.prototype);
+       //  var fi = function(num1,num2){
+       //      return num1+num2;
+       //  };
+    //所以,函数实际上也是对象
+
+     console.dir(f1);
+</script>
+</body>
+</html>

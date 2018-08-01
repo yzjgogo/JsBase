@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    /*
+        总结：bind用法 --> 改变函数中this的指向，同时复制该函数
+        bind的用法：var result = 对象.函数名.bind(另一个对象,参数1，参数2，参数3...);
+                    result();
+                    或者
+                    var result = 对象.函数名.bind(另一个对象);
+                    result(参数1，参数2，参数3...);
+
+        注意：
+            a：如果另一个对象不为null或undefined，则函数中的this就是指的这个"另一个对象"；
+            b：如果另一个对象为null或undefined，则函数中的this就是值window对象，注意即使
+              函数是定义在非window对象中，此时函数中的this仍然是window对象；
+            c：参数列表是用于函数需要的参数；
+            d：bind函数会复制一个函数并返回，而并没有执行函数，只是返回一个函数名，这是与apply和bind的区别
+            e：如果bind没有传参，则返回的参数调用时需传参;如果bind传参了则返回的参数调用时就不需传参了；
+    */
+
+
+    /*
+       第一：
+        window对象中的函数使用bind方法
+     */
+    window.age = 100;//给window一个age属性值用于和obj的age属性值区分，证明bind传入null时函数中的this是window对象，传入obj时函数中的this是obj对象
+
+    function f1(x, y) {
+        console.log((x + y) + ":=====>" + this.age);
+    }
+
+    var obj = {
+        age: 10086
+    };
+    //bind传入null时，函数中的this是window对象
+    var ff = f1.bind(null);//不传参
+    ff(10, 20);//复制产生的函数传参
+
+    var fff = f1.bind(null, 30, 40);//直接传参
+    fff();//复制产生的函数无需再传参
+
+    //bind传入其它obj时，函数中的this就是obj对象
+    var ffff = f1.bind(obj);
+    ffff(10, 20);
+
+    var fffff = f1.bind(obj, 30, 40);
+    fffff();
+
+
+
+    console.log("&&&&&&&&&&&&&&&&&&&&分割线&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+
+
+
+    /*
+        第二：
+        其它自定义的对象中的函数使用apply和call
+    */
+    window.sex = "驴";//给window指定一个sex属性，用于区分Person和Student的sex属性，证明bind传入对象时里面的this就是该对象，没传入对象时里面的this就是window
+    function Person(age, sex) {
+        this.age = age;
+        this.sex = sex;
+    }
+    Person.prototype.eat = function (food, water) {
+        console.log("人会吃："+food+","+water+","+this.sex);
+    };
+
+    function Student() {
+        this.sex = "学生";
+    }
+    var per = new Person(34,"人");
+    var stu = new Student();
+    //bind传入stu则eat函数中的this就是stu
+    //bind直接传入eat函数的参数，调用reFun时无需再传入参数
+    var reFun = per.eat.bind(stu,"面包","可乐");
+    reFun();
+
+    //bind传入null则eat函数中的this就是window对象
+    //bind没有传入eat函数的参数，调用reFun2时需要传入参数
+    var reFun2 = per.eat.bind(null);
+    reFun2("烧烤","雪碧");
+
+
+
+    console.log("&&&&&&&&&&&&&&&&&&&&分割线&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+
+
+
+    /*
+        第三：
+        bind函数存在于哪里
+     */
+    function diy() {
+
+    }
+    //函数也是对象，由Function构造函数创建，
+    console.log(diy.__proto__ == Function.prototype);
+    console.dir(diy)//可见bind存在于Function.prototype中
+
+
+
+    console.log("&&&&&&&&&&&&&&&&&&&&分割线&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+
+
+    /*
+        第四：
+        bind案例
+     */
+
+
+    function ShowNum() {
+        this.number=1000;
+    }
+    ShowNum.prototype.show1=function () {
+        //每隔1s输出一次number
+        //改变了定时器中的this的指向了,本来应该是window,现在是实例对象了
+        window.setInterval(this.show2.bind(this),1000);
+    };
+    ShowNum.prototype.show2=function () {
+        console.log(this.number);
+    };
+    var sr=new ShowNum();
+    sr.show1();
+
+</script>
+</body>
+</html>

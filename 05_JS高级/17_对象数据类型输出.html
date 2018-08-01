@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+        对比typeof instanceof
+     */
+    console.log(Object.prototype.toString());//[object Object]
+
+    var obj = {};
+    console.log(Object.prototype.toString.call(obj));//[object Object]
+    console.log(typeof obj);//object
+
+    var arr = [];
+    console.log(Object.prototype.toString.call(arr));//[object Array]
+    console.log(typeof arr);//object
+
+    var date = new Date();
+    console.log(Object.prototype.toString.call(date));//[object Date]
+    console.log(typeof date);//object
+
+    var str = "abcd";
+    console.log(Object.prototype.toString.call(str));//[object String]
+    console.log(typeof str);//string
+
+    var num = 120;
+    console.log(Object.prototype.toString.call(num));//[object Number]
+    console.log(typeof num);//number
+
+    var boo = true;
+    console.log(Object.prototype.toString.call(boo));//[object Boolean]
+    console.log(typeof boo);//boolean
+
+</script>
+</body>
+</html>

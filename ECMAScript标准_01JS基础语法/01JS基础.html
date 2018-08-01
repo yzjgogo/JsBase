@@ -646,11 +646,47 @@
             }
 
             fun3();
-        }
+        }"条件if为true"
 
         fun4();
 
 
+
+        /*
+            11，条件语句中函数声明在IE8中的问题
+         */
+           if(true){
+             function funTiaojian() {
+               console.log("条件if为true");
+             }
+           }else{
+             function funTiaojian() {
+               console.log("条件else");
+             }
+           }
+           //IE8中结果是"条件else" 其它浏览器是"条件if为true"
+        funTiaojian();
+
+        //通过函数表达式解决上面不同浏览器结果不同的问题
+        var funTiao;
+        if(true){
+            funTiao = function () {
+                console.log("条件if为true");
+            }
+        }else{
+            funTiao = function () {
+                console.log("条件else");
+            }
+        }
+        funTiao();//无论什么浏览器都执行"条件if为true"
+
+
+
+
+        /*
+            12：函数中的几个成员
+            参考：05_JS高级/16_函数中的几个成员.html
+         */
         console.log("Num23结束：函数");
     </script>
 

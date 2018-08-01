@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+        总结：apply和call用法 --> 改变函数中this的指向
+        apply的用法：对象.函数名.apply(另一个对象,[参数1，参数2，参数3...]);
+        call的用法：对象.函数名.call(另一个对象,参数1，参数2，参数3...);
+
+        注意：
+            a：如果另一个对象不为null或undefined，则函数中的this就是指的这个"另一个对象"；
+            b：如果另一个对象为null或undefined，则函数中的this就是值window对象，注意即使
+              函数是定义在非window对象中，此时函数中的this仍然是window对象；
+            c：参数列表是用于函数需要的参数；
+            d：apply和call只是换一种方式调用函数，不过是在函数中改变this的指向而已，并没有返回值；这是与bind的区别；
+    */
+
+    /*
+       第一：
+        window对象中的函数使用apply或call
+    */
+    window.sex = "妖";//给window一个sex属性，用于和obj的sex属性区分
+    function f1(x, y) {
+        console.log("这个函数是window对象的一个方法:" + (x + y) + this.sex);
+    }
+
+    window.f1(10, 20);//此时f1中的this是window对象
+    //obj是一个对象
+    var obj = {
+        age: 10,
+        sex: "男"
+    };
+    //此时f1中的this是obj对象
+    window.f1.apply(obj, [10, 20]);
+    window.f1.call(obj, 10, 20);
+    //obj只是借用了f1函数，obj中始终都没有f1函数
+    console.dir(obj);
+
+    //此时f1中的this是window对象，注意不是obj对象
+    window.f1.apply(null, [10, 20]);
+    window.f1.call(null, 10, 20);
+
+
+
+    console.log("&&&&&&&&&&&&&&&&&&&&分割线&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+
+    /*
+        第二：
+        其它自定义的对象中的函数使用apply和call
+    */
+
+    window.sex = "驴";//给window一个sex属性，用于和Person,Student的sex属性区分，证明，apply和call中传入的对象是null是，函数中的this是window
+    function Person(age, sex) {
+        this.age = age;
+        this.sex = sex;
+    }
+
+
+    Person.prototype.sayHi = function (x, y) {
+        console.log("您好啊:" + this.sex);
+        return 1000;
+    };
+    var per = new Person(10, "男");
+    per.sayHi();
+
+    console.log("==============");
+
+    function Student(name, sex) {
+        this.name = name;
+        this.sex = sex;
+    }
+
+    var stu = new Student("小明", "人妖");
+    //此时sayHi函数中的this是stu对象
+    var r1 = per.sayHi.apply(stu, [10, 20]);
+    var r2 = per.sayHi.call(stu, 10, 20);
+    //此时sayHi函数中的this是window对象，注意不是per对象，更不是stu对象
+    var r3 = per.sayHi.apply(null, [10, 20]);
+    var r4 = per.sayHi.call(null, 10, 20);
+
+    console.log(r1);
+    console.log(r2);
+    console.log(r3);
+    console.log(r4);
+
+
+
+    console.log("&&&&&&&&&&&&&&&&&&&&分割线&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+
+
+    /*
+        第三：apply和call方法存在于哪里？
+
+     */
+    function diy() {
+
+    }
+    //函数也是对象，由Function构造函数创建，
+    console.log(diy.__proto__ == Function.prototype);
+    console.dir(diy)//可见apply和call存在于Function.prototype中
+</script>
+</body>
+</html>

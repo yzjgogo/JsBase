@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>标签选择器：我是span</span>
+<p id="pId">id选择器：我是p，我有id</p>
+<p class="pClass">class选择器：我是p，我有class</p>
+<div class="old">
+    <div>
+        <p>后代选择器：我是div的后代p</p>
+    </div>
+</div>
+<div class="father">
+    <p>子元素选择器：我是div的儿子p</p>
+</div>
+
+<div class="jiao">交集选择器：我是div</div>
+<h6>我是并集的1</h6>
+<b>我是并集的3</b>
+<div class="bing">我是并集的4</div>
+
+<ul>
+    <li>1燕洵</li>
+    <li>2楚乔</li>
+    <li>3小乔</li>
+    <li>4亚瑟</li>
+    <li>5文字呢绒</li>
+    <li>6文字呢绒</li>
+    <li>7文字呢绒</li>
+    <li>8文字呢绒</li>
+    <li>9文字呢绒</li>
+</ul>
+
+<div id="divId">我是div，我有id</div>
+<div class="demo">我是div，我class是demo</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     1：标签选择器
+     参考：HtmlCssBase/2_3选择器.html
+     */
+    $("span").css("backgroundColor", "red");
+
+
+    /**
+     2：id选择器:记住有#符号
+     参考：HtmlCssBase/2_3选择器.html
+     */
+    $("#pId").css("backgroundColor", "blue");
+
+
+    /**
+     3：类选择器：记住有.符号
+     参考：HtmlCssBase/2_3选择器.html
+     */
+    $(".pClass").css("backgroundColor", "pink");
+
+
+    /**
+     4：通配符选择器
+     参考：HtmlCssBase/2_4通配符选择器.html
+     */
+    // $("*").css("backgroundColor","pink");
+
+
+    /**
+     5：后代选择器：空格分割
+     参考：HtmlCssBase/2_7CSS复合选择器-后代选择器.html
+     */
+    $(".old p").css("backgroundColor", "orange");
+
+
+    /**
+     6：子元素选择器：> 分割
+     参考：HtmlCssBase/2_8CSS复合选择器-子元素选择器.html
+     */
+    $(".father>p").css("backgroundColor", "yellow");
+
+
+    /**
+     7：交集选择器：无分割，标签和类的交集、标签和id的交集、类和id的交集等等，但常见的还是标签好类的交集
+     参考：HtmlCssBase/2_9CSS复合选择器-交集选择器.html
+     */
+    $("div.jiao").css("backgroundColor", "SandyBrown");
+
+
+    /**
+     8：并集选择器：逗号分割
+     参考：HtmlCssBase/2_10CSS复合选择器-并集选择器.html
+     */
+    $("h6,b,.bing").css("backgroundColor", "FireBrick");
+
+
+    /**
+     9：结构(位置)伪类选择器
+     参考：HtmlCssBase/66结构伪类选择器.html
+     */
+    // $("ul li:first-child").css("backgroundColor", "orange");
+    // $("ul li:last-child").css("backgroundColor", "orange");
+    // $("li:nth-child(3)").css("backgroundColor", "orange");
+    // $("li:nth-child(even)").css("backgroundColor", "orange");
+    // $("li:nth-child(odd)").css("backgroundColor", "orange");
+    // $("li:nth-child(n)").css("backgroundColor", "orange");
+    // $("li:nth-child(2n)").css("backgroundColor", "orange");
+    // $("li:nth-child(2n+1)").css("backgroundColor", "orange");
+    // $("li:nth-child(4n)").css("backgroundColor", "orange");
+    $("ul li:nth-last-child(n)").css("backgroundColor", "orange");
+
+
+    /**
+     10：属性属于某一类的选择器
+     参考：HtmlCssBase/67属性选择器.html
+     */
+    // $("div[id]").css("backgroundColor", "Orchid");
+    // $("div[class]").css("backgroundColor", "Orchid");
+    // $("div[class=demo]").css("backgroundColor", "Orchid");
+    // $("div[id=divId]").css("backgroundColor", "Thistle");
+    // $("div[class^=test]").css("backgroundColor", "Thistle");
+    // $("div[id^=d]").css("backgroundColor", "Thistle");
+    // $("div[class$=test]").css("backgroundColor", "Thistle");
+    // $("div[class*=test]").css("backgroundColor", "Thistle");
+
+
+</script>
+</body>
+</html>

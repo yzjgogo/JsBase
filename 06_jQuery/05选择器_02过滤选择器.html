@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我是第0个li</li>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+    <li>我是第6个li</li>
+    <li>我是第7个li</li>
+    <li>我是第8个li</li>
+    <li>我是第9个li</li>
+</ul>
+<div>
+    <p>0</p>
+    <span>我是span1</span>
+    <span>我是span1</span>
+    <span>我是span1</span>
+    <div>我是div</div>
+    <div>我是div</div>
+    <span>我是span1</span>
+    <span>我是span1</span>
+    <span>我是span1</span>
+    <div>我是div</div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <span>我是span</span>
+    <p>5</p>
+    <p>6</p>
+    <p id="pId">7</p>
+    <p>8</p>
+    <p class="pclass">9</p>
+    <span>我是span</span>
+</div>
+<div>
+    <h1>我是h1</h1>
+    <h2>我是h2</h2>
+    <h3>我是h3</h3>
+    <h4>我是h4</h4>
+    <h5>我是h5</h5>
+    <h6>我是h6</h6>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        //不仅仅适用于li等列表标签，也适用于父标签中有多个同标签的子标签，例如div中有多个p，但是也可以有别的div，span，img等等
+        //但是我们只考虑div中的p，不考虑其它标签，你想象成其它标签不存在，只有p标签有索引即可
+        // $("p:even").css("backgroundColor", "red");//:even 下标为偶数
+        // $("p:odd").css("backgroundColor", "green");//:odd 下标为奇数
+        // $("p:lt(3)").css("fontSize", "32px");//:lt(index) 所有小于给定索引值的元素，这里是索引是0,1,2的元素
+        // $("p:gt(3)").css("fontSize", "32px");//:gt(index) 所有大于给定索引值的元素，这里是索引是除了0,1,2之外的元素
+        // $("p:eq(3)").css("backgroundColor","green");//:eq(index) 匹配一个给定索引值的元素
+        // $("p:last").css("backgroundColor","green");//:last 最后一个元素
+        // $("p:first").css("backgroundColor","green");//:first 第一个元素
+        // $(":header").css("backgroundColor","green");//:head 匹配标题元素h1 h2 h3 h4 h5 h6
+        //:animated  匹配所有正在执行动画的元素
+        //:focus 匹配当前获取焦点的元素。
+
+
+        //取反：匹配所有除了给定选择器之外的其它元素 :not(选择器)
+        // $("p:not(#pId,.pclass)").css("backgroundColor","blue");
+
+
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li id="cloth">衣服</li>
+    <li>裤子</li>
+    <li>裤衩子</li>
+    <li>袜子</li>
+</ul>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //通过js方式获取的对象是js对象
+    //var cloth = document.getElementById("cloth");
+    //cloth.style.backgroundColor = "pink";
+
+
+
+    //使用jq的方式获取到的元素就是jq对象
+    // var $li = $("li");
+    // console.dir($li);
+    // $li.text("我改了内容");
+
+
+    //js对象不能调用jquery的方法，jquery对象也不能调用js对象的方法
+
+
+    //js对象转换为jquery对象 --> 形象的想象成花钱买洗衣机，把js对象放集合里
+    var cloth = document.getElementById("cloth");//js对象
+    $(cloth).text("呵呵");//$(js对象)-->jquery对象，js对象花钱变成jquery对象
+
+    //jquery对象访问js对象 --> jquery对象是伪数组，通过下标可取出其中的js对象，也可通过jquery提供的get(index)方法
+    var $li = $("li");
+    $li[1].style.backgroundColor = "red";
+    $li.get(2).style.backgroundColor = "yellow";
+
+
+
+</script>
+</body>
+</html>

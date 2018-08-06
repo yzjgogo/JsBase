@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     $其实就是一个函数，以后用$的时候，记得跟小括号 $();
+     因此$是一个函数名，其实$===jQuery，也就是说$是jQuery的简单写法；
+
+     $函数的参数有三种：
+     1：参数是函数 --> 入口函数；
+     2：参数是js对象(dom对象) --> js对象(dom对象)转为jquery对象；
+     3：参数是选择器 --> 用来找对象；
+     */
+    //1. 参数是一个function, 入口函数
+    $(function () {
+
+    });
+    console.log(typeof $);
+
+    //2.参数是js对象 $(domobj)  把dom对象转换成jquery对象
+    //  $(document).ready(function () {
+    //
+    //  });
+
+    //3. 参数是一个选择器的字符串,用来找对象
+    //$("div") $("div ul")   $(".current")
+
+
+</script>
+</body>
+</html>

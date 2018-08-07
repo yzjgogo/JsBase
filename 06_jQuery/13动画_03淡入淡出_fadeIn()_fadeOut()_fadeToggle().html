@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示">
+<input type="button" value="隐藏">
+<input type="button" value="切换">
+
+<div></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+
+        /**
+         参考：06_jQuery/13动画_02滑入滑出_slideDown()_slideUp()_slideToggle().html
+         参数的逻辑都是一样的。
+         */
+        $("input").eq(0).click(function () {
+            $("div").fadeIn(2000);
+
+        });
+
+
+        $("input").eq(1).click(function () {
+            $("div").fadeOut(1000);
+        });
+
+
+        $("input").eq(2).click(function () {
+            $('div').fadeToggle();
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .basic {
+            background-color: pink;
+            font-size: 32px;
+            color: red;
+        }
+
+        .bigger {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加basic类">
+<input type="button" value="添加bigger类">
+<input type="button" value="移除bigger类">
+<input type="button" value="判断有没有bigger类">
+<input type="button" value="切换basic类">
+<ul>
+    <li class="aa bb cc dd">1</li>
+    <li class="aa bb cc dd">2</li>
+    <li class="aa bb cc dd">3</li>
+    <li class="aa bb cc dd">4</li>
+</ul>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         .addClass(类名)：给标签添加类样式，在原来的基础上添加，不会删除原来的；
+         .removeClass(类名);移除标签中原来所有类的某个类，剩下的类不动；
+         .hasClass(类名);判断标签有没有某个类，有为true，没有为false；
+         .toggleClass(类名);标签中如果有该类就移除，如果没有该类就添加；
+         */
+
+        $("input").eq(0).click(function () {
+            // 添加一个类
+            $("li").addClass("basic");
+        });
+
+        $("input").eq(1).click(function () {
+            $("li").addClass("bigger");
+        });
+
+
+        $("input").eq(2).click(function () {
+
+            //移除一个类
+            $("li").removeClass("bigger");
+        });
+
+        //判断类
+        $("input").eq(3).click(function () {
+
+            //移除一个类
+            console.log($("li").hasClass("bigger"));
+            ;
+        });
+
+
+        $("input").eq(4).click(function () {
+
+            //判断li有没有basic类，如果有，就移除他，如果没有，添加他
+            //toggle
+            $("li").toggleClass("basic");
+        });
+    });
+</script>
+</body>
+</html>

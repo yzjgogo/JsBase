@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<input type="button" value="选中">
+<input type="button" value="不选中">
+<input type="button" value="获取状态">
+<input type="checkbox" id="ck">
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    /**
+     类似checked、selected、disabled等单属性值的属性，不能使用.attr()方法,因为.attr()获取属性时，如果没有该属性会返回undefined，而不是false
+     而应该使用.prop()方法
+     .prop(属性名,true/false);设置属性
+     .prop(属性名);获取属性值，返回true、false
+     */
+    $(function () {
+
+        $("input").eq(0).click(function () {
+            // $("#ck").attr("checked", true);
+            $("#ck").prop("checked", true);
+        });
+
+        $("input").eq(1).click(function () {
+            // $("#ck").attr("checked", false);
+            $("#ck").prop("checked", false);
+        });
+
+        $("input").eq(2).click(function () {
+            console.log($("#ck").prop("checked"));//true,false
+        });
+    });
+</script>
+
+
+</body>
+</html>

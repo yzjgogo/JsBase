@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始">
+<input type="button" value="停止">
+<div></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("input").eq(0).click(function () {
+            $("div").slideDown(4000).slideUp(4000);
+        });
+
+        /**
+         stop(clearQueue,jumpToEnd);
+         clearQueue：是否清除动画序列，即是否清除当前动画以后的动画，true、false；
+         jumpToEnd：是否跳转到当前动画的最终结果，true、false；
+
+         stop(false,false)等价于stop();当前动画不在继续执行，转而从当前状态开始执行下一个动画；
+         stop(false,true);当前动画直接到达当前动画的最终状态，继续下一个动画；
+         stop(true,false);清除当前动画之后的动画，且停留在当前动画的当前状态；
+         stop(true,true);清除当前动画之后的动画，且当前动画直接到达当前状态的最终状态；
+
+
+         建议：以后要执行某个动画之前，先调用一次stop()函数
+         */
+        $("input").eq(1).click(function () {
+            // $("div").stop(false,false);
+            // $("div").stop(false,true);
+            // $("div").stop(true,false);
+            // $("div").stop(true,true);
+            $("div").stop();//这个最常用
+        })
+    });
+</script>
+</body>
+</html>

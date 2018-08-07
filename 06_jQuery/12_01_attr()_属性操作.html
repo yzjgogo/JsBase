@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img src="img/01.jpg" alt="我是alt" title="我是title">
+<!--<img src="img/01.jpg" alt="我是b" title="我是title">-->
+<!--<img src="img/01.jpg" alt="我是c" title="我是title">-->
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         01,：设置单个属性
+         .attr(属性名，属性值);
+         支持自定义属性
+         */
+        // $("img").attr("alt", "我是alt2");
+        // $("img").attr("title", "我是title2");
+        // $("img").attr("diy", "我是diy");//自定义属性
+
+
+
+        /**
+         02：一次性设置多个属性，传入对象；
+         .attr(obj);obj={key:value,key:value...}
+         支持自定义属性
+         */
+        // $("img").attr({
+        //     alt:"我是alt3",
+        //     title:"我是title3",
+        //     diy:"我是自定义属性"//自定义属性
+        // });
+
+
+
+        /**
+         03：获取属性值,如果没有该属性则返回undefined
+         .attr(属性名);返回属性值
+         与.css(属性名)获取属性值类似，返回的只是jquery对象中的第一个js对象的该属性值，
+         参考06_jQuery/10_css()_设置和获取样式.html中的03
+         */
+        // console.log($("img").attr("alt"));
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示">
+<input type="button" value="隐藏">
+
+<div></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+
+        /**
+         01：显示动画
+         .show([时间],[回调函数])
+         说明：
+         不传参数：不传时间，说明没有动画，直接显示出来；
+         时间可以是：毫秒数、fast(200ms)、normal(400ms)、slow(600ms);
+         回调函数：动画完成后执行回调；
+         */
+
+        $("input").eq(0).click(function () {
+            $("div").show(1000, function () {
+                console.log("哈哈，动画执行完成啦");
+            })
+
+        });
+
+
+
+        /**
+         02：
+         hide()与show()类似，参考show()的说明
+         */
+        $("input").eq(1).click(function () {
+            $("div").hide();
+        })
+
+    });
+</script>
+</body>
+</html>

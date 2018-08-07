@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li>0高圆圆</li>
+    <li>1周二珂</li>
+    <li>2冯提莫</li>
+    <li>3郑爽</li>
+</ul>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+
+        /**
+         01：设置单个样式
+         .css(styleName,styleValue);
+         */
+        // $("li")
+        //     .css("backgroundColor", "pink")
+        //     .css("color", "red")
+        //     .css("fontSize", "32px");
+
+
+        /**
+         02：一次性设置多个样式
+         .css(obj); obj={key:value,key:value,key:value...}
+         */
+        // $("li").css({
+        //     backgroundColor: "pink",
+        //     color: "red",
+        //     fontSize: "32px",
+        //     border: "1px solid black"
+        // });
+
+
+
+
+        /**
+         03：获取样式,如果没有该样式则返回undefined
+         .css(styleName);
+         需要注意的是，jquery对象是js对象的集合，是伪数组，调用.css()隐式迭代设置样式时，会给所有js对象都设置
+         相同的样式，除非从中取出单个js对象逐个设置，才能设置不同的样式，即使如此，jquery对象通过.css(styleName)获取的
+         样式仍然只能获取到jquery对象中的第一个js对象的样式。
+
+         一句话总结：.css(styleName)返回jquery对象中第一个js对象的样式值
+         */
+        $("li").eq(0).css("fontSize", "20px");
+        $("li").eq(1).css("fontSize", "21px");
+        $("li").eq(2).css("fontSize", "22px");
+        $("li").eq(3).css("fontSize", "23px");
+        console.log($("li").css("fontSize"));//20px $("li").eq(0)的样式值
+    });
+
+</script>
+</body>
+</html>

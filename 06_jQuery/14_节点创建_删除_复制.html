@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--<a href="http://web.itcast.cn" target="_blank">传智大前端</a>-->
+<div id="box">
+    我是div
+</div>
+<p>我是外面的p元素</p>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     参考js创建元素的三种方式
+     */
+    $(function () {
+        /**
+         01_1：
+         append(标签字符串/jquery对象); 追加到最后
+         例如：a.append(b) 把b追加到a里面的最后；
+         */
+        //参数是标签字符串
+        // $("#box").append('<a href="http://web.itcast.cn" target="_blank">传智大前端</a>');
+
+        //参数是jquery对象
+        var $a = $('<a href="http://web.itcast.cn" target="_blank">传智大前端</a>');
+        // $("#box").append($a);
+        // $("#box").append($("p"));//当前页面的标签添加到某个标签后，该标签其实是移动过去了
+
+
+        /**
+         01_2：
+         appendTo(jquery对象/选择器); 追加到最后
+         例如：a.appendTo(b) 把a追加到b里面的最后
+         */
+        // $("p").appendTo($("#box"));
+        // $a.appendTo($("#box"));
+        // $("p").appendTo("#box");//参数是选择器
+
+
+        /**
+         02_1：
+         prepend(标签字符串/jquery对象) 追加到最前面
+         例如：a.prepend(b) 把b追加到a里面的最前面
+         */
+        // $("#box").prepend($("p"));
+        // $("#box").prepend($a);
+        // $("#box").prepend('<a href="http://web.itcast.cn" target="_blank">传智大前端</a>');
+
+
+        /**
+         02_2：
+         prependTo(jquery对象/选择器); 追加到最前面
+         例如：a.prependTo(b); 把a追加到b里面的最前面
+         */
+        // $("p").prependTo($("#box"));
+        // $a.prependTo($("#box"));
+
+
+        /**
+         03_1：
+         after(标签字符串/jquery对象)
+         作为兄弟元素追加到某元素的后面
+
+         例如：a.after(b) b作为a的兄弟元素，放在a的后面
+         */
+        // $("#box").after($a);
+        // $("#box").after('<a href="http://web.itcast.cn" target="_blank">传智大前端</a>');
+        // $("#box").after($("p"));
+
+
+        /**
+         03_2：
+         before(标签字符串/jquery对象)
+         作为兄弟元素追加到某元素的前面
+
+         例如：a.before(b) b作为a的兄弟元素，放在a的前面
+         */
+        // $("#box").before($a);
+        // $("#box").before('<a href="http://web.itcast.cn" target="_blank">传智大前端</a>');
+        // $("#box").before($("p"));
+
+
+        /**
+         04_1清除自己的子内容
+         html("");//可能内存泄露，因为无法清除监听；
+         empty();//用这个，可以同时清除监听，无内存泄露的隐患；
+         */
+        // $("#box").html("");
+        // $("#box").empty();
+
+        /**
+         04_2清除自己本身，当然也包括子内容
+         remove();
+         */
+        // $("#box").remove();
+
+
+        /**
+         05 克隆 深度复制
+         clone(true/false); true:也复制监听事件；false：不会复制监听事件
+         */
+        // $("p").clone(true).appendTo("#box");//复制一份p标签追加到div中，原来的p标签还在原位置
+
+        console.log($("input").eq(0).val());
+        console.log($("input").eq(1).val());
+        console.log($("input").eq(2).val());
+    });
+</script>
+</body>
+</html>

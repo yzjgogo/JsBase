@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="text"/>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     监听键盘按键事件：keyup
+     */
+    $("#text").keyup(function (e) {
+        if (e.keyCode == 13) {//Enter键
+            console.log("我有反应了");
+        }
+    });
+</script>
+</body>
+</html>

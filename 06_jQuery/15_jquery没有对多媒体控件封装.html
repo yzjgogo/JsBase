@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <audio src="mp3/1.ogg"></audio>
+    <audio src="mp3/2.ogg"></audio>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     jQuery没有对多媒体封装，因此在jQuery中如果要操作多媒体，需将多媒体标签的jquery对象转换为js对象，再操作
+     */
+    $(function () {
+        $("audio").get(0).load();
+        $("audio").get(0).play();
+    });
+</script>
+</body>
+</html>

@@ -9,10 +9,12 @@
 <img src="img/01.jpg" alt="我是alt" title="我是title">
 <!--<img src="img/01.jpg" alt="我是b" title="我是title">-->
 <!--<img src="img/01.jpg" alt="我是c" title="我是title">-->
+<input type="text" name="" id="" value="我是input">
 
 <script src="jquery-1.12.4.js"></script>
 <script>
     $(function () {
+
         /**
          01,：设置单个属性
          .attr(属性名，属性值);
@@ -42,8 +44,13 @@
          .attr(属性名);返回属性值
          与.css(属性名)获取属性值类似，返回的只是jquery对象中的第一个js对象的该属性值，
          参考06_jQuery/10_css()_设置和获取样式.html中的03
+
+         val()
+         如果是表单标签，可通过val()方法获取value值
          */
         // console.log($("img").attr("alt"));
+        // console.log($("input").attr("value"));
+        // console.log($("input").val());//val()获取表单控件的value值
 
     });
 </script>

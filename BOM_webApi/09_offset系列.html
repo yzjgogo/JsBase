@@ -77,7 +77,7 @@
             无论定位情况如何，offsetLeft和offsetTop的意思是当前标签的border的外侧到offsetParent标签的border的内侧的距离
             因此，这段距离里可能有当前标签的margin值。
             如果offsetParent无border,测参考实际边界。
-            如果offsetParent无null，则一般是窗口的边界，例如当前定位是fixed时。
+            如果offsetParent为null，则一般是窗口的边界，例如当前定位是fixed时。
 
             1：元素自身无fixed定位(static relative absolute)
                 如果某个祖辈元素有定位:

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 10px;
+            border: 10px solid #000;
+            margin: 10px;
+            /*box-sizing: border-box;*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         01：复习，我们可以通过css("width");获取宽高，返回带单位的值，这个值就是width的属性值，不管box-sizing是什么类型
+         */
+        // console.log($("div").css("width"));
+
+        /**
+         02：通过width()系列方法获取，height()系列方法同理
+
+         width()：返回值无单位，纯数字
+         前提：如果没有padding，你想象成有padding且padding宽是0
+         无论box-sizing是border-box还是content-box
+         width()是左右padding内侧之间的距离
+
+         innerWidth()：返回值无单位，纯数字
+         前提：如果没有border，你想象成有border且border宽是0
+         无论box-sizing是border-box还是content-box
+         innerWidth()对应js中的clientWidth，左右border内侧之间的距离
+
+         outerWidth()：返回值无单位，纯数字，等价于outerWidth(false)
+         前提：如果没有border，你想象成有border且border宽是0
+         无论box-sizing是border-box还是content-box
+         outerWidth()是左右border外侧之间的距离
+
+         outerWidth(true)：返回值无单位，纯数字
+         前提：如果没有margin，你想象成有margin且margin宽是0
+         无论box-sizing是border-box还是content-box
+         outerWidth(true)是左右margin外侧之间的距离
+         */
+        // console.log($("div").width());//width
+        // console.log($("div").innerWidth());//padding+width
+        // console.log($("div").outerWidth());//padding+width+border
+        // console.log($("div").outerWidth(true));//padding+width+border+margin
+
+        /**
+         width()、innerWidth()、outerWidth()也可以传入参数，设置值
+         具体怎么个设置法，还没研究
+         */
+        // $("div").width(400);
+        // $("div").innerWidth(400);
+        // $("div").outerWidth(400);
+
+
+        /**
+         参考：BOM_webApi/17_窗口缩放尺寸变化监听.html
+         */
+        $(window).resize(function () {
+            console.log($(window).width());
+            console.log($(window).height());
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="text"/>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $("#text").focus(function () {
+        console.log("获取到焦点");
+    });
+    $("#text").blur(function () {
+        console.log("失去焦点");
+    });
+</script>
+</body>
+</html>

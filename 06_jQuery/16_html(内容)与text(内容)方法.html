@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div><h3>我是标题</h3></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /**
+     html("")对应js的innerHtml
+     text("")对应js的innerText
+     参考：20_innerText和innerHTML的区别.html
+     */
+    $(function () {
+        //$("div").html("<p>我是文本</p>");
+        $("div").text("<p>我是文本</p>");
+
+    });
+</script>
+
+</body>
+</html>

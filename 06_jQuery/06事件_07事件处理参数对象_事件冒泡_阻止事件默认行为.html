@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>这是一个div</div>
+
+
+<a href="https://www.baidu.com" id="link">呵呵</a>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         on绑定事件时，传入的data存放到事件处理参数对象中，
+         但是貌似只可以传入数字，其它类型不可以吗？注意一下。
+         */
+        var num = 100;
+        var myData = "我是给事件处理函数的数据";
+        $("div").on("click", num, function (e) {
+            console.log("哈哈");
+            console.log(e);
+            console.log(e.data);
+        });
+
+
+        /**
+         阻止浏览器默认行为和阻止事件冒泡
+
+         参考：
+         BOM_webApi/15_阻止浏览器默认事件.html
+         DOM_webApi/32_元素事件_阻止事件冒泡.html
+         */
+        $("#link").on("click", function (e) {
+            //e.preventDefault();//阻止浏览器默认行为，无兼容性问题
+            //e.stopPropagation();//阻止事件冒泡，无兼容性问题
+            return false;//既能阻止事件冒泡，也能阻止浏览器的默认行为。
+        });
+
+        $("body").on("click", function () {
+            alert("嘻嘻");
+        })
+    });
+</script>
+</body>
+</html>

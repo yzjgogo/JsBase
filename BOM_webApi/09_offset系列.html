@@ -69,6 +69,11 @@
             offsetWidth和offsetHeight：
             对于box-sizing:border-box,就直接是width和height的值；
             对于box-sizing:content-box,offsetWidth=width+padding两边+border两边 , offsetHeight=height+padding两边+border两边
+
+            一句话总结：
+            无论box-sizing是什么类型，offsetWidth是border外侧之间的距离，如果没有border就想象成有border且border的宽为0；
+            offsetHeight也是同样的道理。
+
          */
         /*
             首先

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script src="itcast.js"></script>
+    <script src="jquery-1.12.4.js"></script>
+
+
+    <script>
+
+        console.log($);
+
+        //jQuery释放$的控制权，用jQuery代替
+        // $.noConflict();
+        //
+        // jQuery(function () {
+        //
+        // });
+
+
+        //jQuery释放$的控制权，返回一个新的标志
+        var flag = $.noConflict();
+        flag(function () {
+
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

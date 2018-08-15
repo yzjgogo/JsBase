@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 8000px;
+            width: 4000px;
+        }
+        #sId{
+            width: 100px;
+            height: 200px;
+            overflow: auto;
+            background: orange;
+        }
+
+        a {
+            color: #FFF;
+        }
+
+        .actGotop {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 150px;
+            height: 195px;
+            display: none;
+            z-index: 100;
+        }
+
+        .actGotop a, .actGotop a:link {
+            width: 150px;
+            height: 195px;
+            display: inline-block;
+            background: url(img/gotop.png) no-repeat;
+            outline: none;
+        }
+
+        .actGotop a:hover {
+            width: 150px;
+            height: 195px;
+            background: url(img/gotop.gif) no-repeat;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 返回顶部小火箭 -->
+<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+
+
+<!--文字可滚动的盒子-->
+<div id="sId">
+    老实交代发牢骚的家乐福加的史莱克附近的顺口溜附近收到了开方剂德生科技辽阔的解放路控件等速六块腹肌时点击付款圣诞节离开的时间放开了加的史莱克发净到手困了就发离开的时间离开的时间辅料可见识到了开方剂的设计费颗粒但是就风口浪尖的实例开房记录肯定是荆防颗粒加的史莱克发就德生科技发颗粒但是就立刻九分裤来点实际离开的时间可理解房东说了就了快速搭建了肯定是就离开房间看电视了九分裤拉伸就购房款加的史莱克发单身快乐国防科大时间发苦辣都是荆防颗粒假的顺口溜附近卡的设计费是荆防颗粒加德里克就房东说了
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         参考：
+         BOM_webApi/11_scroll系列_标签内容滚动.html
+         BOM_webApi/12_scroll系列_浏览器页面滚动.html
+
+         注意，jquery中好像没有scrollWidth和scrollHeight
+         scrollTop()和scrollLeft()也可以传值，表示滚动到哪里
+         */
+
+
+        /**
+         监听浏览器窗口滚动的距离，动态显示隐藏小火箭
+         */
+        $(window).scroll(function () {
+            if($(window).scrollTop() >= 1000 ){
+                $(".actGotop").stop().fadeIn(1000);
+            }else {
+                $(".actGotop").stop().fadeOut(1000);
+            }
+        });
+
+
+
+        /**
+         点击小火箭回到顶部的两种方式
+         */
+        $(".actGotop").click(function () {
+            //方式一：以动画的方式回到顶部
+            // $("html,body").stop().animate({scrollTop:0},3000);
+            //方式二：直接回到顶部
+            $(window).scrollTop(0);
+        });
+
+
+
+
+
+        /**
+         文字内容可滚动的盒子，滚动监听
+         */
+        $("#sId").scroll(function () {
+            console.log($("#sId").scrollTop());
+            console.log($("#sId").scrollLeft());
+        });
+    });
+</script>
+
+</body>
+</html>

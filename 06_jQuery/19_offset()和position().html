@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 1px;
+            padding: 2px;
+            border: 3px solid orange;
+        }
+
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: relative;
+            margin: 100px;
+            border: 4px solid black;
+            padding: 5px;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*margin: 20px;*/
+            border: 6px solid green;
+            padding: 7px;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="father">
+    <div class="son"></div>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /**
+         这部分对比js的offset系列：BOM_webApi/09_offset系列.html
+         但是与js的不太一样
+
+         这部分，有些疑问，没有深入研究，以后用到要注意
+         */
+
+
+
+
+
+        /**
+         offset():返回一个对象，有left和top属性
+         不管该元素是什么定位类型，获取元素相对于浏览器窗口(window、document、body)的距离
+         相当于当前元素border外侧到浏览器窗口border内侧之间的距离
+         */
+        console.log($(".son").offset());
+
+
+        /**
+         position():返回一个对象，有left和top属性
+         获得元素相对有定位的祖辈的偏移距离，如果没有有定位的祖辈，则和offset()一样
+         */
+        //获取元素相对于有定位的父元素的位置
+        console.log($(".son").position());
+
+
+    });
+</script>
+
+</body>
+</html>

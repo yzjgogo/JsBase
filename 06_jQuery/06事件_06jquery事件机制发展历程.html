@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<!--点击按钮，在div里面创建一个新的p元素-->
+<input type="button" value="添加p的按钮" id="btn">
+<input type="button" value="触发-添加p的按钮" id="trigger">
+
+<div id="box">
+    <div>
+        <span>呵呵</span>
+        <p>11111</p>
+        <p>22222</p>
+        <p>33333</p>
+        <p>44444</p>
+    </div>
+</div>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //$("div").children("p").click(function(){})
+
+    /**
+     jQuery事件机制发展历程：
+     简单事件绑定解绑 --> bind事件绑定解绑 --> delegate事件绑定解绑 --> on事件绑定解绑(推荐)
+     其中最后一个on事件绑定是我们必须要掌握的。
+
+     触发绑定的事件：
+     $(selector).click();
+     $(selector).trigger("click")//建议这种
+
+     注意：jquery中重复绑定相同的事件，事件不覆盖，两个事件处理函数都执行
+     */
+
+    $(function () {
+        /**
+         01：
+         简单事件绑定：
+         缺点：不能同时注册多个事件，一次只能注册一个事件
+         */
+        // $("#box").click(function () {
+        //     console.log("我是简单事件绑定-单击事件1");
+        // });
+        // $("#box").click(function () {
+        //     console.log("我是简单事件绑定-单击事件2");
+        // });
+        // $("#box").mouseenter(function () {
+        //     console.log("我是简单事件绑定-鼠标进入事件");
+        // });
+
+        /**
+         02：
+         bind事件绑定:
+         缺点，不支持动态时间绑定，例如绑定了一些p，后来动态新增了另一些p，则新增的p没有事件
+
+         解绑所有事件：unbind();
+         解绑指定的事件：unbind("click");
+         */
+        //重复事件也不覆盖，例如两个click事件，单击时都执行；
+        // $("p").bind("click",function () {
+        //     console.log("bind事件绑定-click1");
+        // });
+        // $("p").bind("click",function () {
+        //     console.log("bind事件绑定-click2");
+        // });
+
+        //bind注册多个事件，但共用一个事件处理函数
+        // $("p").bind("click mouseenter",function () {
+        //     console.log("bind事件-click和mouseenter");
+        // });
+
+        //bind注册多个事件，分别有自己的事件处理函数
+        // $("p").bind({
+        //     click:function () {
+        //         console.log("bind事件-click");
+        //     },
+        //     mouseenter:function () {
+        //         console.log("bind事件-mouseenter");
+        //     }
+        // });
+
+
+        /**
+         03:
+         delegate注册委托事件
+         delegate("选择器","事件类型",事件处理函数)
+         委托父标签，给他里面的后代(不一定是子代)标签注册事件，父标签是一个代理，最终事件是绑定到子标签身上；
+         因此，事件处理函数中的this是具体的某个后代标签，而不是该父标签。
+
+         解绑所有的代理事件：undelegate()；
+         解绑指定类型的代理事件：undelegate("click")
+         */
+        //注册一个事件
+        // $("#box").delegate("p", "click", function () {
+        //     console.log("delegate-单击");
+        // });
+
+        //注册多个事件，但是共用事件处理函数
+        // $("#box").delegate("p", "click mouseenter", function () {
+        //     console.log("delegate-单击");
+        // });
+
+        //注册多个事件，且分别有自己的事件处理函数
+        // $("#box").delegate("p", {
+        //     click:function () {
+        //         console.log("delegate-click");
+        //     },
+        //     mouseenter:function () {
+        //         console.log("delegate-mouseenter");
+        //     }
+        // });
+
+
+        /**
+         04：
+         on注册事件(重点)
+         jQuery1.7之后，jQuery用on统一了所有事件的处理方法。
+         最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用。
+
+         on(events,selector,data,handler);
+         第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）；
+         第二个参数：selector, 执行事件的后代元素（可选），如果没有后代元素，那么事件将有自己执行；
+                    如果有该参数就是代理，如果没有就是自己绑定事件；
+         第三个参数：data，传递给处理函数的数据，事件触发的时候通过event.data来使用（不常使用）；
+                    存在于事件处理函数中的，事件处理参数对象中，e.data取用，参考js的事件处理参数对象
+                    参考：06_jQuery/06事件_07事件处理参数对象_事件冒泡_阻止事件默认行为.html
+         第四个参数：handler，事件处理函数；
+
+
+         解绑所有事件：off();
+         解绑指定事件：off("click");
+         */
+        //注册单个事件，单个事件处理函数
+        // $("#box").on("click", function () {
+        //     console.log("on-click");
+        // });
+
+        //注册多个事件，共用一个事件处理函数
+        // $("#box").on("click mouseenter", function () {
+        //     console.log("on-click-mouseenter");
+        // });
+
+        //注册多个事件，分别有自己的事件处理函数
+        // $("#box").on({
+        //     click:function () {
+        //         console.log("on-click");
+        //     },
+        //     mouseenter:function () {
+        //         console.log("on-mouseenter");
+        //     }
+        // });
+
+        //代理,绑定单个事件
+        // $("#box").on("click","p",function () {
+        //     console.log("on-p-click");
+        // });
+
+        //代理,绑定多个事件，共用事件处理函数
+        // $("#box").on("click mouseenter","p",function () {
+        //     console.log("on-p-click-mouseenter");
+        // });
+
+        //代理，绑定多个事件，分别有自己的事件处理函数
+        // $("#box").on({
+        //     click:function () {
+        //         console.log("on-click");
+        //     },
+        //     mouseenter:function () {
+        //         console.log("on-mouseenter");
+        //     }
+        // },"p");
+
+
+        /**
+         事件触发：
+         $(selector).click();
+         $(selector).trigger("click")//建议这种
+         */
+        $("#trigger").on("click",function () {
+            // $("#btn").click();
+            $("#btn").trigger("click");//触发btn的单击事件
+        });
+
+
+
+
+
+
+
+
+        $("#btn").click(function () {
+            $("<p>我是新增加的p元素</p>").appendTo("div");
+        });
+    })
+</script>
+
+</body>
+</html>

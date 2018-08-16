@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 4000px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<img class="lazy" data-original="02.gif" alt="">
+
+<script src="jquery-1.12.4.js" type="text/javascript"></script>
+<script src="jquery.lazyload.js" type="text/javascript"></script>
+<script>
+
+    $(function () {
+        /**
+         懒加载：当页面过长需要滚动，且图片很多时，如果打开网页时立马一次性加载所有图片，肯定会很慢，影响用户体验，
+         所谓懒加载，就是随着页面的滚动，当滚动到该图片位置时再加载该图片；
+
+         jquery.lazyload的用法：
+         第一步：img标签中不通过src属性指定图片路径，因为一旦指定了src，则无论图片在什么位置，一旦打开网页就看是加载图片；
+         第二步：img标签通过data-original指定图片路径，该属性是lazyload的自定义属性，这样因为没有src属性，打开网页时就不会加载图片
+         第三步：一般可给需要懒加载图片的那些img标签一个统一的class属性，例如class="lazy",当然你也可以不必指定class属性，id属性或标签选择器等等都可以，
+         只不过给一个统一的class属性，方便统一控制。
+         第四步：在代码中找到所有使用了懒加载的img标签，执行lazyload()方法。
+
+         结果：实现了懒加载，图片会随着网页的滚动才加载。
+         */
+
+        $("img.lazy").lazyload();
+
+    });
+
+</script>
+</body>
+</html>

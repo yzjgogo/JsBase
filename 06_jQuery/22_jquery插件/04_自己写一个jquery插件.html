@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+<p>1234</p>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery.bgColor.js"></script>
+<script>
+
+    $(function () {
+        /**
+            自定义jquery插件：
+         其实就是在jquery的原型对象中添加新的方法,然后放到一个单独的js文件中，供其他项目引用即可。
+         jQuery.prototype.sayHi = function(){};
+         jQuery.prototype 等价于 $.fn
+         */
+        $("div").bgColor("red").width(400);
+
+    });
+
+</script>
+
+</body>
+</html>

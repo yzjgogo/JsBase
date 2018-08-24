@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://www.so.com" method="post" name="userinfo" enctype="multipart/form-data" id="fId">
+    <!--
+    单选标签radio需要指定value属性，否则提交时，选中的radio默认值时on；
+    多个radio如果没有任何一个被选中，则提交时不会提交任何一个radio；
+    -->
+    <input type="radio" name="sex" value="1" />
+    <input type="radio" name="sex" checked="checked" value="2"/>
+
+    <!--
+    与radio一样，多选标签checkbox也需要指定value值，否则选中的checkbox提交时默认值时on
+    同样，如果没有选中，则不会提交
+    总结：多个checkbox要有相同name，且分别有各自的value
+
+    checkbox的name后跟[]：如果选择了多个checkbox，则提交表单时后台只会收到最后一个checkbox的value，
+    因为前面的一个个被后一个覆盖了，最后只剩下最后一个，解决办法就是在name后面跟[]，以数组形式提交即可；
+    -->
+    <input type="checkbox" name="hobby[]" value="1" checked="checked" />
+    <input type="checkbox" name="hobby[]" value="2" checked="checked" />
+    <input type="checkbox" name="hobby[]" value="3" />
+
+    <!--
+    下拉标签，给select标签定义name，给多个option标签分别定义value，如果没有定义value,则提交表单时提交的value默认
+    是option标签的文本值。
+    enctype默认是application/x-www-form-urlencoded，就是get方式的参数格式，例如name=zhangsan&age=12&sex=1
+    -->
+    <select name="selectName" id="">
+        <option value="1">籍贯</option>
+        <option value="2" selected="selected">北京</option>
+        <option value="3">哈尔滨</option>
+        <option value="4">青岛</option>
+        <option value="5">大连</option>
+    </select>
+
+    <!--
+    需要上传文件时，必须用post方式，为form表单要设置enctype="multipart/form-data"
+    multipart有分卷的意思，跟压缩文件的分卷压缩意思差不多
+    -->
+    <input type="file" name="fileName" />
+
+    <input type="submit" name="send" value="开始提交" />
+</form>
+<script>
+    /**
+     表单有很多提交方式，最常见的就是get和post
+     get：一般是从服务端拿东西
+     表单数据是通过URL中的 ? 参数传递到服务端的；
+     可以在地址栏中看到提交的内容；
+     数据长度有限制，因为 URL 地址长度有限（2000个字符）；
+     post：一般是给服务端发送东西
+     表单数据是通过请求体传递到服务端的，我们在界面上看不到；
+     可以提交任何类型的数据，包括文件；
+     由于界面上看不见，浏览器也不储存，所以更安全；
+
+     js代码怎么提交表单,自己搜索
+
+     post方式提交，也可以携带get参数，例如在action里的地址后跟?sex = 1
+
+     鲁棒性：robust，健壮性，程序应对变化的能力
+
+     提交表单后，通过浏览器-->F12-->Network-->左侧的name选择对应的请求-->右侧的Headers-->下拉找到Form Data即可看到提交的表单数据(如果表单
+     的enctype是multipart即上传文件则不是Form Data而是Request Payload)
+     -->点击Form Data旁边的viewsource可看提交数据的另一种格式
+
+     php对上传单个文件的大小做了限制，可以修改，也对post提交方式参数(请求行+请求头+请求体)的总大小做了限制，也可以修改
+
+     浏览器发送请求包括：请求行(url,get/post,协议版本。。。)，请求头(key:value...)，请求体(二进制/文本/各种类型)
+     */
+</script>
+</body>
+</html>

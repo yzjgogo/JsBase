@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<!--
+autocomplete="off"/"on"
+开启或关闭输入框的自动完成功能；
+可在form上设置，也可在单个input上设置
+-->
 <form action="https://www.so.com" method="post" name="userinfo" enctype="multipart/form-data" id="fId">
     <!--
     单选标签radio需要指定value属性，否则提交时，选中的radio默认值时on；
@@ -40,9 +45,17 @@
 
     <!--
     需要上传文件时，必须用post方式，为form表单要设置enctype="multipart/form-data"
-    multipart有分卷的意思，跟压缩文件的分卷压缩意思差不多
+    multipart有分卷的意思，跟压缩文件的分卷压缩意思差不多;
+
+    如果要限制选择文件的类型，则可通过accept设置，image/png只能选择png图片，
+    image/jpeg只能选择jpeg图片，image/*可选择所有格式的图片，audio/*可选择所有格式的音频，.lrc.png限定两种格式可选
+
+    如果想选择多个文件，则可以设置multiple属性
     -->
-    <input type="file" name="fileName" />
+    <input type="file" name="fileName" accept="image/png" multiple/>
+
+    <!--如果不想展示某个控件，则可用hidden,这样就实现了不展示控件，但是仍然可提交数据-->
+    <input type="hidden"/>
 
     <input type="submit" name="send" value="开始提交" />
 </form>

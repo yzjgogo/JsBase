@@ -1063,6 +1063,29 @@
             console.log(key + "===========" + jsonD[key]);
         }
 
+        //反引号字符串，就是键盘tab上面的那个点，支持换行，支持表达式
+        var jsonhh = `[{
+		"medicineAmount": 1,
+		"medicineAmountSum": 1,
+		"medicineId": "66430",
+		"medicineName": "白花蛇舌草",
+		"medicinePrice": 9,
+		"medicineSignType": 1,
+		"medicineSpecificationsDescription": "段",
+		"medicineType": 2,
+		"medicineTypeId": 379,
+		"medicineUnit": "g",
+		"sort": 1
+	}]`;
+
+        //内置对象JSON,可将json字符串解析成数组
+        var jsonArrhh = JSON.parse(jsonhh);
+        console.log(jsonArrhh);
+
+        //JSON将数组转换为json格式字符串
+        var jsonstyle = JSON.stringify(jsonArrhh);
+        console.log(jsonstyle);
+
         console.log("Num28结束：Json数据和for-in循环");
     </script>
 

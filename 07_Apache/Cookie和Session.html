@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     http的特点是无状态，客户端和服务端每次交流都是初次见面，Cookie就解决这个问题；
+     就像你(Client)在超市(Server)买东西，结账后超市给你一个小票(Cookie)，超市不可能认识所有在他这买东西的人，但是
+     他认识小票，下次如果你买的产品有质量问题你带着小票来，超市就知道这是他们的东西了。
+
+     这个流程大致是这样：
+     第一趟：客户端访问服务端，不带任何Cookie，初次见面；
+     第二趟：服务端响应客户端时，给客户端一个Cookie，放在响应头的Set-Cookie里；
+     第三趟：客户端再次请求服务端，请求头里(Cookie)就会带着上次服务端给的Cookie,这样服务端就认识了；
+             实际上，客户端再访问服务端的任何页面接口，都会带着这个Cookie，因此在服务端的任何位置都能拿到这个Cookie；
+
+     Cookie存在于响应头和请求头里，但是后台语言可以读写Cookie，
+
+     Expires/Max-Age(F12里Cookie相关tab)：服务器可给Cookie设置过期时间，如果不设置则只在当前会话有效，浏览器一关闭就失效了；
+     也就是说如果没设置过期时间，则Expires/Max-Age里显示Session,即一次会话，所谓一次会话就是从浏览器打开到浏览器关闭，浏览器一关闭这个Cookie就失效；
+     如果设置过期 时间则Expires/Max-Age里就显示具体的过期时间，过期时间格式是js中Date的toGMTString()函数的输出格式
+
+     后台也可以给Cookie设置有效路径Path(F12里Cookie相关的Path的tab页),当Path是/时，只要是在网站根目录下的所有链接地址中都可以访问
+     这个Cookie；当Path是/Users时，只有Users目录下才可以访问这个Cookie；
+
+     Domain(F12里Cookie相关的Domain的tab):设置Cookie的作用域名范围，
+     例如:baidu.com，则所有baidu.com的子域名都可以访问,www.baidu.com和foo.baidu.com都可以访问，baiduu.com访问不到
+
+     httponly(F12里Cookie相关的HTTP的tab页)：js无法操作的Cookie，js访问不到，只有在请求响应的过程中才能使用的Cookie；
+
+     一个Cookie的k-v大概是这样：'name=value; expires=Tue, 10 Oct 2017 16:14:47 GMT; path=/; domain=zce.me'
+
+     浏览器开发者工具操作Cookie
+     F12-->Application-->左侧Storage-->Cookies-->下面的网址(如果有)选中
+     上面有清除所有Cookie和清除选中Cookie按钮
+     */
+</script>
+
+<script>
+    /**
+     js获取Cookie
+     返回一个字符串，例如："k1=v1;k2=v2;k3=v3";
+     */
+    var cookies = document.cookie;
+
+    /**
+     js设置Cookie
+     注意不是赋值操作，不会覆盖原来的k-v,而是在原来的基础上追加k-v;
+     也可以设置过期时间，path等之类的，但是需要自己拼成如下格式：
+     'name=value; expires=Tue, 10 Oct 2017 16:14:47 GMT; path=/; domain=zce.me'
+
+     其中的过期时间是js中Date的toGMTString()方法的输出格式
+     */
+    document.cookie = "k=v";
+
+    /**
+     js可以操作Cookie，因此有第三方库的替代品
+     一种是基于jQuery的
+     https://github.com/carhartl/jquery-cookie
+     一种是没有用jQuery的，直接时js的
+     https://github.com/js-cookie/js-cookie
+     */
+
+    /**
+     到现在有一个Cookie不安全的问题，用户完全可以在浏览器修改Cookie的值
+     例如在浏览器的F12-->Console 中通过document.cookie = "k=v";则修改了原来的k对应的value，
+
+     怎么解决这种问题呢？
+     Session可以解决：所谓Session，只是Cookie不安全的一种解决方案，本质上还是Cookie，
+     在Session中，服务端仍然给客户端一个小票(Cookie)，但是这个小票不是真实的数据，而是真实数据的id，
+     真实的数据在服务端里，这样，客户端带着这个id访问服务端，服务端再根据id找到真实的数据，而这个id
+     是一串随机的数字是很难伪造的。
+     就相当于浏览器不在保存真实的数据，只是保存了一把钥匙。Session区别于Cookie一个很大的地方就是：Session数据存
+     在了服务端而钥匙(Cookie)存在了客户端，而Cookie存在了客户端本地，存在服务端最大的优势就是，不是用户想怎么改
+     就怎么改了。
+     */
+</script>
+</body>
+</html>

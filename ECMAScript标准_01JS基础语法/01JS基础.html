@@ -922,6 +922,9 @@
 
         /*
             1,调用系统的构造函数创建对象
+
+            如果创建对象时不需要传参数，则构造函数的括号可省略
+            例如：var obj = new Object;//没有括号
          */
         var sysDog = new Object();
         sysDog.name = "旺财";
@@ -1175,6 +1178,12 @@
         var outTime = new Date();
         console.log(outTime.toTimeString());//20:16:39 GMT+0800 (中国标准时间)
         console.log(outTime.toLocaleTimeString());//下午8:16:39
+        /*
+            输出格林威治日期时间
+            Cookie的过期时间用的就是这种格式
+         */
+        var glwz = new Date;
+        console.log(glwz.toGMTString());//Wed, 12 Sep 2018 03:39:15 GMT
 
         /*
             输出当前毫秒值：从1970-1-1 00:00开始算

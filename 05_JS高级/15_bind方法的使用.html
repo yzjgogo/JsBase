@@ -42,17 +42,17 @@
     };
     //bind传入null时，函数中的this是window对象
     var ff = f1.bind(null);//不传参
-    ff(10, 20);//复制产生的函数传参
+    ff(10, 20);//30:=====>100 复制产生的函数传参
 
     var fff = f1.bind(null, 30, 40);//直接传参
-    fff();//复制产生的函数无需再传参
+    fff();//70:=====>100 复制产生的函数无需再传参
 
     //bind传入其它obj时，函数中的this就是obj对象
     var ffff = f1.bind(obj);
-    ffff(10, 20);
+    ffff(10, 20);//30:=====>10086
 
     var fffff = f1.bind(obj, 30, 40);
-    fffff();
+    fffff();//70:=====>10086
 
 
 
@@ -82,12 +82,12 @@
     //bind传入stu则eat函数中的this就是stu
     //bind直接传入eat函数的参数，调用reFun时无需再传入参数
     var reFun = per.eat.bind(stu,"面包","可乐");
-    reFun();
+    reFun();//人会吃：面包,可乐,学生
 
     //bind传入null则eat函数中的this就是window对象
     //bind没有传入eat函数的参数，调用reFun2时需要传入参数
     var reFun2 = per.eat.bind(null);
-    reFun2("烧烤","雪碧");
+    reFun2("烧烤","雪碧");//人会吃：烧烤,雪碧,驴
 
 
 

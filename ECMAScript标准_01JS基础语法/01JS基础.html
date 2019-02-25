@@ -165,6 +165,7 @@
         var math2 = 0.2;
         var mathSum = math1 + math2;
         console.log("小数运算不准确：" + mathSum == 0.3)//false，发现0.1+0.2不等于0.3
+        console.log("小数运算真实值：" + mathSum)//0.30000000000000004
 
 
         //parseInt(表达式)：表达式的结果是数字、以数字开头(空格忽略)的字符串、boolean才可以转换为数字，
@@ -216,7 +217,7 @@
         console.log(isNaN1 + "," + isNaN2 + "," + isNaN3 + "," + isNaN4 + "," + isNaN5 + "," + isNaN6 + "," + isNaN7 + "," + isNaN8 + "," + isNaN9);
 
         var strb = "9ab" - true;
-        console.log("试试：" + strb);
+        console.log("试试：" + strb);//NaN
 
 
         console.log("Num10结束：number数字类型");
@@ -655,7 +656,7 @@
             }
 
             fun3();
-        }"条件if为true"
+        }
 
         fun4();
 

@@ -19,12 +19,12 @@
             console.log("阿涅哈斯诶呦");
         };
         function Student(name,age,sex,score) {
-            //借用构造函数:结果各个实例继承的属性值重复的问题
+            //借用构造函数:解决了各个实例继承的属性值重复的问题，因为这里是动态给name,age,sex赋值
             Person.call(this,name,age,sex);
             this.score=score;
         }
         //改变原型指向----继承
-        Student.prototype=new Person();//不传值，值通过Student的构造函数指定，解决所有实例继承的属性值相同的问题
+        Student.prototype=new Person();//不传值，值通过Student的构造函数由各个实例自己指定，解决所有实例继承的属性值相同的问题
         Student.prototype.eat=function () {
             console.log("吃东西");
         };

@@ -496,7 +496,7 @@
 
         //正常传参调用
         funParaCount(1, 2);
-        //实参数多于性参数，只取实参的前形参个数个实参即可
+        //实参数多于形参数，只取实参的前形参个数个实参即可
         funParaCount(1, 2, 3);//实际只传了1,2 第3个参数没用
         //实参数少于形参数，少的默认传undefined
         funParaCount(1);//等价于funParaCount(1,undefined);
@@ -540,6 +540,7 @@
         }
 
         console.log(funName);
+        console.log(typeof funName);//function
 
         /*
             5，伪数组：函数隐含的存储传入的实参的数组，arguments
@@ -549,7 +550,7 @@
         function wei() {
             var length = arguments.length;
             if (length > 0) {
-                console.log("出入了" + length + "个参数");
+                console.log("传入了" + length + "个参数");
                 for (var i = 0; i < length; i++) {
                     console.log("第" + i + "个参数：" + arguments[i]);
                 }

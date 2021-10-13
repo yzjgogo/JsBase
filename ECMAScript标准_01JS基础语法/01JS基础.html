@@ -192,6 +192,7 @@
         var pFloat6 = parseFloat(10.3 + true);//11.3 boolean按语运算
         var pFloat7 = parseFloat("a" + 10.3 + true);//NaN 对比parseInt()同样需要以数字开始
         console.log(pFloat1 + "," + pFloat2 + "," + pFloat3 + "," + pFloat4 + "," + pFloat5 + "," + pFloat6 + "," + pFloat7);
+        // console.log("parseFloat的数据类型："+typeof pFloat4+","+typeof pFloat3)
 
 
         //Number(表达式);转数字 比parseInt和parseFloat严格的多，表达式必须是纯数字(整数或小数)，但是两头可以有空格，中间不可以有空格
@@ -281,7 +282,7 @@
         console.log(Boolean(booObj.booMethod));//true booObj对象中有该方法
         console.log(Boolean(booObj.booName1));//false booObj对象中没有该属性
         console.log(Boolean(booObj.booMethod1));//false booObj对象中没有该方法
-        var dvObj = document.getElementById("dv");//body在下面html从上往下解析，还没获取到dv，所以null
+        var dvObj = document.getElementById("dv");//body在下面,html从上往下解析，代码执行到这里还没获取到dv，所以null
         console.log(Boolean(dvObj));//false
 
         console.log("Num12结束：boolean类型");

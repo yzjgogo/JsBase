@@ -1221,20 +1221,20 @@
         }
 
         var exampleStr = "hello";
-        console.log("length:" + exampleStr.length);//获取字符串的长度
+        console.log("length:" + exampleStr.length);//length:5  获取字符串的长度
 
-        console.log("charAt():" + exampleStr.charAt(1));//获取字符串中指定位置的字符，超出索引返回空的
+        console.log("charAt():" + exampleStr.charAt(1));//charAt():e  获取字符串中指定位置的字符，超出索引返回空的
 
         //A ,可以多参数例如：String.fromCharCode(65,66)返回ASCII码对应的字符,参考：ASCII表.png
-        console.log("fromCharCode():" + String.fromCharCode(65));
+        console.log("fromCharCode():" + String.fromCharCode(65));//fromCharCode():A
 
-        console.log("concat：" + exampleStr.concat("我", "爱", "你"));//hello我爱你 字符串拼接
+        console.log("concat：" + exampleStr.concat("我", "爱", "你"));//concat：hello我爱你  hello我爱你 字符串拼接
 
         //str.indexOf(searchValue[, fromIndex])
         // 某个字符在字符串中的位置，第二个参数可省略，指从哪个索引开始找，找到第一个即结束，找不到返回-1
         var indexstr = "good morning";
-        console.log("indexOf():" + indexstr.indexOf("o"));//1
-        console.log("indexOf():" + indexstr.indexOf("o", 3));//1
+        console.log("indexOf():" + indexstr.indexOf("o"));//indexOf():1
+        console.log("indexOf():" + indexstr.indexOf("o", 3));//indexOf():6
 
         /*
             str.lastIndexOf(searchValue[, fromIndex])
@@ -1246,7 +1246,7 @@
             replace("原来的字符串","新的字符串");用来替换字符串的
          */
         var repStr = "hello";
-        console.log("replace():" + repStr.replace("el", "你好"));
+        console.log("replace():" + repStr.replace("el", "你好"));//replace():h你好lo
 
         /*
             slice(开始的索引,结束的索引);
@@ -1303,7 +1303,7 @@
         */
         var frArr = [11, 22, 33];
         var reFrArr = Array.from(frArr);
-        console.log(Array.isArray(reFrArr) + "," + reFrArr);
+        console.log(Array.isArray(reFrArr) + "," + reFrArr);//true,11,22,33
 
         //等价于 var reFrArr2 = Array.from(frArr,x=>x+1);ES6标准新增的一种函数：Arrow Function（箭头函数）
         var reFrArr2 = Array.from(frArr, function (x) {

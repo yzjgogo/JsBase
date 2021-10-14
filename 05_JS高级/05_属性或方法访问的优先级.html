@@ -19,6 +19,9 @@
         this.sex = sex;//会覆盖原型对象中的sex属性
         this.age = age;
         this.eat = function () {//会覆盖原型对象中的eat方法
+            //如果也想调用原型对象(父类)的方法，则可以像下面两行这样，其实就是java的方法的重写
+            // Person.prototype.eat();
+            // this.__proto__.eat();
             console.log("我是我是构造函数的eat方法");
         };
     }

@@ -14,7 +14,9 @@
         }
 
         //02实例对象
+        console.log("--1--")
         var per = new Person(38, "女");
+        console.log("--2--")
         per.eat();//吃
 
         /*
@@ -28,17 +30,29 @@
 
             需要注意的是__proto__在IE8中是没有的
         */
+        console.log("--3--")
         console.dir(per);
+        console.log("--4--")
         console.dir(Person);
+        console.log("--5--")
 
         /*
             04
             下面4个其实都一样，都是指向构造函数体
         */
         console.log(typeof Person);//function 下面三个都指向我
+        console.log("--6--")
         console.log(typeof per.constructor);//function 省略了__proto__
+        console.log("--7--")
         console.log(typeof per.__proto__.constructor);//function
+        console.log("--8--")
         console.log(typeof Person.prototype.constructor);//function
+        console.log("--9--")
+        //因此p1,p2,p3都是Person的实例对象
+        var p1 = new per.constructor(1,"11");
+        var p2 = new per.__proto__.constructor(2,"22");
+        var p3 = new Person.prototype.constructor(3,"33");
+        console.log("输出："+ (p1 instanceof Person)+","+(p2 instanceof Person)+","+(p3 instanceof Person))//输出：true,true,true
 
         /*
             05
@@ -48,15 +62,20 @@
             其中per.constructor是per.__proto__.constructor缩写形式
         */
         console.log(per.constructor == Person);//true
+        console.log("--10--")
         console.log(per.__proto__.constructor == Person);
+        console.log("--11--")
         console.log(per.__proto__.constructor == Person.prototype.constructor);
+        console.log("--12--")
 
         /*
             06
             下面2个一样
         */
         console.log(typeof Person.prototype);//object per.__proto__指向我
+        console.log("--13--")
         console.log(typeof per.__proto__);//object 指向Person.prototype
+        console.log("--14--")
 
     </script>
 </head>

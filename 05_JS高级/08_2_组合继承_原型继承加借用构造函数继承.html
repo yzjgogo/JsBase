@@ -29,6 +29,7 @@
             console.log("吃东西");
         };
         var stu=new Student("小黑",20,"男","100分");
+        console.log("stu是Person的实例吗？"+(stu instanceof Student))//stu是Person的实例吗？true
         console.log(stu.name,stu.age,stu.sex,stu.score);
         stu.sayHi();
         stu.eat();

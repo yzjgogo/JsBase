@@ -15,7 +15,7 @@
             这样我们自定义的原型对象就和默认的原型对象一样了，而且更方便
          */
         Student.prototype = {
-            //手动添加constructor
+            //手动添加constructor,记住了，任何对象a的原型对象都有constructor，且值就是A(),即类A的构造器
             constructor: Student,
             height: "188",
             weight: "55kg",

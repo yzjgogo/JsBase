@@ -37,6 +37,7 @@
         //学生的原型,指向了一个人的实例对象
         Student.prototype=new Person(10);
         var stu=new Student("二年级");
+        console.log("stu是Person的实例吗？"+(stu instanceof Person))//stu是Person的实例吗？true
         stu.eat();
         //Student实例stu --> banji;__proto__(Student的原型对象也就是Person实例)
         //Student实例指向的原型对象__proto__(Person实例) --> age;__proto__(Person原型对象)

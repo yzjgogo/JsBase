@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    1，es5不支持模块化，因为var定义的变量在函数外是全局变量，任意位置，任意js文件都可以访问，只有在函数内变量才有作用域；
+    2，常见的模块化规范，CommonJS，AMD，CMD,ES6(自带模块化支持)
+
+    第一种：自己写ES5的模块化，只要通过匿名函数闭包的方式，然后返回一个对象实现 ,看考：1-es5模块化举例
+
+    第二种：CommonJS实现导出导入
+
+    导出：
+yzj CommonJS导出，得有底层支撑，比如导入CommonJS包,后面的webpack就支持CommonJS，因为用了node,底层支持CommonJS,
+module.exports = {
+  flag: flag,
+  sum: sum
+}
+
+导入：
+yzj CommonJS的导入，关键字require
+var aaa = require('./aaa.js')
+ var flag = aaa.flag;
+ var sum = aaa.sum;
+解构声明
+ var {flag, sum} = require('./aaa.js')
+-->
+</body>
+</html>

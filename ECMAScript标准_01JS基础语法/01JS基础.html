@@ -1372,6 +1372,7 @@
         const bbArr = [1,2,3]
         //当数组的push方法，push一个数组时，带不带‘...’本质上完全不同，带‘...’说明是将bbArr的各个元素依次push进去，这里相当于push了3个元素'1','2','3'进去
         //不带‘...’相当于将bbArr整个数组push进入，即只push了一个元素，因此结果aaArr的长度不同
+        //因为push是可变参数的
         aaArr.push(...bbArr)//数组的push:4 | 100,1,2,3
         // aaArr.push(bbArr)//数组的push:2 | 100,1,2,3
         console.log("数组的push:"+aaArr.length+" | "+aaArr);

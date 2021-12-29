@@ -303,11 +303,30 @@
     }
 
 
+
+
+
     /**
      RegExp.$n  ?: ?= ?! 括号 临时缓冲区的存储与读取
      https://www.cnblogs.com/djh-create/p/5964986.html
      */
 
+    /**
+     正则表达式括号的作用
+     https://blog.csdn.net/qq_40241957/article/details/97750036
+     * */
+    var regexa = /(\d{4})-(\d{2})-(\d{2})/;
+    // var regexa = /(\d{4})-(\d{2})-(\d{2})/g;  //["2017-06-12"] 用了g结果就不同了
+    // var regexa = /\d{4}-\d{2}-\d{2}/; ["2017-06-12"]
+    var stringa = "2017-06-12";
+    console.log( stringa.match(regexa) ); // ["2017-06-12", "2017", "06", "12"]
+
+    console.log("++++++++++++++++20211229++++++++++++++++")
+
+    var mmData = "今天a天a气a不错";
+    console.log(mmData.replace("a","b"))//今天b天a气a不错
+    console.log(mmData.replace(/a/,"b"))//今天b天a气a不错
+    console.log(mmData.replace(/a/g,"b"))//今天b天b气b不错
 </script>
 </body>
 </html>

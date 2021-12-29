@@ -1247,6 +1247,10 @@
          */
         var repStr = "hello";
         console.log("replace():" + repStr.replace("el", "你好"));//replace():h你好lo
+        var mmData = "今天a天a气a不错";
+        console.log(mmData.replace("a","b"))//今天b天a气a不错,替换第一次出现的a
+        console.log(mmData.replace(/a/,"b"))//今天b天a气a不错,替换第一次出现的a
+        console.log(mmData.replace(/a/g,"b"))//今天b天b气b不错,替换出现的所有a
 
         /*
             slice(开始的索引,结束的索引);

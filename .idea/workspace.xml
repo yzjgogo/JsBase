@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acdc437c-4564-4daa-b131-bede0d5970fb" name="Default" comment="修改图片大小">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/19_1浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/19_float_浮动.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/1_0rootHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/1_0rootHtml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/20_1浮动的影响举例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/20_float_浮动的影响举例.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/21_1额外标签法.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/21_float_额外标签法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/22_1overflow清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/22_float_overflow清除浮动.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/23_1after伪元素清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/23_float_after伪元素清除浮动.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/24_1双伪元素清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/24_float_双伪元素清除浮动.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/25定位总览.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/25_position_定位总览.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/26相对定位relative.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/26_position_相对定位relative.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/27绝对定位absolute祖辈无.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/27_position_绝对定位absolute祖辈无.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/28绝对定位absolute祖辈无2.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/28_position_绝对定位absolute祖辈无2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/29绝对定位absolute祖辈有.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/29_position_绝对定位absolute祖辈有.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/30子绝父相.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/30_position_子绝父相.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/31定位的盒子实现居中.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/31_position_定位的盒子实现居中.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/32固定定位.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/32_position_固定定位.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/33固定定位案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/33_position_固定定位案例.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/34定位模式转换.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/34_position_定位模式转换.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/35z-index叠放次序.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/35_position_z-index叠放次序.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HtmlCssBase/36定位和层级案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/36_position_定位和层级案例.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +115,7 @@
       <workItem from="1645429255441" duration="2782000" />
       <workItem from="1645502710023" duration="1893000" />
       <workItem from="1645688450323" duration="11649000" />
-      <workItem from="1645753815290" duration="6374000" />
+      <workItem from="1645753815290" duration="7184000" />
     </task>
     <task id="LOCAL-00001" summary="测试一下提交">
       <created>1558949031572</created>
@@ -445,7 +425,28 @@
       <option name="project" value="LOCAL" />
       <updated>1645782683404</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="修改图片大小">
+      <created>1645782901088</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1645782901088</updated>
+    </task>
+    <task id="LOCAL-00046" summary="修改图片大小">
+      <created>1645782990892</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1645782990892</updated>
+    </task>
+    <task id="LOCAL-00047" summary="修改图片大小">
+      <created>1645783103708</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1645783103708</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,10 +468,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改图片大小" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1645782682460">
+    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1645783099622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="86" key="CommitChangelistDialog2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782682460" />
+    <state x="558" y="86" key="CommitChangelistDialog2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645783099622" />
     <state x="184" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1645782538638">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -489,10 +490,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-9" y="102" width="998" height="708" key="SettingsEditor/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1640746840681" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1645782684788">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1645783105012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782684788" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645783105012" />
     <state x="-1650" y="211" width="1142" height="948" key="find.popup" timestamp="1645709360694">
       <screen x="-1920" y="196" width="1920" height="1040" />
     </state>

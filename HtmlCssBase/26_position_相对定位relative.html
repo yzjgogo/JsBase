@@ -10,11 +10,14 @@
 		background-color: pink;
 		
 	}
-	/*相对自己原来的位置，顶部偏移100px,左侧编译100px,此时top是浮动起来的，比float还高一层，top仍然持有原位置，其它元素不能占用该原位置*/
+	/*相对自己原来的位置，顶部偏移100px,左侧编译100px,此时top是浮动起来的，比float还高一层，top仍然持有原位置，其它元素不能占用该原位置
+	关于top,right,bottom,left数值的正负的意义：
+	正值：代表向box的里面的方向移动
+	负值：代表向box的外面的方向移动
+	*/
 	.top {
 		position: relative;
-		top: 100px;
-		left: 100px;
+		bottom: 50px;
 	}
 	.bottom {
 		background-color: purple;

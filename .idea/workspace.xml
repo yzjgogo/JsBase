@@ -1,119 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acdc437c-4564-4daa-b131-bede0d5970fb" name="Default" comment="" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="acdc437c-4564-4daa-b131-bede0d5970fb" name="Default" comment="修改图片大小">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/19_1浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/19_float_浮动.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/1_0rootHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/1_0rootHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/20_1浮动的影响举例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/20_float_浮动的影响举例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/21_1额外标签法.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/21_float_额外标签法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/22_1overflow清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/22_float_overflow清除浮动.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/23_1after伪元素清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/23_float_after伪元素清除浮动.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/24_1双伪元素清除浮动.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/24_float_双伪元素清除浮动.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/25定位总览.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/25_position_定位总览.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/26相对定位relative.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/26_position_相对定位relative.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/27绝对定位absolute祖辈无.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/27_position_绝对定位absolute祖辈无.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/28绝对定位absolute祖辈无2.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/28_position_绝对定位absolute祖辈无2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/29绝对定位absolute祖辈有.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/29_position_绝对定位absolute祖辈有.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/30子绝父相.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/30_position_子绝父相.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/31定位的盒子实现居中.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/31_position_定位的盒子实现居中.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/32固定定位.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/32_position_固定定位.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/33固定定位案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/33_position_固定定位案例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/34定位模式转换.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/34_position_定位模式转换.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/35z-index叠放次序.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/35_position_z-index叠放次序.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlCssBase/36定位和层级案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlCssBase/36_position_定位和层级案例.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="01JS基础.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01JS基础.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-435">
-              <caret line="929" column="18" lean-forward="true" selection-start-line="929" selection-start-column="18" selection-end-line="929" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>隐</find>
-      <find>var|\.log\(\&quot;未定义的toString\:\&quot;\+tostr1\.toString\(\)\)\;报错\，未定义\n        \/\/ console\.log\(\&quot;为null的toString\:\&quot;\+tostr2\.toString\(\)\)\;报错\，空对象\n        console\.log\(\&quot;未定义的String\(\)</find>
-      <find>转</find>
-      <find>Num1</find>
-      <find>um23</find>
-      <find>typeof</find>
-      <find>allVar3</find>
-      <find>allVar4</find>
-    </findStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/01JS基础.js" />
-        <option value="$PROJECT_DIR$/01JS基础.html" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-196" />
-    <option name="width" value="657" />
-    <option name="height" value="688" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Js基础" type="cbb8eebc:String" user="Js基础" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Js基础" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Js基础" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1zLIXgmXdhln0GAE2bcrzS87Mij" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../web/school-cloud/teacher" />
+    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\soft\JsBase\05_JS高级\前端模块化\3-ES6模块化举例" />
+      <recent name="D:\soft\JsBase\05_JS高级\前端模块化" />
+      <recent name="D:\soft\JsBase\05_JS高级\前端模块化\2-CommonJS模块化举例" />
+      <recent name="D:\soft\JsBase\05_JS高级\前端模块化\es5模块化举例" />
+      <recent name="D:\soft\JsBase\HtmlCssBase" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -136,193 +82,426 @@
       <workItem from="1529979397097" duration="3018000" />
       <workItem from="1530063845978" duration="87000" />
       <workItem from="1530064150517" duration="21000" />
+      <workItem from="1558948959022" duration="115000" />
+      <workItem from="1559020447822" duration="65000" />
+      <workItem from="1559020577034" duration="1215000" />
+      <workItem from="1633914702445" duration="1634000" />
+      <workItem from="1633916513658" duration="602000" />
+      <workItem from="1633920985737" duration="176000" />
+      <workItem from="1633921171308" duration="94000" />
+      <workItem from="1633921372992" duration="306000" />
+      <workItem from="1633921689593" duration="1604000" />
+      <workItem from="1633932174322" duration="8003000" />
+      <workItem from="1633941548391" duration="5741000" />
+      <workItem from="1634002335206" duration="6902000" />
+      <workItem from="1634017072810" duration="12735000" />
+      <workItem from="1634087075813" duration="25949000" />
+      <workItem from="1634174077171" duration="23195000" />
+      <workItem from="1634259042948" duration="15962000" />
+      <workItem from="1634520553567" duration="1277000" />
+      <workItem from="1634623435643" duration="2574000" />
+      <workItem from="1634804566100" duration="749000" />
+      <workItem from="1635156583764" duration="623000" />
+      <workItem from="1635321332263" duration="650000" />
+      <workItem from="1635387356284" duration="1383000" />
+      <workItem from="1635472397666" duration="5870000" />
+      <workItem from="1636525105723" duration="7836000" />
+      <workItem from="1636595282654" duration="1742000" />
+      <workItem from="1636683293465" duration="6742000" />
+      <workItem from="1636939958181" duration="4838000" />
+      <workItem from="1637205591986" duration="9405000" />
+      <workItem from="1637286068913" duration="11769000" />
+      <workItem from="1637543431760" duration="5650000" />
+      <workItem from="1637563146849" duration="1099000" />
+      <workItem from="1637632939089" duration="576000" />
+      <workItem from="1637659097915" duration="602000" />
+      <workItem from="1638167625079" duration="494000" />
+      <workItem from="1640312532550" duration="7098000" />
+      <workItem from="1640567969049" duration="2697000" />
+      <workItem from="1640655637798" duration="5348000" />
+      <workItem from="1640743463470" duration="13614000" />
+      <workItem from="1641276832809" duration="1180000" />
+      <workItem from="1641436057196" duration="1800000" />
+      <workItem from="1641452932487" duration="673000" />
+      <workItem from="1641782323616" duration="6707000" />
+      <workItem from="1641862982181" duration="1942000" />
+      <workItem from="1642054258946" duration="606000" />
+      <workItem from="1644376908807" duration="1168000" />
+      <workItem from="1644911487084" duration="1701000" />
+      <workItem from="1644976314117" duration="3138000" />
+      <workItem from="1645080324828" duration="6135000" />
+      <workItem from="1645171270768" duration="3734000" />
+      <workItem from="1645406197590" duration="5603000" />
+      <workItem from="1645429255441" duration="2782000" />
+      <workItem from="1645502710023" duration="1893000" />
+      <workItem from="1645688450323" duration="11649000" />
+      <workItem from="1645753815290" duration="6374000" />
     </task>
+    <task id="LOCAL-00001" summary="测试一下提交">
+      <created>1558949031572</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1558949031572</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改图片大小">
+      <created>1559021171303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559021171303</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改图片大小">
+      <created>1633933029430</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633933029430</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改图片大小">
+      <created>1633934228645</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633934228645</updated>
+    </task>
+    <task id="LOCAL-00005" summary="修改图片大小">
+      <created>1633935680692</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1633935680692</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改图片大小">
+      <created>1633941398740</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633941398740</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改图片大小">
+      <created>1633944305826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633944305827</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改图片大小">
+      <created>1633945282177</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633945282177</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改图片大小">
+      <created>1633946495623</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1633946495623</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改图片大小">
+      <created>1634004143641</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634004143641</updated>
+    </task>
+    <task id="LOCAL-00011" summary="修改图片大小">
+      <created>1634005975567</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634005975567</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改图片大小">
+      <created>1634006581193</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634006581193</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修改图片大小">
+      <created>1634017043989</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634017043989</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修改图片大小">
+      <created>1634018050049</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634018050049</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改图片大小">
+      <created>1634018650526</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634018650526</updated>
+    </task>
+    <task id="LOCAL-00016" summary="修改图片大小">
+      <created>1634018678157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634018678157</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修改图片大小">
+      <created>1634019749740</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634019749740</updated>
+    </task>
+    <task id="LOCAL-00018" summary="修改图片大小">
+      <created>1634020191385</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1634020191385</updated>
+    </task>
+    <task id="LOCAL-00019" summary="修改图片大小">
+      <created>1634020522979</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634020522979</updated>
+    </task>
+    <task id="LOCAL-00020" summary="修改图片大小">
+      <created>1634020872452</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634020872452</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修改图片大小">
+      <created>1634025123471</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1634025123471</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修改图片大小">
+      <created>1634025807902</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634025807902</updated>
+    </task>
+    <task id="LOCAL-00023" summary="修改图片大小">
+      <created>1634093494667</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634093494667</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改图片大小">
+      <created>1634094896121</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1634094896121</updated>
+    </task>
+    <task id="LOCAL-00025" summary="修改图片大小">
+      <created>1634095425606</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634095425606</updated>
+    </task>
+    <task id="LOCAL-00026" summary="修改图片大小">
+      <created>1634096968307</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634096968307</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改图片大小">
+      <created>1634106426275</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634106426275</updated>
+    </task>
+    <task id="LOCAL-00028" summary="修改图片大小">
+      <created>1634115755016</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634115755016</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修改图片大小">
+      <created>1634177376904</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1634177376904</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修改图片大小">
+      <created>1634178033736</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1634178033736</updated>
+    </task>
+    <task id="LOCAL-00031" summary="修改图片大小">
+      <created>1634178823860</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634178823860</updated>
+    </task>
+    <task id="LOCAL-00032" summary="修改图片大小">
+      <created>1634178888455</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1634178888455</updated>
+    </task>
+    <task id="LOCAL-00033" summary="修改图片大小">
+      <created>1634181537230</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1634181537230</updated>
+    </task>
+    <task id="LOCAL-00034" summary="修改图片大小">
+      <created>1635503320340</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635503320340</updated>
+    </task>
+    <task id="LOCAL-00035" summary="修改图片大小">
+      <created>1635503483054</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1635503483054</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修改图片大小">
+      <created>1636527811785</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1636527811785</updated>
+    </task>
+    <task id="LOCAL-00037" summary="修改图片大小">
+      <created>1636531886724</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636531886724</updated>
+    </task>
+    <task id="LOCAL-00038" summary="修改图片大小">
+      <created>1636540602983</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1636540602983</updated>
+    </task>
+    <task id="LOCAL-00039" summary="修改图片大小">
+      <created>1640746212606</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1640746212606</updated>
+    </task>
+    <task id="LOCAL-00040" summary="修改图片大小">
+      <created>1640763101579</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1640763101579</updated>
+    </task>
+    <task id="LOCAL-00041" summary="修改图片大小">
+      <created>1645753842160</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1645753842160</updated>
+    </task>
+    <task id="LOCAL-00042" summary="修改图片大小">
+      <created>1645782352077</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1645782352077</updated>
+    </task>
+    <task id="LOCAL-00043" summary="修改图片大小">
+      <created>1645782543754</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1645782543754</updated>
+    </task>
+    <task id="LOCAL-00044" summary="修改图片大小">
+      <created>1645782683404</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1645782683404</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54948000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.13323572" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" sideWeight="0.5007949" side_tool="true" weight="0.1317716" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="测试一下提交" />
+    <MESSAGE value="修改图片大小" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改图片大小" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23275">
-          <caret line="931" lean-forward="true" selection-start-line="931" selection-end-line="931" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24950">
-          <caret line="998" lean-forward="true" selection-start-line="998" selection-end-line="998" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24175">
-          <caret line="967" column="13" lean-forward="true" selection-start-line="967" selection-start-column="13" selection-end-line="967" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19075">
-          <caret line="763" column="38" lean-forward="true" selection-start-line="763" selection-start-column="38" selection-end-line="763" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14000">
-          <caret line="560" column="49" selection-start-line="560" selection-start-column="49" selection-end-line="560" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7175">
-          <caret line="287" column="25" lean-forward="true" selection-start-line="287" selection-start-column="25" selection-end-line="287" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6475">
-          <caret line="259" lean-forward="true" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5200">
-          <caret line="208" column="41" lean-forward="true" selection-start-line="208" selection-start-column="41" selection-end-line="208" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2650">
-          <caret line="106" column="60" lean-forward="true" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/Js基础.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="3022" column="27" selection-start-line="3022" selection-start-column="27" selection-end-line="3022" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01JS基础.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="929" column="18" lean-forward="true" selection-start-line="929" selection-start-column="18" selection-end-line="929" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1645782682460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="86" key="CommitChangelistDialog2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782682460" />
+    <state x="184" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1645782538638">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1736" y="282" width="1536" height="860" key="DiffContextDialog/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645690468145" />
+    <state x="184" y="86" width="1536" height="860" key="DiffContextDialog/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782538638" />
+    <state x="-1180" y="471" key="FileChooserDialogImpl" timestamp="1645774040240">
+      <screen x="-1920" y="196" width="1920" height="1040" />
+    </state>
+    <state x="-1180" y="471" key="FileChooserDialogImpl/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645774040240" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645754238998" />
+    <state x="822" y="221" key="RollbackChangesDialog" timestamp="1640743948998">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="822" y="221" key="RollbackChangesDialog/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1640743948998" />
+    <state x="-9" y="102" width="998" height="708" key="SettingsEditor" timestamp="1640746840681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-9" y="102" width="998" height="708" key="SettingsEditor/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1640746840681" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1645782684788">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782684788" />
+    <state x="-1650" y="211" width="1142" height="948" key="find.popup" timestamp="1645709360694">
+      <screen x="-1920" y="196" width="1920" height="1040" />
+    </state>
+    <state x="-1650" y="211" width="1142" height="948" key="find.popup/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645709360694" />
+    <state x="426" y="136" width="1012" height="798" key="find.popup/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645171492091" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1645780966355">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="369" width="672" height="676" key="search.everywhere.popup/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645688795324" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645780966355" />
   </component>
 </project>

@@ -7,10 +7,37 @@
         setTimeout(function () {
             console.log("hello world");
         },3000)
-        console.log("后面一行");
+        console.log("后面一行===");
+
+        var sliceArr = [11,22,33,44,55,66];
+        // var reSliceArr = sliceArr.slice();
+        Array.prototype.slice.call(sliceArr)
+        console.log(Array.prototype.slice.apply(sliceArr));
+
+
+
+        console.log("-------")
+        const aaArr = [100];
+        const bbArr = [1,2,3]
+        // aaArr.push(bbArr)
+        // console.log(aaArr)
+        // console.log(bbArr)
+
+        Array.prototype.push.apply(aaArr, bbArr)
+        console.log(aaArr)
+        console.log(bbArr)
+
+        console.log("^^^^^^^^^^^^^^^^^")
+        console.log(0%10)
+        console.log(0/10)
+        console.log(1%10)
+        console.log(1/10)
+        console.log(Math.floor(1/10))
     </script>
 </head>
 <body>
-
+<div style="background-color: #a43035;width: 100px;height: 100px;padding: 10px 20px 30px 40px;">
+    时代峰峻里的开始教辅里SDK丽枫酒店看来是角度考虑首付款里的数据反馈逻辑的考虑缩放接口里的数据疯狂老爹及时反馈了角度考虑是教辅开了多久是
+</div>
 </body>
 </html>

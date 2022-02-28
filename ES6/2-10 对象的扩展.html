@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+        1,属性简洁表示法(增强写法) 和 属性名表达式
+     */
+    // let name = 'xiecheng'
+    // let age = 34
+    // let s = 'school'
+    // let obj = {
+    //     name,   //使用前面定义的name变量作为属性
+    //     age,    //使用前面定义的age变量作为属性
+    //     [s]: 'imooc',//属性名表达式，属性名引用某个变量通过'[]'实现，则obj有一个school属性，而不是s属性
+    // }
+    // console.log(obj)
+
+    /**
+        2,对象里的方法不要使用箭头函数
+     * */
+    // let name = 'xiecheng'
+    // let obj = {
+    //     name,
+    //     //function(){} this指向当前obj
+    //     // study:function () {
+    //     //     console.log(this.name)
+    //     // }
+    //
+    //     //箭头函数this指向window,参考2-9 箭头函数.html
+    //     // study:()=>{
+    //     //     console.log(this)   //window
+    //     // }
+    //
+    //     //对象里的方法，推荐这种写法
+    //     study(){
+    //         console.log(this.name + '正在学习')
+    //     }
+    // }
+    // obj.study()
+
+
+    /**
+        3,Object.is,比较两个对象是否相等，类似===
+     * */
+    // console.log(Object.is(2, '2')) //false
+    // console.log(Object.is(NaN, NaN)) // true
+    // console.log(Object.is(+0, -0)) // false
+
+    // let obj1 = {  // new Object()
+    //     name: 'xiecheng',
+    //     age: 34
+    // }
+    //
+    // let obj2 = { // new Object()
+    //     name: 'xiecheng',
+    //     age: 34
+    // }
+    // console.log(obj1 == obj2) // false  不是同一个对象，比较的是内存地址
+    // console.log(Object.is(obj1, obj2)) // false  不是同一个对象，比较的是内存地址
+    // let obj2 = obj1
+    // console.log(Object.is(obj1, obj2)) // true
+
+    /**
+        4,使用扩展运算符赋值对象
+     * */
+    // let x = {
+    //     a: 3,
+    //     b: 4,
+    //     c: {d: 5}
+    // }
+    // let y = {...x}
+    // console.log(y)  //{a: 3, b: 4,c: {d: 5}}
+
+    /**
+        5,使用Object.assign(a, b)，b对象的各个属性，逐个添加到a中，如果a中也有相同的属性，则b的覆盖a的
+     * */
+    // let x = {
+    //     a: 3,
+    //     b: 4
+    // }
+    // let y = {
+    //     c: 5,
+    //     a: 6
+    // }
+    // Object.assign(y, x)
+    // console.log(y)   //{c: 5, a: 3, b: 4}
+
+    /**
+        6,使用'in'判断对象中是否包含某个属性，或者判断数组是否包含某个索引
+        实际上，在javascript中，对象和数组很相似，你可以把二者看成是同一个东西，数组的索引就是对象的属性，数组的索引对应的元素值就是对象的属性对应的属性值
+     * */
+
+    // let x = {
+    //     a: 3,
+    //     b: 4
+    // }
+    // console.log('aa' in x)  //false
+    // console.log('a' in x)   //true
+    // let arr = [1, 2, 3]
+    // console.log(2 in arr)   //true arr有索引2
+    // console.log(3 in arr)   //false arr没有索引3
+
+    /**
+        7，对象的遍历
+     * */
+    let obj = {
+        name: 'xiecheng',
+        age: 34,
+        school: 'imooc'
+    }
+
+    //方式1，'in'遍历对象的属性值
+    // for(let key in obj){
+    //     console.log(key, obj[key])
+    // }
+
+    //方式2，Object.keys(obj)遍历对象的属性值
+    // Object.keys(obj).forEach(key => {
+    //     console.log(key, obj[key])
+    // })
+
+    //方式3，Object.getOwnPropertyNames(obj)遍历对象的属性值
+    // Object.getOwnPropertyNames(obj).forEach(key => {
+    //     console.log(key, obj[key])
+    // })
+
+    //方式4，Reflect.ownKeys(obj)遍历对象的属性值
+    // Reflect.ownKeys(obj).forEach(key => {
+    //     console.log(key, obj[key])
+    // })
+</script>
+</body>
+</html>

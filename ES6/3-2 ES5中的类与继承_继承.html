@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 父类
+    function Animal(name) {
+        this.name = name
+    }
+    Animal.prototype.showName = function () {
+        console.log('名字是:' + this.name)
+    }
+
+    // 子类
+    function Dog(name, color) {
+        Animal.call(this, name) // 只能继承属性，不能集成方法，课件是通过call改变Animal方法里的this指向，让其指向Dog示例，可见构造器Animal()还是一个方法
+        this.color = color
+    }
+    //继承方法
+    Dog.prototype = new Animal()
+    Dog.prototype.constuctor = Dog //这一行需要吗？似乎去掉也可以
+
+    let d1 = new Dog('wangcai', 'white')
+    console.log(d1)
+    d1.showName()
+
+</script>
+</body>
+</html>

@@ -77,7 +77,9 @@
 
     /**
         5,使用Object.assign(a, b)，b对象的各个属性，逐个添加到a中，如果a中也有相同的属性，则b的覆盖a的
+     返回值就是a
      * */
+    // 用法1
     // let x = {
     //     a: 3,
     //     b: 4
@@ -86,8 +88,43 @@
     //     c: 5,
     //     a: 6
     // }
-    // Object.assign(y, x)
+    // let yy = Object.assign(y, x)
     // console.log(y)   //{c: 5, a: 3, b: 4}
+    // console.log(Object.is(y,yy))   //true,返回值就是y
+
+    //用法2，如果目的对象不是对象，则会自动转换为对象
+    // let t = Object.assign(2)
+    // console.log(t);   //Number {2}
+    // let s = Object.assign(2, {
+    //     a: 2
+    // })
+    // console.log(s);   //Number {2, a: 2}
+
+    //用法3,因为Object.assign()对于引用数据类型属于浅拷贝，所以会直接把source.a赋值给target.a,而并不考虑里面是如何嵌套的
+        //结果是属性'g'消失了
+        /*
+    let target = {
+            a: {
+                b: {
+                    c: 1
+                },
+                e: 4,
+                f: 5,
+                g: 6
+            }
+        }
+    let source = {
+        a: {
+            b: {
+                c: 1
+            },
+            e: 2,
+            f: 3
+        }
+    }
+    Object.assign(target, source)
+    console.log(target)
+    */
 
     /**
         6,使用'in'判断对象中是否包含某个属性，或者判断数组是否包含某个索引
@@ -107,11 +144,11 @@
     /**
         7，对象的遍历
      * */
-    let obj = {
-        name: 'xiecheng',
-        age: 34,
-        school: 'imooc'
-    }
+    // let obj = {
+    //     name: 'xiecheng',
+    //     age: 34,
+    //     school: 'imooc'
+    // }
 
     //方式1，'in'遍历对象的属性值
     // for(let key in obj){

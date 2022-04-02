@@ -44,21 +44,42 @@
         let ques2 = undefined
         let audio_url = ""
         let audio_arr = []
-        console.log("判断一下:", Boolean(ques), Boolean(ques2), Boolean(audio_url), Boolean(audio_arr))//false false false true
+        let audio_obj = {}
+        console.log("判断一下:", Boolean(ques), Boolean(ques2), Boolean(audio_url), Boolean(audio_arr), Boolean(audio_obj))//false false false true true
 
+        /**
+         * 对象的定义
+         * */
         let temp ={
             name:"Jack",
             age:18
         }
         console.log(temp);//对的
 
+        /**
+         * 字符串的拼接
+         * */
         let audio_name = "good"
         console.log(audio_name.concat("moon"))//goodmoon 字符串拼接，生成新的字符串
         console.log(audio_name)//good
 
+        /**
+         * 字符串的创建
+         * */
+        console.log(String(5),typeof String(5))//5 string
+
+        /**
+         * 字符串类型的数字乘以数字 就是number类型的数字，一般用于乘以1转换为number类型
+         * */
+        let tabtype = "12306"
+        let strtabtype = tabtype * 1
+        console.log("字符串乘以数字：",strtabtype,typeof strtabtype)
     </script>
 </head>
 <body>
+<div style="background-color: #7CFC00;width: 100px;height: 100px;margin: 10px;float: left"></div>
+<div style="background-color: #40E0D0;width: 100px;height: 100px;float: left"></div>
+
 <div style="background-color: #a43035;width: 100px;height: 100px;padding: 10px 20px 30px 40px;">
     时代峰峻里的开始教辅里SDK丽枫酒店看来是角度考虑首付款里的数据反馈逻辑的考虑缩放接口里的数据疯狂老爹及时反馈了角度考虑是教辅开了多久是
 </div>

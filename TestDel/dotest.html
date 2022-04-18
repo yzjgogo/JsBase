@@ -6,19 +6,18 @@
     <script>
         setTimeout(function () {
             console.log("hello world");
-        },3000)
+        }, 3000)
         console.log("后面一行===");
 
-        var sliceArr = [11,22,33,44,55,66];
+        var sliceArr = [11, 22, 33, 44, 55, 66];
         // var reSliceArr = sliceArr.slice();
         Array.prototype.slice.call(sliceArr)
         console.log(Array.prototype.slice.apply(sliceArr));
 
 
-
         console.log("-------")
         const aaArr = [100];
-        const bbArr = [1,2,3]
+        const bbArr = [1, 2, 3]
         // aaArr.push(bbArr)
         // console.log(aaArr)
         // console.log(bbArr)
@@ -29,16 +28,16 @@
 
         console.log("^^^^^^^^^^^^^^^^^")
         let tod = {}
-        if(tod){
+        if (tod) {
             console.log("真的")
-        }else {
+        } else {
             console.log("假的")
         }
-        console.log(0%10)
-        console.log(0/10)
-        console.log(1%10)
-        console.log(1/10)
-        console.log(Math.floor(1/10))
+        console.log(0 % 10)
+        console.log(0 / 10)
+        console.log(1 % 10)
+        console.log(1 / 10)
+        console.log(Math.floor(1 / 10))
         console.log("--------------")
         let ques = null
         let ques2 = undefined
@@ -51,9 +50,9 @@
         /**
          * 对象的定义
          * */
-        let temp ={
-            name:"Jack",
-            age:18
+        let temp = {
+            name: "Jack",
+            age: 18
         }
         console.log(temp);//对的
 
@@ -67,14 +66,14 @@
         /**
          * 字符串的创建
          * */
-        console.log(String(5),typeof String(5))//5 string
+        console.log(String(5), typeof String(5))//5 string
 
         /**
          * 字符串类型的数字乘以数字 就是number类型的数字，一般用于乘以1转换为number类型
          * */
         let tabtype = "12306"
         let strtabtype = tabtype * 1
-        console.log("字符串乘以数字：",strtabtype,typeof strtabtype)
+        console.log("字符串乘以数字：", strtabtype, typeof strtabtype)
     </script>
 </head>
 <body>
@@ -84,5 +83,31 @@
 <div style="background-color: #a43035;width: 100px;height: 100px;padding: 10px 20px 30px 40px;">
     时代峰峻里的开始教辅里SDK丽枫酒店看来是角度考虑首付款里的数据反馈逻辑的考虑缩放接口里的数据疯狂老爹及时反馈了角度考虑是教辅开了多久是
 </div>
+
+
+<div></div>
+<div id="testDisplay">
+    <span>abc</span>
+    <div id="needdel" style="width: 50px;height: 50px;background-color: #40E0D0">def</div>
+</div>
+<script>
+    var elem = document.getElementById("needdel")
+    elem.parentNode.removeChild(elem)
+</script>
+
+
+<div style="margin-top: 200px">-------------------------</div>
+<div style="position: relative;background-color: #40E0D0;width: 200px;height: 200px;padding: 50px">
+    <div style="position: absolute;left: 10px;top: 10px;width: 50px;height: 50px;background-color: #9370DB"></div>
+</div>
+
+<button style="width: 100px;height: 50px"><span>资源下载</span></button>
+
+<div style="background-color: #7CFC00;width: 10mm;height: 10mm"></div>
+<div style="padding: 10px">----</div>
+<div style="background-color: #7CFC00;width: 54pt;height: 54pt"></div>
+<div style="padding: 10px">----</div>
+<div style="background-color: #9370DB;width: 100px;height: 100px;padding: 10px"></div>
+
 </body>
 </html>

@@ -15,33 +15,42 @@
     var myCanvas = document.querySelector('canvas');
     var ctx = myCanvas.getContext('2d');
 
+    /**
+       beginPath():
+        主要解决ctx设置的轨迹的属性值或调用的方法会被覆盖的问题，即无论设置多少次strokeStyle、lineWidth等属性，调用多少次stroke()，总是以
+        最新的strokeStyle、lineWidth属性和最新的stroke()结果位最终效果，而beginPath()可以解决这个问题，因为 stroke()方法，只针对从离它最
+        近的beginPath()方法到它之间的代码生效，因此我们可以通过beginPath()与stroke()配合实现不同样式的多个轨迹
+     * */
+
     /*画平行线*/
-    ctx.beginPath();/*Kai*/
+    ctx.beginPath();//begin1
     /*蓝色  10px*/
     ctx.moveTo(100,100);
     ctx.lineTo(300,100);
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 10;
     /*描边*/
-    ctx.stroke();
+    ctx.stroke();//stroke1  只对begin1 -> stroke1有效
 
 
     /*红色 20px*/
+    ctx.beginPath();//begin2
     ctx.moveTo(100,200);
     ctx.lineTo(300,200);
     ctx.strokeStyle = 'red';
     ctx.lineWidth = 20;
     /*描边*/
-    ctx.stroke();
+    ctx.stroke();//stroke2  只对begin2 -> stroke2有效
 
 
     /*绿色 30px*/
+    ctx.beginPath();//begin3
     ctx.moveTo(100,300);
     ctx.lineTo(300,300);
     ctx.strokeStyle = 'green';
     ctx.lineWidth = 30;
     /*描边*/
-    ctx.stroke();
+    ctx.stroke();//stroke3  只对begin3 -> stroke3有效
 
 
 </script>

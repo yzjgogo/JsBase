@@ -15,7 +15,10 @@
     var myCanvas = document.querySelector('canvas');
     var ctx = myCanvas.getContext('2d');
 
-    /*画平行线*/
+    /**
+     lineCap：设置线冒，即线两端的样式：(butt默认没帽子)、round圆的(因为带了帽子比butt长一些)、square方的(因为带了帽子比butt长一些)
+     lineJoin：线的拐点的样式，miter(默认有角)、round圆滑的、bevel消掉一个角的感觉
+     * */
     ctx.beginPath();
     ctx.moveTo(100,100);
     ctx.lineTo(200,20);

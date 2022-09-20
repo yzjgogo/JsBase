@@ -244,6 +244,32 @@
         console.log("未定义的String()" + String(tostr1));//undefined
         console.log("为null的String()" + String(tostr2));//null
 
+        //2022.09.20  判断字符串是否为空
+        //https://blog.csdn.net/K346K346/article/details/113182838
+        //1:判断字符串为空：
+        function isEmptyStr(s) {
+            if (s == null || s === '') {
+                return true
+            }
+            return false
+        }
+
+        // 或
+        function isEmptyStr(s) {
+            if (s == undefined || s === '') {
+                return true
+            }
+            return false
+        }
+        //2:判断字符串不为空
+        function isNotEmptyStr(s) {
+            if (typeof s == 'string' && s.length > 0) {
+                return true
+            }
+            return false
+        }
+
+
         console.log("Num11结束：字符串");
     </script>
 

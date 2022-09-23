@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+   			padding:0;         /* 清除默认内边距 */
+  			margin:0;          /* 清除默认外边距 */
+		}
+		#outer {
+			width: 300px;
+			height: 300px;
+			/*overflow: hidden;*/
+			border: 10px solid black; /*重点1:必须设置border，其子元素才能设置相对于它的外边距,也不是必须了，参考：“17_box_嵌套外边距_让margin_top有效的三种方式_border-top_padding-top_overflow.html”*/
+			background-color: purple;
+		}
+
+		#inner {
+			width: 100px;
+			height: 100px;
+			margin: 50px;/*重点2：参考重点1，要实现margin相对父元素的外边距，父元素必须有border,否则就是相对最近的border的外边距，因此可能是爷元素甚至body.*/
+			background-color: pink;
+
+			/*
+			margin后面可以跟或4个或3个或2个或1个参数
+			margin: top  right  bottom  left;例如margin: 20px(top) 30px(right) 40px(bottom) 50px(left);top开始顺时针旋转
+			margin: top  right/left  bottom;例如margin: 20px(top) 30px(right/left) 40px(bottom);
+			margin: top/bottom  right/left;例如margin: 20px(top/bottom) 30px(right/left);
+			margin: top/bottom/right/left;例如margin: 20px(top/bottom/right/left);
+
+			还可以上下左右分别设置margin
+			margin-top;
+			margin-bottom;
+			margin-right;
+			margin-left;
+			*/
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<p id="inner">我是里面的p</p>
+	</div>
+</body>
+</html>

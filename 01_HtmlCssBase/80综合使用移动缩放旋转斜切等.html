@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 100px;
+			height: 200px;
+			background-color: green;
+			transition: all 3s;
+		}
+		div:hover {
+			background-color: yellow;
+			/*transform后面可跟多个2d变形效果*/
+			transform: translate(100px,100px) scale(2,0.5) rotate(270deg) skew(30deg);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		transform后面可跟多个2d变形效果,opacity和transform等新属性会影响元素的z-index,注意这个问题
+	</div>
+</body>
+</html>

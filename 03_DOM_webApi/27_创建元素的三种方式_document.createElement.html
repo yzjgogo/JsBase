@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建p" id="btn"/>
+<div id="dv">
+    <span>kkk</span>
+</div>
+<script src="common.js"></script>
+<script>
+    //第三种方式创建元素
+    my$("btn").onclick = function () {
+        var pObj = document.createElement("p");
+        pObj.innerText = "我是一个p";
+        //把创建后的子元素追加到父级元素中,不会干掉父级元素原来的内容，而是在最后追加
+        my$("dv").appendChild(pObj);
+    };
+</script>
+</body>
+</html>

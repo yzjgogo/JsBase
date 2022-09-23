@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+    /*画平行线 .5参考图片'轨迹默认宽度和默认颜色.jpg'*/
+    //每一次moveTo()都是一个新的轨迹的开始
+    ctx.moveTo(100,100.5);
+    ctx.lineTo(300,100.5);
+
+    //每一次moveTo()都是一个新的轨迹的开始
+    ctx.moveTo(100,200);
+    ctx.lineTo(300,200);
+
+    /*描边：每一条轨迹都被显示出来，并不是最近moveTo()出来的这个轨迹才显示*/
+    ctx.stroke();
+
+
+    /*关于线条的问题,参考图片：轨迹默认宽度和默认颜色.jpg*/
+    /*1.默认的宽度是多少   1px*/
+    /*2.默认的颜色是什么   黑色*/
+    /*产生原因  对齐的点是线的中心位置  会把线分成两个0.5px 显示的是会不饱和增加宽度*/
+    /*解决方案  前后移动0.5px */
+
+</script>
+</body>
+</html>

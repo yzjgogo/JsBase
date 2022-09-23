@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*
+	回忆看这里：
+	
+	overflow:visible; 
+	默认属性，不剪切内容也不添加滚动条。溢出部分直接溢出显示，但是溢出部分的位置不属于当前标签；
+
+	overflow:hidden;
+	溢出部分不显示；
+
+	overflow:scroll;
+	内容没有溢出时，仍然有滚动条区域，但是无需滚动;
+	内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。
+
+	overflow:auto;
+	内容没有溢出时，直接正常显示，也没有滚动条边框;
+	内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。
+
+	常用案例：父子关系嵌套，子标签超出父标签的部分处理方式。
+
+
+	*/
+		.div-visible {
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			overflow: visible;
+			/*
+			overflow: visible;
+			默认属性，不剪切内容也不添加滚动条。溢出部分直接溢出显示，但是溢出部分的位置不属于当前标签
+			*/
+		}
+		.div-hidden {
+			width: 200px;
+			height: 200px;
+			margin-top: 100px;
+			border: 1px solid red;
+			overflow: hidden;
+			/*overflow: hidden;溢出部分不显示。*/
+		}
+		.div-scroll-no {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			margin-top: 100px;
+			border: 1px solid red;
+			overflow: scroll;
+			/*overflow: scroll;内容没有溢出时，仍然有滚动条区域，但是无需滚动*/
+		}
+		.div-scroll-yes {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			margin-top: 100px;
+			border: 1px solid red;
+			overflow: scroll;
+			/*overflow: scroll;内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。*/
+		}
+		.div-auto-no {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			margin-top: 100px;
+			border: 1px solid red;
+			overflow: auto;
+			/*overflow: auto;内容没有溢出时，直接正常显示，也没有滚动条边框*/
+		}
+		.div-auto-yes {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			margin-top: 100px;
+			border: 1px solid red;
+			overflow: auto;
+			/*overflow: auto;内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。*/
+		}
+
+		.father {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			border: 1px solid green;
+			overflow: hidden;
+			/*
+			overflow: visible;
+			overflow: scroll;
+			overflow: auto;
+			其实也很好理解：网页<body>中如果内容过多过长就会出现滚动条
+			*/
+		}
+		.son {
+			width: 200px;
+			height: 200px;
+			margin-top: 20px;
+			margin-left: 20px;
+			background-color: orange;
+			/*margin-left和margin-top的作用就是让子标签超出父标签*/
+		}
+	</style>
+</head>
+<body>
+<h2 style="color: red;">overflow用于处理文字的溢出</h2>
+	<div class="div-visible">
+		<span style="color: blue">overflow: visible;默认属性，不剪切内容也不添加滚动条。溢出部分直接溢出显示，但是溢出部分的位置不属于当前标签</span><br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+
+	<div class="div-hidden">
+		<span style="color: blue">overflow: hidden;溢出部分不显示。</span><br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+
+	<div class="div-scroll-no">
+		<span style="color: blue">overflow: scroll;内容没有溢出时，仍然有滚动条边框，但是无需滚动</span><br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+
+	<div class="div-scroll-yes">
+		<span style="color: blue">overflow: scroll;内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。</span><br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div><br>
+
+	<div class="div-auto-no">
+		<span style="color: blue">overflow: auto;内容没有溢出时，直接正常显示，也没有滚动条边框</span><br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+
+	<div class="div-auto-yes">
+		<span style="color: blue">overflow: auto;内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。</span>
+		<br>
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+<h2 style="color: red;">overflow同样适用于标签父子关系的嵌套处理,例如，隐藏掉子标签超出父标签的区域等等。</h2>
+	<div class="father">
+		<div class="son">
+		</div>
+	</div>
+</body>
+</html>

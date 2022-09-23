@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h2{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h2>块级元素(block-level)</h2>
+	<h3 style="background-color: red;">h1,h2,h3,h4,h5,h6等都是块级元素</h3>
+
+	<p style="background-color: green;"> p也是块级元素</p>
+
+	<div style="background-color: blue;">div是典型的块级元素,默认情况下块级元素的宽就是网页的宽，高就是包裹内容</div>
+
+	<div style="background-color: red;width: 300px;height: 100px;">这里我们给该div设置了宽是300px,高是100px。发现：即使给块级元素设置了宽，一行内也只允许放一个块级元素
+	</div>
+
+	<ul style="background-color: pink;">ul也是块级元素</ul>
+
+	<ol style="background-color: yellow;">ol也是块级元素</ol>
+
+	<li style="background-color: orange;">li也是块级元素</li>
+
+
+	<h2>行内元素(inline-level)</h2>
+	<p>现在我在一个段落p里列出常见的行内元素：
+		<a href="#">a标签是行内元素</a>；
+		<strong>strong标签是行内元素</strong>；
+		<b>b标签是行内元素</b>；
+		<em>em标签是行内元素</em>；
+		<i>i标签是行内元素</i>；
+		<del>del标签是行内元素</del>；
+		<s>s标签是行内元素</s>；
+		<ins>ins标签是行内元素</ins>；
+		<u>u标签是行内元素</u>；
+		<span style="background-color: pink;padding: 2px;margin: 2px;">span标签是行内元素。行内元素总结：其实行内元素就像文字一样，只是把一部分文字包裹起来；行内元素宽高无效，但是可以设置背景、padding、margin等</span>。
+	</p>
+
+	<h2>行内块元素(inline-block)</h2>
+	<img src="img/gdg.jpg" style="width: 300px;height: 200px;">
+	<input type="text" value="input也是行内块元素" style="width: 300px;" />
+	<td>td也是行内块元素，总结：行内块元素与块级元素的区别就是不必独占一行，可以与其它行内块元素或行内元素共占一行</td>
+
+
+	<h2>标签显示模式转换 display</h2>
+	<!-- 块级元素转换为行内元素 -->
+	<div style="display: inline;background-color: pink;">
+	我是块级元素div，我通过display: inline被转换为行内元素。你看我可以和右边的span占同一行。的发鬼地方个地方豆腐干豆腐东风风光师傅的说法少的地方是非得失第三方水电费电饭锅第三方水电费水电是范德萨发生的是非得失第三方水电费水电费第三方第三方水电费费。
+	</div>
+	<span style="background-color: yellow;">我是行内元素span</span>
+
+	<!-- 行内元素转换为块级元素 -->
+	<span style="display: block;background-color: green;">
+	我是行内元素span，我通过display: block转换为块级元素。你看我和下一个span不在同一行。
+	</span>
+	<span>我是个行内元素span</span>
+
+	<!-- 块级元素转换为行内块元素 -->
+	<div style="display: inline-block;background-color: blue;">div被转换为行内块，你看我右边有行内元素span。松果松果第三个第三个素span。腐干豆腐东风风光sgsg鬼地方个地方官好地方手动滚动发送该收到师傅的说法少的地方是非得失第三方水电费电饭锅第三方水电费水电是范德萨发生的是非得失第三方水电费水电费第三方第三方水电费费</div>
+	<span>我是行内元素span</span>
+
+	<!-- 行内元素还可以转换为行内块 ：这里就不举例了-->
+<!--“行内元素”和“行内块元素”的区别：行内元素支持换行，不必独占一行；行内块元素一旦需要换行，则在新的行也要独占一行-->
+
+</body>
+</html>

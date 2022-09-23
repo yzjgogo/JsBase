@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="img/tianshi.gif" alt="" id="im" />
+<script src="common.js"></script>
+<script>
+    /*
+        window.event和e的兼容
+        clientX/clientY和pageX/pageY的兼容，引入了scrollLeft和scrollTop
+     */
+    var evt={
+        //window.event：谷歌和IE支持，火狐不支持
+        //e：谷歌和火狐支持，IE8不支持
+        getEvent:function (evt) {
+            return window.event||evt;
+        },
+        //浏览器窗口横坐标的兼容代码，不是网页的
+        getClientX:function (evt) {
+            return this.getEvent(evt).clientX;
+        },
+        //浏览器窗口纵坐标的兼容代码，不是网页的
+        getClientY:function (evt) {
+            return this.getEvent(evt).clientY;
+        },
+        //页面向左卷曲出去的横坐标
+        getScrollLeft:function () {
+            return window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0;
+        },
+        //页面向上卷曲出去的纵坐标
+        getScrollTop:function () {
+            return window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0;
+        },
+        //相对于页面的横坐标(pageX或者是clientX+scrollLeft) 不是相对于浏览器窗口
+        getPageX:function (evt) {
+            return this.getEvent(evt).pageX? this.getEvent(evt).pageX:this.getClientX(evt)+this.getScrollLeft();
+        },
+        //相对于页面的纵坐标(pageY或者是clientY+scrollTop) 不是相对于浏览器窗口
+        getPageY:function (evt) {
+            return this.getEvent(evt).pageY?this.getEvent(evt).pageY:this.getClientY(evt)+this.getScrollTop();
+        }
+
+
+
+    };
+    //最终的代码
+
+    document.onmousemove=function (e) {
+        my$("im").style.left=evt.getPageX(e)+"px";
+        my$("im").style.top=evt.getPageY(e)+"px";
+    };
+
+
+</script>
+</body>
+</html>

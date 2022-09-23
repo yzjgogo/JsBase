@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--
+以下全部是CSS3属性，PC浏览器有兼容性问题
+https://www.cnblogs.com/xiaohuochai/p/7210540.html
+-->
+
+<!--
+fit-content
+类似Android的warp-content包裹内容，以子元素的宽度作为自己的宽度
+-->
+<div id="img-div" style="width: fit-content;background-color: #40E0D0">
+    <img src="../img/fz1.jpg" style="display: block"/>
+</div>
+<div id="span-div" style="background-color: #9370DB;width: fit-content">
+    <span>fit-content的宽度</span>
+</div>
+任意字符串证明fit-content并没有改变div的display显示模式，仍然是block
+<script>
+    /**
+        F12查看数据，确实div的宽度是其内部子元素的宽度，
+     * */
+    console.log("img-div的位置信息：",document.getElementById("img-div").getBoundingClientRect())
+    console.log("span-div的位置信息：",document.getElementById("span-div").getBoundingClientRect())
+</script>
+
+
+<div>--------------------------------------------------------------------------</div>
+
+
+
+<!--
+fill-available：自动撑满父亲的剩余空间，似乎对行内元素(inline-level)无效，因为我试了span无效果，除非span设置display: inline-block
+inline-block结合-webkit-fill-available可把元素变为block的效果，撑满父亲剩余空间
+-->
+<div style="background-color: pink;display: inline-block;width: -webkit-fill-available">小火柴的蓝色理想</div>
+<img src="../img/fz1.jpg" style="background-color: #40E0D0;width: -webkit-fill-available;height: 100px"/>
+<span style="background-color: #1c94c4;width: -webkit-fill-available;display: inline-block">订个蛋糕</span>
+
+
+<div>--------------------------------------------------------------------------</div>
+
+<!--
+min-content：表示采用内部元素最小宽度值最大的那个元素的宽度作为最终容器的宽度
+就是说，假如div使用了min-content作为其width，且其内部有n个子元素，则每个子元素都有一个最小宽度，无论某个子元素是具体width值，还是什么，
+则div的宽就是这n个子元素中，最小宽度值最大的那个值
+-->
+<!--对于汉字，无论你写了多少个汉字，则其最小宽度值始终是一个汉字的宽度，例如你写了'今天天气不错'虽然有6个汉字，则其最小宽度仍然是一个汉字的宽度
+这一个汉字的宽度默认似乎是16px，你可以不指定font-size,然后F12看看，下面这个div的宽度值是不是16px，如果你指定font-size则最小宽度就是font-size的值，
+也还是一个汉字的宽度-->
+<div style="width: -webkit-min-content;background-color: #7CFC00;font-size: 20px;height: 50px">今天天气不错</div>
+<!--对于英文，最下宽度是其中某个单词长度最长的那个单词的宽度-->
+<div style="width: -webkit-min-content;background-color: #DB192A;font-size: 20px;height: 50px">good morning</div>
+<!--对于图片，最小宽度就是图片呈现的宽度，如果你没有指定具体数值-->
+<div style="width: -webkit-min-content;background-color: #40E0D0">
+    <img src="../img/fz1.jpg"/>
+</div>
+<div>---分割---</div>
+<!--如下，上面那个div最小宽度是100，下面那个div最小宽度是一个汉字的宽度，也就16px吧可能，因为100大于16所以外层的div的宽度是100px-->
+<div style="width: -webkit-min-content">
+    <div style="height:10px;width:100px;background:lightgreen"></div>
+    <div style="background-color: pink;">小火柴的蓝色理想</div>
+</div>
+
+<div>-------------------------------------------------------------------------------------------------------------------------</div>
+
+
+<!--max-content：表示采用内部元素宽度值最大的那个元素的宽度作为最终容器的宽度。如果出现文本，则相当于文本不换行(所有文字的宽度和)
+如果外层div的父空间不够显示，则可能出现滚动条显示
+-->
+<div style="width: -webkit-max-content;border: 1px solid black">
+    <div style="height:10px;width:100px;background:lightgreen"></div>
+    <div style="background-color: pink;">小火柴的蓝色理想小火火柴的蓝色理想小火柴的蓝色柴的蓝色理想小火火柴的蓝色理想小火柴的蓝色柴的蓝色理想小火火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想小火柴的蓝色理想</div>
+</div>
+</body>
+</html>

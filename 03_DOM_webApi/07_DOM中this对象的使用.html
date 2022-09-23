@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<script>
+    //在某个元素的事件中,自己的事件中的this就是当前的这个元素对象
+    var btnObj = document.getElementById("btn");
+    btnObj.onclick = function () {
+        this.value="我是按钮,谁咬我,我就咬谁";
+        this.type="text";
+        this.id="btn2";
+    };
+</script>
+</body>
+</html>

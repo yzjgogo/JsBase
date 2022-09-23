@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border:2px solid pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建一个p" id="btn" />
+<div id="dv">
+    <span>jjj</span>
+</div>
+<script src="common.js"></script>
+<script>
+    //在某个标签里通过innerHTML添加新标签，会干掉该标签中所有的内容，再添加
+    my$("btn").onclick=function () {
+        my$("dv").innerHTML="<p>窗前明月光,疑是地上霜,举头望明月,低头思故乡</p>";
+    };
+</script>
+</body>
+</html>

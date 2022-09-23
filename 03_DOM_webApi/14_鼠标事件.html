@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <style>
+        ul {
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>金士百</li>
+    <li>雪花</li>
+    <li>百威</li>
+    <li>燕京</li>
+    <li>青岛</li>
+    <li>崂山</li>
+    <li>珠江</li>
+    <li>华丹</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    //鼠标进入和鼠标离开两个事件
+    //获取所有的li标签
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+        //为li注册鼠标进入事件
+        list[i].onmouseover = function () {
+            this.style.backgroundColor = "yellow";
+        };
+        //为li注册鼠标离开事件
+        list[i].onmouseout = function () {
+            //恢复到这个标签默认的颜色
+            this.style.backgroundColor = "";
+        };
+    }
+
+</script>
+</body>
+</html>

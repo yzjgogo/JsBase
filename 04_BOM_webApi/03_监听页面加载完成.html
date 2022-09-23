@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+
+        /*
+            参考：02_2Html文档从上往下顺序解析.html
+            这里提供一种解决方案，监听页面加载完成再执行相关操作
+         */
+        //只要页面加载完毕,这个事件就会触发-----页面中所有的内容,标签,属性,文本,包括外部引入js文件
+        window.onload = function () {
+            //window是可以省略的
+            document.getElementById("btn").onclick = function () {
+                alert("您好");
+            };
+        };
+
+
+        //扩展的事件IE8支持，IE11，谷歌，火狐不支持---页面关闭后才触发的事件，可点叉叉验证
+        window.onunload = function () {
+            alert("页面关闭了");
+        };
+
+        //扩展事件IE8支持，IE11，谷歌，火狐不支持---页面关闭之前触发的
+        window.onbeforeunload = function () {
+            alert("页面马上要关闭了");
+        };
+
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<script src="common.js"></script>
+</body>
+</html>

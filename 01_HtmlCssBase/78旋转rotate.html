@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*默认围绕中心点旋转*/
+	.center {
+		width: 200px;
+		height: 100px;
+		background-color: pink;
+		margin: 100px auto;
+		transition: all 0.6s;
+	}
+	.center:hover {
+		transform: rotate(360deg); 
+	}
+	/*通过左顶右下实现围绕四个角旋转*/
+	.direction {
+		width: 200px;
+		height: 100px;
+		background-color: green;
+		margin: 100px auto;
+		transition: all 0.6s;
+		transform-origin: left top;
+	}
+	.direction:hover {
+		transform: rotate(360deg); 
+	}
+	/*通过围绕相对原点的偏移值旋转*/
+	.usepx {
+		width: 200px;
+		height: 100px;
+		background-color: blue;
+		margin: 100px auto;
+		transition: all 0.6s;
+		transform-origin: 50px 50px; /* 左上角是(0,0) */
+	}
+	.usepx:hover {
+		transform: rotate(360deg); 
+	}
+	</style>
+</head>
+<body>
+<h2>默认围绕中心点旋转</h2>
+	<div class="center">123</div>
+
+
+	<h2>通过左顶右下指定旋转的中心点</h2>
+	<div class="direction">456</div>
+
+
+	<h2>通过像素指定旋转的中心点，这个像素是相对于原点的偏移值，盒子默认的原点是左上角(0,0)</h2>
+	<div class="usepx">789</div>
+</body>
+</html>

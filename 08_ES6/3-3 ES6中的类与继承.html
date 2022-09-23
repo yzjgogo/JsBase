@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * ES6的类与继承，实际上是ES5的语法糖，没有任何本质的改变，console.log(obj)输出es5和es6是一样的
+     * People在ES6里虽然是用class关键字修饰，但实际上仍然是一个Function
+     */
+    //class关键字修饰类
+    class People {
+        //constructor是构造器
+        constructor(name, age) {
+            //实例属性
+            this.name = name
+            this.age = age
+            this._sex = -1
+        }
+        //ES6不支持这样定义静态属性，只能沿用ES5定义静态属性的方式
+        // static count = 0
+
+        //_sex属性的get方法
+        get sex() { // 属性
+            if (this._sex === 1) {
+                return 'male'
+            } else if (this._sex === 0) {
+                return 'female'
+            } else {
+                return 'error'
+            }
+        }
+        //_sex属性的set方法
+        set sex(val) { // 1:male 0:female
+            if (val === 0 || val === 1) {
+                this._sex = val
+            }
+        }
+        //实例方法
+        showName() {
+            console.log(this.name)
+        }
+        // 静态方法
+        static getCount() {
+            return 5
+        }
+    }
+    // 静态属性，沿用ES5的用法，ES6没用提供静态属性的新方式
+    People.count = 9
+    console.log(typeof People) // function
+    console.log(People.count)
+
+    let p1 = new People('xiecheng', 34)
+    console.log(p1)
+    p1.sex = 5
+    console.log(p1.sex)
+    console.log(People.getCount())
+
+    //extends关键字用于继承
+    class Coder extends People {
+        constructor(name, age, company) {
+            //super关键字调用父类构造器
+            super(name, age)
+            this.company = company
+        }
+        //子类自己的实例方法
+        showCompany() {
+            console.log(this.company)
+        }
+    }
+
+    let c1 = new Coder('zhangsan', 25, 'imooc')
+    console.log(c1)
+    c1.showName()
+    c1.showCompany()
+    c1.sex = 1
+    console.log(c1.sex)
+    console.log(Coder.getCount())
+</script>
+</body>
+</html>

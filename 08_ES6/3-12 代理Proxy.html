@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+        ES5实现代理
+     * */
+    // let obj = {}
+    // let newVal = ''
+    // //第一个参数是要代理的对象，第二个参数是要代理的对象的属性，第三个参数是对象类型，里面可以定义get和set，这样读写代理的属性name时，就会走get和set
+    // Object.defineProperty(obj, 'name', {
+    //     //获取name属性时会调用get
+    //     get(){
+    //         return newVal
+    //     },
+    //     //设置name属性时会调用set
+    //     set(val){
+    //         console.log('set')
+    //         // this.name = val  报错，无限递归set(val)了，因此定义一个newVal作为中转
+    //         newVal = val
+    //     }
+    // })
+    // obj.name = 'es'   //会调用set
+    // console.log(obj.name)   //会调用get
+
+
+    /**
+        ES6的代理proxy
+     * */
+
+    /**
+        1，代理的基本使用
+     * */
+    // let obj = {}
+    // //用p代理obj,以后p就是obj了，操作p就会作用到obj上
+    // let p = new Proxy(obj, {})
+    // // obj.name = 'imooc'
+    // p.name = "good"   //给p定义属性name同时赋值，就和操作obj一样
+    // console.log(obj.name)   //good
+    // for(let key in obj){
+    //     console.log(key)   //obj有name属性了
+    // }
+
+
+    /**
+        2，代理Proxy-get
+        访问对象或数组的某个属性值obj['name']或元素值arr[0]时会走代理的get方法
+     * */
+    //代理数组
+    // let arr = [7, 8, 9]
+    // arr = new Proxy(arr, {
+    //     //target就是arr，arr[1]时prop时1；arr[10]时prop是10
+    //     get(target, prop) {
+    //         console.log(target, prop)
+    //         return prop in target ? target[prop] : 'error'
+    //     }
+    // })
+    // console.log(arr[1])  //会走get([7, 8, 9],'1')
+    // console.log(arr[10]) //会走get([7, 8, 9],'10')
+    // console.log(Object.prototype.toString.call(arr))
+    // console.log(arr instanceof Array)   //true
+
+    //代理对象
+    // let dict = {
+    //     'hello': '你好',
+    //     'world': '世界'
+    // }
+    // dict = new Proxy(dict, {
+    //     //访问dict的某个属性会走get,其中target就是原对象dict，prop就是属性名
+    //     get(target, prop) {
+    //         console.log(target,prop)
+    //         return prop in target ? target[prop] : prop
+    //     }
+    // })
+    // console.log(dict['world'])   //会走get({hello: '你好', world: '世界'},'world')
+    // console.log(dict['imooc'])   //会走get({hello: '你好', world: '世界'},'imooc')
+
+
+    /**
+        3,代理Proxy-set
+        给数组push元素或给对象属性赋值时触发
+        注意，set方法有返回值，是boolean类型，true为设置成功？
+     * */
+    //代理数组，给数组push元素时会走set
+    // let arr = []
+    // arr = new Proxy(arr, {
+    //     //target就是原始arr数组；prop就是本次push到的索引；val就是本次push到的值
+    //     set(target, prop, val) {
+    //         // console.log(target,prop,val)
+    //         if (typeof val === 'number') {
+    //             target[prop] = val
+    //             return true
+    //         } else {
+    //             return false
+    //         }
+    //     }
+    // })
+    // arr.push(5)//push时会走set,prop是0;val是5
+    // arr.push(6)//push时会走set,prop是1;val是6
+    // console.log(arr[0], arr[1], arr.length)   //5,6,2
+
+    //代理对象，省略。。自己试试
+
+    /**
+        4,代理Proxy-has，使用'in'时触发has()
+     * */
+    //代理对象
+    // let range = {
+    //     start: 1,
+    //     end: 5
+    // }
+    // range = new Proxy(range, {
+    //     //target就是原对象range，prop就是调用'in'时,'in'前面的东西
+    //     has(target, prop){
+    //         console.log(target,prop)
+    //         return prop >= target.start && prop <= target.end
+    //     }
+    // })
+    // console.log(2 in range)   //prop是2
+    // console.log(9 in range)   //prop是9
+    // console.log('end' in range)//prop是'end'
+
+    //代理数组的has，省略。。。自己试一下
+
+    /**
+        5,代理Proxy-deleteProperty，使用'delete'删除对象属性时触发
+     * */
+    // let user = {
+    //     name: 'xiecheng',
+    //     age: 34,
+    //     _password: '***'
+    // }
+    // user = new Proxy(user, {
+    //     //target是user对象，prop是要删除的属性名
+    //     deleteProperty(target, prop) { // 拦截删除
+    //         // console.log(target,prop)
+    //         if (prop.startsWith('_')) {
+    //             throw new Error('不可删除')
+    //         } else {
+    //             delete target[prop]
+    //             return true
+    //         }
+    //     }
+    // })
+    // delete user.age  //prop是'age'
+    // console.log(user);
+    /**
+        6，代理Proxy-ownKeys，对象被遍历时触发ownKeys,ownKeys返回true时才遍历的到
+     * */
+    // let userinfo = {
+    //     username: 'xiecheng',
+    //     age: 34,
+    //     _password: '***'
+    // }
+    // userinfo = new Proxy(userinfo, {
+    //     ownKeys(target) {
+    //         console.log("执行了ownKeys:"+target)
+    //         return Object.keys(target).filter(key => !key.startsWith('_'))
+    //     }
+    // })
+     /**用'in'遍历会触发onwKeys,*/
+    // for (let key in userinfo) {
+    //     console.log(key)
+    // }
+    /**用Object.keys会触发onwKeys*/
+    // console.log(Object.keys(userinfo))
+    /**下面三种没有触发ownKeys？到时候再验证一下*/
+    // console.log(Object.getOwnPropertyNames(obj));
+    // console.log(Object.getOwnPropertySymbols(obj))
+    // console.log(Reflect.ownKeys(obj))
+
+
+    /**
+        7，代理Proxy-apply,方法调用的代理，方法调用，方法.call，方法.apply时触发
+     * */
+    // let sum = (...args) => {
+    //     let num = 0
+    //     args.forEach(item => {
+    //         num += item
+    //     })
+    //     return num
+    // }
+    // sum = new Proxy(sum, {
+    //     //target就是sum的方法体，ctx暂不管，args是此时调用sum()或sum.call()或sum.apply()时传的参数
+    //     apply(target, ctx, args) {
+    //         // console.log(target,ctx,args)
+    //         console.log(args)
+    //         return target(...args) * 2
+    //     }
+    // })
+    // console.log(sum(1, 2))
+    // console.log(sum.call(null, 1, 2, 3))
+    // console.log(sum.apply(null, [1, 2, 3]))
+
+
+    /**
+        8，代理Proxy-construct，当new一个对象时触发construct
+     * */
+    // let User = class {
+    //     constructor(name) {
+    //         this.name = name
+    //     }
+    // }
+    // User = new Proxy(User, {
+    //     construct(target, args, newTarget) {
+    //         console.log('construct')
+    //         return new target(...args)
+    //     }
+    // })
+    // console.log(new User('imooc'))
+
+
+
+</script>
+</body>
+</html>

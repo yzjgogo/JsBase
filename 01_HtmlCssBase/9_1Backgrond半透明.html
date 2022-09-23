@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body {
+		background: #fff url(img/sm.jpg) no-repeat fixed center top ;
+	}
+	.bg_rgba {
+		width: 400px;
+		height: 100px;
+		color: yellow;
+		background: rgba(255, 0, 0, .5); /* red  green blue  alpha  0~1  */
+	}
+
+	/*opacity和transform等新属性会影响元素的z-index,注意这个问题*/
+
+	.bg_opacity {
+		width: 400px;
+		height: 100px;
+		color: red;
+		background-color: gray;
+		margin-top: 10px;
+		opacity: 0.8;
+	}
+	</style>
+</head>
+<body>
+	<div class="bg_rgba">
+		背景半透明:<br/>
+		background: rgba(red, green, blue, alpha);<br/>
+		background: rgba(0~255, 0~255, 0~255, 0~1);<br/>
+		第四个参数的小数可以省略0，例如0.5和.5都是可以的.
+	</div>
+	<div class="bg_opacity">
+		opacity实现半透明<br>
+
+		filter: alpha(opacity=20); ie6的写法
+	</div>
+</body>
+</html>

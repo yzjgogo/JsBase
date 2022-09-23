@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h2{
+			color: red;
+		}
+		/*字体*/
+		.oneFamily{
+			font-family: "隶书"
+		}
+		.multiFamily{
+			font-family: Arial,"华文行楷","microsoft yahei";
+		}
+		.unicodeFamily{
+			font-family: "\534E\6587\7EC6\9ED1";
+		}
+		
+		/*
+		字体粗细
+		font-weight属性用于定义字体的粗细，其可用属性值：normal、bold、bolder、lighter、100~900（100的整数倍）。
+		数字 400 等价于 normal，而 700 等价于 bold。  但是我们更喜欢用数字来表示。
+		*/
+		.fontWeight{
+			font-weight: bold;
+		}
+
+		/*字体风格
+			normal：默认值，浏览器会显示标准的字体样式。
+
+			italic：浏览器会显示斜体的字体样式。
+
+			oblique：浏览器会显示倾斜的字体样式和italic我看着没区别。
+
+		*/
+		.fontStyle{
+			font-style: italic;
+		}
+
+		/*
+		font:综合设置字体样式
+		选择器{font: font-style  font-weight  font-size/line-height  font-family;};
+		使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开;
+		其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用.
+
+		其中font-size/line-height李的line-height可以是px值，也可以是无单位的数，例如14px/21px、14px/1.5
+		为px值很好理解，就是行高，为无单位的小数时就是这个小数乘以font-size就是行高，这里14*1.5就是行高
+		*/
+		.allFont{
+		/*font: 400 25px "宋体";*/
+		font: 12px "微软雅黑";
+		}
+	</style>
+</head>
+<body>
+	<h2>font-size:字号大小,常用px</h2>
+	<!-- 
+	1. 现在网页中普遍使用14px+。
+	2. 尽量使用偶数的数字字号。ie6等老式浏览器支持奇数会有bug。 -->
+	<img src="img/font_size.png"/>
+
+	<h2>font-family:字体</h2>
+	<!-- 
+	3. 各种字体之间必须使用英文状态下的逗号隔开。
+	4. 中文字体需要加英文状态下的引号，英文字体一般不需要加引号。当需要设置英文字体时，英文字体名必须位于中文字体名之前。
+	5. 如果字体名中包含空格、#、$等符号，则该字体必须加英文状态下的单引号或双引号，例如font-family: "Times New Roman";。
+	6. 尽量使用系统默认字体，保证在任何用户的浏览器中都能正确显示。 -->
+	<div class="oneFamily">使用一个字体</div>
+	<div class="multiFamily">使用多个字体multi:中间以逗号隔开，表示如果浏览器不支持第一个字体，则会尝试下一个，直到找到合适的字体;如果文字中既有中文又有英文则中文找第一个系统支持的中文字体，英文找系统支持的第一个英文字体，例如这里中文的字体是华文行楷英文的字体是Arial</div>
+
+	<h2>Unicode字体</h2>
+	<img src="img/unicode_font.png">
+	<div class="unicodeFamily">使用Unicode字体：效率更高</div>
+
+	<h2>font-weight:字体粗细</h2>
+	<div class="fontWeight">通过css实现字体粗细，html也有b和strong标签能实现字体粗细。<br/>font-weight属性用于定义字体的粗细，其可用属性值：normal、bold、bolder、lighter、100~900（100的整数倍）。
+	数字 400 等价于 normal，而 700 等价于 bold。  但是我们更喜欢用数字来表示。</div>
+
+	<h2>font-style:字体风格:字体是否倾斜</h2>
+	<div class="fontStyle">font-style:字体风格:字体是否倾斜,html标签的i和em也能实现文字倾斜<br/>
+			normal：默认值，浏览器会显示标准的字体样式。
+			italic：浏览器会显示斜体的字体样式。
+			oblique：浏览器会显示倾斜的字体样式和italic我看着没区别。</div>
+
+
+	<h2>font:综合设置字体样式</h2>
+	<div class="allFont">
+		font:综合设置字体样式<br/>
+		选择器{font: font-style  font-weight  font-size/line-height  font-family;};<br/>
+		使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开;<br/>
+		其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用<br>
+		其中font-size/line-height李的line-height可以是px值，也可以是无单位的数，例如14px/21px、14px/1.5
+		为px值很好理解，就是行高，为无单位的小数时就是这个小数乘以font-size就是行高，这里14*1.5就是行高
+	</div>
+</body>
+</html>

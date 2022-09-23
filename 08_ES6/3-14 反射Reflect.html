@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+        1,将Object属于语言内部的方法放到Reflect上
+     例如：
+     Object.defineProperty
+     Reflect.defineProperty
+     * */
+    // Object -> Reflect
+    // let obj = {}
+    // let newVal = ''
+    // Reflect.defineProperty(obj, 'name', {
+    //     get() {
+    //         return newVal
+    //     },
+    //     set(val) {
+    //         console.log('set')
+    //         // this.name = val
+    //         newVal = val
+    //     }
+    // })
+    // obj.name = 'es'
+    // console.log(obj.name)
+
+        /**
+            2,修改某些Object方法的返回结果，让其变得更合理
+         * */
+    // try {
+    //     Object.defineProperty()  //Object里的这个方法，如果某个属性无法定义就会报错，我们需要try-catch
+    // } catch (e) {}
+
+     //在Reflect中defineProperty()定义了返回值，为true说明定义成功，false说明定义失败
+    // if (Reflect.defineProperty()) { // boolean
+
+    // } else {
+
+    // }
+
+            /**
+                3，让Object操作变成函数行为
+             'assign' in Object  有点像命令
+             Reflect中改成了Reflect.has(Object, 'assign')方法
+             */
+    // console.log('assign' in Object) // true
+    // console.log(Reflect.has(Object, 'assign'))// true
+
+
+                /**
+                    4,Reflect的方法与Proxy的方法一一对应
+                 * */
+    // let user = {
+    //     name: 'xiecheng',
+    //     age: 34,
+    //     _password: '***'
+    // }
+    // user = new Proxy(user, {
+    //     get(target, prop) {
+    //         if (prop.startsWith('_')) {
+    //             throw new Error('不可访问')
+    //         } else {
+    //             // return target[prop]
+    //             return Reflect.get(target, prop)  //访问target对象的prop属性值，或target的prop索引的值
+    //         }
+    //     },
+    //     set(target, prop, val) {
+    //         if (prop.startsWith('_')) {
+    //             throw new Error('不可访问')
+    //         } else {
+    //             // target[prop] = val
+    //             Reflect.set(target, prop, val) //给target对象的prop属性设置val值
+    //             return true
+    //         }
+    //     },
+    //     deleteProperty(target, prop) { // 拦截删除
+    //         if (prop.startsWith('_')) {
+    //             throw new Error('不可删除')
+    //         } else {
+    //             // delete target[prop]
+    //             Reflect.deleteProperty(target, prop)//删除target对象的prop属性
+    //             return true
+    //         }
+    //     },
+    //     ownKeys(target) {
+    //         // return Object.keys(target).filter(key => !key.startsWith('_'))
+    //         return Reflect.ownKeys(target).filter(key => !key.startsWith('_')) //获取target对象的所有属性名
+    //     }
+    // })
+
+
+    // apply
+    let sum = (...args) => {
+        let num = 0
+        args.forEach(item => {
+            num += item
+        })
+        return num
+    }
+
+    sum = new Proxy(sum, {
+        apply(target, ctx, args) {
+            // return target(...args) * 2
+            return Reflect.apply(target, target, [...args]) * 2  //
+        }
+    })
+    console.log(sum(1, 2))
+    console.log(sum.call(null, 1, 2, 3))
+    console.log(sum.apply(null, [1, 2, 3]))
+
+</script>
+</body>
+</html>

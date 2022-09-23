@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="创建一个p" id="btn"/>
+这里是文本内容，说明页面有内容
+<script src="common.js"></script>
+<script>
+    /*
+        创建元素的作用：一般等页面加载完毕后，再在用户点击或做某个操作后创建新的标签展示内容，提升用户体验
+        因为之前页面少加载了一些东西，所以也提高了加载速度
+
+        三种方式
+         1. document.write("标签的代码及内容");
+         2. 对象.innerHTML="标签及代码";
+         3. document.createElement("标签的名字");
+     */
+
+    //页面加载完毕后，再使用document.write创建元素，会干掉原body里的所有内容
+    my$("btn").onclick = function () {
+        document.write("<p>这是一个p</p>");
+    };
+    //页面加载的时候，再使用document.write创建元素，就是新加元素，不会干掉原内容
+    // document.write("<p>这是一个p</p>");
+</script>
+</body>
+</html>

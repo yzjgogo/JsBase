@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="common.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 210px;
+            /*border: 20px solid red;*/
+            padding: 10px;
+            /*border-left-width: 50px;*/
+            box-sizing: border-box;
+            /*margin: 30px;*/
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<script>
+
+    /*
+        前提：如果没有border，你想象成有border且border宽是0
+        无论box-sizing是border-box还是content-box
+        clientWidth：左右border内侧之间的距离；
+        clientHeight：上下border内侧之间的距离；
+        clientLeft:左侧border的宽度；
+        clientTop:顶部border的宽度；
+
+     */
+    var dvObj = my$("dv");
+    console.log("clientWidth:" + dvObj.clientWidth +
+        ",clientHeight:" + dvObj.clientHeight +
+        ",clientLeft:" + dvObj.clientLeft +
+        ",clientTop:" + dvObj.clientTop);
+</script>
+</body>
+</html>

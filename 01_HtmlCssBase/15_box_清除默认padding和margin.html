@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*使用通配符选择器取消各种标签的默认margin和padding，这种方式效率比较低*/
+		* {
+			margin: 0;
+			padding: 0;
+		  }
+
+		  /*使用并集选择器列出所有能用到的标签，取消他们默认的margin和padding，这样方式虽然写起来麻烦但是效率较高*/
+		 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { 
+		  	margin:0; 
+		  	padding:0; 
+		  }
+	</style>
+</head>
+<body>
+	假设body里面有各种各样的标签<br>
+<img src="img/clean_default.png">
+</body>
+</html>

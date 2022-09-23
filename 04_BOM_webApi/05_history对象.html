@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+</head>
+<body>
+<input type="button" value="跳过去" id="btn1"/>
+<input type="button" value="前进" id="btn2"/>
+<script src="common.js"></script>
+<script>
+    //使用href属性或assign()函数跳转页面，浏览器会记录目标网页到history对象里
+    //这样就可以使用history.forward()和history.back()访问到目标网页
+    my$("btn1").onclick = function () {
+        window.location.href = "05_history对象测试页.html";
+        // window.location.assign("05_history对象测试页.html");
+    };
+    //前进
+    my$("btn2").onclick = function () {
+        window.history.forward();//跟浏览器自带的前进按钮一个功能
+    };
+</script>
+</body>
+</html>

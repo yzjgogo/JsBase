@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+
+    <!--拦截onClick单击事件的三种写法-->
+
+<!--
+    第一种写法:直接在html标签的onclick里return false
+-->
+<a href="http://www.baidu.com" onclick="alert('第一'); return false">百度1</a>
+<br/>
+
+
+<!--
+第二种写法:html的onclick中调用了函数，计时该函数有boolean类型的返回值，仍然需要return
+-->
+<script>
+    function f1() {
+        alert("第二");
+        return false;
+    }
+
+</script>
+<!--不要少了return-->
+<a href="http://www.baidu.com" onclick="return f1()">百度2</a><br>
+
+
+<!--
+第三种写法:DOM对象的onclick中调用了函数，只要函数有boolean类型返回值即可
+-->
+<a href="http://www.baidu.com" id="ak">百度3</a>
+<script>
+    document.getElementById("ak").onclick = function () {
+        alert("第三");
+        return false;
+    };
+</script>
+</body>
+</html>

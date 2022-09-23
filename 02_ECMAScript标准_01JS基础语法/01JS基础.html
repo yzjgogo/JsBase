@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myTest</title>
+    <script>
+        //Num1 js简介
+        console.log("\n\nNum1开始：js简介");
+        /*
+         Num01
+         JavaScript :简称:js
+         js分三个部分:
+         1. ECMAScript 标准----js的基本的语法
+         2. DOM------Document Object Model  文档对象模型
+         3. BOM------Browser Object Model  浏览器对象模型
+
+         JavaScript是什么？
+         是一门脚本语言
+         是一门解释性语言
+         是一门动态类型的语言
+         是一门基于对象的语言
+
+         编译语言:需要把代码翻译成计算机所认知的二进制语言,才能够执行
+         脚本语言:不需要编译,直接执行，例如Js:浏览器打开直接运行js
+         常见的脚本语言:t-sql,cmd
+
+         js原名不是JavaScript,而是LiveScript
+
+         HTML:是标记语言,展示数据的
+         CSS:美化页面
+         JavaScript:用户和浏览器交互,
+         */
+
+        console.log("Num1结束：js简介");
+
+        //Num2 alert介绍
+        console.log("\n\nNum2开始：alert介绍");
+        //Num02 网页中弹出一个弹窗，可见弹窗显示过程中浏览器标题栏一直是转圈加载中，只有点击了确定浏览器才能继续执行
+        // alert("我试试");
+        console.log("Num2结束：alert介绍");
+
+        //Num3 js代码的书写位置
+        console.log("\n\nNum3开始：js代码的书写位置");
+        /*
+             Num03 js代码的书写位置：
+             1：在html的head标签中的script标签中写，例如本行所在的script标签；
+             2：在html标签的事件中直接调用js，例如id="doClick"；
+             3：引用外部的js文件,例如id="outLink",如果引用了外部的Js文件，则该script标签中就不要写任何js代码了；
+         */
+        console.log("Num3结束：js代码的书写位置");
+
+    </script>
+
+    <script id="userType" type="text/javascript" language="JavaScript">
+        //Num4 script标签和js代码相关通用问题
+        console.log("\n\nNum4开始：script标签和js代码相关通用问题");
+        /*
+        Num04 script标签和js代码相关通用问题
+        1：在一对script的标签中有错误的js代码,那么该错误的代码后面的js代码不会执行，也就是遇到错误就停止。
+        2：如果第一对的script标签中有错误,不会影响后面的script标签中的js代码执行
+        3：script的标签中可以写type="text/javascript"是标准写法或者写language="JavaScript"或者两者都写；
+        也可以两者都不写,因为html是遵循h5的标准,参考id="useType"。
+        4：script标签可以出现多对；
+        */
+        console.log("Num4结束：script标签和js代码相关通用问题");
+    </script>
+    <script>
+        //Num5 js中声明变量
+        console.log("\n\nNum5开始：js中声明变量");
+        /*
+            Num05 变量，js中声明变量都用var,动态类型：变量的类型不必提前限定，后续赋值什么类型，会自动认为是什么类型
+         */
+        var a;
+        var b = 10;
+        var c, d;
+        var e, f = 204, g;//同时定义变量e,f,g；其中e和g没有初始化，f初始化为204
+        var h = "hh";
+        var i = false;
+        var j = null;
+        var k = new Object();
+        var l = {};
+        console.log("Num5结束：js中声明变量");
+
+        //Num6 控制台输出log
+        console.log("\n\nNum6开始：控制台输出log");
+
+        console.log(b);
+
+        console.log("Num6结束：控制台输出log");
+
+        //Num7 位运算
+        console.log("\n\nNum7开始：位运算");
+        /*
+            Num07 位运算，知道有这个就行
+         */
+        console.log("Num7结束：位运算");
+    </script>
+
+    <script>
+        console.log("\n\nNum08-09开始：数据类型和获取变量的数据类型");
+        /*
+            Num08 数据类型
+            动态类型：变量的类型不必提前限定,全部用var声明，后续赋值什么类型，会自动认为是什么类型
+            number：数字类型，整数和小数，进行数字运算时如果无法返回数字则返回NaN，即not a number；小数计算机计算不准确
+            string：字符串类型，可用单引号或双引号都行；纯数字的字符串，默认也是数字，可直接参与算术运算，
+                    不是纯数字的需要先转为数字(parseInt,parseFloat)才能参与算术运算，，否则会NaN;
+                    所有的字符串与任意表达式通过"+"相连，则都是字符串拼接而不是算术运算的加法
+            boolean：true，false，
+                    对于数字0为false，非0位true
+                    空字符串、null、undefined、NaN都是false
+                    对象的属性如果不存在则 对象.属性 为false，
+                    如果存在且属性值为0,"",null,undefined,NaN则 对象.属性 也为false
+                    如果存在且属性不为0,"",null,undefined,NaN则 对象.属性 为true
+                    如果对象的某个方法存在则 对象.方法名 为true ，否则为false
+                    boolean只有参与算术运算时才会true转换为1，false转换0，
+                    与字符串用“+”不会转换为数字而是直接拼接成字符串,
+                    isNaN(boolean)会返回false即是数字，但parseInt(boolean)会返回NaN
+            undefined：未定义，变量声明了但是没有赋值，也有可能方法返回；
+            object：对象，空对象为null。
+            function：函数类型
+
+            Num09 获取变量的数据类型
+            typeof 变量名；或者 typeof(变量名);
+         */
+        var num = 10;
+        console.log("var num = 10 --> " + typeof num);//number
+
+        var str = "我是字符串";
+        console.log("var str = \"我是字符串\" --> " + typeof str);//string
+
+        var boo = true;
+        console.log("var boo = true --> " + typeof boo);//boolean
+
+        var undef;
+        console.log("var undef --> " + typeof undef);//undefined
+
+        var obj = {};
+        console.log("var obj = {} --> " + typeof obj);//object
+
+        var nll = null;//null也是对象
+        console.log("var nll = nul --> " + typeof nll);//object
+
+        console.log("Num08-09结束：数据类型和获取变量的数据类型");
+    </script>
+
+    <script>
+        // Num10 number数字类型
+        console.log("\n\nNum10开始：number数字类型");
+        /*
+            八进制：0开头，例如var eight = 037；
+            十六进制：0x开头，例如 var sixty = 0x37;
+         */
+        var eight = 0o37;//八进制 提示我用0o而不是0开头
+        console.log(eight);//输出十进制结果
+
+        var sixty = 0x37;//十六进制
+        console.log(sixty);//输出十进制结果
+
+        //数字类型有范围: 最小值和最大值
+        console.log("Number的最大值" + Number.MAX_VALUE + ",Number的最小值：" + Number.MIN_VALUE);
+
+
+        //对于计算机，小数的数学运算不是很准确
+        var math1 = 0.1;
+        var math2 = 0.2;
+        var mathSum = math1 + math2;
+        console.log("小数运算不准确：" + mathSum == 0.3)//false，发现0.1+0.2不等于0.3
+        console.log("小数运算真实值：" + mathSum)//0.30000000000000004
+
+
+        //parseInt(表达式)：表达式的结果是数字、以数字开头(空格忽略)的字符串、boolean才可以转换为数字，
+        // 如果不能转则返回NaN
+        var parse1 = parseInt("6.12");//6
+        var parse2 = parseInt("");//NaN not a number
+        var parse3 = parseInt(22.5);//22 遇到非数字截止
+        var parse4 = parseInt("1234abcd");//1234 遇到非数字截止
+        var parse5 = parseInt("   1234  abcd");//1234 自动省略空格
+        var parse6 = parseInt("a1234abcd");//NaN
+        var parse7 = parseInt("12px") + 2;//14
+        var parse8 = parseInt(true);//NaN
+        var parse9 = parseInt(true + 1);//2 true参与算术运算，隐式转换
+        console.log(parse1 + "," + parse2 + "," + parse3 + "," + parse4 + "," + parse5 + "," + parse6 + "," + parse7 + "," + parse8 + "," + parse9);
+
+
+        //parseFloat(表达式)：表达式的结果是数字、以数字开头(空格忽略)的字符串、boolean才可以转换为数字，
+        // 如果不能转则返回NaN，结果可能是int，要看有没有"."且"."后有没有数字
+        var pFloat1 = parseFloat("6.11");//6.11
+        var pFloat2 = parseFloat("6.12abcd");//6.12
+        var pFloat3 = parseFloat("7.");//7
+        var pFloat4 = parseFloat("8");//8
+        var pFloat5 = parseFloat(9 + true);//10
+        var pFloat6 = parseFloat(10.3 + true);//11.3 boolean按语运算
+        var pFloat7 = parseFloat("a" + 10.3 + true);//NaN 对比parseInt()同样需要以数字开始
+        console.log(pFloat1 + "," + pFloat2 + "," + pFloat3 + "," + pFloat4 + "," + pFloat5 + "," + pFloat6 + "," + pFloat7);
+        // console.log("parseFloat的数据类型："+typeof pFloat4+","+typeof pFloat3)
+
+
+        //Number(表达式);转数字 比parseInt和parseFloat严格的多，表达式必须是纯数字(整数或小数)，但是两头可以有空格，中间不可以有空格
+        console.log(Number("10"));//10
+        console.log(Number("11afrswfdsf"));//NaN
+        console.log(Number("g12"));//NaN
+        console.log(Number("1fds3"));//NaN
+        console.log(Number("10.98"));//10.98
+        console.log(Number("10.99fdsfd"));//NaN
+        console.log(Number(" 11.02 "));//11.02
+
+        //isNaN() true:不是数字；false：是数字
+        //对于isNaN(表达式):只有表达式的结果是纯数字、纯数字字符串、boolean才被认为是数字才是false
+        var isNaN1 = isNaN(22.5)//false 是数字
+        var isNaN2 = isNaN("10")//false 可以被强制转为整数 是数字
+        var isNaN3 = isNaN("10" + 3)//false 可以被强制转为整数 是数字
+        var isNaN4 = isNaN("1234blue")//true 不是数字
+        var isNaN5 = isNaN(true)//false 是数字 可以隐式转换为1
+        var isNaN6 = isNaN(true + "7.9")//true 不是数字 boolean与字符串拼接会转换为字符串
+        var isNaN7 = isNaN(true + 7.9)//false 是数字 此时boolean隐式转为为数字
+        var isNaN8 = isNaN(NaN)//true 不是数字
+        var isNaN9 = isNaN(NaN == NaN);//false 是数字 NaN与任何值都不相等，包括它自己
+        console.log(isNaN1 + "," + isNaN2 + "," + isNaN3 + "," + isNaN4 + "," + isNaN5 + "," + isNaN6 + "," + isNaN7 + "," + isNaN8 + "," + isNaN9);
+
+        var strb = "9ab" - true;
+        console.log("试试：" + strb);//NaN
+
+
+        console.log("Num10结束：number数字类型");
+    </script>
+    <script>
+        //Num11 字符串
+        console.log("\n\nNum11开始：字符串");
+        //字符串的长度
+        var strLength = " 12 345 ";//8
+        console.log("长度：" + strLength.length);
+
+        //字符串计算
+        // 纯数字的字符串可以直接解释为数字，参与算术计算，不是纯数字的字符串需要先转为为数字才能参与算术计算，否则会NaN，
+        //所有的字符串与任意表达式通过"+"相连，则都是字符串拼接而不是算术运算的加法
+
+
+        //toString()和String():将某个变量或表达式转换为字符串
+        //如果变量或表达式为null或undefined则不可使用toString(),但是可以用String()
+        var tostr1;
+        var tostr2 = null;
+        // console.log("未定义的toString:"+tostr1.toString());报错，未定义
+        // console.log("为null的toString:"+tostr2.toString());报错，空对象
+        console.log("未定义的String()" + String(tostr1));//undefined
+        console.log("为null的String()" + String(tostr2));//null
+
+        //2022.09.20  判断字符串是否为空
+        //https://blog.csdn.net/K346K346/article/details/113182838
+        //1:判断字符串为空：
+        function isEmptyStr(s) {
+            if (s == null || s === '') {
+                return true
+            }
+            return false
+        }
+
+        // 或
+        function isEmptyStr(s) {
+            if (s == undefined || s === '') {
+                return true
+            }
+            return false
+        }
+        //2:判断字符串不为空
+        function isNotEmptyStr(s) {
+            if (typeof s == 'string' && s.length > 0) {
+                return true
+            }
+            return false
+        }
+
+
+        console.log("Num11结束：字符串");
+    </script>
+
+    <script>
+        //Num12 boolean
+        //对于数字0为false，非0位true
+        //空字符串、null、undefined、NaN都是false
+
+        //对象的属性如果不存在则 对象.属性 为false，如果存在且属性值为0,"",null,undefined,NaN则 对象.属性 也为false
+        //如果存在且属性不为0,"",null,undefined,NaN则 对象.属性 为true
+
+        //如果对象的某个方法存在则 对象.方法名 为true ，否则为false
+
+        console.log("\n\nNum12开始：boolean类型");
+        function booFun(){
+
+        }
+        var booObj = {
+            booName: "字面量方式创建对象，直接写出属性和方法",
+            booMethod: function () {
+                console.log(this.booName);
+            }
+        };
+
+        console.log(Boolean(1));//true
+        console.log(Boolean(0));//false
+        console.log(Boolean(11));//true
+        console.log(Boolean(-10));//true
+        console.log(Boolean("哈哈"));//true
+        console.log(Boolean(""));//false
+        console.log(Boolean(null));//false
+        console.log(Boolean(undefined));//false
+        console.log(Boolean(NaN));//false
+        console.log(Boolean(booFun));//true
+        console.log(Boolean(booObj.booName));//true booObj对象中有该属性
+        console.log(Boolean(booObj.booMethod));//true booObj对象中有该方法
+        console.log(Boolean(booObj.booName1));//false booObj对象中没有该属性
+        console.log(Boolean(booObj.booMethod1));//false booObj对象中没有该方法
+        var dvObj = document.getElementById("dv");//body在下面,html从上往下解析，代码执行到这里还没获取到dv，所以null
+        console.log(Boolean(dvObj));//false
+
+        console.log("Num12结束：boolean类型");
+    </script>
+
+    <script>
+        //Num13 操作符
+        /*
+            算术运算符:+ - * / %
+
+            一元运算符:++ --
+                        前置++：先加1，后参与运算
+                        后置++：先参与运算，后加1
+                        同理
+                        前置--  ：先减1，后参与运算
+                        后置--  ：先参与运算，后减1
+
+             逻辑运算符(布尔运算符):&& || !
+
+             关系运算符(比较运算符):<  >  >=  <= == != === !==
+                                    ==与===的区别：==只进行值得比较，===类型和值同时相等，则相等
+
+             赋值运算符：=   +=   -=   *=   /=   %=
+
+             运算符的优先级：
+                            优先级从高到底
+                            1. ()  优先级最高
+                            2. 一元运算符  ++   --   !
+                            3. 算数运算符  先*  /  %   后 +   -
+                            4. 关系运算符  >   >=   <   <=
+                            5. 相等运算符   ==   !=    ===    !==
+                            6. 逻辑运算符 先&&   后||
+                            7. 赋值运算符
+
+              三目运算符：var 变量=表达式1?表达式2:表达式3;
+
+         */
+        console.log("\n\nNum13开始：操作符");
+        //==和===
+        var yange1 = "23";
+        var yange2 = 23;
+        var yange3 = 22 + true;
+        var yange4 = "24" - true;
+        console.log((yange1 == yange2) + "," + (yange1 === yange2));//true false
+        console.log((yange1 == yange3) + "," + (yange1 === yange3));//true false
+        console.log((yange1 == yange4) + "," + (yange1 === yange4));//true false
+        console.log((yange2 == yange4) + "," + (yange2 === yange4));//true true
+
+
+        // 或运算||  多个表达式通过||连接，赋值给变量，则从第一个表达式开始，直到某个表达式结果为true为止，则取该表达式赋值给接收的变量
+        //如果都不为true，则取最后一个表达式赋值，因为我们一般把最后一个作为默认值处理
+        var huo = false || null || 1 ||"";
+        var huo1 = false || null || 0 ||"";
+        console.log("或运算赋值给变量，取第一个为真的表达式的结果："+huo);//1
+        console.log("或运算赋值给变量，取第一个为真的表达式的结果："+huo1);//""
+
+
+        //&&容易忽略的问题：(表达式a)&&(表达式b)，因为&&一假全假，当表达式a为false时不再执行表达式b，当表达式a为true时
+        //会继续执行表达式b
+        var bingboo = true;
+        function bingFunc(){
+            console.log("我是测试&&的函数体");
+        }
+        bingboo&&bingFunc();
+
+        console.log("Num13结束：操作符");
+    </script>
+    <script>
+        //Num14 prompt的用法
+        console.log("\n\nNum14开始：prompt的用法");
+
+        // var promptContent = prompt("请您输入：");
+        // console.log(promptContent);
+
+        console.log("Num14结束：prompt的用法");
+
+        //Num15 分支语句
+        console.log("\n\nNum15开始：分支语句");
+        /*
+            if else
+
+            switch case ：注意js中switch-case用的是===严格相等的比较
+         */
+        console.log("Num15结束：分支语句");
+
+        //Num16 循环语句
+        console.log("\n\nNum16开始：循环语句");
+        /*
+            while循环、do-while循环
+            for循环
+         */
+        console.log("Num16结束：循环语句");
+
+        //Num17 document.write()方法
+        console.log("\n\nNum17开始：document.write()方法");
+        /*
+            可以通过document.write()方法，在js代码中写入html标签，所写的标签会自动被添加到html的body标签中，可通过f12查看
+         */
+        document.write("<p>我是被加入的标签</p>")
+        console.log("Num17结束：document.write()方法");
+
+
+        //Num18 调试debug
+        console.log("\n\nNum18开始：调试debug");
+        //暂时没看，以后有需要再看
+        console.log("Num18结束：调试debug");
+
+        //Num19 百度和京东的招聘
+        console.log("\n\nNum19开始：百度和京东的招聘");
+        /*
+            在百度或京东的首页按F12可以看到百度或京东的招聘信息
+         */
+        console.log("Num19结束：百度和京东的招聘");
+
+
+        //Num20 关键字break
+        console.log("\n\nNum20开始：关键字break");
+
+        console.log("Num20结束：关键字break");
+
+
+        //Num21 关键字continue
+        console.log("\n\nNum21开始：关键字continue");
+
+        console.log("Num21结束：关键字continue");
+
+
+        //Num22 数组
+        console.log("\n\nNum22开始：数组");
+        /*
+            1:数组的创建
+         */
+        var shuzu1 = new Array();//length为0，空数组
+        console.log(shuzu1);//[]
+
+        var shuzu2 = new Array(3);//定义了一个length是3的数组，但是每一个元素都是undefined
+        console.log(shuzu2.length + "|" + shuzu2[0] + "|" + shuzu2[1] + "|" + shuzu2[2] + "|" + shuzu2);
+        //3|undefined|undefined|undefined|,,
+
+        var shuzu3 = new Array(10, 20, 30, 40);//定义一个数组，数组的length是4，每一个元素分别是10、20、30/40
+        console.log(shuzu3);
+
+        var shuzu4 = [];//定义一个空数组，length为0
+        console.log(shuzu4 + "|" + shuzu4.length);
+
+        var shuzu44 = [12, 22, 32, 42];//定义一个数组，长度是4，元素分别是12,22,32,42
+        console.log(shuzu44);
+
+        /*
+            2:数组的长度可以自增:
+
+            原来某个数组arr有个length，例如length = 3,则这个数组各个元素是arr[0],arr[1],arr[2]
+            则我们可以给arr[3],arr[4],arr[18],arr[1000]等等等赋值，赋值后数组arr的长度也就变化了，如果我们
+            跳过某些索引给arr的元素赋值，则也可以，结果是被跳过的索引的元素值是undefined,例如：我们在原来的
+            arr的基础上，给arr[3]=3,arr[4]=4,arr[7]=7,因为我们跳过了arr[5]和arr[6]则arr[5]和arr[6]都是undefined
+            最后arr的length是8，因为我们赋值到了arr[7]所以length是8
+         */
+        var shuzu5 = [];
+        console.log("自增前的length：" + shuzu5.length);
+        shuzu5[0] = 1;
+        shuzu5[1] = 2;
+        shuzu5[2] = 3;
+        shuzu5[9] = 10;
+        console.log("自增后的length：" + shuzu5.length + ",元素：" + shuzu5);
+
+        /*
+            3:数组中的元素类型可以互不相同，但是一般都用相同的类型
+         */
+        var szlx = [11, true, "hello", undefined, null, {}];
+        console.log(szlx);
+
+        /*
+            4:数组的输出
+                直接用数组名即可输出
+                例如：var shuzu = [1,2];
+                console.log(shuzu);//输出1,2
+         */
+
+
+        console.log("Num22结束：数组");
+    </script>
+
+    <script>
+        //Num23 函数
+        console.log("\nNum23开始：函数");
+
+        /*
+            1，使用函数
+         */
+        function funstart() {
+            console.log("我是函数体1");
+        }
+
+        //覆盖上一个funstart函数:同一个函数被定义多次，则以最后一次为准，其它作废
+        function funstart() {
+            console.log("我是函数体2");
+        }
+
+        funstart();
+
+
+        /*
+            2，函数参数
+            函数的参数不用写var
+            形参:函数在定义的时候小括号里的变量叫形参
+            实参:函数在调用的时候小括号里传入的值叫实参,实参可以是变量也可以是值
+         */
+        function funParaCount(x, y) {
+            console.log(x + "," + y);
+        }
+
+        //正常传参调用
+        funParaCount(1, 2);
+        //实参数多于形参数，只取实参的前形参个数个实参即可
+        funParaCount(1, 2, 3);//实际只传了1,2 第3个参数没用
+        //实参数少于形参数，少的默认传undefined
+        funParaCount(1);//等价于funParaCount(1,undefined);
+
+
+        /*
+            3，返回值
+         */
+        //直接接受有返回值的函数的返回值
+        function returnValue() {
+            console.log("这个函数有返回值")
+            return "我是返回值";//直接使用return返回值，不用像java那样定义返回类型
+        }
+
+        var receiveReturn = returnValue();//直接接受函数的返回值
+        console.log(receiveReturn);
+
+        //变量接受没有返回值的函数，则这个变量会undefined
+        function noReturn() {
+            console.log("这个函数没有返回值")
+        }
+
+        var receiveNo = noReturn();//receiveNo:undefined
+        console.log(receiveNo);
+
+        //函数有return也不一定有返回值
+        function noReturnMay() {
+            console.log("这个函数有return但是没有返回值")
+            return;//直接return，但是并没有返回值
+        }
+
+        var receiveMay = noReturnMay();
+        console.log(receiveMay);//同样是undefined
+
+
+        /*
+            4,函数名代表函数的整段代码，可以直接输出
+         */
+        function funName() {
+            console.log("直接通过函数名输出函数的整段代码")
+        }
+
+        console.log(funName);
+        console.log(typeof funName);//function
+
+        /*
+            5，伪数组：函数隐含的存储传入的实参的数组，arguments
+            无论函数有没有形参，这个arguments都是存在的
+         */
+        // function wei(x,y){arguments也存在
+        function wei() {
+            var length = arguments.length;
+            if (length > 0) {
+                console.log("传入了" + length + "个参数");
+                for (var i = 0; i < length; i++) {
+                    console.log("第" + i + "个参数：" + arguments[i]);
+                }
+            } else {
+                console.log("传入了0个参数")
+            }
+        }
+
+        wei();//传入0个参数
+        wei(1, 2, 3);//传入3个参数
+
+
+        /*
+            6，匿名函数：没有函数名的函数，直接把命名函数的函数名去掉就是匿名函数
+            例如：
+            function (){
+            }
+            匿名函数常见用处：
+            1，函数表达式，把匿名函数赋值给变量，eg：var f = function(){...};
+            2，函数自调用,普通的函数调用就是,函数名(),而函数名就是这个函数体，所以匿名函数的自调用就是(函数体)()
+         */
+        //函数表达式
+        var funbds = function () {
+            console.log("我是函数表达式的函数体")
+        };//作为函数表达式记得加分号
+        //回想一下命名函数的调用：函数名(),函数名就代表整个函数体，而函数表达式的变量就代表整个函数体，所以这个变量
+        //就相当于这个匿名函数的函数名，所以可通过这个变量调用函数
+        funbds();//我是函数表达式的函数体
+        //重新赋值匿名函数
+        funbds = function () {
+            console.log("我是函数表达式的新的函数体")
+        };
+        //再次调用
+        funbds();//我是函数表达式的新的函数体
+
+        //函数的自调用：一次性的，回想一下命名函数的调用：函数名(),函数名就代表整个函数体，因此如果我们想直接调用函数
+        //则只需让整个函数体加括号即可，例如:(函数体)()
+        (
+            function () {
+                console.log("匿名函数自调用的函数体");
+            }
+        )();
+
+        /*
+            7，函数的数据类型 typeof
+         */
+        function typeFun() {
+
+        }
+
+        console.log("函数的数据类型：" + typeof typeFun);//函数的数据类型：function
+
+
+        /*
+            8，函数作为其他函数的参数传入：注意传入的是函数名
+         */
+        function fa(fn) {
+            console.log("我是fa，我的参数是其它函数");
+            fn();//调用函数类型的参数
+        }
+
+        function fb() {
+            console.log("我是fb,我将作为参数传入fa函数");
+        }
+
+        fa(fb);
+
+        /*
+            9，函数作为其它函数的返回值
+         */
+        function reFunc() {
+            console.log("我是个函数，我也会返回一个函数");
+            return function () {//返回一个匿名函数，直接返回函数体即可
+                console.log("我是被返回的函数");
+            }
+            // return otherAs;//返回一个明明函数，直接返回函数名即可
+        }
+
+        function otherAs() {
+            console.log("我是另一个被返回的函数");
+        }
+
+        var receiveReF = reFunc();
+        receiveReF();
+        // reFunc()();直接这样也是可以的，因为reFunc()返回一个函数体，再执行这个函数体
+
+        /*
+            10，函数内部定义函数,记得定义后要调用，不然不执行
+         */
+        function fun4() {
+            console.log("fun4");
+
+            function fun3() {
+                console.log("fun3");
+
+                function fun2() {
+                    console.log("fun2");
+
+                    function fun1() {
+                        console.log("fun1");
+                    }
+
+                    fun1();
+                }
+
+                fun2();
+            }
+
+            fun3();
+        }
+
+        fun4();
+
+
+
+        /*
+            11，条件语句中函数声明在IE8中的问题
+         */
+           if(true){
+             function funTiaojian() {
+               console.log("条件if为true");
+             }
+           }else{
+             function funTiaojian() {
+               console.log("条件else");
+             }
+           }
+           //IE8中结果是"条件else" 其它浏览器是"条件if为true"
+        funTiaojian();
+
+        //通过函数表达式解决上面不同浏览器结果不同的问题
+        var funTiao;
+        if(true){
+            funTiao = function () {
+                console.log("条件if为true");
+            }
+        }else{
+            funTiao = function () {
+                console.log("条件else");
+            }
+        }
+        funTiao();//无论什么浏览器都执行"条件if为true"
+
+
+
+
+        /*
+            12：函数中的几个成员
+            参考：05_JS高级/16_函数中的几个成员.html
+         */
+        console.log("Num23结束：函数");
+    </script>
+
+
+    <script>
+        //Num24 变量及其作用域
+        console.log("\n\nNum24开始：变量及其作用域");
+        /*
+            1,全局变量和局部变量
+            全局变量：var定义，且在函数体以外的变量都是全局变量,全局变量可在程序的任何位置引用到，在其它script标签中也可引用到；
+                    只要页面不关闭，全局变量就一直存在，就会持有内存.
+                    需要注意的是，js存在预编译，可能某个全局变量在代码上声明且初始化了，但是由于执行条件的限制，实际编译时只声明了
+                    而无法初始化，例如if语句中定义的全局变量，如果这个if条件为false即不执行if语句，则这个if语句中定义的全局变量在编译时
+                    只声明无初始化，即使你在代码上定义且初始化了，也不行。
+            局部变量：var定义，且在函数体以内的变量都是局部变量；只在函数体内有效，函数执行完就消失，就不持有内存了。
+            隐式全局变量：不用var定义，直接定义的变量都是隐式全局变量，无论是否在函数体内或外；
+
+            全局变量和隐式全局变量的区别：全局变量不可通过delete关键字删除，隐式全局变量可通过关键字删除
+         */
+        //全局变量：直接定义
+        var allVar1 = 12;
+        //全局变量：代码块中定义
+        {
+            var allVar2 = 13;
+        }
+        //全局变量：if-else while do-while switch-case等等中定义
+        if (false) {
+            var allVar3 = 14;//因为false不执行，所以allVar3声明了但是没有初始化，所以是undefined
+        } else {
+            var allVar4 = 15;
+        }
+
+        //局部变量：函数内
+        function partFunc() {
+            var partVar = 3;//局部变量，只在函数体内有效
+        }
+
+        //隐式全局变量-方法体内
+        function hideFunc() {
+            hideVar = 4;//虽然在方法体内定义，但是由于没有使用var修饰，所以这个变量是隐式的全局变量，具有全局变量的作用域
+        }
+
+        //隐式全局变零：其它任何地方
+        hideAny = 12;//没有用var修饰，虽然是全局变量，但是是隐式的
+
+        //全局变量不可delete，隐式全局变量可delete
+        delete allVar1;
+        console.log("全局变量不能被delete：" + allVar1);
+        delete hideAny;
+        // console.log("隐式全局变量可以被delete"+hideAny);//报错，因为hideAny被删除，就相当于你没写
+
+
+        /*
+            作用于链：怎么找变量
+            在某个位置找某个变量，先在当前代码所在区域找，再在父区域找，再在爷区域找，直到找到
+         */
+        var findVar = 10;
+
+        function findF1() {
+            var findVar = 20;
+
+            function findF2() {
+                var findVar = 30;
+
+                function findF3() {
+                    var findVar = 50;
+                    console.log(findVar);//这里引用了findVar,则先在当前区域找findVar,找到了findVar=50，如果没有找到则在父区域找，找到findVar=30
+                }
+
+                findF3();
+            }
+
+            findF2();
+        }
+
+        findF1();
+
+        console.log("Num24结束：变量及其作用域");
+    </script>
+
+    <script>
+        //Num25 预解析
+        console.log("\n\nNum25开始：预解析");
+        /*
+            预解析：js代码是先解析，后执行的
+            解析过程：
+            1. 把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值。
+            2. 把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用。
+            3. 先提升var，在提升function，也就是说提升后function在var后面
+
+            不同的script标签中，预解析互不干扰
+         */
+        /*
+            预解析变量:结果
+            var foreVar;//声明提前
+            console.log("预解析变量："+foreVar);
+            foreVar = 10;//赋值不动
+         */
+        console.log("预解析变量：" + foreVar);
+        var foreVar = 10;
+
+        /*
+            预解析函数：结果
+            function foreFun(){//函数声明提前
+                console.log("我是函数，我被预解析");
+            }
+            foreFun();
+         */
+        foreFun();
+
+        function foreFun() {
+            console.log("我是函数，我被预解析");
+        }
+
+        /*
+            变量和函数都要预解析的位置关系：
+            先提升var的声明，再提升function的声明，也就是说提升后function在var后面
+            var relaF;//先提升变量的声明
+            function relaF() {//再提升函数的声明
+                console.log('aaaaa');
+            }
+            console.log(relaF);
+            relaF = 1;
+         */
+        console.log(relaF);
+
+        function relaF() {
+            console.log('aaaaa');
+        }
+
+        var relaF = 1;
+
+        /*
+            函数体中的预解析
+        function fInner(){
+            var innerVar;
+            console.log("函数体内变量的与解析:"+innerVar);//undefined
+            innerVar = 14;
+        }
+        fInner();
+         */
+        fInner();
+
+        function fInner() {
+            console.log("函数体内变量的与解析:" + innerVar);
+            var innerVar = 14;
+        }
+
+
+        /*
+            案例一
+        var foreEgNum = 10;//没用
+        function foreEgFun() {
+            var foreEgNum
+            console.log("案例一："+foreEgNum);//先从当前区域找foreEgNum,找到了，就不用在方法外找了
+            foreEgNum = 20;
+        }
+        foreEgFun();
+         */
+        var foreEgNum = 10;
+        foreEgFun();
+
+        function foreEgFun() {
+            console.log("案例一：" + foreEgNum);
+            var foreEgNum = 20;
+        }
+
+
+        /*
+            案例二
+        var eg2a = 18;//没用
+        function eg2f1() {
+            var eg2b = 9;
+            var eg2a;
+            console.log("案例二a："+eg2a);//undefined
+            console.log("案例二b："+eg2b);//9
+            eg2a = '123';
+        }
+        eg2f1();
+         */
+        var eg2a = 18;
+        eg2f1();
+
+        function eg2f1() {
+            var eg2b = 9;
+            console.log("案例二a：" + eg2a);
+            console.log("案例二b：" + eg2b);
+            var eg2a = '123';
+        }
+
+
+        /*
+            案例三
+        function eg3f1() {
+            var eg3a;//局部变量
+            eg3a = eg3b = eg3c = 9;//eg3b和eg3c是隐式全局变量
+            console.log("案例3-函数内a:"+eg3a);//9
+            console.log("案例3-函数内b:"+eg3b);//9
+            console.log("案例3-函数内c:"+eg3c);//9
+        }
+        eg3f1();
+        console.log("案例3-函数外c:"+eg3c);//9
+        console.log("案例3-函数外b:"+eg3b);//9
+        console.log("案例3-函数外a:"+eg3a);//报错，eg3a是函数内的局部变量，引用不到因此报错
+         */
+        eg3f1();
+        console.log("案例3-函数外c:" + eg3c);//9
+        console.log("案例3-函数外b:" + eg3b);//9
+        // console.log("案例3-函数外a:"+eg3a);//报错
+        function eg3f1() {
+            var eg3a = eg3b = eg3c = 9;
+            console.log("案例3-函数内a:" + eg3a);//9
+            console.log("案例3-函数内b:" + eg3b);//9
+            console.log("案例3-函数内c:" + eg3c);//9
+        }
+
+        console.log("Num25结束：预解析");
+    </script>
+
+
+    <script>
+        //Num26 创建对象的方式
+        console.log("\n\nNum26开始：创建对象的方式");
+
+        /*
+            1,调用系统的构造函数创建对象
+
+            如果创建对象时不需要传参数，则构造函数的括号可省略
+            例如：var obj = new Object;//没有括号
+         */
+        var sysDog = new Object();
+        sysDog.name = "旺财";
+        sysDog.pinzhong = "边牧";
+        sysDog.age = "3";
+        sysDog.eat = function () {
+            console.log("调用系统的构造函数创建对象，狗吃东西的方法");
+        };
+        sysDog.play = function () {
+            console.log("调用系统的构造函数创建对象，狗玩的方法");
+        };
+        console.log("狗的名字：" + sysDog.name + ",品种：" + sysDog.pinzhong + ",年龄：" + sysDog.age);
+        sysDog.eat();
+        sysDog.play();
+
+        /*
+            2,调用系统的构造函数创建对象,封装：工厂模式，多少创建对象
+         */
+        function createObject(name, age) {
+            var obj = new Object();//创建对象
+            obj.name = name;
+            obj.age = age;
+            obj.sayHi = function () {
+                console.log("工厂模式调用系统构造函数创建对象,我叫:" + this.name + "我今年:" + this.age);
+            };
+            return obj;
+        }
+
+        //创建人的对象
+        var factory1 = createObject("小芳", 20);
+        factory1.sayHi();
+        //创建一个人的对象
+        var factory2 = createObject("小红", 30);
+        factory2.sayHi();
+
+
+        /*
+            3，自定义构造函数创建对象
+
+                使用自定义构造函数new对象时做了下面4件事
+                1. 在内存中开辟(申请一块空闲的空间)空间,存储创建的新的对象
+                2. 把this设置为当前的对象
+                3. 设置对象的属性和方法的值
+                4. 把this这个对象返回
+
+                判断某个对象是不是类的实例：对象 instanceof 类
+
+                注意构造函数与函数的区别：
+                构造函数的首字母大写，构造函数是特殊的函数，类似java的类名
+                不是必须大写，只是约定俗成
+         */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.work = function () {
+                console.log("自定义构造函数：我叫" + this.name + ",今年" + this.age + "岁，我会工作！");
+            };
+        }
+
+        var person1 = new Person("张三", 29);
+        person1.work();
+        var person2 = new Person("李四", 32);
+        person2.work();
+
+        function Dog(pinzhong, sex) {
+            this.pz = pinzhong;
+            this.sex = sex;
+            this.play = function () {
+                console.log("自定义构造函数，我是" + this.pz + ",我是" + this.sex + "狗，我爱玩。");
+            };
+        }
+
+        var hsq = new Dog("哈士奇", "公");
+        hsq.play();
+        var bm = new Dog("边牧", "母");
+        bm.play();
+        console.log(person1 instanceof Person);//true
+        console.log(hsq instanceof Person);//false
+        console.log(hsq instanceof Object);//true 同样Object是所有类的基类
+
+
+        /*
+            4，字面量方式创建对象
+               空的{}等价于new Object();
+         */
+        //先创建空对象，再分别写出属性和方法
+        var zobj = {};//空的{}等价于new Object();
+        zobj.name = "字面量方式创建对象";
+        zobj.print = function () {
+            console.log("当前：" + this.name);
+        };
+        zobj.print();
+
+        //直接写出属性和方法，可用for-in遍历该对象，该对象也可以理解成json对象
+        var zobj2 = {
+            name: "字面量方式创建对象，直接写出属性和方法",
+            print: function () {
+                console.log(this.name);
+            }
+        };
+        zobj2.print();
+
+        console.log("Num26结束：创建对象的方式");
+
+
+        //Num27 设置和获取属性和方法的另一种方式：中括号
+        console.log("\n\nNum27开始：设置和获取属性的另一种方式：中括号");
+
+
+        function OtherWay() {
+            this.name = "通过中括号访问属性和方法";
+            this.visit = function () {
+                console.log(this.name);
+            };
+        }
+
+        var otherWay = new OtherWay();
+        otherWay.visit();
+        otherWay["name"] = "$通过中括号访问属性和方法$";//[]
+        otherWay["visit"]();//[]
+
+        console.log("Num27结束：设置和获取属性的另一种方式：中括号");
+
+
+        //Num28 Json数据和for-in循环
+        console.log("\n\nNum28开始：Json数据和for-in循环");
+
+        /*
+            Json:key都是字符串，value可以是多种类型
+         */
+        var jsonD = {
+            "name": "小明",
+            "age": 10,
+            "sex": "男"
+        };
+
+        //for-in也可以遍历字面量对象，字面量对象也可以理解成json对象
+        for (var key in jsonD) {
+            console.log(key + "===========" + jsonD[key]);
+        }
+
+        //反引号字符串，就是键盘tab上面的那个点，支持换行，支持表达式
+        var jsonhh = `[{
+		"medicineAmount": 1,
+		"medicineAmountSum": 1,
+		"medicineId": "66430",
+		"medicineName": "白花蛇舌草",
+		"medicinePrice": 9,
+		"medicineSignType": 1,
+		"medicineSpecificationsDescription": "段",
+		"medicineType": 2,
+		"medicineTypeId": 379,
+		"medicineUnit": "g",
+		"sort": 1
+	}]`;
+
+        //内置对象JSON,可将json字符串解析成数组
+        var jsonArrhh = JSON.parse(jsonhh);
+        console.log(jsonArrhh);
+
+        //JSON将数组转换为json格式字符串
+        var jsonstyle = JSON.stringify(jsonArrhh);
+        console.log(jsonstyle);
+
+        console.log("Num28结束：Json数据和for-in循环");
+    </script>
+
+    <script>
+        //Num29 简单类型和复杂类型
+        console.log("\n\nNum29开始：简单类型和复杂类型");
+
+        //原始数据类型: number,string,boolean,undefined, null,object
+        //基本类型(简单类型),值类型: number,string,boolean
+        //复杂类型(引用类型):object
+        //空类型:undefined,null
+
+        console.log("Num29结束：简单类型和复杂类型");
+    </script>
+
+    <script>
+        //Num30 Math对象
+        console.log("\n\nNum30开始：Math对象");
+
+        /*
+        直接看看文档就行了
+         Math.ceil(4.3)---向数轴右侧取整
+         Math.floor(4.3)---向数轴左侧取整
+         Math.Pi----圆周率的值
+         Math.max(1,2,3)---一组数字中的最大值
+         Math.Min(1,2,3)---一组数字中的最小值
+         Math.abs(-9)----绝对值
+         Math.random()---[0,1)的随机数，包括0，不包括1,根据此可得到任意范围的随机数
+         Math.sqrt()----开平方
+         Math.pow()----一个数字的多少次幂
+         Math.fround() ---- 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。
+         */
+        /*
+            Math.random()
+         */
+        console.log(Math.random());//[0,1)
+        console.log(Math.random() * 5);//[0,5)
+        console.log(Math.random() * 100);//[0,100)
+        /*
+            Math.fround() ---- 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。
+         */
+        console.log(Math.fround(2));//2
+        console.log(Math.fround(2.1));//2.0999999046325684
+        console.log(Math.fround(2.9));//2.9000000953674316
+
+        console.log("Num30结束：Math对象");
+    </script>
+
+
+    <script>
+        //Num31 Date对象
+        console.log("\n\nNum31开始：Date对象");
+
+        var curDt = new Date();
+        console.log("直接new Date():" + curDt);//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+        console.log("直接new Date():" + curDt.toString());//Wed Jun 27 2018 19:48:05 GMT+0800 (中国标准时间)
+
+        var curDt2 = new Date("2017-08-12");
+        console.log("传入字符串格式的时间：" + curDt2);//Sat Aug 12 2017 08:00:00 GMT+0800 (中国标准时间)
+
+        var curDt3 = Date.now();//Date的valueOf()也可以
+        console.log("获取当前时间的毫秒数，从1970.1.1 00:00开始算起：" + curDt3);//1530100310542
+
+        /*
+            获取年 月 日 时 分 秒 星期
+            有了这些值就可以像java的format一样随意格式化日期了
+         */
+        var currentDate = new Date();
+        console.log(currentDate.getFullYear());//获取年份
+        console.log(currentDate.getMonth() + 1);//获取月份，是0开始的 中国的月份是需要加1的
+        console.log(currentDate.getDate());//获取日期
+        console.log(currentDate.getHours());//获取时 24小时制
+        console.log(currentDate.getMinutes());//获取分
+        console.log(currentDate.getSeconds());//获取秒
+        console.log(currentDate.getDay());//获取星期 0是周日 1是周一。。。
+
+        /*
+            输出日期
+         */
+        var outDate = new Date();
+        console.log(outDate.toDateString());//Wed Jun 27 2018
+        console.log(outDate.toLocaleDateString());//2018/6/27
+
+        /*
+            输出时间
+         */
+        var outTime = new Date();
+        console.log(outTime.toTimeString());//20:16:39 GMT+0800 (中国标准时间)
+        console.log(outTime.toLocaleTimeString());//下午8:16:39
+        /*
+            输出格林威治日期时间
+            Cookie的过期时间用的就是这种格式
+         */
+        var glwz = new Date;
+        console.log(glwz.toGMTString());//Wed, 12 Sep 2018 03:39:15 GMT
+
+        /*
+            输出当前毫秒值：从1970-1-1 00:00开始算
+         */
+        var millDate = new Date();
+        console.log(millDate.valueOf());//1530101913003 Date.now()也可以
+
+        console.log("Num31结束：Date对象");
+    </script>
+
+
+    <script>
+        //Num32 String对象
+        console.log("\n\nNum32开始：String对象");
+
+        /*
+            字符串
+            js中的字符串可以用单引号也可用双引号；
+            js中虽然没有字符的概念，但是js中的字符串仍然可以看成是一组字符组成的数组；
+            因此可以像遍历数组一样遍历字符串，for循环；
+
+            字符串的特性：不可变性，即字符串的对象在堆中是不可变的，你不能改变它的任何一个字符；str[i]可读不可写
+
+            有时你看到某个字符串变量的值变了，只是它指向堆中字符串对象的位置发生变化，并没有改变原来的字符串，而是指向了新的字符串；
+         */
+        //像遍历数组一样，遍历字符串
+        var blstr = 'hello';
+        for (var i = 0; i < blstr.length; i++) {
+            console.log(blstr[i]);
+        }
+
+        var exampleStr = "hello";
+        console.log("length:" + exampleStr.length);//length:5  获取字符串的长度
+
+        console.log("charAt():" + exampleStr.charAt(1));//charAt():e  获取字符串中指定位置的字符，超出索引返回空的
+
+        //A ,可以多参数例如：String.fromCharCode(65,66)返回ASCII码对应的字符,参考：ASCII表.png
+        console.log("fromCharCode():" + String.fromCharCode(65));//fromCharCode():A
+
+        console.log("concat：" + exampleStr.concat("我", "爱", "你"));//concat：hello我爱你  hello我爱你 字符串拼接
+
+        //str.indexOf(searchValue[, fromIndex])
+        // 某个字符在字符串中的位置，第二个参数可省略，指从哪个索引开始找，找到第一个即结束，找不到返回-1
+        var indexstr = "good morning";
+        console.log("indexOf():" + indexstr.indexOf("o"));//indexOf():1
+        console.log("indexOf():" + indexstr.indexOf("o", 3));//indexOf():6
+
+        /*
+            str.lastIndexOf(searchValue[, fromIndex])
+            从后向前找,但是索引仍然是从左向右的方式,找不到则返回-1
+            参考indexOf()
+         */
+
+        /*
+            replace("原来的字符串","新的字符串");用来替换字符串的
+         */
+        var repStr = "hello";
+        console.log("replace():" + repStr.replace("el", "你好"));//replace():h你好lo
+        var mmData = "今天a天a气a不错";
+        console.log(mmData.replace("a","b"))//今天b天a气a不错,替换第一次出现的a
+        console.log(mmData.replace(/a/,"b"))//今天b天a气a不错,替换第一次出现的a
+        console.log(mmData.replace(/a/g,"b"))//今天b天b气b不错,替换出现的所有a
+
+        /*
+            slice(开始的索引,结束的索引);
+            从字符串中提取子串
+            从索引5的位置开始提取,到索引为10的前一个结束,没有10，并返回这个提取后的字符串
+         */
+        var sliceStr = "我今天非常高兴因为我是一个大帅哥";
+        console.log("slice():" + sliceStr.slice(5, 10));//高兴因为我
+
+        /*
+            substr(开始的位置,个数);返回的是截取后的新的字符串
+            对比slice()第二个参数 一个时截取结束的索引，一个时截取的个数
+         */
+        console.log("substr():" + sliceStr.substr(5, 10));//高兴因为我是一个大帅
+        /*
+            split("要干掉的字符串",切割后留下的个数);切割字符串
+            返回分割出的字符串组成的数组,第二个参数可有可无，表示分割后保留几个子串组成数组，也就是分割后数组的长度
+         */
+        var splitStr = "我|今天非|常高|兴|你|知|道为|什么|吗";
+        var arrSplit = splitStr.split("|");//返回分割出的字符串组成的数组
+        console.log("split():" + arrSplit);//我,今天非,常高,兴,你,知,道为,什么,吗
+        var arrSplit2 = splitStr.split("|", 3);
+        console.log("split():" + arrSplit2);//我,今天非,常高
+
+        /*
+            toLocaleLowerCase();转小写
+            toLowerCase();转小写
+            toLocaleUpperCase()转大写
+            toUpperCase();转大写
+            trim();干掉字符串两端的空格
+         */
+
+
+        console.log("Num32结束：String对象");
+    </script>
+    <script>
+        //Num33 Array对象
+        console.log("\n\nNum33开始：Array对象");
+
+
+        /*
+            Array.isArray(对象)---->判断这个对象是不是数组
+         */
+        var arrOr = new Array();
+        var arrOr2 = [];
+        var arrOr3 = "";
+        console.log(Array.isArray(arrOr) + "," + Array.isArray(arrOr2) + "," + Array.isArray(arrOr3));//true,true,false
+
+        /*
+            Array.from(类似数组的对象,[数组中每个元素都执行的函数]):方法从一个类似数组或可迭代对象中创建一个新的数组实例
+            第一个参数是类似数组的对象，例如字符串等
+
+            第二个参数可选，如果写，就表示数组的每个元素都会执行这个函数
+        */
+        var frArr = [11, 22, 33];
+        var reFrArr = Array.from(frArr);
+        console.log(Array.isArray(reFrArr) + "," + reFrArr);//true,11,22,33
+
+        //等价于 var reFrArr2 = Array.from(frArr,x=>x+1);ES6标准新增的一种函数：Arrow Function（箭头函数）
+        var reFrArr2 = Array.from(frArr, function (x) {
+            return (x + 1);
+        });
+        console.log(reFrArr2);
+
+        var frArr2 = "hello";
+        console.log(Array.from(frArr2));//字符串被转换成数组["h", "e", "l", "l", "o"]
+
+        /*
+            arr.concat(arr2,arr3....) 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+        */
+        var conArr1 = [1, 2];
+        var conArr2 = [3, 4, 5];
+        var conArr3 = [6, 7, 8, 9];
+        var conArr4 = conArr1.concat(conArr2, conArr3);
+        console.log(conArr4);//[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        /*
+            every(func) 方法测试数组的所有元素是否都通过了指定函数的测试,有一个没通过都返回false，只有所有都通过才返回true，即一假全假
+            返回值是布尔类型
+            其中func一般可以有三个参数，第一个参数是当前要测试的元素，第二个参数是当前要测试的元素的索引，第三个参数是当前整个数组
+            但是，我们可以只保留一个元素、或两个元素
+        */
+        var eveArr = [1, 2, 3];
+        var booArr = eveArr.every(function (element, index, arr) {
+            console.log("element:" + element + ",index:" + index + ",arr" + arr);
+            // return element>3;//false
+            return element < 4;//true
+        });
+        console.log(booArr);
+        var booArr1 = eveArr.every(function (element, index) {
+            console.log("element:" + element + ",index:" + index);
+            // return element>3;//false
+            return element < 4;//true
+        });
+        var booArr2 = eveArr.every(function (element) {
+            console.log("element:" + element);
+            // return element>3;//false
+            return element < 4;//true
+        });
+
+        /*
+            filter(func) 返回一个新数组, 所有满足func测试的元素组成一个新的数组
+            过滤，取的满足条件的所有元素，并组成新的数组返回
+
+            与every()类似的是func一般可以有三个参数，第一个参数是当前要测试的元素，第二个参数是当前要测试的元素的索引，第三个参数是当前整个数组
+            但是，我们可以只保留一个元素、或两个元素
+        */
+        var filArr = [1, 2, 3];
+        var reFilArr = filArr.filter(function (element, index, arr) {
+            console.log(element + "|" + index + "|" + arr);
+            return element > 1;//这就是判断条件，大于1的元素都满足，放到新的数组里
+        });
+        console.log(reFilArr);
+
+        /*
+            push(element...) 方法将一个或多个元素添加到数组的末尾，并返回新数组的长度。
+            注意改变的是原数组，不会产生新的数组
+        */
+        var pushArr = [1, 2, 3];
+        var rePushArrLength = pushArr.push(4, 5, 6);
+        console.log(rePushArrLength + "|" + pushArr);//6|1,2,3,4,5,6
+        const aaArr = [100];
+        const bbArr = [1,2,3]
+        //当数组的push方法，push一个数组时，带不带‘...’本质上完全不同，带‘...’说明是将bbArr的各个元素依次push进去，这里相当于push了3个元素'1','2','3'进去
+        //不带‘...’相当于将bbArr整个数组push进入，即只push了一个元素，因此结果aaArr的长度不同
+        //因为push是可变参数的
+        aaArr.push(...bbArr)//数组的push:4 | 100,1,2,3
+        // aaArr.push(bbArr)//数组的push:2 | 100,1,2,3
+        console.log("数组的push:"+aaArr.length+" | "+aaArr);
+
+        /*
+            unshift(element...) 方法将一个或多个元素添加到数组的开头，并返回新数组的长度。
+            注意改变的是原数组，不会产生新的数组
+        */
+        var unsArr = [1, 2, 3];
+        var reUnsArrLength = unsArr.unshift(4, 5, 6);
+        console.log(reUnsArrLength + "|" + unsArr);//6|4,5,6,1,2,3
+
+        /*
+            pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度,但是不会产生新的数组。
+        */
+        var popArr = [1, 2, 3];
+        var popElement = popArr.pop();
+        console.log(popElement + "|" + popArr);//3|1,2
+        /*
+            shift()方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度,但是不会产生新的数组。
+        */
+        var shiftArr = [1, 2, 3];
+        var shiftElement = shiftArr.shift();
+        console.log(shiftElement + "|" + shiftArr);//1|2,3
+
+        /*
+            forEach(func)方法---遍历数组用---相当于for循环
+            func里可以有两个参数，第一个是当前遍历到的元素值，第二个是当前遍历到的元素索引
+
+            注意低版本无效，但是有解决方案
+            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+            里面的兼容旧环境（Polyfill）章节，将那段代码进入就行了
+        */
+        var feArr = [1, 2, 3];
+        feArr.forEach(function (element, index) {
+            console.log("element：" + element + ",index：" + index);
+        });
+
+        /*
+            indexOf(元素值);返回的是元素在数组中的索引,没有则返回-1
+        */
+        var ioArr = [11, 22, 33];
+        console.log(ioArr.indexOf(33));//2
+        console.log(ioArr.indexOf(44));//-1
+
+        /*
+            join("字符串");用指定的字符串连接各个元素，组成一个整体字符串返回
+        */
+        var jiArr = [1, 2, 3];
+        var reJiArrStr = jiArr.join("fuck");
+        console.log(reJiArrStr);//1fuck2fuck3
+
+        /*
+            map(func) 数组中的每个元素都会通过func得到新的元素，这些新的元素组成新的数组返回
+            该方法并返回新的数组
+        */
+        var mapArr = [1, 4, 9];
+        var remArr = mapArr.map(Math.sqrt);//不要奇怪，其实就是传入Math.sqrt(x),相当于传入了一个函数名，也就代表传入了函数
+        console.log(remArr + "|" + mapArr);//1,2,3|1,4,9 原数组不变，返回新的数组
+
+        var mapArr2 = [1,2,3];
+        var remArr2 = mapArr2.map(function (element, index, array) {
+            console.log(element+"|"+index+"|"+array);
+            return element*2;
+        });
+        console.log(remArr2);//[2, 4, 6]
+
+        /*
+            reverse() 方法将数组中元素的位置颠倒。
+            不创建新的数组，但是有返回值，返回的是原数组的引用，也就是颠倒后改变的是原数组
+        */
+        var revArr = [1,2,3];
+        var retrevArr = revArr.reverse();
+        console.log(revArr+"|"+retrevArr);//3,2,1|3,2,1 改变原数组，返回原数组的引用
+
+        /*
+            sort() sort排序不一定是稳定的。默认排序顺序是根据字符串Unicode码点。
+             可以有参数sort(compareFunction),参数是排序规则函数
+             如果没有参数就默认按照Unicode码排序
+            不创建新的数组，而是改变原数组，但是有返回值，返回的是原数组的引用
+        */
+        var monthsSort = ['March', 'Jan', 'Feb', 'Dec'];
+        var reMSort = monthsSort.sort();
+        console.log(reMSort+"|"+monthsSort);//Dec,Feb,Jan,March|Dec,Feb,Jan,March 改变原数组，返回原数组的引用
+
+        //可见默认排序规则不是我们想要的，因此我们要自定义排序规则了
+        var sortArr = [1, 30, 4, 21];
+        var reSortArr = sortArr.sort();
+        console.log(reSortArr +"|"+ sortArr);//1,21,30,4|1,21,30,4 改变原数组，返回原数组的引用
+        //自定义排序规则
+        var diysort = [1, 30, 4, 21];
+        var reDiySort = diysort.sort(function (pre,after) {
+            if (pre < after) {
+                return -1;
+            }else if(pre > after){
+                return 1;
+            }
+            return 0;
+        });
+        console.log(reDiySort+"|"+diysort);//1,4,21,30|1,4,21,30
+
+        /*
+            slice(开始索引，[结束索引]) 截取一段数组，组成新的数组返回，原数组不变
+            可以没有结束索引，如果没有就截取到最后一个元素
+        */
+        var sliceArr = [11,22,33,44,55,66];
+        var reSliceArr = sliceArr.slice(1,4);
+        console.log(reSliceArr);//[22, 33, 44]
+
+        /*
+            splice(开始操作的索引，删除几个元素，增加的元素...)
+            如果即删除又添加，则先删除后添加
+        */
+        var spArr = [11,22,33,44,55];
+        var reSpArr = spArr.splice(1,0,"a");//第2个参数是0，说明不删除元素，有第三个参数说明新增元素
+        console.log(reSpArr+"|"+spArr);//|11,a,22,33,44,55
+
+        var spArr2 = [11,22,33,44,55];
+        var reSpArr2 = spArr2.splice(1,2);//第2个参数不是0说明要删除2个元素，没有第三个参数说明不新增元素
+        console.log(reSpArr2+"|"+spArr2);//22,33|11,44,55
+
+        var spArr3 = [11,22,33,44,55];
+        var reSpArr3 = spArr3.splice(1,2,"b","c","d");//第2个参数不是0说明要删除2个元素，有第三个参数说明新增元素
+        console.log(reSpArr3+"|"+spArr3);//22,33|11,b,c,d,44,55
+
+        console.log("Num33结束：Array对象");
+    </script>
+
+    <script>
+        /*
+            基本类型 ： 基本包装类型
+            number   ： Number
+            string   :  String
+            boolean  :  Boolean
+            undefined
+            object/null
+         */
+
+        //下面是Boolean毁三观的案例
+        //如果是一个对象&&true,那么结果是true
+        //如果是一个true&&对象,那么结果是对象
+
+        var flagBoo = new Boolean(false);
+        var resultBoo = flagBoo&&true;
+        console.log(resultBoo);//true
+
+        var flagBoo2=new Boolean(false);
+        var resultObj=true&&flagBoo2;
+        console.log(resultObj);//Boolean {false}
+    </script>
+</head>
+<body>
+<input id="doClick" type="button" value="在html标签的onClick属性中执行js代码" onclick="alert('在html标签的onClick属性中执行js代码');">
+<!--引用外部的js文件的script应该写在body标签里面的最底部，也就是body表中所有其它html标签的后面，
+当然你写在别的地方也是可以的，只是这样最合适，你写到别的地方，浏览器执行后也会帮你挪到这里。-->
+<script id="outLink" src="01JS基础.js"></script>
+
+<div id="dv"></div>
+</body>
+</html>

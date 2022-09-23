@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*a：这里father没有高度，big和small没有浮动时会撑起father的高度，但是一旦big和samll浮动起来了，则不再占用father的位置，相当于father不再有子元素，再加上father没有高度，所以结果是father只剩下有solid的一条线。*/
+	.father {
+		border: 1px solid red;
+		width: 300px;
+
+	}
+	.big {
+		width: 100px;
+		height: 100px;
+		background-color: purple;
+		float: left;
+	}
+	.small {
+		width: 80px;
+		height: 80px;
+		background-color: blue;
+		float: left;
+	}
+	/*b：big和small没有浮动时撑起了father，footer默认就是在father下；一旦big和small浮动起来了，二者不再占用原来的位置，father又没有高度，所以footer会顶上去占用big和small的位置。*/
+
+	/*由a和b分析可知，浮动虽好，但是带来的后续影响也不小，接下来我们就来解决这些不好的影响*/
+	.footer {
+		width: 400px;
+		height: 100px;
+		background-color: pink;
+	}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="big"></div>
+		<div class="small"></div>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>

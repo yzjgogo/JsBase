@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="getElementsByTagName获取多个标签组成的数组" id="btn"/>
+<div id="dv1">
+    <p>哈哈,我又变帅了</p>
+    <p>哈哈,我又变帅了</p>
+    <p>哈哈,我又变帅了</p>
+    <p>哈哈,我又变帅了</p>
+    <p>哈哈,我又变帅了</p>
+</div>
+
+<div id="dv2">
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+</div>
+<script>
+    document.getElementById("btn").onclick=function () {
+        // var pObjs= document.getElementsByTagName("p");
+        //getElementsByTagName，根据标签名返回多个标签对象组成的数组，这里获取指定返回内的所有p标签
+        var pObjs=document.getElementById("dv1").getElementsByTagName("p");
+        //循环遍历这个数组
+        for(var i=0;i<pObjs.length;i++){
+            pObjs[i].innerText="我们都是p";
+        }
+    };
+</script>
+</body>
+</html>

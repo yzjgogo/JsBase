@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*div {
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+		padding: 10px;  
+	}
+	a {
+		height: 35px;
+		background-color: #ccc;
+		display: inline-block;
+		line-height: 35px;
+		color: #fff;
+		text-decoration: none;
+		padding-left: 10px;
+		padding-right: 10px;
+	}*/
+	.all {
+		background-color: purple;
+		width: 300px;
+		height: 300px;
+		padding: 30px;
+		/*
+		padding会导致盒子扩张，例如这里本来盒子是300*300,但是设置了padding为30，则这个盒子实际占据的宽高为330*330
+
+		padding后面可以跟或4个或3个或2个或1个参数
+		padding: top  right  bottom  left;例如padding: 20px(top) 30px(right) 40px(bottom) 50px(left);top开始顺时针旋转
+		padding: top  right/left  bottom;例如padding: 20px(top) 30px(right/left) 40px(bottom);
+		padding: top/bottom  right/left;例如padding: 20px(top/bottom) 30px(right/left);
+		padding: top/bottom/right/left;例如padding: 20px(top/bottom/right/left);
+		*/
+	}
+
+	.four {
+		background-color: cyan;
+		width: 300px;
+		height: 300px;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		padding-right: 40px;
+		padding-left: 50px;
+	}
+	</style>
+</head>
+<body>
+	<div class="all">同时设置上下左右内边距</div><br/>
+	<div class="four">分别设置上下左右内边距</div>
+
+</body>
+</html>

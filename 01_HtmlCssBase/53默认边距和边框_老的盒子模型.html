@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 500px;
+			height: 50px;
+			background-color: green;
+		}
+
+		input {
+			width: 448px;/*448+1+1=450*/
+			height: 48px;/*48+1+1=50*/
+			outline: none;
+			padding: 0;/*因为padding会撑开标签，导致实际长宽比指定长宽大，所以我去掉默认的padding。*/
+			border: 0;/*去掉默认的border自己指定，我就知道这个border到底是多少px了*/
+			border: 1px solid red;
+			float: left;
+			/*因为我设置了border是1px,原来我想width是450px，所以减去左右border就是448px;
+			同理height是50-2-48px;
+			此时input的宽+button的宽是448+2+50=500,正好是500px，但是因为两个行内块元素之间是有间隙的，
+			加上这个间隙就超过500了，因此这里我通过float解决间隙的问题,也就是说float可以去掉行内块元素之间的间隙。*/
+		}
+
+		button {
+			width: 50px;
+			height: 50px;
+			background-color: orange;
+			padding: 0;
+			border: 0;
+			outline: none;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<!-- 这只是一个案例，通过这个案例我们要知道，在做项目时要小心默认的padding，border，marign，间隙造成的布局影响。 
+	要记住：控件的实际占用宽度是width+padding(两侧)+border(两侧)，注意不包含两侧的margin。
+	参考：71盒子模型.html
+	-->
+	<div>
+		<input type="text">
+		<button></button>
+	</div>
+	<h2 style="padding: 5px;width: 200px;height: 200px;border: 10px solid yellow;margin: 20px;background-color: blue;">padding、border、margin</h2>
+	<img src="img/biaoqian_border.png" alt="">
+</body>
+</html>

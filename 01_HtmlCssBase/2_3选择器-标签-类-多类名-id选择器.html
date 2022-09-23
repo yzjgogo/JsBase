@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*
+	标签选择器
+		用于指定某个标签的样式；所有标签都有效
+		*/
+		h5{
+			color: red;
+		}
+	/*
+	类选择器
+	定义一个样式类，谁想用谁就拿来用；
+	如果某个标签想使用这个样式类，则可通过class="suibian-name"的方式引用
+	格式：.+任意名
+	*/
+	.suibian-name {
+		color: blue;
+	}
+
+	.red {
+		color: red;
+	}
+	.font20 {
+		font-size: 40px;
+		color: blue;
+	}
+	.fontw {
+		font-weight: 700;
+	}
+
+	/*id选择器*/
+	#last {
+		color: pink;
+	}
+</style>
+</head>
+<body>
+	<!-- 标签选择器 -->
+	<h5>我是标题</h5>
+	<h5>我是也是标题</h5>
+	<!-- 类选择器 
+	一个html页面中可以有多个相同的类名，就好像很多人都叫张伟-->
+	<div class="suibian-name">我是类选择器</div>
+	<div class="suibian-name">我是类选择器</div>
+	<div>我是类选择器</div>
+	<div>我是类选择器</div>
+	<div>我是类选择器</div>
+	<div>我是类选择器</div>
+	<!-- 多类名选择器
+	这多个类名不存在先后顺序；
+	样式的执行是由样式的代码先后顺序执行的，如果前面设置过某个样式，后面又设置一次，则后面的会覆盖前面的效果；
+	例如你看前面的样式表，先定义了.red,再定义了.font20,最后定义了.fontw，所以执行的顺序也是这个顺序，因此.font20里的color会覆盖.red中的color。
+	 -->
+	<div class="font20 red fontw">多类名</div>
+
+	<!-- id选择器：这个id在整个html页面中唯一，就好像每个人(标签)都有一个唯一的身份证号 -->
+	<div id="last">id选择器</div>
+</body>
+</html>

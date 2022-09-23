@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //定义一个类
+    class Goods {
+        constructor(name, price) {
+            this.name = name
+            this.price = price
+        }
+    }
+    //创建对象
+    let  good = new Goods("狗",100)
+    console.log(good);//Goods {name: '狗', price: 100}
+    //获取对象的所有属性，Object.keys(good).length == 0说明是空对象，没有属性
+    console.log(Object.keys(good));//['name', 'price']
+
+
+    //对象展开运算符
+    good = {...good}
+    console.log("---------");
+    console.log(good);
+
+    //Object.defineProperty()的作用就是直接在一个对象上定义一个新属性，或者修改一个已经存在的属性
+    //https://www.jianshu.com/p/8fe1382ba135
+    Object.defineProperty(good,'address',{
+        value:"成都",
+        writable:true
+    })
+    console.log("给good定义属性");
+    console.log(good);
+    good.address = "重庆"
+    console.log("给good修改属性值");
+    console.log(good);
+</script>
+</body>
+</html>

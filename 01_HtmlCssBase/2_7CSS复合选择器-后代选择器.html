@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h2{
+			color: red;
+		}
+	/*
+		后代选择器：注意是前后代关系，例如父子，爷孙，爷重孙等等，不一定是父子关系；
+		后台选择器开始
+	*/
+	div p{ /*只要在div中能找到p就行了，p不一定是div的儿子，也可能是重孙，重重孙等等*/
+		color: pink;
+	}
+
+	.jianlin p {/*只要在.jianli中能找到p就行，p不一定是.jianlin的儿子，也可能是孙子，重孙子等等*/
+		color: purple;
+	}
+	ul li span{/*只要在ul中能找到span就行了，span不一定是ul的儿子，也可能是重孙，重重孙等等*/
+		color: #daa520;
+	}
+	table tr{/*只要能在table中能找到tr就行了，tr不一定是table的儿子，也可能是重孙，重重孙等等*/
+		color: blue;
+	}
+	/*后代选择器结束*/
+
+	</style>
+</head>
+<body>
+	<h2>后代选择器</h2>
+	<div> 后代选择器：注意是前后代关系，例如父子，爷孙，爷重孙等等，不一定是父子关系； </div>
+	<div> 王者荣耀 </div>
+	<div> 王者荣耀 </div>
+	<div> 
+	    <p>王思聪,div下的p</p> 
+	</div>
+	<div> 
+	    <p>王思聪,div下的p</p>	   
+	</div>
+	<div> 
+	    <p>王思聪,div下的p</p>	   
+	</div>
+	<div class="jianlin"> 
+	    <p>王思聪,jianlin下的p</p>	 
+	    <span>jianlin下的span</span>  
+	</div>
+
+	<p> 王者荣耀 </p>
+	<p> 王者荣耀 </p>
+
+	<ul>
+		<li>苹果,ul下的li</li>
+		<li>梨子,ul下的li</li>
+		<li>苹果,ul下的li</li>
+		<li><span>ul下的li下的span</span></li>
+	</ul>
+	<ol>
+		<li>苹果</li>
+		<li>梨子</li>
+		<li>苹果</li>
+		<li>苹果</li>
+	</ol>
+	<table>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>张安,table的重孙</td>
+				<td>男</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

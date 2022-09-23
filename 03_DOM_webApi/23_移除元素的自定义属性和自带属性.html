@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .cls{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移除自定义属性" id="btn"/>
+<div id="dv" score="10" class="cls"></div>
+<script src="common.js"></script>
+<script>
+    //移除属性:removeAttribute("属性的名字")
+    my$("btn").onclick=function () {
+        my$("dv").removeAttribute("score");//移除自定义属性
+        //my$("dv").className="";这个不是移除，而是重新赋值
+        my$("dv").removeAttribute("class");//移除自带属性
+    };
+</script>
+</body>
+</html>

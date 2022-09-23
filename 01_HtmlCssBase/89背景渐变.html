@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		/*颜色渐变必须用-webkit-、-ms-等等*/
+		width: 300px;
+		height: 100px;
+		/*两种颜色渐变*/
+		/*background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结束颜色)；*/
+		/*background: -webkit-linear-gradient(top, red, green);从顶部开始渐变*/
+		/*background: -webkit-linear-gradient(left, red, green);从左侧开始渐变*/
+		/*background: -webkit-linear-gradient(left top, red, green);从左上角开始渐变*/
+		
+		/*多种颜色渐变*/
+		/*background:-webkit-linear-gradient(渐变的起始位置， 颜色 位置， 颜色 位置....)*/
+		background: -webkit-linear-gradient(top, red 0%, green 50%, blue 100%);
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

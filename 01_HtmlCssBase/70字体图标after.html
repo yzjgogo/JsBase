@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@font-face {
+	  font-family: 'icomoon';
+	  src:  url('fonts/icomoon.eot?hrstq9');
+	  src:  url('fonts/icomoon.eot?hrstq9#iefix') format('embedded-opentype'),
+	    url('fonts/icomoon.ttf?hrstq9') format('truetype'),
+	    url('fonts/icomoon.woff?hrstq9') format('woff'),
+	    url('fonts/icomoon.svg?hrstq9#icomoon') format('svg');
+	  font-weight: normal;
+	  font-style: normal;
+	}
+	span , div {
+		font-family: 'icomoon';
+	}
+	div::after {
+		/*别忘了加斜杠，参考图片font_code.png*/
+		content: "\e901";
+	}
+	div:hover::after {
+		/*div的子after元素获取到焦点，顺序不可以颠倒，不能写成div::after:hover,因为前面用到了这个after元素，所以不在需要content*/
+		color:red;
+	}
+
+	</style>
+</head>
+<body>
+<!--参考：48字体图标.html-->
+	<span></span>
+	<div></div>
+</body>
+</html>

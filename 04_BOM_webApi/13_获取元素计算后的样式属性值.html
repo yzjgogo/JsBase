@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            /*因为没有指定定位模式，虽然left100px,但是并没有效果，offsetLeft也没有值，但是我们仍然可以获取到该值*/
+            left:100px;
+            top:10px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    /*
+        谷歌,火狐支持
+        第一个参数是当前标签，第二个参数是伪元素，不需要可不传或传null
+        返回一个包含当前标签的各种样式的对象
+        var obj = window.getComputedStyle(my$("dv"),null)
+        obj.left
+        obj["left"]
+
+
+        IE8支持
+        var obj = my$("dv").currentStyle
+        obj.left
+        obj["left"]
+     */
+
+    //兼容代码
+    function getStyle(element,attr) {
+        //判断浏览器是否支持这个方法
+        return window.getComputedStyle? window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];
+    }
+
+
+    my$("btn").onclick=function () {
+        console.log(getStyle(my$("dv"),"top"));
+    };
+</script>
+</body>
+</html>

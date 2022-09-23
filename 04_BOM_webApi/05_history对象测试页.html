@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+</head>
+<body>
+<input type="button" value="后退" id="btn"/>
+<script src="common.js"></script>
+<script>
+    //后退
+    my$("btn").onclick = function () {
+        window.history.back();//跟浏览器自带的后退按钮一个功能
+    };
+</script>
+
+</body>
+</html>

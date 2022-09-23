@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		div {
+			background-color: green;
+			width: 400px;
+			height: 300px;
+			margin: 0 auto;
+			/*
+			前提：margin:top right bottom left;
+			margin: 0 auto; 	--> margin:0 auto 0 auto;
+			margin:auto; 		--> margin:auto auto auto atuo; 注意top和bottom的auto是无效的，也就是说在垂直方向auto无效；
+			margin:auto 30px;	--> margin:auto 30px auto 30px;又因为垂直方向auto无效，所以最终效果是margin-left:30px;
+
+			如果该标签使用了浮动或非static的定位则auto失效，但是数字值不失效，例如margin：20px auto,20px还是有效的但是auto就失效没法居中了，参考31定位的盒子实现居中.html
+			*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+			前提：margin:top right bottom left;<br>
+			margin: 0 auto; 	--> margin:0 auto 0 auto;<br>
+			margin:auto; 		--> margin:auto auto auto atuo; <br>注意top和bottom的auto是无效的，也就是说在垂直方向auto无效；<br>
+			margin:auto 30px;	--> margin:auto 30px auto <br>30px;又因为垂直方向auto无效，所以最终效果是margin-left:30px;<br>
+
+			如果该标签使用了浮动或非static的定位则auto失效，但是数字值不失效，例如margin：20px auto,20px还是有效的但是auto就失效没法居中了，参考31定位的盒子实现居中.html
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.jianlin {
+			color: blue;
+			font-size: 50px;
+			height: 100px;/*p无法继承该样式*/
+		}
+	</style>
+</head>
+<body>
+	<div class="jianlin">
+		<p>继承性：这里只给div设置了样式，并没有给p设置样式，但是p仍然继承城了div的部分样式，注意是部分，（text-，font-，line-这些元素开头的都可以继承，以及color属性）</p>
+	</div>
+</body>
+</html>

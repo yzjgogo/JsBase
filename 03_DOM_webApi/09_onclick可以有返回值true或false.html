@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="ak" href="../img/1.jpg" target="_blank">
+    <img src="../img/1-small.jpg" alt="" id="im">
+</a>
+<script>
+    //点击图片标签,设置图片标签的src路径为超链接中大图的路径
+    document.getElementById("im").onclick=function () {
+        this.src=document.getElementById("ak").href;//改变img标签的图片
+        return false;//函数执行完毕后，终止单击事件传递，a标签不再响应单击事件，即不再有跳转
+        // return true;默认值，即执行了单击事件函数，有继续传递单击事件执行其他操作，例如会执行a标签的跳转操作
+    };
+
+</script>
+</body>
+</html>

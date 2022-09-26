@@ -10,7 +10,12 @@
 </head>
 <body>
 <div>
-    注：这种情况，注意理解，iframe里加载的文档(inner.html)(内部window)，是属于外部(out.html)window的，这与你单独开一个网页访问inner.html完全不是同一个东西
+    注：
+    1：这种情况，注意理解，iframe里加载的文档(inner.html)(内部window)，是属于外部(out.html)window的，这与你单独开一个网页访问inner.html完全不是同一个东西
+    2：window.postMessage("发送的消息","http://192.168.2.27:8080/")
+       window.postMessage(message, targetOrigin)
+       根据浏览器的同源策略，window必须是targetOrigin所属的window，否则会报错：window_postMessage参数问题.png
+        参考：https://blog.csdn.net/bbj12345678/article/details/109435199
 
     参考图片：使用postMessage在iframe中实现跨域数据传递.png
 

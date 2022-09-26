@@ -10,6 +10,7 @@
             这里提供一种解决方案，监听页面加载完成再执行相关操作
          */
         //只要页面加载完毕,这个事件就会触发-----页面中所有的内容,标签,属性,文本,包括外部引入js文件
+        //20220926 onload只能执行一次，怎么理解？
         window.onload = function () {
             //window是可以省略的
             document.getElementById("btn").onclick = function () {

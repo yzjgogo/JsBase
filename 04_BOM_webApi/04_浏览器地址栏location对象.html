@@ -27,8 +27,12 @@
         //整个网址，包含参数?&
         console.log(window.location.href);
 
+        //直接修改href的值，其实就是在当前页面打开(替换)新的页面，对比window.open(url)
+        // window.location.href = "www.baidu.com"
+
         onload = function () {
             document.getElementById("hrefId").onclick = function () {
+                //打开(替换)当前页面，对比window.open(url)
                 location.href = "http://www.jd.com";//页面跳转可后退有history 同assign函数
             };
             document.getElementById("assignId").onclick = function () {

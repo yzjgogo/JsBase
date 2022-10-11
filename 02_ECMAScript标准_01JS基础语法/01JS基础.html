@@ -1249,7 +1249,11 @@
         var exampleStr = "hello";
         console.log("length:" + exampleStr.length);//length:5  获取字符串的长度
 
-        console.log("charAt():" + exampleStr.charAt(1));//charAt():e  获取字符串中指定位置的字符，超出索引返回空的
+        console.log("charAt():" + exampleStr.charAt(1));//charAt():e  获取字符串中指定位置的字符(字符串类型)，超出索引返回空的
+
+        //str.charCodeAt(index)可返回字符串str指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。
+        let charCodeStr = "AB";
+        console.log("charCodeAt(index)："+charCodeStr.charCodeAt(0)+" , "+charCodeStr.charCodeAt(1))//charCodeAt(index)：65 , 66
 
         //A ,可以多参数例如：String.fromCharCode(65,66)返回ASCII码对应的字符,参考：ASCII表.png
         console.log("fromCharCode():" + String.fromCharCode(65));//fromCharCode():A

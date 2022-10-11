@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- 告诉浏览器我们用的是html5版本，测试提交 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>易记混</title>
+</head>
+<body>
+
+overflow
+
+12_box_外边距margin.html
+可让margin生效的一种方式
+
+22_float_overflow清除浮动.html
+清除浮动影响的一种方式
+
+40_display_显示和隐藏overflow.html
+内容(文字和子元素)显示的处理方式：visible、hidden、scroll、auto
+
+44溢出的文字隐藏.html
+溢出的文字隐藏的处理方式，例如以省略号结尾
+
+-------------------------------
+auto
+
+13_box_margin水平居中.html
+margin实现水平居中
+margin: 0 auto;
+margin: 0 auto 0;
+使用了浮动或非static的定位则auto失效，但是数字值不失效
+
+22_float_overflow清除浮动.html
+overflow:auto
+
+40_display_显示和隐藏overflow.html
+overflow:auto;
+内容没有溢出时，直接正常显示，也没有滚动条边框;
+内容有溢出时，溢出部分不在外部显示，而是在标签内部添加滚动条可以滚动显示。
+
+
+54百分比和auto.html
+img {
+width: 100%;/*百分比是根据父元素调整自己的大小，如果父元素在缩放，则该标签也缩放*/
+height: auto;/*根据自身长宽比例，再参考width调整自己的大小*/
+}
+
+
+
+-------------------------------------
+2_11CSS复合选择器-伪类选择器.html
+a:link   a:hover
+
+23_float_after伪元素清除浮动.html
+.clearfix:after{}
+
+24_float_双伪元素清除浮动.html
+.clearfix:before, .clearfix:after{}
+
+68伪元素选择器1.html
+p::first-letter
+
+69伪元素选择器2.html
+div::before
+div::after
+
+72盒子模型综合_伪类选择器_伪元素选择器.html
+div:hover::after{}
+
+-------------------------------
+
+居中
+2_6CSS外观属性.html
+文字垂直居中实现：设置height和line-height相等，例如这里都是50px
+text-align:水平对齐方式
+
+13_box_margin水平居中.html
+margin: 0 auto;垂直方向auto无效
+
+31_position_定位的盒子实现居中.html
+position: absolute;
+left: 50%;
+margin-left: -100px;
+top: 50%;
+margin-top: -100px;
+
+76移动translate实现定位居中.html
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+
+-------------------------------------------
+
+元素的显示隐藏
+
+display: none; 隐藏某个元素且不再持有位置；
+display: block 显示某个元素,可见block除了转换为块级元素之外，同时还有显示元素的意思。
+visibility: hidden;隐藏某个标签，持有原位置；
+visibility: visible;显示某个标签。
+
+
+-------------------------------------------------------
+
+margin-top没有相对父元素、只有top吗？垂直方向上下两个盒子的margin-bottom与margin-top的合并问题
+12_box_外边距margin.html
+要求父元素margin-top不为0或padding-top不为0
+
+17_box_嵌套外边距_让margin_top有效的三种方式_border-top_padding-top_overflow.html
+margin-top和padding-top为0也可以，父元素overflow:hidden
+
+16_box_外边距的合并_上下两个box_margin-bottom和margin-top取最长.html
+
+</body>
+</html>

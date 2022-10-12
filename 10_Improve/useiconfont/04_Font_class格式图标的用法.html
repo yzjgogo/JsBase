@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!--    参考：
+    https://blog.csdn.net/qq_40685439/article/details/116003406
+
+    Font_class格式特点.png
+
+    -->
+
+    <!--    第一步：通过Font_class格式使用某个图标.png-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3701068_g9ua0tkgg4k.css">
+    <style>
+
+        /*第二步*/
+        .iconfont {
+            font-family: "iconfont";
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+<div>
+    <!--    第三步：Font class也同时支持Unicode格式
+    Font_class图标名称引入.png
+    -->
+    <i class='iconfont icon-gongju' style="color: red"></i>
+    <i class="iconfont" style="color: red">&#xe644;</i>
+
+    <span class="iconfont icon-gongju" style="color: green"></span>
+    <span class="iconfont" style="color: green">&#xe644;</span>
+
+    <div class="iconfont  icon-gongju" style="color: blue"></div>
+    <div class="iconfont" style="color: blue">&#xe644;</div>
+</div>
+
+</body>
+</html>

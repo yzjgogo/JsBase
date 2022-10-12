@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        /*参考：
+        https://blog.csdn.net/qq_40685439/article/details/116003406
+
+        Unicode特点.png
+        */
+
+        /*第一步：复制Unicode格式的代码.png*/
+        /*CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+        @font-face {
+            font-family: 'iconfont';  /* Project id 3701068 */
+            src: url('//at.alicdn.com/t/c/font_3701068_g9ua0tkgg4k.woff2?t=1665561364392') format('woff2'),
+            url('//at.alicdn.com/t/c/font_3701068_g9ua0tkgg4k.woff?t=1665561364392') format('woff'),
+            url('//at.alicdn.com/t/c/font_3701068_g9ua0tkgg4k.ttf?t=1665561364392') format('truetype');
+        }
+
+        /*第二步：定义iconfont类，使用iconfont格式的font-family,然后业务中使用图标的地方要使用iconfont类*/
+        .iconfont {
+            font-family: "iconfont";
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+<div>
+    <!--    第三步：通过Unicode格式使用某个图标.png
+            使用Unicode格式必须通过Unicode引入，例如&#xe644;
+            不能通过'Font class'格式的图标引入，例如icon-gongju
+    -->
+    <!--    <i class='iconfont icon-gongju'></i>-->
+    <i class="iconfont" style="color: red">&#xe644;</i>
+
+    <!--    <span class="iconfont icon-gongju"></span>-->
+    <span class="iconfont" style="color: green">&#xe644;</span>
+
+    <!--    <div class="iconfont  icon-gongju" style="color: red"></div>-->
+    <div class="iconfont" style="color: blue">&#xe644;</div>
+</div>
+
+</body>
+</html>

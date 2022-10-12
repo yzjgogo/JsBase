@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+<!--    第一步：下载到本地的方法.png-->
+
+<!--    第二步：将下载的文件放入到项目，然后引入iconfont.css-->
+    <link type="text/CSS" rel="stylesheet" href="css/iconfont.css" />
+    <style>
+
+        /*第三步*/
+        .iconfont{
+            font-family: "iconfont";
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+<div>
+
+<!--    第四步：下载的方式既支持Unicode格式的图标 也支持 Font class格式的图标；但是不支持Symbol格式的图标？-->
+
+    <i class='iconfont icon-gongju' style="color: red"></i>
+    <i class="iconfont" style="color: red">&#xe644;</i>
+
+    <span class="iconfont icon-gongju" style="color: green"></span>
+    <span class="iconfont" style="color: green">&#xe644;</span>
+
+    <div class="iconfont  icon-gongju" style="color: blue"></div>
+    <div class="iconfont" style="color: blue">&#xe644;</div>
+
+<!--    不支持Symbol格式的图标？-->
+<!--    <svg>-->
+<!--        <use xlink:href="#icon-gongju"></use>-->
+<!--    </svg>-->
+</div>
+
+</body>
+</html>

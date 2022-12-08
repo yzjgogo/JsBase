@@ -272,10 +272,18 @@ label:绑定一个标签元素，如果label标签里只有一个标签元素，
     <!-- 单选按钮：多个radio根据需要定义相同的name -->
     <input type="radio" name="sex"/>
     <input type="radio" name="sex" checked="checked"/><br/><br/>
+
+
     <!-- 多选按钮：多个checkbox根据需要定义相同的name -->
     <input type="checkbox" name="hobby" checked="checked"/>
-    <input type="checkbox" name="hobby" checked="checked"/>
+<!--    使用label后点击“吹牛”也可以选中checkbox-->
+    <label><input type="checkbox" name="hobby" checked="checked"/>吹牛</label>
     <input type="checkbox" name="hobby"/><br/><br/>
+
+
+
+
+
     <!-- 普通按钮 -->
     <input type="button" name="confirm" value="注册"/><br/><br/>
     <!-- 提交按钮 -->

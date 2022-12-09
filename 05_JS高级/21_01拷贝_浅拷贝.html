@@ -29,6 +29,18 @@
         console.dir(obj2);//开始的时候这个对象是空对象
         console.dir(obj1);//有属性
 
+        console.log(obj1 == obj3)//true
+        console.log(obj1 === obj3)//true
+        console.log("------------------")
+        console.log(Object.is(obj1,obj3))//true
+        console.log(Object.is(obj1,obj2))//false
+        console.log("------------------")
+        console.log(obj1 == obj2)//false
+        console.log(obj1 === obj2)//false
+        console.log("******************")
+        console.log(12=="12")//true
+        console.log(12==="12")//false
+
 
 
     </script>

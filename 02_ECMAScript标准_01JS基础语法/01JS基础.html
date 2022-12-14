@@ -371,6 +371,7 @@
 
         //&&容易忽略的问题：(表达式a)&&(表达式b)，因为&&一假全假，当表达式a为false时不再执行表达式b，当表达式a为true时
         //会继续执行表达式b
+        //多个and也是同样的道理
         var bingboo = true;
         function bingFunc(){
             console.log("我是测试&&的函数体");

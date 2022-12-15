@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+</head>
+<body>
+<input type="button" value="add按钮" id="btn1"/>
+<input type="button" value="attach按钮" id="btn2"/>
+<input type="button" value="兼容按钮" id="btn3"/>
+<img id="gdg" src="gdg.jpg" width="600"/>
+<img id="gdg2" src="gdg2.png" width="600"/>
+<img id="gdg3" src="gdg3.webp" width="600"/>
+<script src="common.js"></script>
+<script>
+
+    window.addEventListener('click',(event)=>{
+        console.log("执行----------------")
+        let box = document.querySelector('#gdg')
+        //toolbar里的<localUpload/>弹出文件选择弹窗的过程中会自动提交，因此这样
+        let box2 = document.querySelector('#gdg2')
+        //打印出path(元素层叠关系)，发现包含‘#toolbar’，就是toolbar.vue,虽然没有给toolbar.vue定义id：‘#toolbar’，大概是vue自己添加的，因此通过‘#toolbar’找到它
+        let box3 = document.querySelector('#gdg3')
+        // 兼容
+        const ev = window.event || event
+        const path = event.path || (event.composedPath && event.composedPath())
+        if (path.includes(box)) {
+            console.log("执行1")
+        } else if (path.includes(box2)) {
+            console.log("执行2")
+        } else if (path.includes(box3)) {
+            console.log("执行3")
+        } else {
+            console.log("执行4")
+        }
+    })
+</script>
+</body>
+</html>

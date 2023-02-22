@@ -43,6 +43,28 @@
 	  		$代表以什么结尾；
 	  		*代表包含什么；
 	  */
+
+
+		/*给某个属性的元素设置样式*/
+		/*.login[data-v-10086]{*/
+		/*	width: 200px;*/
+		/*	height: 200px;*/
+		/*	background-color: #9370DB;*/
+		/*}*/
+
+	/*这样也可以*/
+	/*	div[data-v-10086]{*/
+	/*		width: 200px;*/
+	/*		height: 200px;*/
+	/*		background-color: #7CFC00;*/
+	/*	}*/
+
+	/*这样也可以*/
+		[data-v-10086]{
+			width: 200px;
+			height: 200px;
+			background-color: #0086b3;
+		}
 	</style>
 </head>
 <body>
@@ -59,5 +81,9 @@
 	<div class="test3">test3王者荣耀</div>
 	<h5 id="d3">d3</h5>
 	<h5 class="test">test</h5>
+
+<!--	任意定义一个属性 data-v-10086-->
+	<div class="login" data-v-10086>aaaa</div>
+	<div class="login">bbbb</div>
 </body>
 </html>

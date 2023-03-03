@@ -10,9 +10,11 @@
 		background-color: pink;
 		padding: 30px;
 		border-right: 20px solid red;
-		box-sizing: border-box;  
+		/*box-sizing: border-box;*/
+		margin: 10px;
 		/*
-		box-sizing: border-box：内减模式：总宽高就是width和height指定的宽高，不会因为使用了padding和margin而增加
+		box-sizing: border-box：内减模式：总宽高就是width和height指定的宽高，width = 内部的宽+padding(两边)+border(两边),与margin无关
+					注意不包含两侧的margin
 		
 		box-sizing: content-box;默认样式，就是老版的盒子模型，外增模式；总宽度=width+padding(两边)+border(两边)
 					注意不包含两侧的margin

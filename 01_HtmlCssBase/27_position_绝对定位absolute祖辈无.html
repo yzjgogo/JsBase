@@ -8,7 +8,6 @@
 			background-color: #999999;
 		}
 	body {
-		/*把高弄的很高，你会发现浏览器虽然可以上下滑动，但是绝对定位的元素仍然以当前浏览器窗口为基准偏移，而不是以下拉后的窗口为基准(不会随着滚动保持固定，对比固定定位)*/
 		height: 1500px;
 		background-color: #7CFC00;
 	}
@@ -18,9 +17,9 @@
 		background-color: pink;
 	}
 	.top {
-		position: absolute;  /*因为祖辈没有有定位的标签，所以以当前浏览器窗口为基准偏移，right:0;bottom:0说明在窗口的右下角，注意是浏览器的窗口，不是整个body可滚动的区域*/
-		right: 0;
-		bottom: 0;
+		/*position: absolute;*/
+		/*right: 0;*/
+		/*bottom: 0;*/
 
 	}
 	.bottom {
@@ -30,8 +29,20 @@
 	</style>
 </head>
 <body>
-	<div class="top"></div>
+	<div class="top" id="tope"></div>
 <!--	top浮动起来，bottom占用了top的位置-->
 	<div class="bottom"></div>
+
+	<input type="button" value="给top定位" id="btn" style="margin-top: 500px"/>
+	<script>
+		//演示absolute到底是怎么定位的：以浏览器窗口为基准定位(非滚动区域)，且会随着页面的滚动跟着滚动(这是与fixed的区别)
+		var mbtn = document.getElementById("btn")
+		var myTop = document.getElementById("tope")
+		mbtn.onclick = function () {
+			myTop.style.position = "absolute";
+			myTop.style.right = "0";
+			myTop.style.bottom = "0";
+		};
+	</script>
 </body>
 </html>

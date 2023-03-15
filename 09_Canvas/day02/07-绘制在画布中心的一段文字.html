@@ -59,7 +59,7 @@
     start：direction默认rtl的情况下，等价于left
     end：direction为ltr的情况下，等价于right
     */
-    ctx.textAlign = 'left';
+    ctx.textAlign = 'center';
     /*
         textBaseline：
         根据基线进行对齐：基线就是ctx.fillText(str,x,y)中(x,y)所在的水平线，这里就是X轴
@@ -69,7 +69,7 @@
         bottom时，文字在基线的上方；
         middle时，文字的中心与基线重合；
     */
-    ctx.textBaseline = 'alphabetic';
+    ctx.textBaseline = 'middle';
     // ctx.direction = 'rtl';不管
     //ctx.strokeText(str,x0,y0);绘制镂空文字
     ctx.fillText(str,x0,y0);//绘制实体文字

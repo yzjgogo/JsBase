@@ -15,20 +15,45 @@
     var myCanvas = document.querySelector('canvas');
     var ctx = myCanvas.getContext('2d');
 
-    /*绘制矩形路径 不是独立路径*/
-    /*ctx.rect(100,100,200,100);
-    ctx.fillStyle = 'green';
-    ctx.stroke();
-    ctx.fill();*/
+    /*
+    方法1：rect(x,y,width,height)
+    绘制矩形路径,rect(x,y,width,height),该方法只是创建一个矩形区域，不进行绘制，要显示出来还需要自己调用stroke()、fill()等方法
+    不是独立路径:相当于在其后接着用ctx.xxx等各种方法或属性会接着画，相当于没有beginPath()
+    */
+    // ctx.beginPath()
+    // ctx.rect(100,100,200,100);
+    // ctx.fillStyle = 'green';
+    // ctx.stroke();
+    // ctx.fill();
+    //因为不是独立路径，所以下面如果遇到相同的属性或方法，会覆盖之前的
+    // ctx.lineTo(400,500)
+    // ctx.strokeStyle = 'red'
+    // ctx.stroke()
 
-    /*绘制矩形  有自己的独立路径*/
-    //ctx.strokeRect(100,100,200,100);
+
+
+    /*
+    方法2：strokeRect(x,y,width,height),直接绘制出来带有stroke的矩形，默认stroke的颜色是黑色，想改变颜色可以，可以在该方法之前设置ctx.strokeStyle = 'color'
+    绘制矩形  有自己的独立路径
+    */
+    // ctx.strokeStyle = 'yellow'
+    // ctx.strokeRect(100,100,200,100);
+
+    /*
+    方法3：fillRect(x,y,width,height),直接绘制出来带有fill效果的矩形，默认fill是黑色，想改变颜色可以在该方法之前调用ctx.fillStyle = 'color'
+    也有自己的独立路径
+    */
+    // ctx.fillStyle = 'blue'
     ctx.fillRect(100,100,200,100);
 
-    /*清除矩形的内容*/
-    ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
-
-    //ctx.fillRect(100,100,200,100);
+    /*
+    方法3：clearRect(),按照矩形范围，清楚canvas上指定区域的内容
+    */
+    // ctx.clearRect(0,0,150,150)
+    // 清除整个canvas区域
+    // ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+    // 清除完成后，可以重新按需画
+    // ctx.fillRect(100,100,200,100);
 
 </script>
 </body>

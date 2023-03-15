@@ -15,19 +15,20 @@
     var myCanvas = document.querySelector('canvas');
     var ctx = myCanvas.getContext('2d');
 
-    /*在中心位置画一个半径150px的圆弧右上角 扇形  边  填充 */
     var w = ctx.canvas.width;
     var h = ctx.canvas.height;
 
-    /*把起点放到圆心位置*/
-    ctx.moveTo(w/2,h/2);
 
+    //第一步：有了moveTo的点
+    ctx.moveTo(w/2,h/2)
+
+    //第二步：有一段弧形
     ctx.arc(w/2,h/2,150,0,-Math.PI/2,true);
 
-    /*闭合路径*/
-    //ctx.closePath();
-
-    ctx.fill();
+    //第三步：因为有moveTo因此会把moveTo的点纳入闭合区域，这样就形成了扇形
+    ctx.closePath();
+    ctx.stroke()
+    // ctx.fill();
 
 
 </script>

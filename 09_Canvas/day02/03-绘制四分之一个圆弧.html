@@ -20,9 +20,9 @@
     arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean)
     (x,y)：圆弧所在圆的圆心；
     radius：圆弧所在圆的半径；
-    startAngle：圆弧开始的弧度值，水平向右弧度是0，然后顺时针一次π/2、π、3π/2,弧度值方向与参数anticlockwise无关；
-    endAngle：圆弧结束的弧度制，水平向右弧度是0，然后顺时针一次π/2、π、3π/2,弧度值方向与参数anticlockwise无关；
-    anticlockwise：默认值为false顺时针画圆弧，true为逆时针画圆弧，注意，这个参数决定不了弧度制的顺序，弧度值永远是水平向右为0，然后顺时针增加；
+    startAngle：圆弧开始的弧度值，水平向右弧度是0，然后顺时针一次π/2、π、3π/2；逆时针依次是-π/2、-π、-3π/2；弧度值方向与参数anticlockwise无关；
+    endAngle：圆弧结束的弧度制，水平向右弧度是0，然后顺时针一次π/2、π、3π/2；逆时针依次是-π/2、-π、-3π/2；弧度值方向与参数anticlockwise无关；
+    anticlockwise：默认值为false顺时针画圆弧，true为逆时针画圆弧，注意，这个参数决定不了弧度制的顺序，弧度值永远是水平向右为0，然后顺时针为正数，逆时针为负数；
      */
     var w = ctx.canvas.width;
     var h = ctx.canvas.height;

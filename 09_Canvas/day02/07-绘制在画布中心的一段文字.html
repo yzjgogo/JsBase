@@ -19,8 +19,8 @@
 
     /*1.在画布的中心绘制一段文字*/
     /*2.申明一段文字*/
-    // var str = '您吃-,了吗';
-    var str = 'good morning';
+    var str = '您吃-,了吗';
+    // var str = 'good morning';
     /*3.确定画布的中心*/
     var w = ctx.canvas.width;
     var h = ctx.canvas.height;
@@ -59,7 +59,7 @@
     start：direction默认rtl的情况下，等价于left
     end：direction为ltr的情况下，等价于right
     */
-    ctx.textAlign = 'center';
+    ctx.textAlign = 'left';
     /*
         textBaseline：
         根据基线进行对齐：基线就是ctx.fillText(str,x,y)中(x,y)所在的水平线，这里就是X轴
@@ -69,7 +69,7 @@
         bottom时，文字在基线的上方；
         middle时，文字的中心与基线重合；
     */
-    ctx.textBaseline = 'middle';
+    ctx.textBaseline = 'alphabetic';
     // ctx.direction = 'rtl';不管
     //ctx.strokeText(str,x0,y0);绘制镂空文字
     ctx.fillText(str,x0,y0);//绘制实体文字

@@ -19,7 +19,8 @@
 
     /*1.在画布的中心绘制一段文字*/
     /*2.申明一段文字*/
-    var str = '您吃-,了吗';
+    // var str = '您吃-,了吗';
+    var str = 'good morning';
     /*3.确定画布的中心*/
     var w = ctx.canvas.width;
     var h = ctx.canvas.height;
@@ -31,26 +32,59 @@
     ctx.lineTo(w / 2 - 0.5, h);
     ctx.strokeStyle = '#eee';
     ctx.stroke();
+
+
+
+
+
+    // 主要看绘制文本这里
     /*5.绘制文本*/
     ctx.beginPath();
     ctx.strokeStyle = '#000';
     var x0 = w/2;
     var y0 = h/2;
     /*注意：起点位置在文字的左下角*/
-    /*有文本的属性  尺寸 字体  左右对齐方式  垂直对齐的方式*/
+    /*
+       font的用法参考：
+       E:\web\JsBase\01_HtmlCssBase\2_5CSS字体样式属性.html
+       E:\web\JsBase\01_HtmlCssBase\96背景是否可见.html
+    * */
     ctx.font = '40px Microsoft YaHei';
-    /*左右对齐方式 (center left right start end) 基准起始坐标*/
+    /*
+    文字相对fillText(str,x,y)中的文字绘制的起点(x,y)的对齐方式 (center left right start end)
+    注意，(x,y)位置是不动的，设置的是文字是从(x,y)开始绘制，这几个参数决定了朝哪个方向绘制
+    left：(x,y)在文字左侧，文字从(x,y)开始朝右侧绘制；
+    right：(x,y)在文字的右侧，文字从(x,y)开始向左绘制；
+    center：(x,y)在文字的水平中间，文字从(x,y)向左右两侧绘制；
+    start：direction默认rtl的情况下，等价于left
+    end：direction为ltr的情况下，等价于right
+    */
     ctx.textAlign = 'center';
-    /*垂直对齐的方式 基线 baseline(top,bottom,middle) 基准起始坐标*/
+    /*
+        textBaseline：
+        根据基线进行对齐：基线就是ctx.fillText(str,x,y)中(x,y)所在的水平线，这里就是X轴
+        取值：top, bottom, middle, hanging, alphabetic, ideographic。默认值是 alphabetic；hanging和ideographic不管它
+        默认alphabetic时，就是我们正常看到的，基线处于正常基线位置的效果；
+        top时，文字在基线的下方；
+        bottom时，文字在基线的上方；
+        middle时，文字的中心与基线重合；
+    */
     ctx.textBaseline = 'middle';
-    //ctx.direction = 'rtl';
-    //ctx.strokeText(str,x0,y0);
-    ctx.fillText(str,x0,y0);
+    // ctx.direction = 'rtl';不管
+    //ctx.strokeText(str,x0,y0);绘制镂空文字
+    ctx.fillText(str,x0,y0);//绘制实体文字
+
+
+
     /*6.画一个下划线和文字一样长*/
     ctx.beginPath();
-    /*获取文本的宽度*/
+    /*
+    获取文本的宽度
+    是根据之前设置的ctx.font这些来计算出来的
+    */
     console.log(ctx.measureText(str));
     var width = ctx.measureText(str).width;
+    //文字的font-size==40,即文字的高度是40，因此这里是20
     ctx.moveTo(x0-width/2,y0 + 20);
     ctx.lineTo(x0+width/2,y0 + 20);
     ctx.stroke();

@@ -25,9 +25,9 @@
     ctx.lineWidth = 10// 如果使用lineTo(100,100)(不用closePath())去闭合斜边，则会导致三角形左上角定点有凹角，因为lineTo()不具备闭合功能只是看起来闭合,不考虑线的宽度，以线的中心线为参考
 
 
-    ctx.closePath()
-    ctx.stroke()
-    ctx.fill()
+    ctx.closePath()//闭合路径
+    ctx.stroke()//不闭合路径
+    ctx.fill()//自动闭合路径
 
     /**1,closePath()属于构建轨迹过程中的方法，只是构建时让轨迹自动闭合,不会填充这个闭合区域，也不会显示出轨迹，要显示出轨迹还需调用stroke()；要显示出被填充的轨迹区域则需调用fill()
         注意：closePath也是考虑线宽的，闭合时也会考虑lineWidth导致的三角形左上角有凹角的问题，自动填充补全*/

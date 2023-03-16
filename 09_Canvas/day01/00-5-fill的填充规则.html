@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<script>
+    /**
+        参考：
+            https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/fill
+            https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
+            E:\web\JsBase\09_Canvas\day01\00-4Path2D.html
+            E:\web\JsBase\09_Canvas\day01\05-绘制一个镂空正方形-非零环绕规则.html
+     * */
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(50, 50, 30, 0, Math.PI*2, true);
+    ctx.arc(50, 50, 15, 0, Math.PI*2, true);
+    // ctx.fill("nonzero");非零环绕规则
+    ctx.fill("evenodd");//奇偶环绕规则
+
+</script>
+</body>
+</html>

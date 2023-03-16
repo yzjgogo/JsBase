@@ -35,7 +35,16 @@
 
     var rectPath = new Path2D()
     rectPath.rect(200,200,50,50)
-    ctx.fill(rectPath);//传入一个要填充的path，绘制出来
+    /**
+     fill(path: Path2D, fillRule?: CanvasFillRule)
+     path：传入一个要填充的path，绘制出来
+     fillRule：填充规则，nonzero：非零环绕规则；evenodd：奇偶环绕规则；
+            参考：
+                E:\web\JsBase\09_Canvas\day01\05-绘制一个镂空正方形-非零环绕规则.html
+                E:\web\JsBase\09_Canvas\day01\00-5-fill的填充规则.html
+                https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/fill
+     */
+    ctx.fill(rectPath);
 
 </script>
 </body>

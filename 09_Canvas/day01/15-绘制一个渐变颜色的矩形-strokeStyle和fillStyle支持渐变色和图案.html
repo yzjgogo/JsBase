@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+/*        .linearGradient{
+            width: 400px;
+            height: 100px;
+            background-image: linear-gradient(to right,pink,blue);
+        }*/
+    </style>
+</head>
+<body>
+<div class="linearGradient"></div>
+<canvas id="canvas1" width="600" height="400"></canvas>
+<canvas id="canvas2" width="500" height="300"></canvas>
+<script>
+    var myCanvas = document.getElementById('canvas1');
+    var ctx = myCanvas.getContext('2d');
+
+    /**
+        fillStyle和strokeStyle支持'pink'、'#000'、'rgb()'、'rgba()'、渐变、图案
+     */
+    /** 一、线性渐变 */
+    //1，创建一个CanvasGradient对象，参数是(startX,startY,endX,endY)，代表这个渐变色会沿着(startX,startY)到(endX,endY)这个线段方向实现颜色渐变效果,但是注意这个线段区间可能大于目标矩形区间
+    var linearGradient = ctx.createLinearGradient(100,100,300,100);
+    //2,区间(0~1)，0代表(startX,startY)线段开始处的颜色,0.5代表线段中间的颜色,1代表(endX,endY)线段结束处的颜色，addColorStop()之外的区域机会在这几个颜色间过度
+    linearGradient.addColorStop(0,'yellow');
+    linearGradient.addColorStop(0.5,'red');
+    linearGradient.addColorStop(1,'blue');
+
+    ctx.fillStyle = linearGradient;
+
+    ctx.fillRect(100,100,400,100);
+
+    /**
+        二、放射渐变
+        放射渐变：createRadialGradient(x1, y1, r1, x2, y2, r2)
+        参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
+     * */
+
+
+    /**
+      三、图案填充
+     createPattern(image, repetition):CanvasPattern
+     image：可以传入Image对象 或 另一个Canvas
+     repetition：被填充的图案或Canvas填入当前当前canvas时的重复默认，取值：repeat，repeat-x，repeat-y 和 no-repeat
+
+
+     对ctx.fillStyle = CanvasPattern的理解
+     上面说‘填入当前当前canvas时’这句话的原因：虽然实际显示效果是只有在绘制的形状区域才能开到CanvasPattern，但是实际上CanvasPattern是从当前canvas的原点开始按照
+     repetition指定的模式来填充的，只是在形状意外的区域看似透明看似不存在而已。
+
+      */
+    /** 用法一：createPattern传入图片 */
+    var img = new Image();
+    img.src = 'file/01.png';
+    img.onload = function() {
+        var ptrn = ctx.createPattern(img, 'repeat');
+        ctx.fillStyle = ptrn;
+        ctx.fillRect(20, 220, 150, 150);
+    }
+
+
+    /** 用法二：createPattern传入另一个canvas */
+    var myCanvas2 = document.getElementById('canvas2');
+    var ctx2 = myCanvas2.getContext('2d');
+    var image = new Image();
+    image.src = 'file/02.jpg';
+    image.onload = function () {
+        ctx2.drawImage(image, 0, 0, 500, 300)
+
+        var ptrn2 = ctx.createPattern(myCanvas2,'no-repeat')
+        ctx.fillStyle = ptrn2
+        ctx.fillRect(180,220,150,150)
+    }
+</script>
+</body>
+</html>

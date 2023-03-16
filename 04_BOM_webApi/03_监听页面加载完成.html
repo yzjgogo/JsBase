@@ -29,9 +29,15 @@
             alert("页面马上要关闭了");
         };
 
+        /**
+         * body的onload回调也会在页面接在完成后执行
+         */
+        function doMyLoad(){
+            console.log("打开接口的九分裤")
+        }
     </script>
 </head>
-<body>
+<body onload="doMyLoad();">
 <input type="button" value="按钮" id="btn"/>
 <script src="common.js"></script>
 </body>

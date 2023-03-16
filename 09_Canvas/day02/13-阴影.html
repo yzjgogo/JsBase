@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+
+    /**
+     shadowOffsetX 和 shadowOffsetY：用来设定阴影在 X 和 Y 轴的延伸距离，正值则表示会往下或右延伸，它们默认都为 0。
+     shadowBlur：阴影的模糊程度
+     shadowColor：阴影的颜色
+     */
+
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = "rgba(255, 0, 0, 0.5)";
+
+    ctx.font = "40px Times New Roman";
+    ctx.fillStyle = "Black";
+    ctx.fillText("Sample String", 5, 60);
+
+
+    ctx.fillRect(10,100,100,100)
+
+
+    ctx.shadowColor = 'yellow'
+    var image = new Image();
+    image.src = 'image/01.png';
+    image.onload = function () {
+        ctx.drawImage(image,10,210)
+    };
+
+</script>
+</body>
+</html>

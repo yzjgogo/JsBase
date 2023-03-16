@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="600" height="400" ></canvas>
+
+<script>
+
+    var myCanvas = document.querySelector('canvas');
+
+    var ctx = myCanvas.getContext('2d');
+
+    /**
+     二阶贝塞尔曲线
+     quadraticCurveTo(cpx, cpy, x, y)
+     (cpx,cpy)：控制点的坐标；
+     (x,y)：结束点的坐标；
+
+     三阶贝塞尔曲线
+     bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+     (cp1x,cp1y)：第一个控制的坐标；
+     (cp2x,cp2y)：第二个控制的坐标；
+     (x,y)：结束点的坐标；
+     */
+    ctx.moveTo(100,100)
+    ctx.quadraticCurveTo(300,0,300,100)
+    ctx.stroke()
+</script>
+</body>
+</html>

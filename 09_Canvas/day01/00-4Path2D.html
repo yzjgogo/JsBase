@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="600" height="400" ></canvas>
+
+<script>
+
+    var myCanvas = document.querySelector('canvas');
+
+    var ctx = myCanvas.getContext('2d');
+    /**
+        Path2D：不要想的太复杂，不要被后面的2D误导，其实就是和android中的Path类一样，用于构建Path的，相当于把Path的构建从ctx中抽离出来，独立出来，
+        ctx中的所有的路径方法比如moveTo, rect, arc或quadraticCurveTo等，在Path2D中都有这些方法。
+
+        参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Path2D
+     */
+
+    var path = new Path2D();
+    path.rect(10, 10, 50, 50);
+    var circle = new Path2D();
+    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+    //addPath(path: Path2D, transform?: DOMMatrix2DInit)可以添加别的path进来
+    path.addPath(circle)
+    ctx.stroke(path);//传入一个要描边的path，绘制出来
+
+    var rectPath = new Path2D()
+    rectPath.rect(200,200,50,50)
+    ctx.fill(rectPath);//传入一个要填充的path，绘制出来
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<button onclick="f()">按钮</button>
+<img src="image/01.png" name="my1" />
+<img src="image/02.jpg" name="my2" width="300"/>
+<script>
+    /** 通过new Image()的方式添加图片 */
+    var image3
+    image3 = new Image()
+    image3.src = 'image/00.png';
+    image3.name = 'my3'
+    document.body.appendChild(image3);
+
+
+    /** 通过createElement创建图片 */
+    var image4 = document.createElement('img');
+    image4.src = 'image/05.png';
+    image4.name = 'my4'
+    document.body.appendChild(image4);
+
+
+    /** 保证所有图片都加载完成，才能取到图片本身的信息 */
+    function f(){
+        console.log("根据name获取图片",document.images.my2)
+        console.log("通过namedItem根据name获取图片",document.images.namedItem('my4'))
+        console.log("所有图片",document.images)
+        console.log("所有图片数",document.images.length)
+        console.log("第一个图片",document.images[1])
+    }
+</script>
+</body>
+</html>

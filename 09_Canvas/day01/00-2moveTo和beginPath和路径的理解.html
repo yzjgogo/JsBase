@@ -30,6 +30,8 @@
 
      生成路径的第一步叫做 beginPath()。本质上，路径是由很多子路径构成，这些子路径都是在一个列表中，所有的子路径（线、弧形、等等）构成图形。而每次这个方法调用之后，
      列表清空重置，然后我们就可以重新绘制新的图形。
+
+     moveTo, rect, arc或quadraticCurveTo等都是路径构建的方法，strokeRect()和fillRect()不是
      */
     ctx.beginPath();
     ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制

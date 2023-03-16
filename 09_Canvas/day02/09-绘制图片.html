@@ -18,7 +18,7 @@
 
     /*1.加载图片到内存即可*/
     /*var img = document.createElement('img');
-    img.src = 'image/01.jpg';*/
+    img.src = 'image/01.png';*/
     /*创建对象*/
     var image = new Image();
     /*绑定加载完成事件*/
@@ -27,26 +27,41 @@
         console.log(image);
         /*绘制图片的三种方式*/
 
-        /*3参数*/
-        /*图片对象*/
-        /*绘制在画布上的坐标 x y*/
-        //ctx.drawImage(image,100,100);
+
+        /*
+        方法1：
+            drawImage(image: CanvasImageSource, dx: number, dy: number)
+            image：就是加载成功的图片；
+            (dx,dy)：就是图片绘制到canvas时，图片左上角的位置
+        */
+        // ctx.drawImage(image,10,10);
 
 
-        /*5个参数*/
-        /*图片对象*/
-        /*绘制在画布上的坐标 x y*/
-        /*是图片的大小  不是裁剪  是缩放*/
-        //ctx.drawImage(image,100,100,100,100);
 
 
-        /*9个参数*/
-        /*图片对象*/
-        /*图片上定位的坐标  x y */
-        /*在图片上截取多大的区域  w h*/
-        /*绘制在画布上的坐标 x y*/
-        /*是图片的大小  不是裁剪  是缩放*/
-        ctx.drawImage(image,400,400,400,400,200,200,100,100);
+        /*
+        方法2：
+            drawImage(image: CanvasImageSource, dx: number, dy: number, dw: number, dh: number)
+            image：就是加载成功的图片；
+            (dx,dy)：就是图片绘制到canvas时，图片左上角的位置；
+            dw,dh：是指定将原来的图片缩放到宽为dw，高为dh；注意是缩放不是剪裁；
+        */
+        // ctx.drawImage(image,10,10,100,100);
+
+
+
+
+
+        /*
+        方法3：
+            drawImage(image: CanvasImageSource, sx: number, sy: number, sw: number, sh: number, dx: number, dy: number, dw: number, dh: number)
+            image：就是加载成功的图片；
+            (sx,sy)：在图片上准备剪裁的矩形区域的左上角坐标，注意这个坐标是图片的，图片的左上角为(0,0)，图片的右下角为(图片宽,图片高)
+            sw,sh：从(sx,sy)开始，要剪裁的图片大小，剪裁sw这么宽，剪裁sh这么高；
+            (dx,dy)：就是把剪裁的图片绘制到canvas时，图片左上角在canvas的位置；
+            dw,dh：是指定将剪裁的图片缩放到宽为dw，高为dh；注意是缩放不是剪裁；
+        */
+        ctx.drawImage(image,0,0,800,800,20,20,100,100);
 
     };
     /*设置图片路径*/

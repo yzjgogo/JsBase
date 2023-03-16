@@ -14,11 +14,64 @@
 <script>
     var myCanvas = document.querySelector('canvas');
     var ctx = myCanvas.getContext('2d');
-    //ctx.translate(100,100);
-    //ctx.scale(0.5,1);
-    //ctx.rotate(Math.PI/6);
+
+    /**
+        translate(x,y)
+        是坐标系的移动，相当于拿着坐标系的原点在平面上任意水平或垂直移动；
+    */
+    // ctx.strokeRect(20,20,200,100)
+    // ctx.translate(20,20);
+    // ctx.strokeRect(20,20,200,100)
+
+
+    /**
+     scale(x,y)
+     是坐标系的缩放，相当于坐标系中0~1之间是1毫米，缩放到0.5倍时，0~1之间变为0.5毫米了，只是视觉上刻度的密度的变化，但是刻度值仍然是不变的
+     即原来0~1占据了1毫米，现在0~1占据了0.5毫米
+     */
+    // ctx.strokeRect(20,20,200,100)
+    // ctx.scale(0.5,1);
+    // ctx.strokeRect(20,20,200,100)
+
+
+    /**
+     rotate(angle)
+     是坐标系的旋转，相当于把坐标系的原点钉住，然后任意旋转角度；
+     */
+    // ctx.strokeRect(20,20,200,100)
+    // ctx.rotate(Math.PI/6);
+    // ctx.strokeRect(20,20,200,100)
+
+
+    /**
+     translate,scale,rotate只会影响调用之后的代码，之前的代码是未使用时的效果，之后的代码以新的变换后的坐标系为准
+     * */
+
+
+
+    /**
+     canvas状态的保存与恢复
+     */
+
+    // ctx.strokeRect(20, 20, 200, 100)
+    // ctx.save()//变化之前保存状态
+    // ctx.translate(20, 20);
+    // ctx.strokeRect(20, 20, 200, 100)
+    // ctx.restore()//变化后，可根据需要恢复状态，之后canvas就相当于没使用过变化
+    // ctx.strokeRect(20,20,10,10)//这个矩形就是在原始canvas基础上画的
+
+
+    /**
+        一个小案例，实现形状围绕自身的中心点旋转
+
+        本来通过ctx.rotate()可以实现形状围绕canvas坐标系的原点旋转，然后画一个矩形让矩形的中心点整好落到坐标系原点上，这样就间接实现了矩形围绕自身的中心点旋转，
+        实际上矩形还是围绕坐标系原点旋转，只是矩形的中心点恰好与坐标系原点重合
+
+        然后，为了让矩形看起来在canvas的任意位置都能围绕自身的中心点旋转，就用到了ctx.translate()，这样把canvas的原点移动到任意位置后，再通过上面的操作就实现了
+        其结果是矩形还是围绕translate之后的canvas坐标系的原点旋转，只是矩形的中心点仍然恰好与这个原点重合而已。
+     */
     var startAngle = 0;
-    ctx.translate(150,150);
+    // ctx.translate(150,150);
     setInterval(function () {
         startAngle += Math.PI/180;
         ctx.rotate(startAngle);

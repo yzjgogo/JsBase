@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="600" height="400" ></canvas>
+
+<script>
+
+    var myCanvas = document.querySelector('canvas');
+
+    var ctx = myCanvas.getContext('2d');
+
+
+
+    /**
+     1：beginPath()是新的路径集合的开始，紧随beginPath()之后的第一个路径构造命令(这里是ctx.arc(75, 75, 50, 0, Math.PI * 2, true))充当了moveTo()的功能，
+     因此不用再调用moveTo()
+     2：每次调用moveTo(x,y)都是一个新的路径的开始，通过这个特性可以画出一些不连续的路径，因为moveTo一次，就断开一次
+        下面的例子就是由多个不连续的路径，构成的图形；如果想让他们连续只需把下面这几个moveTo注释掉即可
+
+
+     生成路径的第一步叫做 beginPath()。本质上，路径是由很多子路径构成，这些子路径都是在一个列表中，所有的子路径（线、弧形、等等）构成图形。而每次这个方法调用之后，
+     列表清空重置，然后我们就可以重新绘制新的图形。
+     */
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false);   // 口 (顺时针)
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // 左眼
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // 右眼
+    ctx.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div style="width: 600px;height: 400px;background-image:url(file/01.png);">
+    <canvas width="600" height="400" ></canvas>
+</div>
+
+<script>
+
+    var myCanvas = document.querySelector('canvas');
+
+    var ctx = myCanvas.getContext('2d');
+    /**
+        透明度实现方式1：
+        globalAlpha：全局的透明度，针对canvas里所有的图形
+     * */
+    ctx.globalAlpha = 0.6
+    ctx.fillStyle = 'red'
+    ctx.fillRect(100,100,100,100)
+
+    /**
+        透明度实现方式2：
+        fillStyle 或 strokeStyle 支持带透明度的颜色
+
+        因为上面又用了globalAlpha，所以这里双重透明度
+     * */
+    ctx.fillStyle = 'rgba(255,0,0,0.5)'
+    ctx.fillRect(200,200,100,100)
+</script>
+</body>
+</html>

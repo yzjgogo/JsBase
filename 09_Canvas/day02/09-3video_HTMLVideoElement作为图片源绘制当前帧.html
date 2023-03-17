@@ -27,7 +27,10 @@
 		 */
 		function f() {
 			var video = document.querySelector('video');
-			console.log("视频",video)
+
+			console.log(video); //<video autoplay="" controls="" loop="" width="500" height="300"><source src="image/movie04.ogg"></video>
+			console.log((video instanceof HTMLVideoElement)); //true
+			console.log(Object.prototype.toString.call(video)); //[object HTMLVideoElement]
 			ctx.drawImage(video, 0, 0, 500, 300)
 		}
 	</script>

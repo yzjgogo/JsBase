@@ -24,6 +24,12 @@
     image.onload = function () {
         ctx2.drawImage(image,0,0,500,300)
 
+
+
+        console.log(myCanvas2); //<canvas id="canvas2" width="500" height="300"></canvas>
+        console.log((myCanvas2 instanceof HTMLCanvasElement)); //true
+        console.log(Object.prototype.toString.call(myCanvas2)); //[object HTMLCanvasElement]
+
         /** 把myCanvas2绘制到myCanvas1上 */
         ctx.drawImage(myCanvas2,0,0,500,300)
     };

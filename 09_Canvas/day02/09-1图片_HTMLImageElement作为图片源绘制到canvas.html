@@ -23,8 +23,9 @@
     var image = new Image();
     /*绑定加载完成事件*/
     image.onload = function () {
-        /*实现图片绘制*/
-        console.log(image);
+        console.log(image); //<img src="image/02.jpg">
+        console.log((image instanceof HTMLImageElement)); //true
+        console.log(Object.prototype.toString.call(image)); //[object HTMLImageElement]
         /*绘制图片的三种方式*/
 
 

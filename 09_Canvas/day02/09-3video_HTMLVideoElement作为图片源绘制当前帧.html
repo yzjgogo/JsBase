@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas {
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<video autoplay  controls loop width="500" height="300">
+		<source  src="image/movie04.ogg"/>
+	</video>
+
+	<br><br>
+	<canvas width="500" height="300"></canvas>
+	<button onclick="f()">按钮</button>
+	<script>
+		var myCanvas = document.querySelector('canvas');
+		var ctx = myCanvas.getContext('2d');
+
+		/**
+		 用一个 HTML 的 <video>元素作为你的图片源，可以从视频中抓取当前帧作为一个图像
+		 例如这里，在视频播放过程中，每点击一次按钮都会获取<video/>的当前帧绘制绘制到canvas上
+		 */
+		function f() {
+			var video = document.querySelector('video');
+			console.log("视频",video)
+			ctx.drawImage(video, 0, 0, 500, 300)
+		}
+	</script>
+</body>
+</html>

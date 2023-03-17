@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+<script>
+    /**
+     drawImage(image: CanvasImageSource, dx: number, dy: number)的第一个参数CanvasImageSource:
+     如下是CanvasImageSource的定义：(Ctrl+左键 进去看到)
+     type CanvasImageSource = HTMLOrSVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas;
+     可见，CanvasImageSource 是一个辅助类型，它不是一个接口，也没有对象实现它，它只用于描述上面类型的任何一个对象
+     其中
+     <img/>就是HTMLImageElement就是HTMLOrSVGImageElement 因为type HTMLOrSVGImageElement = HTMLImageElement | SVGImageElement;
+     <canvas/>就是HTMLCanvasElement；
+     <video/>就是HTMLVideoElement；
+     * */
+</script>
+</body>
+</html>

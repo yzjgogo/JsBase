@@ -69,7 +69,17 @@
     image.src = 'image/02.jpg';
 
 
+    /**
 
+     控制图像的缩放行为
+     如同前文所述，过度缩放图像可能会导致图像模糊或像素化。您可以通过使用绘图环境的imageSmoothingEnabled属性来控制是否在缩放图像时使用平滑算法。默认值为true，即启用平滑缩放。您也可以像这样禁用此功能：
+
+     ctx.mozImageSmoothingEnabled = false;
+     ctx.webkitImageSmoothingEnabled = false;
+     ctx.msImageSmoothingEnabled = false;
+     ctx.imageSmoothingEnabled = false;
+
+     * */
     
 </script>
 </body>

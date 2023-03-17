@@ -28,10 +28,12 @@
      scale(x,y)
      是坐标系的缩放，相当于坐标系中0~1之间是1毫米，缩放到0.5倍时，0~1之间变为0.5毫米了，只是视觉上刻度的密度的变化，但是刻度值仍然是不变的
      即原来0~1占据了1毫米，现在0~1占据了0.5毫米
+
+     scale(-1,-1)：水平和垂直翻转
      */
-    // ctx.strokeRect(20,20,200,100)
-    // ctx.scale(0.5,1);
-    // ctx.strokeRect(20,20,200,100)
+    ctx.strokeRect(20,20,200,100)
+    ctx.scale(0.5,1);
+    ctx.strokeRect(20,20,200,100)
 
 
     /**
@@ -50,7 +52,16 @@
 
 
     /**
+     参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Transformations
      canvas状态的保存与恢复
+     保存的状态包括：
+     1：当前应用的变形（即移动，旋转和缩放）
+     2：以及下面这些属性：strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin,
+        miterLimit, lineDashOffset, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor,
+        globalCompositeOperation, font, textAlign, textBaseline, direction, imageSmoothingEnabled
+     3：当前的裁切路径（clipping path）
+
+     你可以调用任意多次 save方法。每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。
      */
 
     // ctx.strokeRect(20, 20, 200, 100)
@@ -70,15 +81,13 @@
         然后，为了让矩形看起来在canvas的任意位置都能围绕自身的中心点旋转，就用到了ctx.translate()，这样把canvas的原点移动到任意位置后，再通过上面的操作就实现了
         其结果是矩形还是围绕translate之后的canvas坐标系的原点旋转，只是矩形的中心点仍然恰好与这个原点重合而已。
      */
-    var startAngle = 0;
-    // ctx.translate(150,150);
-    setInterval(function () {
-        startAngle += Math.PI/180;
-        ctx.rotate(startAngle);
-        ctx.strokeRect(-50,-50,100,100);
-    },500);
-
-
+    // var startAngle = 0;
+    // // ctx.translate(150,150);
+    // setInterval(function () {
+    //     startAngle += Math.PI/180;
+    //     ctx.rotate(startAngle);
+    //     ctx.strokeRect(-50,-50,100,100);
+    // },500);
 
 </script>
 </body>

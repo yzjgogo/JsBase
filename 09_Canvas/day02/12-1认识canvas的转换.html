@@ -31,9 +31,9 @@
 
      scale(-1,-1)：水平和垂直翻转
      */
-    ctx.strokeRect(20,20,200,100)
-    ctx.scale(0.5,1);
-    ctx.strokeRect(20,20,200,100)
+    // ctx.strokeRect(20,20,200,100)
+    // ctx.scale(0.5,1);
+    // ctx.strokeRect(20,20,200,100)
 
 
     /**
@@ -44,6 +44,24 @@
     // ctx.rotate(Math.PI/6);
     // ctx.strokeRect(20,20,200,100)
 
+
+    /**
+     变形 Transforms:就是缩放、旋转、位移的综合
+     参考：
+     https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Transformations
+     transform参数理解.png
+
+     transform()方法 和 setTransform()的区别
+     transform()总是在上次矩阵的基础上生效；
+     setTransform()覆盖矩阵；
+
+     具体用法以后用到再研究，涉及到矩阵 和 android的对比
+
+     * */
+
+    // ctx.transform(1,Math.PI/2,-Math.PI/2,1,0,0)
+    // ctx.setTransform(1,Math.PI/2,-Math.PI/2,1,0,0)
+    ctx.fillRect(0,0,100,50)
 
     /**
      translate,scale,rotate只会影响调用之后的代码，之前的代码是未使用时的效果，之后的代码以新的变换后的坐标系为准

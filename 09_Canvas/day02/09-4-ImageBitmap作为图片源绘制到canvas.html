@@ -24,6 +24,16 @@
     <source  src="image/movie04.ogg"/>
 </video>
 <script>
+    /**
+     ImageBitmap：就是Android中的Bitmap，可以从png,jpg,gif 中生成，也可以从 <img> ,<canvas>,<video> 中生成；就像android中可以从resources中等等生成
+     参考：
+     ImageBitmap介绍.png
+     https://developer.mozilla.org/zh-CN/docs/Web/API/ImageBitmap
+
+     注意与Android的Bitmap有recycle()方法一样，ImageBitmap有close()方法，用的时候注意
+
+     * */
+
     var myCanvas = document.getElementById('canvas1');
     var ctx = myCanvas.getContext('2d');
 
@@ -33,9 +43,11 @@
     image.src = 'image/00.png';
     function drawFromImage() {
         Promise.all([
-            createImageBitmap(image, 0, 0, 200, 200),
+            //后面可选的参数，参考'ImageBitmap介绍.png'
+            createImageBitmap(image, 0, 0, 200, 200,{imageOrientation:'flipY','resizeWidth':100}),
             createImageBitmap(image, 0, 493, 200, 200)
         ]).then(function (sprites) {
+            console.log("获取ImageBitmap的宽高："+sprites[0].width+","+sprites[0].height)
             ctx.drawImage(sprites[0], 0, 0);
             ctx.drawImage(sprites[1], 0, 210);
         });

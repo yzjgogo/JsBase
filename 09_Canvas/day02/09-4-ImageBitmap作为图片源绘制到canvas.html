@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button onclick="drawFromImage()">从HTMLImageElement中获取ImageBitmap</button>
+    <button onclick="drawFromCanvas()">从HTMLCanvasElement中获取ImageBitmap</button>
+    <button onclick="drawFromVideo()">从HTMLVideoElement中获取ImageBitmap</button>
+</div>
+<canvas id="canvas1" width="800" height="600"></canvas>
+<canvas id="canvas2" width="400" height="300"></canvas>
+
+<!--<video controls loop width="672" height="378">-->
+<!--<video controls loop width="336" height="189">-->
+<video controls loop width="500" height="300">
+    <source  src="image/movie04.ogg"/>
+</video>
+<script>
+    var myCanvas = document.getElementById('canvas1');
+    var ctx = myCanvas.getContext('2d');
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var image = new Image();
+    image.src = 'image/00.png';
+    function drawFromImage() {
+        Promise.all([
+            createImageBitmap(image, 0, 0, 200, 200),
+            createImageBitmap(image, 0, 493, 200, 200)
+        ]).then(function (sprites) {
+            ctx.drawImage(sprites[0], 0, 0);
+            ctx.drawImage(sprites[1], 0, 210);
+        });
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var myCanvas2 = document.getElementById('canvas2');
+    var ctx2 = myCanvas2.getContext('2d');
+    ctx2.fillStyle = 'yellow'
+    ctx2.fillRect(0,0,400,300)
+    function drawFromCanvas() {
+        Promise.all([
+            createImageBitmap(myCanvas2, 0, 0, 400, 300),
+        ]).then(function (sprites) {
+            ctx.drawImage(sprites[0], 210, 0);
+        });
+    }
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var video = document.querySelector('video');
+    function drawFromVideo() {
+        Promise.all([
+            createImageBitmap(video, 0, 0, 672, 378),
+        ]).then(function (sprites) {
+            ctx.drawImage(sprites[0], 210, 210,300,200);
+            // ctx.drawImage(sprites[0], 0, 0,672,378);
+            // ctx.drawImage(sprites[0], 0, 0,336,189);
+            // ctx.drawImage(sprites[0], 100, 100,300,200);
+        });
+    }
+
+
+</script>
+</body>
+</html>

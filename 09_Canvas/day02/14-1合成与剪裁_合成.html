@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas1" width="600" height="400"></canvas>
+<script>
+    var myCanvas = document.getElementById('canvas1');
+    var ctx = myCanvas.getContext('2d');
+
+    /**
+     * https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Compositing
+     * 各种模式参考上面的网站
+     * 对比android
+     */
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(10, 10, 100, 100);
+    //ctx.globalCompositeOperation要放在用于合成的两者之间
+    // ctx.globalCompositeOperation = "source-in";//---
+    // ctx.globalCompositeOperation = "source-out";
+    // ctx.globalCompositeOperation = "source-atop";//---
+    // ctx.globalCompositeOperation = "destination-over";
+    // ctx.globalCompositeOperation = "destination-in";//---
+    // ctx.globalCompositeOperation = "destination-out";//---
+    ctx.globalCompositeOperation = "destination-atop";
+    // ctx.globalCompositeOperation = "lighter";
+    // ctx.globalCompositeOperation = "copy";
+    // ctx.globalCompositeOperation = "xor";
+    // ctx.globalCompositeOperation = "multiply";
+    // ctx.globalCompositeOperation = "screen";
+    // ctx.globalCompositeOperation = "overlay";
+    // ctx.globalCompositeOperation = "darken";
+    // ctx.globalCompositeOperation = "lighten";
+    // ctx.globalCompositeOperation = "color-dodge";
+    // ctx.globalCompositeOperation = "color-burn";
+    // ctx.globalCompositeOperation = "hard-light";
+    // ctx.globalCompositeOperation = "soft-light";
+    // ctx.globalCompositeOperation = "difference";
+    // ctx.globalCompositeOperation = "exclusion";
+    // ctx.globalCompositeOperation = "hue";
+    // ctx.globalCompositeOperation = "saturation";
+    // ctx.globalCompositeOperation = "color";
+    // ctx.globalCompositeOperation = "luminosity";
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(50, 50, 100, 100);
+</script>
+</body>
+</html>

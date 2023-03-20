@@ -19,6 +19,7 @@
     /**
         clip()
         相当于剪裁出一部分canvas区域，用来绘图，该区域之外的canvas区域不再被绘制，默认情况下的canvas相当于clip了整个canvas的宽高区域。
+     与clearRect的区别是，clearRect清除后可以继续画清除区域内外部分，而clip则是剪裁出一部分canvas使用，剪裁之外的区域不可绘制
      */
     var image = new Image();
     image.src = 'image/01.png';

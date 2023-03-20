@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="mydiv" style="width: 100px;height: 50px;background-color: #9370DB" onclick="doClick()">开始动画</div>
+<div id="mystop" style="width: 100px;height: 50px;background-color: #7CFC00;margin-left: 10px" onclick="doStop()">取消动画</div>
+<script>
+
+
+    const element = document.getElementById('mydiv');
+    const element2 = document.getElementById('mystop');
+    let start, previousTimeStamp;
+    let done = false
+    var frameId;
+
+    /**
+     参考：
+     https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame
+     https://developer.mozilla.org/zh-CN/docs/Web/API/Window/cancelAnimationFrame
+
+     在浏览器每次重绘之前获得调用；
+     设置了window.requestAnimationFrame(step)后，在浏览器每次重绘时都会回调step(timeStamp)函数，timeStamp是毫秒数
+     具体间隔多久调用一次window.requestAnimationFrame(step)，要看浏览器的刷新频率，例如通常是每秒 60 次，按这样算的话，两次
+     调用的时间间隔是：1秒==1000毫米，1000/60 = 16.66毫米，即每隔16.66毫米调用一次window.requestAnimationFrame(step)
+
+     与通过setInterval()与setTimeout实现动画相比，window.requestAnimationFrame(step)提供了更加平缓并更加有效率的方式来执行动画，
+     当系统准备好了重绘条件的时候，才调用绘制动画帧。
+
+     * */
+    function step(timestamp) {
+        if (start === undefined) {
+            start = timestamp;
+        }
+        const elapsed = timestamp - start;
+        if (previousTimeStamp !== timestamp) {
+            // 这里使用 `Math.min()` 确保元素刚好停在 200px 的位置。
+            const count = Math.min(0.1 * elapsed, 200);
+            element.style.transform = 'translateX(' + count + 'px)';
+            if (count === 200) {
+                done = true;
+            }
+        }
+
+        if (elapsed < 2000) { // 在两秒后停止动画
+            previousTimeStamp = timestamp;
+            if (!done) {
+                frameId = window.requestAnimationFrame(step);
+            }
+        }
+    }
+
+
+    /**
+        开始动画
+     * */
+    function doClick() {
+        frameId = window.requestAnimationFrame(step);
+    }
+
+
+    /**
+        取消动画
+     */
+    function doStop() {
+        window.cancelAnimationFrame(frameId)
+
+    }
+
+</script>
+</body>
+</html>

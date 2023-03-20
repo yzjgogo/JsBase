@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas1" width="600" height="400"></canvas>
+<script>
+    var myCanvas = document.getElementById('canvas1');
+    var ctx = myCanvas.getContext('2d');
+
+
+    /**
+        clip()
+        相当于剪裁出一部分canvas区域，用来绘图，该区域之外的canvas区域不再被绘制，默认情况下的canvas相当于clip了整个canvas的宽高区域。
+     */
+    var image = new Image();
+    image.src = 'image/01.png';
+    image.onload = function () {
+        ctx.save()//剪裁之前，可以按需保存状态
+        ctx.rect(20,20,100,200)
+        ctx.stroke()
+        ctx.clip()
+        ctx.drawImage(image,0,0,600,400);//只在剪裁区域能画出来
+        ctx.fillRect(30,30,100,100)//只在剪裁区域能画出来
+        ctx.restore()
+        ctx.fillRect(40,150,100,100)//因为restore了，所以整个canvas又能能画出来了
+    };
+</script>
+</body>
+</html>

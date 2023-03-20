@@ -34,6 +34,9 @@
      与通过setInterval()与setTimeout实现动画相比，window.requestAnimationFrame(step)提供了更加平缓并更加有效率的方式来执行动画，
      当系统准备好了重绘条件的时候，才调用绘制动画帧。
 
+
+     这里所谓的动画，就是随着时间的推移，调用各种之前学的canvas的各种方法，用window.requestAnimationFrame()、setInterval()、setTimeout都能做到
+
      * */
     function step(timestamp) {
         if (start === undefined) {

@@ -44,16 +44,18 @@
     也有自己的独立路径
     */
     // ctx.fillStyle = 'blue'
-    ctx.fillRect(100,100,200,100);
+    // ctx.fillRect(100,100,200,100);
 
     /*
-    方法3：clearRect(),按照矩形范围，清楚canvas上指定区域的内容
+    方法3：clearRect(),按照矩形范围，清楚canvas上指定区域的内容，与clip的区别是，清除后可以继续画清除区域内外部分，而clip则是剪裁出一部分canvas使用，剪裁之外的区域不可绘制
     */
-    // ctx.clearRect(0,0,150,150)
+    ctx.fillStyle = 'yellow'
+    ctx.fillRect(0,0,200,100)
+    ctx.clearRect(0,0,100,400)
     // 清除整个canvas区域
     // ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
     // 清除完成后，可以重新按需画
-    // ctx.fillRect(100,100,200,100);
+    ctx.fillRect(0,200,200,100);
 
 </script>
 </body>

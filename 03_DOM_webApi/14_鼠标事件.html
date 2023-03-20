@@ -11,6 +11,7 @@
     </style>
 </head>
 <body>
+<div>onmouseover和onmouseout事件</div>
 <ul>
     <li>金士百</li>
     <li>雪花</li>
@@ -21,8 +22,17 @@
     <li>珠江</li>
     <li>华丹</li>
 </ul>
+<div>onmouseenter和onmouseleave事件</div>
+<div style="width: 200px;height: 100px;background-color: red" id="mydiv"></div>
 <script src="common.js"></script>
 <script>
+    /**
+     onmouseover和onmouseout事件  与   onmouseenter和onmouseleave事件 的区别
+     https://blog.csdn.net/zhangwen809877665/article/details/117485673
+     https://blog.csdn.net/weixin_45846357/article/details/105938643
+     * */
+
+
     //鼠标进入和鼠标离开两个事件
     //获取所有的li标签
     var list = document.getElementsByTagName("li");
@@ -37,6 +47,19 @@
             this.style.backgroundColor = "";
         };
     }
+
+
+
+
+    var mydiv = document.getElementById('mydiv');
+
+    mydiv.onmouseenter = function () {
+        console.log("进入了")
+    };
+    //为li注册鼠标离开事件
+    mydiv.onmouseleave = function () {
+        console.log("出去了。。。")
+    };
 
 </script>
 </body>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<img id="myimg" width="600">
+<img id="myimg2" width="600">
+<a id="mya"
+   target="_blank"
+    download="myfilename">点击下载toDataURL得到的图片</a>
+<script>
+    /**
+     参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas#%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87
+     搜“保存图片”
+     * */
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+    var myimg = document.getElementById('myimg')
+    var myimg2 = document.getElementById('myimg2')
+    var mya = document.getElementById('mya')
+
+    ctx.fillStyle = 'yellow'
+    ctx.fillRect(20,20,200,100)
+
+    ctx.strokeStyle = 'green'
+    ctx.moveTo(350,200)
+    ctx.lineTo(550,300)
+    ctx.lineTo(100,300)
+    ctx.closePath()
+    ctx.stroke()
+
+    /**
+        参考：
+        https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toBlob
+        https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL
+
+     URL.revokeObjectURL() 静态方法用来释放一个之前已经存在的、通过调用 URL.createObjectURL() 创建的 URL 对象。当你结束使用某个 URL 对象之后，应该通过调用这个方法来让浏览器知道不用在内存中继续保留对这个文件的引用了。
+     因为 createObjectURL() 仅仅意味着将一个媒体元素的 src 属性关联到一个 MediaSource 对象上去。调用revokeObjectURL() 使这个潜在的对象回到原来的地方，允许平台在合适的时机进行垃圾收集。
+
+     toBlob(callback: BlobCallback, type?: string, quality?: any)
+     callback：回调函数，参数是一个Blob对象，可以转换为图片
+     type：可选，图片格式，默认值是'image/png'
+     quality：值在 0 与 1 之间，当请求图片格式为 image/jpeg 或者 image/webp 时用来指定图片展示质量。如果这个参数的值不在指定类型与范围之内，则使用默认值，其余参数将被忽略。
+     * */
+    //生产默认的png图片
+    myCanvas.toBlob(function(blob){
+       let mUrl = URL.createObjectURL(blob);
+        //blob:http://localhost:63342/cb7e50e7-ca82-411c-8c86-09c9e5aefaaa  包括前面的blob:整个复制到浏览器地址栏可以访问
+       console.log("图片的url:",mUrl)
+        myimg.src = mUrl
+        mya.href = mUrl//就是blob:http://localhost:63342/cb7e50e7-ca82-411c-8c86-09c9e5aefaaa，点击下载就是现在这个路径的图片
+        myimg.onload = function () {
+           //回收后就访问不到 blob:http://localhost:63342/cb7e50e7-ca82-411c-8c86-09c9e5aefaaa  也就无法下载它
+            URL.revokeObjectURL(mUrl);
+        }
+    })
+    //生产jpeg图片
+    myCanvas.toBlob(function(blob){
+       let mUrl = URL.createObjectURL(blob);
+       console.log("jpeg图片",mUrl)
+        myimg2.src = mUrl
+        myimg2.onload = function () {
+            URL.revokeObjectURL(mUrl);
+        }
+    },'image/jpeg',1)
+
+    /**
+     将在canvas画的内容，转换为图片,然后放在一个带有download属性的超链接里，支持下载保存到本地
+     * */
+
+
+
+</script>
+</body>
+</html>

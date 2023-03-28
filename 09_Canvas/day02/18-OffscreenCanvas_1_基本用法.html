@@ -10,8 +10,12 @@
     </style>
 </head>
 <body>
+<!--用于绘制OffscreenCanvas的内容-->
 <canvas id="canvas1" width="600" height="400"></canvas>
+<!--  用于在'2d'context下，绘制offscreenCanvas.transferToImageBitmap()返回的ImageBitmap，使用drawImage(ImageBitmap)绘制-->
 <canvas id="canvas2" width="600" height="400"></canvas>
+<!--  用于在'bitmaprenderer'context下，绘制offscreenCanvas.transferToImageBitmap()返回的ImageBitmap，使用transferFromImageBitmap(ImageBitmap)绘制-->
+<canvas id="canvas3" width="600" height="400"></canvas>
 <script>
     /**
 
@@ -36,9 +40,12 @@
     offscreenCtx.fillStyle = 'yellow'
     offscreenCtx.fillRect(20,20,100,100)
 
-    //函数convertToBlob()
-    // 返回一个Promise对象
-    //对比：16-2-toBlob将在canvas绘制的内容转为图片.html
+
+    /**
+     函数convertToBlob()
+     返回一个Promise对象
+     对比：16-2-toBlob将在canvas绘制的内容转为图片.html
+     * */
     //不传参数，默认png图片，把mUrl放到<a download />中，或访问浏览器访问'blob:http://localhost:63342/2833e071-0346-4ee8-8b62-f8dd60378343'然后另存为可看图片类型
     offscreenCanvas.convertToBlob().then((blob) => {
         let mUrl = URL.createObjectURL(blob);
@@ -57,12 +64,24 @@
     ctx.drawImage(offscreenCanvas,0,0)
 
 
-
+    /**
+     offscreenCanvas.transferToImageBitmap()
+     * */
     var myCanvas2 = document.getElementById('canvas2');
     var ctx2 = myCanvas2.getContext('2d');
     //transferToImageBitmap()返回一个ImageBitmap对象
     let bitmap = offscreenCanvas.transferToImageBitmap()
     ctx2.drawImage(bitmap,0,0)
+
+
+    /**
+     getContext('bitmaprenderer'):返回ImageBitmapRenderingContext，仅用于将ImageBitmap绘制到canvas
+     getContext('2d'):返回OffscreenCanvasRenderingContext2D类型，可以绘制各种图形
+    * */
+    var myCanvas3 = document.getElementById('canvas3');
+    var ctx3 = myCanvas3.getContext('bitmaprenderer');
+    ctx3.transferFromImageBitmap(bitmap)
+    // ctx3.fillRect(200,200,100,100)//会报错，因为当前的context对象是bitmaprenderer类型的，只能用于绘制ImageBitmap，找不到fillRect方法，Ctrl+左键进入getContext查看
 
 </script>
 </body>

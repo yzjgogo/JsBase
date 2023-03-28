@@ -77,6 +77,9 @@
     /**
      getContext('bitmaprenderer'):返回ImageBitmapRenderingContext，仅用于将ImageBitmap绘制到canvas
      getContext('2d'):返回OffscreenCanvasRenderingContext2D类型，可以绘制各种图形
+
+     transferFromImageBitmap(bitmap) 和 drawImage(bitmap,0,0)对比；
+     前者是ImageBitmapRenderingContext里的方法；后者是OffscreenCanvasRenderingContext2D的方法；
     * */
     var myCanvas3 = document.getElementById('canvas3');
     var ctx3 = myCanvas3.getContext('bitmaprenderer');

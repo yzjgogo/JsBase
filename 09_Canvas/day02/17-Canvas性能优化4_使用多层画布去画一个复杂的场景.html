@@ -16,12 +16,11 @@
 
      参考：
      https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas
-     搜：避免浮点数的坐标点，用整数取而代之
+     搜：使用多层画布去画一个复杂的场景
+     回忆的时候，看看这里就可以了
 
 
-     你画一个没有整数坐标点的对象时会发生子像素渲染。
-     ctx.drawImage(myImage, 0.3, 0.5);
-     浏览器为了达到抗锯齿的效果会做额外的运算。为了避免这种情况，请保证在你调用drawImage()函数时，用Math.floor()函数对所有的坐标点取整。
+
 
 
      * */

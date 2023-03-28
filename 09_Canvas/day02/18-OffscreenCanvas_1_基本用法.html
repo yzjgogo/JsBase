@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas1" width="600" height="400"></canvas>
+<canvas id="canvas2" width="600" height="400"></canvas>
+<script>
+    /**
+
+     参考：
+     https://developer.mozilla.org/zh-CN/docs/Web/API/OffscreenCanvas
+
+     知识点：
+     构造函数；
+     getContext('2d'/'webgl')；
+     height、width；
+     toBlob()；
+     transferToImageBitmap()；
+
+     * */
+
+    var myCanvas = document.getElementById('canvas1');
+    var ctx = myCanvas.getContext('2d');
+
+    let offscreenCanvas = new OffscreenCanvas(600,400)
+    let offscreenCtx = offscreenCanvas.getContext('2d')
+    offscreenCtx.fillStyle = 'yellow'
+    offscreenCtx.fillRect(20,20,100,100)
+
+    //函数convertToBlob()
+    // 返回一个Promise对象
+    //对比：16-2-toBlob将在canvas绘制的内容转为图片.html
+    //不传参数，默认png图片，把mUrl放到<a download />中，或访问浏览器访问'blob:http://localhost:63342/2833e071-0346-4ee8-8b62-f8dd60378343'然后另存为可看图片类型
+    offscreenCanvas.convertToBlob().then((blob) => {
+        let mUrl = URL.createObjectURL(blob);
+        console.log("png图片的url:",mUrl)//图片的url: blob:http://localhost:63342/2833e071-0346-4ee8-8b62-f8dd60378343
+    })
+
+    //传参，可以指定图片类型和质量，这里jpg，把mUrl放到<a download />中，或访问浏览器访问'blob:http://localhost:63342/2833e071-0346-4ee8-8b62-f8dd60378343'然后另存为可看图片类型
+    offscreenCanvas.convertToBlob({
+        quality: 1,
+        type: 'image/jpeg'
+    }).then((blob) => {
+        let mUrl = URL.createObjectURL(blob);
+        console.log("jpg图片的url:",mUrl)//图片的url: blob:http://localhost:63342/2833e071-0346-4ee8-8b62-f8dd60378343
+    })
+
+    ctx.drawImage(offscreenCanvas,0,0)
+
+
+
+    var myCanvas2 = document.getElementById('canvas2');
+    var ctx2 = myCanvas2.getContext('2d');
+    //transferToImageBitmap()返回一个ImageBitmap对象
+    let bitmap = offscreenCanvas.transferToImageBitmap()
+    ctx2.drawImage(bitmap,0,0)
+
+</script>
+</body>
+</html>

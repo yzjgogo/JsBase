@@ -23,12 +23,17 @@
      https://developer.mozilla.org/zh-CN/docs/Web/API/OffscreenCanvas
      17-Canvas性能优化1_在离屏canvas上预渲染重复使用的图形.html  ；其实两个都是离屏canvas
 
+     https://zhuanlan.zhihu.com/p/452871005
+     搜：离屏canvas
+
      知识点：
      构造函数；
      getContext('2d'/'webgl')；
      height、width；
      toBlob()；
      transferToImageBitmap()；
+
+     注意：离屏Canvas一个很大的好处在于，可以放到worker里面使用，比如可以把一个比较耗费时间的绘制放到web worker下的OffscreenCanvas对象上进行，绘制完成后，创建一个ImageBitmap对象，并把该对象传递给页面端，在页面端绘制ImageBitmap对象。
 
      * */
 

@@ -7,10 +7,14 @@
 <body>
 <input type="button" value="直接写js代码逻辑" onclick="alert('哈哈,我又变帅了')"/>
 <!--onclick里调用函数需要加括号()-->
-<input type="button" value="单击调用函数" onclick="f()"/>
+<input type="button" id="btn" value="单击调用函数" onclick="f()"/>
+<input type="button" value="代码触发某个元素的单击事件，类似android的performClick()" onclick="toTrigger()"/>
 <script>
     function f() {
         alert("我在函数里");
+    }
+    function toTrigger(){
+        document.getElementById("btn").click()
     }
 </script>
 </body>

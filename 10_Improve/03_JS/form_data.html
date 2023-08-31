@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         FormData是js中键值对数据的表示方式，不要想的太复杂，有点像map，就理解成map也可以，但是console.log输出好像又看不到键值对
+         例如：
+         1，可以接收一个表单，直接生成表单对应的键值对，参考https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects，搜“你还可以在创建一个包含 Form 表单数据的 FormData 对象之后和发送请求之前，附加额外的数据到 FormData 对象里，像这样”
+         var formData = new FormData(<form/>)
+         2，用axios发送post请求时，可以直接给data传入FormData
+         axios({
+         url:***,
+         method:'post',
+         data:formData
+         })
+
+
+         用法很简单，直接看看下面两个连接就可以了
+         https://developer.mozilla.org/zh-CN/docs/Web/API/FormData
+         https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects
+
+         参考：E:\web\baseWeb\vuecli3study\src\views\my-axios\index.vue
+         上传图片是使用axios用了FormData
+         * */
+        const formData = new FormData()
+        formData.append('file', 'z.png')
+        formData.append('business_id', 185)
+        formData.append('file_type', 'png')
+        formData.append('compress_tye', 0)
+        formData.append('token', 'oik23kk564gh45kd98hw0e43yqn32vb67skn7f')
+        formData.append('filter_sensitive', 23)
+        formData.append('folder_id', 56)
+        for(let item of formData){
+            // console.log("遍历表单数据:"+","+item[0]+":"+item[1])
+            console.log("遍历表单数据:",item[0],item[1])
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

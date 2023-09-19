@@ -38,7 +38,8 @@
     var list = document.getElementsByTagName("li");
     for (var i = 0; i < list.length; i++) {
         //为li注册鼠标进入事件
-        list[i].onmouseover = function () {
+        list[i].onmouseover = function (event) {
+            console.log(event)
             this.style.backgroundColor = "yellow";
         };
         //为li注册鼠标离开事件

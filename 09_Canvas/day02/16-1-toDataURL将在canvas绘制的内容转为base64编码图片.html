@@ -41,6 +41,8 @@
      toDataURL(type?: string, quality?: any)
      type：图片类型
      quality：可选，当为type为png图片时，不用设置
+
+     返回base64编码图片
      * */
 
 
@@ -48,7 +50,7 @@
      将在canvas画的内容，转换为png图片，png带有透明通道，可见myimg是透明的
      * */
     let mUrl = myCanvas.toDataURL('image/png')
-    console.log("打印url-1",mUrl)
+    console.log("打印url-1",mUrl)//mUrl是base64编码
     myimg.src = mUrl
 
     /**
@@ -56,7 +58,7 @@
      第二个参数是图片质量，0-1,1最好，可省略，第二个参数对png格式图片无效吗？
      * */
     let mUrl2 = myCanvas.toDataURL('image/jpeg', 1)
-    console.log("打印url-2",mUrl2)
+    console.log("打印url-2",mUrl2)//mUrl2是base64编码
     myimg2.src = mUrl2
 
     /**

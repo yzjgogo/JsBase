@@ -9,12 +9,17 @@
 <!--onclick里调用函数需要加括号()-->
 <input type="button" id="btn" value="单击调用函数" onclick="f()"/>
 <input type="button" value="代码触发某个元素的单击事件，类似android的performClick()" onclick="toTrigger()"/>
+<input type="button" value="通过MouseEvent触发某个元素的单击事件，类似android的performClick()" onclick="toTriggerByEvent()"/>
 <script>
     function f() {
         alert("我在函数里");
     }
     function toTrigger(){
         document.getElementById("btn").click()
+    }
+    function toTriggerByEvent(){
+        let event = new MouseEvent('click')
+        document.getElementById("btn").dispatchEvent(event)
     }
 </script>
 </body>

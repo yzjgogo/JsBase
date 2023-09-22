@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="直接写js代码逻辑" onclick="alert('哈哈,我又变帅了')"/><br/><br/>
+<!--onclick里调用函数需要加括号()-->
+<input type="button" id="btn" value="通过onClick指定回调函数" onclick="f()"/><br/><br/>
+<input type="button" id="btn2" value="通过addEventListener指定回调函数"/><br/><br/>
+<input type="button" value="代码触发某个元素的单击事件，类似android的performClick()" onclick="toTrigger()"/><br/><br/>
+<input type="button" value="通过MouseEvent触发某个元素的单击事件，类似android的performClick()" onclick="toTriggerByEvent()"/>
+<script>
+
+    document.getElementById('btn2').addEventListener('click',function (event) {
+        console.log('通过addEventListener指定回调函数',event)//如果不需要event，可以不定义这个参数
+    })
+
+    function f(event) {
+        console.log("我在函数里",event);//event是undefined
+    }
+    function toTrigger(){
+        document.getElementById("btn").click()
+        document.getElementById('btn2').click()
+    }
+    function toTriggerByEvent(){
+        let event = new MouseEvent('click')
+        document.getElementById("btn").dispatchEvent(event)
+        document.getElementById("btn2").dispatchEvent(event)
+    }
+
+    /**
+     扩展：
+     关键字：Event，MouseEvent，dispatchEvent
+     参考：
+     https://zhuanlan.zhihu.com/p/430293284
+
+     dispatchEvent.png
+
+     * */
+</script>
+</body>
+</html>

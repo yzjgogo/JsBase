@@ -1539,6 +1539,24 @@
         console.log(reSpArr3+"|"+spArr3);//22,33|11,b,c,d,44,55
 
         console.log("Num33结束：Array对象");
+
+        console.log("Num34开始-补充：变量前面的加号+");
+        /**
+if (+value >= distance) {
+这个+什么意思
+
+可以理解为
+
+Number(value)
+会将其按照Number函数的规则转换为数值或者NaN,规则大概如下：
+
+Boolean:true返回1，false返回0
+数据值，直接返回
+null，返回0
+undefined，返回NaN
+对于字符串，将其转换为十进制数值，会忽略前面的0（16进制除外），空字符串返回0，浮点数会返回浮点数值。其他格式字符串（无论是否数字开头，返回NaN，字符串中好几个小数点，返回NaN）
+         * */
+        console.log("Num34结束-补充：变量前面的加号+");
     </script>
 
     <script>

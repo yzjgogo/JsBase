@@ -45,7 +45,27 @@
             document.getElementById("replaceId").onclick = function () {
                 location.replace("http://www.jd.com");//在当前页加载(替换当前页)，没有history，不可后退
             };
+
+
+
+          document.getElementById("hashbbb").onclick = function () {
+            window.location.hash = 'bbb'
+          };
         };
+
+
+        /**
+         * 这里演示通过三种方式修改hash：
+         * 1：给<a/>标签指定href，修改hash为aaa
+         * 2：点击按钮，通过给location.hash直接赋值修改hash为bbb
+         * 3：直接在浏览器地址栏，URL的最后修改hash为ccc
+         *
+         * 最终都能监听的到
+         */
+        window.addEventListener('hashchange', function() {
+          console.log('hash发生变化：'+window.location.hash);
+        });
+
 
     </script>
 </head>
@@ -54,6 +74,9 @@
 <input type="button" value="assign" id="assignId"/>
 <input type="button" value="reload" id="reloadId"/>
 <input type="button" value="replace" id="replaceId"/>
+<br>
+<a href="#aaa">修改hash为'aaa'</a>
+<input type="button" value="修改hash为'bbb'" id="hashbbb"/>
 
 </body>
 </html>

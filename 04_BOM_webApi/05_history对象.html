@@ -10,6 +10,10 @@
 <input type="button" value="前进" id="btn2"/>
 <script src="common.js"></script>
 <script>
+
+    // 参考：E:\web\JsBase\01_HtmlCssBase\file\window的history.md
+    //与hash类似，history的pushState和replaceState等方法也不会触发页面加载，同样可以用单页面应用的实现，vue也兼容这种模式
+
     //使用href属性或assign()函数跳转页面，浏览器会记录目标网页到history对象里
     //这样就可以使用history.forward()和history.back()访问到目标网页
     my$("btn1").onclick = function () {

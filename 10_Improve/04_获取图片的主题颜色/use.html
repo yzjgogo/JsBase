@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  import {RGBaster} from "./util/rgbaster";
+// var curImg = document.getElementById('myimage')
+  var curImg = 'http://xxxxx.jpg'
+  //可以传入img标签，也可以传入图片的url
+  RGBaster.colors(curImg,{
+    success:function(payload){
+      console.log("颜色结果",payload)
+      // payload.dominant  主色
+      // payload.secondary 次色
+      // payload.palette 色调板 含多个主要颜色 数组
+    }
+  })
+</script>
+</body>
+</html>

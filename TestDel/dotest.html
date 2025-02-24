@@ -2,125 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Document</title>
+    <style>
+        .title{
+            background-color: #E0FFFF;
+            padding: 10px;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
     <script>
-        setTimeout(function () {
-            console.log("hello world");
-        }, 3000)
-        console.log("后面一行===");
-
-        var sliceArr = [11, 22, 33, 44, 55, 66];
-        // var reSliceArr = sliceArr.slice();
-        Array.prototype.slice.call(sliceArr)
-        console.log(Array.prototype.slice.apply(sliceArr));
 
 
-        console.log("-------")
-        const aaArr = [100];
-        const bbArr = [1, 2, 3]
-        // aaArr.push(bbArr)
-        // console.log(aaArr)
-        // console.log(bbArr)
-
-        Array.prototype.push.apply(aaArr, bbArr)
-        console.log(aaArr)
-        console.log(bbArr)
-
-        console.log("^^^^^^^^^^^^^^^^^")
-        let tod = {}
-        if (tod) {
-            console.log("真的")
-        } else {
-            console.log("假的")
-        }
-        console.log(0 % 10)
-        console.log(0 / 10)
-        console.log(1 % 10)
-        console.log(1 / 10)
-        console.log(Math.floor(1 / 10))
-        console.log("--------------")
-        let ques = null
-        let ques2 = undefined
-        let audio_url = ""
-        let audio_arr = []
-        let audio_obj = {}
-        let m_zero = 0
-        console.log("判断一下:", Boolean(ques), Boolean(ques2), Boolean(audio_url), Boolean(audio_arr), Boolean(audio_obj), Boolean(m_zero))//false false false true true false
-
-        /**
-         * 对象的定义
-         * */
-        let temp = {
-            name: "Jack",
-            age: 18
-        }
-        console.log(temp);//对的
-
-        /**
-         * 字符串的拼接
-         * */
-        let audio_name = "good"
-        console.log(audio_name.concat("moon"))//goodmoon 字符串拼接，生成新的字符串
-        console.log(audio_name)//good
-
-        /**
-         * 字符串的创建
-         * */
-        console.log(String(5), typeof String(5))//5 string
-
-        /**
-         * 字符串类型的数字乘以数字 就是number类型的数字，一般用于乘以1转换为number类型
-         * */
-        let tabtype = "12306"
-        let strtabtype = tabtype * 1
-        console.log("字符串乘以数字：", strtabtype, typeof strtabtype)
     </script>
 </head>
 <body>
-<div style="background-color: #7CFC00;width: 100px;height: 100px;margin: 10px;float: left"></div>
-<div style="background-color: #40E0D0;width: 100px;height: 100px;float: left"></div>
-
-<div style="background-color: #a43035;width: 100px;height: 100px;padding: 10px 20px 30px 40px;">
-    时代峰峻里的开始教辅里SDK丽枫酒店看来是角度考虑首付款里的数据反馈逻辑的考虑缩放接口里的数据疯狂老爹及时反馈了角度考虑是教辅开了多久是
-</div>
+    <div class="title">1:定位正常来说不会越过border，但是会越过padding</div>
+    <div style="width: 200px;height: 200px;background-color: yellow;border: 10px solid green;padding: 10px;position: relative">
+        <div style="width: 50px;height: 50px;position: absolute;left: -10px;top: 0;background-color: #9a6e3a"></div>
+    </div>
 
 
-<div></div>
-<div id="testDisplay">
-    <span>abc</span>
-    <div id="needdel" style="width: 50px;height: 50px;background-color: #40E0D0">def</div>
-</div>
-<script>
-    var elem = document.getElementById("needdel")
-    elem.parentNode.removeChild(elem)
-</script>
+    <div class="title">2:数组的filter方法：原数组不变，满足条件的元素组成新的数组返回</div>
+    <script>
+      /**
+       filter:
+       原数组不变，满足条件的元素组成新的数组返回
+       * */
+      let arr = [1, 2, 3, 2, 4]
+      let result = arr.filter(function (value) {
+        // console.log(value)
+        return value == 2
+      })
+      console.log(arr, result)   //[1, 2, 3, 2, 4] [2, 2]
+    </script>
 
 
-<div style="margin-top: 200px">-------------------------</div>
-<div style="position: relative;background-color: #40E0D0;width: 200px;height: 200px;padding: 50px">
-    <div style="position: absolute;left: 10px;top: 10px;width: 50px;height: 50px;background-color: #9370DB"></div>
-</div>
+    <div class="title">3:javascript的除法：跟java不同，结果按数学计算，该是多少就是多少</div>
+    <script>
+      console.log(1230000/100)//12300
+      console.log(1230/100)//12.3
+      console.log(12/100)//0.12
+      console.log(1/100)//0.01
+      console.log(10/3)//3.3333333333333335
+      console.log(10/0)//Infinity无限大
+    </script>
 
-<button style="width: 100px;height: 50px"><span>资源下载</span></button>
 
-<div style="background-color: #7CFC00;width: 10mm;height: 10mm"></div>
-<div style="padding: 10px">----</div>
-<div style="background-color: #7CFC00;width: 54pt;height: 54pt"></div>
-<div style="padding: 10px">----</div>
-<div style="background-color: #9370DB;width: 100px;height: 100px;padding: 10px"></div>
+    <div class="title">4:判断一个变量是不是严格的undefined，区分null</div>
+    <script>
+        let aa = undefined
+        let bb = null
 
-<div>----------------------</div>
-<div>white-space: nowrap:强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象</div>
-<div style="width: 400px;height: 200px;background-color: #7CFC00;white-space: nowrap">兰陵街道个的结果发链接地方改接口了杜甫江阁考虑十多个十多个第三个</div>
+        if (typeof aa === 'undefined') {
+          console.log('a is undefined');
+        } else {
+          console.log('a is defined');
+        }
 
-<div>文本换行</div>
-<!--<div style="width: 400px;background-color: pink;display: flex">-->
-<!--    <div style="display: inline-block;background-color: green">我只是炸裂</div>-->
-<!--    <div style="display: inline-block;background-color: #1c94c4;flex: 1">分割废话废话发货的规范化地方和代发货地方和代发货很过分官方科技股份</div>-->
-<!--</div>-->
-<div style="width: 400px;background-color: pink;overflow: hidden">
-    <div style="float: left;background-color: green">我只是炸裂</div>
-    <div style="float: left;background-color: #1c94c4;">分割废话废话发货的规范化地方和代发货地方和代发货很过分官方科技股份</div>
-</div>
+        if (typeof bb === 'undefined') {
+          console.log('bb is undefined');
+        } else {
+          console.log('bb is defined');
+        }
+
+    </script>
+<div class="title">5:让一个元素，例如div变为可编辑：参考善版云后台(数字出版运营-企微运营管理-企微运营-渠道激活码-欢迎语配置-新建/编辑欢迎语)：src\views\pages\publishingOperate\wechatOperate\channelCode\components\welcomeDrawer.vue</div>
+<div contenteditable="true">good <span style="color: green;border: 1px solid red;padding:0 5px;border-radius: 4px;">morning</span> class.</div>
 </body>
 </html>

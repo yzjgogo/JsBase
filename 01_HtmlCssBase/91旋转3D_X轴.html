@@ -4,15 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-	img {
+	.img1 {
 		transition: all 2s;
 	}
-	img:hover {
+	.img1:hover {
 		transform: rotateX(360deg);
+	}
+
+	
+	.img2 {
+		transition: all 2s;
+	}
+	.img2:hover {
+		/* 
+		rotate3d(X轴,Y轴,Z轴,度)
+		rotate3d(1,0,0,度) 沿着X轴旋转
+		rotate3d(0,1,0,度) 沿着Y轴旋转
+		rotate3d(0,0,1,度) 沿着Z轴旋转
+		rotate3d(1,1,1,度) 沿着X轴、Y轴、Z轴旋转
+		也可以是小数，就涉及到矩阵了
+		*/
+		transform: rotate3d(1,0,0,360deg);
 	}
 	</style>
 </head>
 <body>
-	<img src="img/x.jpg" height="226" width="300" alt="">
+	<img class="img1" src="img/x.jpg" height="226" width="300" alt="">
+	<img class="img2" src="img/x.jpg" height="226" width="300" alt="">
 </body>
 </html>

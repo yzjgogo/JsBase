@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+	/* 
+	参考：坐标系和transform介绍.jpeg
+	1：元素的默认坐标原点是左上角，x轴向右，y轴向下，z轴向屏幕外(对着你的眼睛)
+	2：当我们使用transform属性时，会改变元素的坐标系，是元素的坐标原点移动的元素的中心，但是元素的默认坐标原点不会改变，因为当我们使用transform属性时，会默认通过transform-origin: 50% 50%;将坐标原点移动到元素的中心；
+	3：当我们使用transform进行变化（位移，旋转，缩放，错切等）时，都会改变元素的坐标系(在3D层面改变，改变坐标原点和方向)，且元素后续的每次变换都是在上次被改变坐标系基础上进行的，例如你第一次进行了translateX 100,此时整个
+	坐标系向右移动100，然后你再进行旋转的话，则是在上一次坐标系被移动100的基础上的坐标系进行旋转的。
+	 */
+    body{
+      margin: 0;
+      padding: 0;
+      background-image: url(../images/grid.png);
+    }
+    .box{
+      width: 200px;
+      height: 100px;
+      background-color: skyblue;
+
+      /* 先向右移动100px，然后在此时新坐标系的基础上再旋转45度，因为没有设置transform-origin，则默认设置了transform-origin: 50% 50%，将坐标原点移动到了中心 */
+      /* transform: translateX(100px) rotate(45deg); */
+
+	  /* 先围绕中心旋转45度(一旦你使用了transform，则就默认使用了transform-origin: 50% 50%,将原点移动到中心了，参考：75_0_坐标系和transform介绍.html)
+	  再在新的坐标系的基础上沿X轴移动100px
+		这里有个不好理解的要注意，因为你先旋转了45度(transform导致默认transform-origin: 50% 50%，原点移动到中心)，则旋转后坐标系的X轴箭头方向从元素的中心指向右下角，
+		Y轴的箭头从元素中心指向左下角，因此下一步你translateX(100px)时，其实是沿着右下角方向移动100px(因为X轴此时指向右下角方向)
+	  */
+      transform: rotate(45deg) translateX(100px);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box">div</div>
+</body>
+</html>

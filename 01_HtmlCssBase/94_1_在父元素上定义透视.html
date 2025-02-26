@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+		/* 参考：透视介绍.jpeg */
+    body{
+      margin: 0;
+      padding: 0;
+      background-image: url(../images/grid.png);
+    }
+    .box{
+      position: relative;
+      width: 200px;
+      height: 100px;
+      background-color: skyblue;
+      
+      /* 在父元素添加透视效果，在屏幕外200px处有一个眼睛 */
+      perspective: 200px;
+    }
+
+    .item{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+      /* 以上属性定义，让在2d平面上item和box完全重合   */
+
+      /* 形变后，在3d空间，其实有一半的item在box后面，另一半在box前面(我们看到的部分，较大(近大远小)) */
+      transform: rotateY(60deg);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box">div
+    <div class="item">10</div>
+  </div>
+</body>
+</html>

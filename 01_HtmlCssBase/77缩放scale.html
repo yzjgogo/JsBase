@@ -9,13 +9,18 @@
 		height: 200px;
 		background-color: pink;
 		transition: all 1s;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		/* transform-origin: 50% 50%; 一旦你使用了transform，则就默认使用了transform-origin: 50% 50%,将原点移动到中心了，参考：75_0_坐标系和transform介绍.html */
+
 	}
 	div:hover {
 		/*transform: scale(0.2,0.4);宽度变为原来的0.2倍，高度变为原来的0.4倍*/
 		/*transform: scale(0.2);宽度和高度都变为原来的0.2*/
 		/*transform: scaleX(0.2);宽度变为原来的0.2倍，高度不变*/
 		/*transform: scaleY(0.2);高度变为原来的0.2倍，宽度不变*/
-		transform: scale(2,3);/*宽度变为的原来的2倍，高度变为原来的3倍*/
+		transform: scale(3,3);/*宽度变为的原来的2倍，高度变为原来的3倍*/
 	}
 	</style>
 </head>

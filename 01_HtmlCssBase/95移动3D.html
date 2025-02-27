@@ -7,11 +7,12 @@
 	body {
 		/*
 		Z轴的3D效果，要用perspective才能看到效果
+		此时body是img的父元素，眼睛也在body的中轴线上800px处
 		*/
 		perspective: 800px;
 	}
 	img {
-		margin: 0 auto;
+		margin: 200px;
 		transition: all 3s;
 	}
 	img:hover {
@@ -21,7 +22,8 @@
 		综合移动X,Y,Z轴
 		translate3d()x和y可以是长度值，也可以是百分比，百分比是相对于其本身元素水平方向的宽度和垂直方向的高度和；z只能设置长度值
 		*/
-		transform: translate3d(800px,200px,200px);
+		/* transform: translate3d(800px,200px,200px); */
+		transform: translateZ(100px);
 	}
 	</style>
 </head>

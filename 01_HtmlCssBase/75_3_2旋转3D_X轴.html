@@ -23,6 +23,9 @@
 		rotate3d(0,0,1,度) 沿着Z轴旋转
 		rotate3d(1,1,1,度) 沿着X轴、Y轴、Z轴旋转
 		也可以是小数，就涉及到矩阵了
+
+		rotate3d和rotateZ会调用GPU硬件加速，
+		rotateX和rotateY不会
 		*/
 		transform: rotate3d(1,0,0,360deg);
 	}

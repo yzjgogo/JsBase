@@ -30,16 +30,17 @@
       background-color: pink;
       /* 
 	  默认transform-origin: 50% 50%，即围绕元素的垂直中轴线旋转
-	  旋转0-90度时还是正面对着人，90-360就是背面对着人
+	  旋转0-90度时还是正面对着人，90-360就是背面对着人，此时backface-visibility就起作用了，hidden时，背对着人时的背面不可见；
+    visible时，背对着人时的背面可见
 	  
 	  */
-      transform: rotateY(240deg);
+      transform: rotateY(130deg);
 
       /* 元素背向是否可见 */
       /* backface-visibility: visible; */
-      backface-visibility: hidden;
+      backface-visibility: visible;
 
-      /* 帧动画 */
+      /* 帧动画，通过一个动画，更直观的观察背对着人时的背面是否可见 */
       /* animation: loop 6s linear infinite; */
     }
 

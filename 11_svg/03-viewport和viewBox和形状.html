@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(../images/grid.png);
+      }
+      svg {
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+  解释：
+  width、height：整个svg元素的宽、高
+  svg的坐标系：左上角是原点(0,0)，x轴向右正，y轴向下正
+  
+  viewport：就是(0,0,width,height)svg的这片区域
+
+  viewBox(vx, vy, vWidth, vHeight)：代表svg的一片矩形区域，其中x是在svg坐标系中的x坐标，y是在svg坐标系中的y坐标，width是这个矩形区域的宽度，height是这个矩形区域的高度(注意千万不要把vWidth和vHeight理解成是在svg坐标系中的x坐标和y坐标了,vx, vy才是svg坐标系中的x坐标和y坐标)(即(vx,vy)是viewBox矩形区域左上角在svg坐标系的位置)，如果不指定默认是(0 0 width height)，这里默认是(0,0,400,400)；
+
+  viewBox的作用（很重要，以后回忆就看这里）：
+      前提，你想在svg中画任何图形，参考的坐标系、距离等都是按照上面讲的svg的坐标系来的，跟viewBox无关；例如你想画circle，则用到的(cx,cy)是svg坐标系的点,r是svg坐标系的距离；
+      那么viewBox的作用是什么呢，其实viewBox一直存在，默认情况下viewBox就是(0 0 width height)和svg完全重合而已。完全重合就太简单了我们甚至不用关心viewBox的存在。
+      当viewBox与svg不重合时，例如viewBox是一个比svg小的矩形，此时就该考虑viewBox的作用了，此时viewBox的作用就是截取svg中对应的(vx, vy, vWidth, vHeight)这部分区域的快照，然后按照preserveAspectRatio指定的方式放到svg的(0,0,width,height)区域中且同时清空svg的(0,0,width,height)区域中原来的内容(暂时这么理解吧)。
+      viewBox可以在svg坐在坐标系二维平面的任意位置，即可以在坐标线的任意象限，即(-vx, -vy, vWidth, vHeight)也可以，作用都是一样的，即即使你的viewBox在svg的负数坐标系那里，只要你的svg在负数组坐标系那里或图形了，都能截取到对应区域的快照人后放到svg的(0,0,width,height)区域中。
+
+  preserveAspectRatio：官网：https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/preserveAspectRatio
+      默认值是xMidYMid 即居中
+      none 不会进行强制统一缩放，如果需要，会缩放指定元素的图形内容，使元素的边界完全匹配视图矩形。（注意：如果 <align> 的值是 none ，则 <meetOrSlice> 属性的值将会被忽略。）
+      xMinYMin - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值与视图的 X 的最小值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值与视图的 Y 的最小值对齐。
+      xMidYMin - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的中点值与视图的 X 的中点值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值与视图的 Y 的最小值对齐。
+      xMaxYMin - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值 + 元素的宽度与视图的 X 的最大值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值与视图的 Y 的最小值对齐。
+      xMinYMid - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值与视图的 X 的最小值对齐。将 SVG 元素的 viewbox 属性的 Y 的中点值与视图的 Y 的中点值对齐。
+      xMidYMid (默认值) - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的中点值与视图的 X 的中点值对齐。将 SVG 元素的 viewbox 属性的 Y 的中点值与视图的 Y 的中点值对齐。
+      xMaxYMid - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值 + 元素的宽度与视图的 X 的最大值对齐。将 SVG 元素的 viewbox 属性的 Y 的中点值与视图的 Y 的中点值对齐。
+      xMinYMax - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值与视图的 X 的最小值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值 + 元素的高度与视图的 Y 的最大值对齐。
+      xMidYMax - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的中点值与视图的 X 的中点值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值 + 元素的高度与视图的 Y 的最大值对齐。
+      xMaxYMax - 强制统一缩放。将 SVG 元素的 viewbox 属性的 X 的最小值 + 元素的宽度与视图的 X 的最大值对齐。将 SVG 元素的 viewbox 属性的 Y 的最小值 + 元素的高度与视图的 Y 的最大值对齐。
+
+      绘制形状：
+      常用属性：
+      fill是填充颜色，默认是黑色
+      stroke="red" 描边颜色
+      stroke-width="5" 描边宽度
+  -->
+
+    <svg
+      width="400"
+      height="400"
+      viewBox="50 50 100 100"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle cx="75" cy="75" r="25"></circle>
+    </svg>
+  </body>
+</html>

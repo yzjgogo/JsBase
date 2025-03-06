@@ -1,0 +1,28 @@
+
+<!-- SVG官网 https://developer.mozilla.org/zh-CN/docs/Web/SVG -->
+
+<!-- xml文件声明
+standalone：指定当前 XML 文档是否依赖于外部标记声明（可选，使用该属性时，需和DTD声明一起用才有意义）。
+✓ 默认为no：代表依赖外部标记声明，本案例就是no，因此引入DOCTYPE
+✓ yes：代表依赖内部默认的标记声明
+ -->
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 
+ version="1.0" 1.0,1.1 没有2.0这个值，但是有2.0版本
+ baseProfile="full" 正确渲染svg内容时所需要最小SVG语言概述(版本); full:正常的svg语言概述  basic:基本SVG语言概述  tiny: 轻量级SVG语言概述
+
+ xmlns: 指定svg元素  和 svg内的子元素都是属于 http://www.w3.org/2000/svg 这个命名空间下
+ 
+ svg的默认宽度是300px; 默认高度是150px; 默认单位是px,也可以是em,ex,pt,pc,cm,mm,in等
+ -->
+<svg
+ version="1.0"
+ baseProfile="full"
+ width="100"
+ height="100"
+ xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="0" y="0" width="100" height="100"></rect>
+</svg>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    /* text{
+      fill: red;
+    } */
+
+  </style>
+
+</head>
+<body>
+
+  <svg width="300" height="1200" xmlns="http://www.w3.org/2000/svg" >
+   
+    <!-- 
+    1.在svg中绘制一个文字 
+
+    https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/text
+
+     font-family、font-style、font-weight、font-variant、font-stretch、font-size、font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration。
+     等这些属性都支持
+    
+    -->
+
+    <!-- 文字绘制的方向 -->
+     <!-- 从(x,y)开始向右绘制文字 -->
+    <text x="100" y="100" font-size="50" text-anchor="start" fill="red">Hello</text>
+    <!-- 从(x,y)开始向两边绘制文字 -->
+    <text x="100" y="200" font-size="50" text-anchor="middle" fill="red">Hello</text>
+    <!-- 从(x,y)开始向左绘制文字 -->
+    <text x="100" y="300" font-size="50" text-anchor="end" fill="red">Hello</text>
+    <!-- inherit继承，放这里 -->
+    <text x="100" y="400" font-size="50" text-anchor="inherit" fill="red">Hello</text>
+
+    <!-- 3.基线对齐方式 :
+      有 auto 、middle 或 hanging 值, 默认值：auto
+    -->
+       <text x="100" y="500" dominant-baseline="auto" font-size="50" fill="green">Hello</text>
+       <text x="100" y="600" dominant-baseline="middle" font-size="50" fill="green">Hello</text>
+       <text x="100" y="700" dominant-baseline="hanging" font-size="50" fill="green">Hello</text>
+
+
+  </svg>
+
+</body>
+</html>

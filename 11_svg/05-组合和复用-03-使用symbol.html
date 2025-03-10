@@ -38,6 +38,8 @@
 ✓ 比如： viewBox、 preserveAspectRatio 、x、y、width、height等。
 
 ◼ SVG ICON文件-合并成SVG精灵图：https://www.zhangxinxu.com/sp/svgo
+
+注意(这个注意是AI生成的，有待验证)：symbol元素中的viewBox属性是必须的，因为symbol元素是不会显示的，只有通过<use>元素引用的时候才会显示出来，而<use>元素引用的时候，会根据viewBox属性来显示symbol元素中的内容 
   -->
 
   <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
@@ -61,7 +63,7 @@
 
   <!-- 复用 -->
   <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
-    <!-- 因为定义时viewBox是100*100，而此时use调用处是50*50，因此此时是缩小，缩小后再从此时的svg的左上角展示 -->
+    <!-- 因为定义时viewBox是100*100，而此时use调用处是50*50，因此此时是缩小，缩小后再从此时的svg的左上角展示（不是03-viewport和viewBox和形状.html中按照preserveAspectRatio进行展示？） -->
     <use href="#previous" width="50" height="50"></use>
   </svg>
 

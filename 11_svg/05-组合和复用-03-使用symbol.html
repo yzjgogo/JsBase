@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+  https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/symbol
+
+    <symbol>元素和<defs>元素类似，也是用于定义可复用元素，然后通过<use>元素来引用显示。
+ 在<symbol>元素中定义的图形元素默认也是不会显示在界面上。
+ <symbol>元素常见的应用场景是用来定义各种小图标，比如：icon、logo、徽章等
+
+◼ <symbol>元素的属性
+ viewBox：定义当前 <symbol> 的视图框（在svg中截取出viewBox这片区域，symbol中定义的图形的坐标系仍是视口的坐标系，只不过是用viewBox截取视口的一片区域，注意截取的是在定义symbol时的状态的区域）
+ x / y ：symbol元素的 x / y坐标。 ；默认值：0,symbol有x和y吗？目前认为和在use中使用的作用一样，注意点！！！
+ width / height：symbol元素的宽度。 默认值：0
+◼ <symbol>和<defs> 的区别
+ <defs>元素没有专有属性，而<symbol>元素提供了更多的属性
+✓ 比如： viewBox、 preserveAspectRatio 、x、y、width、height等。
+
+◼ SVG ICON文件-合并成SVG精灵图：https://www.zhangxinxu.com/sp/svgo
+  -->
+
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    
+    <!-- 1.ICON previous
+     (0 0 100 50)区域是此时定义时的区域，截取到此时定义的path的区域
+    --> 
+    <symbol id="previous" viewBox="0 0 100 100">
+      <path fill="currentColor" d="M 80 0,L 20 50, L 80 100 Z"></path>
+    </symbol>
+
+    <!-- 2.ICON next -->
+    <symbol id="next" viewBox="0 0 100 100">
+      <polygon points="20 0, 80 50, 20 100"></polygon>
+    </symbol>
+
+    <!-- 复用：因为width100 height100,而定义时viewBox就是100*100,因此此时没有缩放 -->
+    <use href="#previous" width="100" height="100"></use>
+  </svg>
+
+
+  <!-- 复用 -->
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <!-- 因为定义时viewBox是100*100，而此时use调用处是50*50，因此此时是缩小，缩小后再从此时的svg的左上角展示 -->
+    <use href="#previous" width="50" height="50"></use>
+  </svg>
+
+  <!-- 此时use直接引用定义的尺寸，即定义时的viewBox的100*100,而此时的svg是30*30，因此此时的symbol被压缩到30*30充满svg -->
+  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" >
+    <use href="#previous" ></use>
+  </svg>
+
+  <!-- 此时use直接引用定义的尺寸，即定义时的viewBox的100*100,而此时的svg是200*200，因此此时的symbol被放大到200*200充满svg -->
+  <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <use href="#previous" ></use>
+  </svg>
+
+</body>
+</html>

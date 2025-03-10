@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(../images/grid.png);
+      }
+      svg {
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <!-- <circle cx="50" cy="50" r="25" fill="transparent" stroke="red"></circle>
+    <circle cx="80" cy="50" r="25" fill="transparent" stroke="red"></circle>
+    <circle cx="110" cy="50" r="25" fill="transparent" stroke="red"></circle>
+    <circle cx="140" cy="50" r="25" fill="transparent" stroke="red"></circle> -->
+
+      <!-- 
+      g：group 元素没有专有的属性,只有全局的属性
+
+      <g>元素是用来组合元素的容器。
+添加到g元素上的变换会应用到其所有的子元素上。
+添加到g元素的属性大部分会被其所有的子元素继承。
+g元素也可以用来定义复杂的对象，之后可以通过<use>元素来引用它们
+
+
+
+  g的属性
+核心属性：id
+ 样式属性：class 、style
+ Presentation Attributes（也可说是 CSS 属性，这些属性可写在CSS中(例如style中，less中)，也可作为元素的属性用）：
+✓ cursor, display, fill, fill-opacity, opacity,…
+✓ stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin
+✓ 更多表示属性：进入Mozilla-> SVG：可缩放矢量图形 -> 文档 -> SVG 属性参考 -> https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute
+ 事件属性：onchange, onclick, ondblclick, ondrag…
+ 动画属性：transform
+ 更多：https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/g
+
+
+      全局属性:id  class  style fill stroke onclick
+     -->
+      <g fill="transparent" stroke="red">
+        <circle cx="50" cy="50" r="25"></circle>
+        <circle cx="80" cy="50" r="25"></circle>
+        <circle cx="110" cy="50" r="25"></circle>
+        <circle cx="140" cy="50" r="25"></circle>
+      </g>
+    </svg>
+  </body>
+</html>

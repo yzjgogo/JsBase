@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  
+  <!-- 
+  defs：定义一些可复用的图形，defs里只是定义，不会显示出来，只有通过use引用的时候才会显示出来
+  defs没有专有的属性，一般用的时候也不会添加任何属性；
+  同样需要考虑viewBox，参考：11_svg\03-viewport和viewBox和形状.html，跟这里介绍的一模一样，最终use的时候的显示才考虑viewBox
+
+  use:https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/use
+  在使用的时候等同于深度克隆DOM节点，克隆到use元素所在的位置  
+ href： 需要复制元素/片段的 URL 或 ID（支持跨SVG引用）。默认值：无
+ x / y ：元素的 x / y 坐标（相对被复制元素的（定义时的？）位置，+x，+y）（最终还是视口坐标系的位置）。 默认值：0，渲染时再参考viewBox
+ width / height ：元素的宽和高，只用use引用的图形是 svg 或 symbol 才会起作用
+   -->
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <defs>
+      <!-- 0.定义样式 -->
+      <style>
+        rect{
+          fill: green;
+        }
+      </style>
+      <!-- 1.定义了一个矩形 -->
+      <rect id="rectangle"  x="0" y="0" width="100" height="50"></rect>
+
+      <!-- 2.定义了一个组合图形 -->
+      <g id="logo" fill="transparent" stroke="red">
+        <circle cx="50" cy="50" r="25"></circle>
+        <circle cx="80" cy="50" r="25"></circle>
+        <circle cx="110" cy="50" r="25"></circle>
+        <circle cx="140" cy="50" r="25"></circle>  
+      </g>
+      <!-- 定义渐变 -->
+      <!-- 滤镜 -->
+    </defs>
+
+    <!-- 在这里进行图形的复用 -->
+    <use href="#rectangle"></use>
+    <use x="100" y="100"  href="#rectangle"></use>
+
+    <use href="#logo"></use>
+    <use x="100" y="100" href="#logo"></use>
+    
+  </svg>
+
+
+
+
+
+
+
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" >
+    <!-- 
+      他的宽和高是没有生效的 ????  只用use引用的图形是 svg 或 symbol 才会起作用
+     -->
+    <use href="#rectangle" width="200" height="100" ></use>
+  </svg>
+  
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" >
+    <use href="#logo"></use>
+  </svg>
+</body>
+</html>

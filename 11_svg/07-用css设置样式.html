@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(../images/grid.png);
+      }
+      svg {
+        background-color: rgba(255, 0, 0, 0.1);
+        color: green;
+      }
+
+      .rectangle2 {
+        fill: blue;
+      }
+    </style>
+    
+  <link rel="stylesheet" href="../images/style.css">
+  </head>
+  <body>
+    <!-- 1.行内的样式 -->
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="100" height="100" style="fill: red"></rect>
+    </svg>
+
+    <!-- 2:在defs中定义style -->
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .rectangle {
+            fill: green;
+            stroke: red;
+          }
+        </style>
+      </defs>
+
+      <rect class="rectangle" x="10" y="10" width="100" height="100"></rect>
+    </svg>
+
+    <!-- 3:在html的style标签中定义样式，可以设置class -->
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <rect class="rectangle2" x="10" y="10" width="100" height="100"></rect>
+    </svg>
+
+
+    
+
+    <!-- 4:引入外部css文件
+    <link rel="stylesheet" href="../images/style.css"> 
+    -->
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <rect class="rectangle3" x="10" y="10" width="100" height="100"></rect>
+  </svg>
+
+
+  <!-- 5：注意优先级 -->
+
+  <!-- 
+  6：svg的属性
+  可用于css和元素上的属性：
+  https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute#%E8%A1%A8%E7%8E%B0%E5%B1%9E%E6%80%A7
+  
+  alignment-baseline
+baseline-shift
+clip
+clip-path
+clip-rule
+color
+color-interpolation
+color-interpolation-filters
+color-profile
+color-rendering
+cursor
+d
+
+  只能用在元素上的属性：
+  https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute#svg_%E5%B1%9E%E6%80%A7%EF%BC%88%E4%BB%8E_a-z_%E6%8E%92%E5%BA%8F%EF%BC%89
+  A
+accent-height
+accumulate
+additive
+alignment-baseline
+alphabetic
+amplitude
+arabic-form
+ascent
+attributeName
+attributeType
+azimuth
+  
+  -->
+  </body>
+</html>

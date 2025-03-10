@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: url(../images/grid.png);
+      }
+      svg {
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <!-- 
+  stroke-linejoin:拐角样式
+  miter:默认值，尖角
+  round:圆角
+  bevel:平直切掉角
+   -->
+  <body>
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <polyline
+        points="20 0, 80 50, 20 100"
+        stroke="red"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="miter"
+        fill="transparent"
+      ></polyline>
+    </svg>
+
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <polyline
+        points="20 0, 80 50, 20 100"
+        stroke="red"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="transparent"
+      ></polyline>
+    </svg>
+
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <polyline
+        points="20 0, 80 50, 20 100"
+        stroke="red"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="bevel"
+        fill="transparent"
+      ></polyline>
+    </svg>
+  </body>
+</html>

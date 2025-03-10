@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    
+    <!-- 
+      stroke-dashoffset: 虚线的偏移量
+      大于0向左偏移，尾巴按照虚线规则继续补齐
+      小于0向右偏移，头部按照虚线规则继续补齐
+     -->
+    <line x1="100" y1="80"  x2="200" y2="80" 
+      stroke="red" 
+      stroke-width="10"
+      stroke-dasharray="10"
+      stroke-dashoffset="10"
+    >
+    </line>
+
+  </svg>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+  旋转
+  rotate(angle, cx, cy)
+  angle: 旋转的角度，单位是度，正值表示顺时针旋转，负值表示逆时针旋转
+  cx, cy: 旋转的中心点，如果不指定，默认是左上角（对比之前的css的旋转是以中心点旋转的？查一下）
+  -->
+
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <!-- 
+    1.
+    先对rect进行旋转，rect则得到一个旋转了的坐标系，再对rect进行平移，这个平移是在上次旋转后的坐标系的基础上平移的，因此视觉上是斜着平移
+    -->
+    <!-- <rect 
+      transform="rotate(45, 50, 25) translate(100, 0)"
+      x="0" y="0" width="100" height="50"
+    >
+    </rect> -->
+
+    <!-- 
+    2.
+    先对rect进行平移，rect得到一个平移后的坐标系，再对rect进行旋转，这个旋转是在上次平移后的坐标系的基础上旋转的
+     -->
+    <rect 
+      transform="translate(100, 0) rotate(45, 50, 25)"
+      x="0" y="0" width="100" height="50"
+    >
+    </rect>
+
+    
+    <!-- 
+    总结：
+    使用transform属性时，形变的顺序很重要，不同的顺序有不同的结果，因为不同的顺序改变的坐标系不同
+     -->
+
+  </svg>
+
+</body>
+</html>

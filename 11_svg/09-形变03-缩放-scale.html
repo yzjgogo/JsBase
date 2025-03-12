@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+  缩放
+  scale(sx, sy)
+  sx: x轴的缩放比例，1表示不缩放，大于1表示放大，小于1表示缩小
+  sy: y轴的缩放比例，1表示不缩放，大于1表示放大，小于1表示缩小
+  如果只有一个参数scale(s)，则表示x和y轴的缩放比例相同
+
+  缩放只能从左上角（坐标系原点）开始缩放，无法修改缩放原点，但是可以通过translate来假像缩放原点：原则就是把你想作为缩放原点的点，移动到与坐标系原点重合，然后再缩放，此时虽然仍然是围绕坐标系缩放但是坐标系原点和你想要的缩放原点重合了，视觉上就是围绕你想要的缩放原点缩放了。
+
+
+
+  缩放同样会改变坐标系，改变的是坐标系的刻度的密度
+  -->
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <!-- 1.缩放一个元素 -->
+    <!-- <rect 
+      transform="translate(100, 100) scale(1, 2)"
+      x="0" y="0" width="100" height="50"
+    >
+    </rect> -->
+
+    <!-- 
+    2.修改缩放的原点： 
+    本来你想scale(2)是这样的：
+    <rect 
+      transform="translate(100, 100) scale(2)"
+      x="0" y="0" width="50" height="50"
+    >
+    </rect>
+    即在坐标系原点（0, 0）（其实就是svg视口坐标系的(100,100)）的基础上放大2倍
+
+    但是你想围绕rect的中心点缩放，可以设置x="-25" y="-25"，因为width和height都是50，这样就把rect的中心点和原点(0,0)重合了，然后再放大2倍，这样就是围绕rect的中心点(其实还是围绕原点)放大2倍了
+    -->
+    <!-- <rect 
+      transform="translate(100, 100) scale(2)"
+      x="-25" y="-25" width="50" height="50"
+    >
+    </rect> -->
+    
+     <!-- 3.缩放也会改变坐标系，改变坐标系刻度的密度
+     1：你先给g设置了scale(2)，然后recttranslate(10, 0),视觉上rect沿X轴移动了20
+     -->
+     <g  transform="scale(2)">
+        <rect
+          transform="translate(10, 0)"
+          x="0" y="0" width="50" height="50"
+        >
+        </rect>
+     </g>
+
+    
+  </svg>
+
+</body>
+</html>

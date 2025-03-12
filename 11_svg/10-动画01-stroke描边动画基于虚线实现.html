@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    /* 
+      参考：11_svg\06-填充和描边-06-stroke-dashoffset.html
+      就是根据stroke-dashoffset的特点：大于0向左偏移，小于0向右偏移，且设置stroke-dasharray的实线长度正好是line的长度，其它的line之外的都不可见
+
+      这样把思想放开，其实我们可以做任何形状的stroke动画了，比如多边形，三角形，任何的path，只要你给它设置stroke,设置stroke-dasharray，然后对stroke-dashoffset进行动画即可
+      参考：11_svg\10-动画02-stroke描边动画-雪糕.html
+     */
+    #line1{
+      /* 指定为虚线，其实就是为了让虚线的第一段实线的长度等于line的长度，也可以大于line的长度，比如500，这样在2s内看到的动画就更快，因为两秒内移动500px比100px更快 */
+      /* 500 */
+      stroke-dasharray: 100px;
+      /* 可见 */
+      /* stroke-dashoffset: 0px; */
+      animation: line1Move 2s linear;
+    }
+
+    @keyframes line1Move{
+      0%{
+        /* 不可见 */
+        /* 500 */
+        stroke-dashoffset: 100px;
+      }
+
+      100%{
+        /* 可见 */
+        stroke-dashoffset: 0px;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    
+    <!-- 
+      stroke , 而不是 fill
+     -->
+    <line 
+      id="line1"
+      x1="100" y1="70"  x2="200" y2="70" 
+      stroke="red" 
+      stroke-width="10"
+    >
+    </line>
+
+
+  </svg>
+
+</body>
+</html>

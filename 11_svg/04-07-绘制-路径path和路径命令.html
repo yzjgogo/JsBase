@@ -33,11 +33,23 @@
      具体含义参考官方文档：
      https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/d#%E8%B7%AF%E5%BE%84%E5%91%BD%E4%BB%A4
 
+     获取path的长度：
+      https://developer.mozilla.org/zh-CN/docs/Web/API/SVGPathElement/getTotalLength
+
+      window.onload = function () {
+        getPathLength("mypath");
+      };
+
+      function getPathLength(className) {
+        let stickEl = document.getElementsByClassName(className)[0];
+        let stickLength = stickEl.getTotalLength();
+        console.log(className + "Length=", stickLength);
+      }
   -->
 
     <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
       <!-- 1.使用path 绘制一个收尾不闭合三角形 -->
-      <path d="M 20 0, 80 50, 20 100" fill="transparent" stroke="red"></path>
+      <path d="M 20 0, 80 50, 20 100" fill="transparent" stroke="red" class="mypath"></path>
 
       <!-- 1.使用path 绘制一个闭合的三角形 -->
       <!-- <path d="M 20 0, 80 50, 20 100 Z" fill="transparent" stroke="red"></path> -->

@@ -26,27 +26,36 @@
   旋转
   rotate(angle, cx, cy)
   angle: 旋转的角度，单位是度，正值表示顺时针旋转，负值表示逆时针旋转
-  cx, cy: 旋转的中心点，如果不指定，默认是左上角（对比之前的css的旋转是以中心点旋转的？查一下）
+  cx, cy: 选中的中心点看下面的解释，保持怀疑的态度，我是实验出来的结论
   -->
 
   <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    
+    <!-- 
+    此时执行rotate时，rect还没有发生过任何transform，因此选中的中心点默认是视口的(0,0),你设置成(100,100)就是视口坐标系的(100,100)跟rect还没关系，因此在此时rotate时rect还没有坐标系
+     -->
+    <!-- <rect 
+      transform="rotate(45,100,100)"
+      x="100" y="100" width="100" height="50"
+    >
+    </rect> -->
     <!-- 
     1.
-    先对rect进行旋转，rect则得到一个旋转了的坐标系，再对rect进行平移，这个平移是在上次旋转后的坐标系的基础上平移的，因此视觉上是斜着平移
+    先对rect进行旋转，rect则得到一个旋转了的坐标系，再对rect进行平移，这个平移是在rect上次旋转后得到的坐标系的基础上平移的，因此视觉上是斜着平移
     -->
     <!-- <rect 
-      transform="rotate(45, 50, 25) translate(100, 0)"
-      x="0" y="0" width="100" height="50"
+      transform="rotate(45,100,100) translate(100, 0)"
+      x="100" y="100" width="100" height="50"
     >
     </rect> -->
 
     <!-- 
     2.
-    先对rect进行平移，rect得到一个平移后的坐标系，再对rect进行旋转，这个旋转是在上次平移后的坐标系的基础上旋转的
+    先对rect进行平移(100,0)，rect得到一个平移后的坐标系这个坐标系的(0,0)正好是svg视口坐标系的(100,0)，其x="100" y="100"也是相对这个rect自己的坐标系的(100,100)， 这样再对rect进行旋转，因为在rotate前rect有过transform，因此这个rotate的旋转中心点是参考rect产生的自己的坐标系选中的，此时是(45,100,100),正好对应svg视口的(200,100)
      -->
     <rect 
-      transform="translate(100, 0) rotate(45, 50, 25)"
-      x="0" y="0" width="100" height="50"
+      transform="translate(100, 0)  rotate(45,100,100)"
+      x="100" y="100" width="100" height="50"
     >
     </rect>
 

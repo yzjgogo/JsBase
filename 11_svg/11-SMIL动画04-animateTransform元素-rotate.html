@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(../images/grid.png);
+      }
+      svg {
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 关于旋转时的围绕的中心点参考：11_svg\09-形变02-旋转-rotate.html -->
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="50" height="50" fill="red">
+        <!-- 从0度旋转到360，默认的旋转的中心点事svg视口坐标系的(0,0) -->
+        <!-- <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0"
+        to="360"
+        dur="20s"
+        begin="1s"
+        repeatCount="indefinite"
+      >
+      </animateTransform> -->
+
+        <!-- 从0度旋转到360，同时设置选中的中心点是svg视口坐标系的(150,150) -->
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 150 150"
+          to="360 150 150"
+          dur="20s"
+          begin="1s"
+          repeatCount="indefinite"
+        ></animateTransform>
+      </rect>
+    </svg>
+  </body>
+</html>

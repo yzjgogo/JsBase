@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 一个要动画的元素这里是rect中，最多只能有一个animateTransform元素，如果有多个，只有最后一个生效 -->
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="red">
+
+      <!-- 对rect执行transform的translate动画，from和to一个值时，此时说明只执行translateX -->
+      <!-- <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0"
+        to="200"
+        dur="2s"
+        begin="1s"
+        repeatCount="indefinite"
+      >
+      </animateTransform> -->
+
+      <!-- from和to有两个值时，说明同时执行translateX和translateY -->
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0, 0"
+        to="200, 0"
+        dur="2s"
+        begin="1s"
+        repeatCount="indefinite"
+      >
+      </animateTransform>
+    </rect>
+  </svg>
+
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="red">
+      <!-- 当使用values时，from to就无效了，多组值用分号隔开，
+       这里传入0;200 说明x从0移动到200，y不移动 -->
+      <!-- <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0;200"
+        dur="2s"
+        begin="1s"
+        repeatCount="indefinite"
+      >
+      </animateTransform> -->
+
+      <!-- 这里的values传入0 0;200 0，说明同时对X和Y进行位移 -->
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0;200 0"
+        dur="2s"
+        begin="1s"
+        repeatCount="indefinite"
+      >
+      </animateTransform>
+    </rect>
+  </svg>
+
+
+</body>
+</html>

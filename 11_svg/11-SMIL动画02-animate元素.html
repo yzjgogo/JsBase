@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="red">
+      <!-- 
+        2s后把x从0移动到200，整个移动过程持续3s
+       -->
+      <animate
+        attributeName="x"
+        form="0"
+        to="200"
+        dur="3s"
+        begin="2s"
+        fill="freeze"
+      >
+      <!-- 
+        2.animate 元素的基本使用(3个属性时必须的)
+       -->
+      <!-- <animate
+        attributeName="x"
+        to="200"
+        dur="3s"
+      >
+
+      </animate> -->
+    </rect>
+  </svg>
+
+
+  
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="green">
+      <!-- 
+        同时执行两个animate，只需要先后写即可
+        第一个动画前1.5s，x从0移动到190，后1.5s，x从190移动到200，无线循序执行
+        第二个动画把fill从red变为green，持续3s，无限循环
+
+        当使用了values属性时，from和to属性就不需要了，也失效了
+       -->
+      <animate
+        attributeName="x"
+        values="0; 190; 200"
+        dur="3s"
+        repeatCount="indefinite"
+      >
+      </animate>
+
+      <!-- 执行2次 -->
+      <animate
+        attributeName="fill"
+        values="red;green"
+        dur="3s"
+        repeatCount="2"
+      >
+      </animate>
+    </rect>
+
+  </svg>
+
+
+  <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="pink">
+      <!-- 两个动画先后执行的案例
+        主要是begin得用法，begin="oneAnimate.end"，表示oneAnimate动画结束后才开始执行当前动画， oneAnimate是animate元素的id
+        https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/begin 
+      -->
+      <animate
+        id="oneAnimate"
+        attributeName="x"
+        values="0;200"
+        dur="3s"
+        fill="freeze"
+      >
+      </animate>
+
+      <animate
+        attributeName="y"
+        values="0;100"
+        dur="3s"
+        fill="freeze"
+        begin="oneAnimate.end"
+      >
+      </animate>
+    </rect>
+  </svg>
+
+
+</body>
+</html>

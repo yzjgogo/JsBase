@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+  <!-- 
+
+   SVG 中支持SMIL动画的元素：
+   <set> <animate> <animateColor> <animateMotion>
+  https://www.w3.org/TR/SVG11/animate.html#AnimationElements
+
+
+  set:
+  1. attributeName: 要改变的属性
+  2. to: 目标值
+  3. begin: 动画开始的时间，可以是数字，单位是秒，也可以是事件，比如click，mouseover等
+  
+  set元素的动画是数值的一次性改变没有过度效果
+
+  begin属性：
+  https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/begin 
+
+  -->
+
+  <!-- 3s后，x从0变为200 -->
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <rect x="0" y="0" width="100" height="50" fill="red">
+       <set
+         attributeName ='x'
+         to="200"
+         begin="3s"
+       >
+       </set> 
+    </rect>
+  </svg>
+
+  <!-- rectangle被点击时把x从0变为200 -->
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <rect id="rectangle" x="0" y="0" width="100" height="50" fill="green">
+       <set
+         attributeName ='x'
+         to="200"
+         begin="rectangle.click"
+       >
+       </set> 
+    </rect>
+  </svg>
+
+</body>
+</html>

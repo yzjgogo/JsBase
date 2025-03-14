@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #E5F1FB;
+      }
+      svg {
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <!-- 
+    三个圆点淡入淡出的加载动画 
+    其实就是三个圆点都做透明度渐变动画，然后动画开始时间挫开
+    -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100"
+      height="100"
+      viewBox="0 0 100 100"
+    >
+      <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
+        <animate
+         attributeName="opacity"
+         values="0;1;0"
+         dur="1s"
+         begin="0s"
+         repeatCount="indefinite"
+        >
+        </animate>
+      </circle>
+      <circle fill="#fff" stroke="none" cx="26" cy="50" r="6">
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          dur="1s"
+          begin="0.1s"
+          repeatCount="indefinite"
+        >
+        </animate>
+      </circle>
+      <circle fill="#fff" stroke="none" cx="46" cy="50" r="6">
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          dur="1s"
+          begin="0.2s"
+          repeatCount="indefinite"
+        >
+        </animate>
+      </circle>
+    </svg>
+
+    
+  </body>
+</html>

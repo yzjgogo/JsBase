@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #E5F1FB;
+      }
+      svg {
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 3.转动动画 -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100"
+      height="100"
+      viewBox="0 0 100 100"
+    >
+      <!-- 外圆顺时针旋转 -->
+      <circle
+        fill="none"
+        stroke="#fff"
+        stroke-width="6"
+        stroke-miterlimit="15"
+        stroke-dasharray="14.2472,14.2472"
+        cx="50"
+        cy="50"
+        r="47"
+      >
+       <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="0 50 50;360 50 50"
+        dur="5s"
+        repeatCount="indefinite"
+       >
+       </animateTransform>
+      </circle>
+
+      <!-- 内圆逆时针旋转 -->
+      <circle
+        fill="none"
+        stroke="#fff"
+        stroke-width="1"
+        stroke-miterlimit="10"
+        stroke-dasharray="10,10"
+        cx="50"
+        cy="50"
+        r="39"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0 50 50;-360 50 50"
+          dur="5s"
+          repeatCount="indefinite"
+        >
+        </animateTransform>
+      </circle>
+
+      <!-- 里面的5根线上下来回移动 -->
+      <g fill="#fff">
+        <rect x="30" y="35" width="5" height="30">
+          <animateTransform
+           attributeName="transform"
+           type="translate"
+           values="0 -5; 0 5; 0 -5"
+           dur="1s"
+           begin="0s"
+           repeatCount="indefinite"
+          >
+          </animateTransform>
+        </rect>
+        <rect x="40" y="35" width="5" height="30">
+          <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 -5; 0 5; 0 -5"
+          dur="1s"
+          begin="0.1s"
+          repeatCount="indefinite"
+         >
+         </animateTransform>
+        </rect>
+        <rect x="50" y="35" width="5" height="30">
+          <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 -5; 0 5; 0 -5"
+          dur="1s"
+          begin="0.2s"
+          repeatCount="indefinite"
+         >
+         </animateTransform>
+        </rect>
+        <rect x="60" y="35" width="5" height="30">
+          <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 -5; 0 5; 0 -5"
+          dur="1s"
+          begin="0.3s"
+          repeatCount="indefinite"
+         >
+         </animateTransform>
+        </rect>
+        <rect x="70" y="35" width="5" height="30">
+          <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 -5; 0 5; 0 -5"
+          dur="1s"
+          begin="0.4s"
+          repeatCount="indefinite"
+         >
+         </animateTransform>
+        </rect>
+      </g>
+    </svg>
+  </body>
+</html>

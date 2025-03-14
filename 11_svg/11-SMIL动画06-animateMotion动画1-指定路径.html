@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: url(../images/grid.png);
+    }
+    svg{
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+  <!-- 
+  animateMotion 能让元素按照某个path轨迹移动
+  rotate="auto" 自动让rect元素的角度跟着path的角度走，必须path斜着则rect也歇着等等
+    -->
+
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    
+    <!-- 画一条路径:纯粹是为了能看到动画运动的轨迹，跟动画本身无关，下面的animateMotion动画本身指定了path，只是正好和这个path一样 -->
+    <path d="M 0 100, L 100 30, L 200 100, L 300 30" fill="transparent" stroke="red"></path>
+
+    
+    <rect x="0" y="0" width="20" height="10" rx="4" ry="4" fill="red">
+      <animateMotion
+       path="M 0 100, L 100 30, L 200 100, L 300 30"
+       dur="2s"
+       rotate="auto"
+       repeatCount="indefinite"
+      >
+      </animateMotion>
+    </rect>
+
+
+  </svg>
+
+</body>
+</html>

@@ -24,8 +24,19 @@
   <!-- 
 
    SVG 中支持SMIL动画的元素：
-   <set> <animate> <animateColor> <animateMotion>
+   <set> <animate> <animateColor> <animateTransform> <animateMotion>  这些动画都支持用法1 和 用法2
   https://www.w3.org/TR/SVG11/animate.html#AnimationElements
+
+  用法1：包裹
+  <rect>
+    <set>
+  </rect>
+
+  用法2：引用
+  <rect id="rectangle">
+  </rect>  
+  <set href="#rectangle">
+
 
 
   set:

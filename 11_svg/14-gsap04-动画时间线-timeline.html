@@ -42,7 +42,8 @@
       //第2步：链式调用多个动画即可
       timeline.to(['#rectangle1', '#rectangle2'], {
         scale: 0.5,
-        duration: 1
+        duration: 1,
+        stagger:0.2//多个动画之间挫开多久执行
       })
 
       // .to('#rectangle2', {

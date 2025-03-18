@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="acdc437c-4564-4daa-b131-bede0d5970fb" name="Default" comment="修改图片大小">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="acdc437c-4564-4daa-b131-bede0d5970fb" name="Default" comment="修改图片大小" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +21,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="1zLIXgmXdhln0GAE2bcrzS87Mij" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../web/school-cloud/teacher" />
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/SubTest/mymanager",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\soft\JsBase\05_JS高级\前端模块化\3-ES6模块化举例" />
@@ -41,6 +53,14 @@
       <recent name="D:\soft\JsBase\HtmlCssBase" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -116,6 +136,7 @@
       <workItem from="1645502710023" duration="1893000" />
       <workItem from="1645688450323" duration="11649000" />
       <workItem from="1645753815290" duration="7184000" />
+      <workItem from="1742182125929" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="测试一下提交">
       <created>1558949031572</created>
@@ -450,7 +471,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -466,43 +487,5 @@
     <MESSAGE value="测试一下提交" />
     <MESSAGE value="修改图片大小" />
     <option name="LAST_COMMIT_MESSAGE" value="修改图片大小" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1645783099622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="558" y="86" key="CommitChangelistDialog2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645783099622" />
-    <state x="184" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1645782538638">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1736" y="282" width="1536" height="860" key="DiffContextDialog/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645690468145" />
-    <state x="184" y="86" width="1536" height="860" key="DiffContextDialog/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645782538638" />
-    <state x="-1180" y="471" key="FileChooserDialogImpl" timestamp="1645774040240">
-      <screen x="-1920" y="196" width="1920" height="1040" />
-    </state>
-    <state x="-1180" y="471" key="FileChooserDialogImpl/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645774040240" />
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645754238998" />
-    <state x="822" y="221" key="RollbackChangesDialog" timestamp="1640743948998">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="822" y="221" key="RollbackChangesDialog/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1640743948998" />
-    <state x="-9" y="102" width="998" height="708" key="SettingsEditor" timestamp="1640746840681">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-9" y="102" width="998" height="708" key="SettingsEditor/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1640746840681" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1645783105012">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645783105012" />
-    <state x="-1650" y="211" width="1142" height="948" key="find.popup" timestamp="1645709360694">
-      <screen x="-1920" y="196" width="1920" height="1040" />
-    </state>
-    <state x="-1650" y="211" width="1142" height="948" key="find.popup/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645709360694" />
-    <state x="426" y="136" width="1012" height="798" key="find.popup/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645171492091" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1645780966355">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1304" y="369" width="672" height="676" key="search.everywhere.popup/-1920.196.1920.1040/0.0.1920.1040@-1920.196.1920.1040" timestamp="1645688795324" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/-1920.196.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645780966355" />
   </component>
 </project>

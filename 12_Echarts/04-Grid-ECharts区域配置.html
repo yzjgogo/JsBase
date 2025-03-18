@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  <!-- Echarts图标有两个区域
+    1：Echarts图表整个区域，此处即为maindiv的区域
+    2：Echarts图表的绘图区域
+    -->
+  <div id="main" style="height: 400px;width: 800px;"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <script>
+    window.onload = function() {
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        // ECharts的背景
+        backgroundColor: 'rgba(255, 0, 0, 0.1)',//main容器的背景色
+
+        // grid 网格组件( 绘图区域 ),以柱状图为例，就是柱状图区域
+        grid: {
+          show: true,//默认是false
+          backgroundColor: 'rgba(0, 255, 0, 0.1)',
+          //当left,right,top,bottom都设置了0，且containLabel: false时，绘图区域会占满整个main容器
+          // top: 0,
+          // bottom: 0,
+          left: 0,
+          // right: 0,
+          containLabel: true,
+        },
+
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+          {
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

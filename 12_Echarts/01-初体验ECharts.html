@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- 4.ECharts 的容器( 必须要有高度,宽度是可选的 ) -->
+  <div id="main" style="height: 400px;width: 800px;"></div>
+
+  <!-- 
+    window.echarts = 
+   -->
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <script>
+    window.onload = function() {
+       // 1.基于准备好的dom，初始化 echarts实例
+       var myChart = echarts.init(document.getElementById('main'));
+
+      // 2.指定图表的配置项和数据
+      var option = {
+        title: {
+          show:true,
+          text: 'ECharts 入门示例'
+          // ...
+        },
+        tooltip: {},//鼠标放到条目上，会显示当前条目的情况，即使是空对象
+        legend: {//图例
+          data: ['销量']//需要和series中的name一致
+        },
+        xAxis: {//x轴显示的信息
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        // yAxis: {data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']},
+        yAxis: {},//如果没有给y轴设置data数据，那么y轴会根据series中的data数据自动计算
+        series: [//以柱状图为例，就是每一个柱子的数据，也是yAxis的取值来源
+          {
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
+      };
+
+      // 3.使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+
+    }
+  </script>
+</body>
+</html>

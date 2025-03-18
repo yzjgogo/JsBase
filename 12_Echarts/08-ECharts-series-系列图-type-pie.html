@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="main" style="height: 400px;width: 800px;"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <script>
+    window.onload = function() {
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+        grid: {
+          show: true,
+          backgroundColor: 'rgba(0, 255, 0, 0.1)',
+        },
+        
+        xAxis: {
+          show: false,//饼图不需要x轴,因此隐藏
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+          {
+            type: 'pie', // line bar scatter pie
+            label: { 
+              show: true//是否显示每一块饼的类型名称
+            },
+          // 设置成百分比时第一项是相对于容器main的宽度，第二项是相对于容器main的高度。
+          center: ["50%", "50%"], // 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标。
+            
+            // 百分比是参照容器高宽中较小一项( 感觉是直径 )
+            radius: ["20%", "80%"], // 饼图的半径。数组的第一项是内圆半径，第二项是外圆半径。可以通过修改这两个值，使饼图变成环形图。如果内圆半径大于外圆半径则label显示在每一块饼上，而不是显示在饼外
+
+            //是否展示成南丁格尔图，通过半径区分数据大小。可选择两种模式：'radius' 扇区圆心角展现数据的百分比，半径展现数据的大小。'area' 所有扇区圆心角相同，仅通过半径展现数据大小。
+            roseType: false, // false | 'radius' | 'area' 取这三个值
+
+
+            
+            data: [
+              {
+                value: 5,
+                name: "衬衫", // 数据项名称, 比如pie系列 tooltip 需要用到
+              },
+              {
+                value: 20,
+                name: "羊毛衫",
+              },
+              {
+                value: 36,
+                name: "雪纺衫",
+              },
+              {
+                value: 10,
+                name: "裤子",
+              },
+              {
+                value: 10,
+                name: "高跟鞋",
+              },
+              {
+                value: 20,
+                name: "袜子",
+              },
+            ],
+                 
+
+          }
+        ]
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

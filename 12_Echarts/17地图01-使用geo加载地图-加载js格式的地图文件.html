@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="main" style="height: 400px"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <!-- 1：引入地图的js文件 -->
+  <script src="./geojson/china.js"></script>
+  <script>
+    window.onload = function() {
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        // 2.在 echarts 中展示中国地图，使用geo属性
+        geo: {
+          map: 'china'
+        },
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

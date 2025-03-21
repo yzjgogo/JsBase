@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="main" style="height: 400px"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <!-- 这里以加载json格式的地图文件为例,参考：12_Echarts\17地图02-使用geo加载地图-加载json格式的地图文件.html -->
+  <script src="./geojson/china_geojson.js"></script>
+  <script>
+    window.onload = function() {
+      echarts.registerMap('中国', { geoJSON: china_geojson })
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        // 对比 17地图01-使用geo加载地图-加载js格式的地图文件.html 和 17地图02-使用geo加载地图-加载json格式的地图文件.html 使用geo属性加载地图的方式，此时使用series属性加载地图，需要设置type属性为map
+        
+        series: [
+          {
+            type: 'map', // 系列图是 地图
+            map: '中国' // 展示中国地图( 因为只注册一个中国地图 )
+          }
+        ]
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

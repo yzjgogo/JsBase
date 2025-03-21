@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="main" style="height: 400px"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <!-- 
+    本来我们是打算加载china.json文件的，以后在工程化项目中，例如vueh中，可以通过require或者import的方式引入json文件,但是现在是先把china.json进行格式化，然后定义china_geojson.js文件，
+    然后在china_geojson.js文件中定义一个全局变量china_geojson，然后将格式化后的json数据赋值给china_geojson变量，然后在html文件中引入china_geojson.js文件，
+    一旦通过script标签引入china_geojson.js文件，china_geojson就会挂载到window上，我们就通过这种方式拿到了json数据，然后就可以使用china_geojson变量，加载地图
+    
+    window.china_geojson = {}
+  -->
+  <script src="./geojson/china_geojson.js"></script>
+  <script>
+    window.onload = function() {
+      // 1：使用json格式的地图文件，需要先注册地图，使用js格式的地图文件则不需要，因为在js文件中会自动注册地图
+      echarts.registerMap('中国', { geoJSON: china_geojson })
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        // 2.使用geo在echarts 中展示中国地图
+        geo: {
+          map: '中国'
+        },
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

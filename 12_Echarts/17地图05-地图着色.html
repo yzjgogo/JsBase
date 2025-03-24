@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="main" style="height: 400px"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  
+  <script src="./geojson/china_geojson.js"></script>
+  <script>
+    window.onload = function() {
+      // 注册一下中国地图的
+      echarts.registerMap('中国', { geoJSON: china_geojson })
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        //参考：12_Echarts\14-ECharts-tooltip-提示框组件.html
+        //鼠标放到地图的某块区域，会悬浮显示信息
+        tooltip: {},
+        // 1.使用geo展示中国地图
+        // geo: {
+        //   map: '中国',
+        //   // =======地图着色=========
+        //   itemStyle: {
+        //     areaColor: "#023677", // 地图区域的颜色。
+        //     borderColor: "#1180c7", // 图形的描边颜色。
+        //   },
+            
+        //   emphasis: {
+        //     itemStyle: {
+        //       areaColor: "#4499d0",
+        //     },
+        //     label: {
+        //       color: "white",
+        //     },
+        //   },
+        //   // =======地图着色=========
+        // },
+
+        // 2.使用series加载中国地图
+        series: [
+          {
+            
+            type: 'map', // 系列图是 地图(创建一个地理坐标系统, 用来展示数据 )
+            map: '中国', // 
+            roam: true,
+            // =======地图着色=========
+            itemStyle: {
+              areaColor: "#023677", // 各块地图的颜色
+              borderColor: "#1180c7", // 各块地图交界处的颜色
+            },
+              
+            emphasis: {
+              itemStyle: {
+                areaColor: "#4499d0",//鼠标滑过的地图区域的颜色
+              },
+              label: {
+                color: "white",//鼠标滑过地图区域，显示的此块省份名称的字体颜色
+              },
+            },
+              // =======地图着色=========
+          }
+        ]
+      };
+      myChart.setOption(option);
+    }
+  </script>
+</body>
+</html>

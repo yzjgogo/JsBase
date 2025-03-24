@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 
+  
+  ◼ 全局 echarts 对象，在 script 标签引入 echarts.js 文件后获得，或者在 AMD 环境中通过 require('echarts') 获得。
+ echarts. init( dom， theme， opts )：创建echartsInstance实例
+ echarts. registerMap( mapName， opts )：注册地图
+ echarts. getMap( mapName )：获取已注册地图
+◼ 通过 echarts.init 创建的实例（echartsInstance）
+ echartsInstance. setOption(opts)：设置图表实例的配置项以及数据，万能接口。
+ echartsInstance. getWidth()、 echartsInstance. getHeight()：获取 ECharts 实例容器的宽高度。
+ echartsInstance. resize(opts)：改变图表尺寸，在容器大小发生改变时需要手动调用。
+ echartsInstance. showLoading()、 echartsInstance. hideLoading()：显示和隐藏加载动画效果。
+ echartsInstance. dispatchAction( )：触发图表行为，例如：图例开关、显示提示框showTip等
+ echartsInstance. dispose：销毁实例，销毁后实例无法再被使用
+ echartsInstance. on()：通过 on 方法添加事件处理函数，该文档描述了所有 ECharts 的事件列表。
+
+  -->
+
+  
+  <div id="main" style="height: 400px"></div>
+  <script src="../libs/echarts-5.3.3.js"></script>
+  <script>
+    window.onload = function() {
+      let myChart = echarts.init(document.getElementById('main'));
+      let option = {
+        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+        grid: {
+          show: true,
+          backgroundColor: 'rgba(0, 255, 0, 0.1)',
+        },
+        
+
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+          {
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
+      };
+      myChart.setOption(option);
+
+      // 1.响应式图表
+      window.addEventListener('resize', function() {
+        //随着浏览器窗口大小的改变，图表也会自适应的改变
+        myChart.resize()
+      })
+    }
+  </script>
+</body>
+</html>

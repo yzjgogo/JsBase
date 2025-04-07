@@ -137,6 +137,9 @@
             name: 'John',
             age: 30
         }
+    //    Object.entries(user)可以将对象转换为键值对数组，与Object.entries(user)相对的是Object.fromEntries()，Object.fromEntries() 把键值对列表转换为一个对象，例如：Object.fromEntries([['name', 'John'], ['age', 30]]) = {name: 'John', age: 30}
+    //    例如：Object.entries(user) = [['name', 'John'], ['age', 30]]，注意是二维数字，数组的每一个元素都是key和value组成的数组
+    console.log('将对象转换为键值对数组:',Object.entries(user),Object.entries(user)[0],Object.entries(user)[1])   
     for (let [key, value] of Object.entries(user)) {
         console.log(`${key}:${value}`) // name:John,  age:30
     }

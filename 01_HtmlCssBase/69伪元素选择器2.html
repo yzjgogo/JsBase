@@ -4,23 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+		.aaa{
+			display: flex;
+			font-size: 18px;
+			line-height: 29px;
+			background-color: pink;
+		}
 	div::before { 
+		flex-shrink: 0;
 		/*before其实是个盒子，且是行内元素，其插入到div的前面，因此其父标签是其所属的div*/
-		content: "我";/*必须用到content,即使没有内容也要用空的，例如content:"";*/
-		width: 200px;
-		height: 200px;
+		content: "";/*必须用到content,即使没有内容也要用空的，例如content:"";*/
 		/*设置了宽高，但是没有效果，说明是行内元素*/
 		background-color: pink;
+		width: 5px;
+		height: 5px;
+		margin-top: 12px;
+		background-color: green;
 		/*display: block;把before这个行内元素转换为块元素*/
 	}
-	div::after {
+	/* div::after {
 		/*after和before一个道理*/
 		content: "18岁";
-	}
+	} */
 	</style>
 </head>
 <body>
-	<div>今年</div>
+	<div class="aaa">今神鼎飞丹砂第三方电饭锅电饭锅地方给代发给电饭锅电饭锅代发给年</div>
 
 	<br><br><img src="img/before_after.png" alt="">
 </body>

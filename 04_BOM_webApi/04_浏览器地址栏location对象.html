@@ -32,6 +32,12 @@
         // window.location.href = "www.baidu.com"
 
         onload = function () {
+            document.getElementById("openId").onclick = function () {
+                window.open("http://www.jd.com");//默认值是"_blank"新窗口打开
+                window.open("http://www.jd.com", "_blank");//新窗口(标签)打开
+                window.open("http://www.jd.com", "_self");//当前窗口打开
+                //更多window.open的参数参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/open
+            };
             document.getElementById("hrefId").onclick = function () {
                 //打开(替换)当前页面，对比window.open(url)
                 location.href = "http://www.jd.com";//页面跳转可后退有history 同assign函数
@@ -72,6 +78,7 @@
     </script>
 </head>
 <body>
+<input type="button" value="open" id="openId"/>
 <input type="button" value="href" id="hrefId"/>
 <input type="button" value="assign" id="assignId"/>
 <input type="button" value="reload" id="reloadId"/>

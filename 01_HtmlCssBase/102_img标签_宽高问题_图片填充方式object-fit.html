@@ -33,11 +33,25 @@
         inherit: 从该元素的父元素继承属性
         */
     </style>
+    <script>
+        
+        window.onload = function () {
+            //window是可以省略的
+            // document.getElementById("img2").onclick = function () {
+            //     alert("您好");
+            // };
+
+            const img2 = document.getElementById("img2")
+            const img2Rect = img2.getBoundingClientRect()
+            console.log("img2的位置信息：", img2Rect)
+            console.log("img2的宽高：", img2.naturalWidth, img2.naturalHeight)
+        };
+    </script>
 </head>
 <body>
 <div>
     <img class="img1" src="./img/tudou.jpg"/>
-    <img class="img2" src="./img/tudou.jpg"/>
+    <img id="img2" class="img2" src="./img/tudou.jpg"/>
     <img class="img3" src="./img/tudou.jpg"/>
     <img class="img4" src="./img/tudou.jpg"/>
     <img class="img5" src="./img/tudou.jpg"/>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /* 更多渐变
+https://zhuanlan.zhihu.com/p/643134748
+
+
+background: radial-gradient(shape size at position, color-stop1 stop1-position, color-stop2 stop2-position, ...);
+background: radial-gradient(形状 半径长度 at 形状在哪展示, color-stop1 stop1-position, color-stop2 stop2-position, ...);
+
+下面的解释都以circle为例
+所谓径向渐变：即从某个点向四面八方周围区域辐射渐变，因此整个辐射区域是一个圆形区域；，那么对于一个矩形或长方形的div，没有被这个圆形区域覆盖的区域的背景色其实就是最后一个color-stop的颜色；
+
+shape::取值是circle 或 ellipse，圆或椭圆
+
+size：整个镜像渐变圆形区域的半径长度，可以是farthest-corner (默认)，closest-side，closest-corner，farthest-side ，也可以是具体的长度值（px，em，%等）
+		farthest-corner (默认) : 指定径向渐变的半径长度为从圆心到离圆心最远的角
+		closest-side ：指定径向渐变的半径长度为从圆心到离圆心最近的边
+		closest-corner ： 指定径向渐变的半径长度为从圆心到离圆心最近的角
+		farthest-side ：指定径向渐变的半径长度为从圆心到离圆心最远的边
+
+position：整个镜像渐变的圆心的坐标，取值可以是：center（默认），top	，bottom,left top,right top,left bottom,right bottom等，也可以是具体的数组，例如60px 100px，即圆心坐标是当前div的(60px,100px)处
+
+color-stop1：从position处辐射的第一个颜色值，辐射stop1-position这么长，stop1-position是一段距离，即从position处开始到四面八方的stop1-position这么长；
+color-stop2：从stop1-position处开始颜色逐渐从color-stop1渐变为color-stop2，直到stop2-position处渐变结束，stop2-position是从position处开始到四面八方的stop2-position这么长；
+。。。。。
+stop-position：可以是百分比，也可以是具体的数值（px，em，%等），100%就等于size的值；
+可见所谓的渐变就是stop1-position 到 stop2-position这段有渐变效果，颜色从color-stop1渐变为color-stop2；
+
+那么如果stop2-position === stop1-position 就相当于没有渐变效果了，即颜色直接从color-stop1变为color-stop2；，根据这个特性，我们可以把stop1-position设置为transparent，实现一个镂空的圆
+
+注意：这么多参数有很多是可以省略的，用的时候再说
+
+
+发现的问题：当shape是椭圆ellipse时，size不能用具体的数值，只能用farthest-corner，closest-side，closest-corner，farthest-side这几个值？
+
+*/
+
+      .box {
+        margin: 10px;
+        width: 500px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+	  .d1{
+		background-image: radial-gradient(ellipse farthest-side, red, green, blue);
+	  }
+	  .d2{
+		background-image: radial-gradient(circle farthest-side,red, green, blue);
+	  }
+	  .d3{
+		background-image: radial-gradient(ellipse closest-side, red, green, blue);
+	  }
+	  .d4{
+		background-image: radial-gradient(circle closest-side, red, green, blue);
+	  }
+	  .d5{
+		background-image: radial-gradient(circle 50px at left top, red, green, blue);
+	  }
+	  .d6{
+		/* 红色从50px处开始逐渐渐变为蓝色，直到100px处 */
+		background-image: radial-gradient(circle 100px at 100px 100px,red 50px, blue 100%);
+	  }
+	  .d7{
+		/* 红色到蓝色之间没有任何过渡渐变，直接变色，因为从红色到蓝色之间的距离是0，这里是从100px处到100px处 */
+		background-image: radial-gradient(circle 100px at 100px 100px,red 100%, blue 100%);
+	  }
+
+	  .under{
+        margin: 10px;
+        width: 500px;
+        height: 200px;
+		background-image: url(./img/qw.png);
+		background-size: 100% 100%;
+	  }
+	  .cover{
+		width: 100%;
+		height: 100%;
+		opacity: 0.9;
+		background-image: radial-gradient(circle, transparent 75px, #ffffff 75px);
+	  }
+    </style>
+  </head>
+  <body>
+    <div class="box d1">
+		
+    </div>
+    <div class="box d2">
+		
+    </div>
+    <div class="box d3">
+		
+    </div>
+    <div class="box d4">
+		
+    </div>
+    <div class="box d5">
+		
+    </div>
+    <div class="box d6">
+		
+    </div>
+    <div class="box d7">
+		
+    </div>
+
+	<!-- 头像选择案例 -->
+	<div class="under">
+		<div class="cover"></div>
+	</div>
+	
+  </body>
+</html>

@@ -34,7 +34,7 @@ https://zhuanlan.zhihu.com/p/643134748
 		background: linear-gradient(270deg, red, green);
 	}
 	.d2{
-		/*无-webkit-前缀,不支持top,left等方向，需要加to才可以*/
+		/*无-webkit-前缀,不支持top,left等方向，需要加to才可以,例如 to top;to left ;to top left(从某个角开始)*/
 		background: linear-gradient(to top, red, green);
 	}
 	.d3{
@@ -47,7 +47,8 @@ https://zhuanlan.zhihu.com/p/643134748
 		background: -webkit-linear-gradient(0deg, red, green);
 	}
 	.d5{
-		background: -webkit-linear-gradient(left, red, green);
+		/*有-webkit-前缀,支持top,left,right,bottom等方向,不能加to,也支持从某个角开始，例如top left;right bottom*/
+		background: -webkit-linear-gradient(left top, red, green);
 	}
 	.d6{
 		background: -webkit-linear-gradient(0deg, red 0%, green 30%, blue 100%);
@@ -60,7 +61,7 @@ https://zhuanlan.zhihu.com/p/643134748
 	<div class="d3">无-webkit-前缀,支持给颜色指定位置百分比</div>
 
 	<div class="d4">有-webkit-前缀,使用deg角度：90deg度从下到上；180deg从右到左；270deg从上到下；0deg从左到右</div>
-	<div class="d5">有-webkit-前缀,支持top,left,right,bottom等方向,斜角方向还没研究，不能加to</div>
+	<div class="d5">有-webkit-前缀,支持top,left,right,bottom等方向,不能加to</div>
 	<div class="d6">有-webkit-前缀,支给颜色指定位置百分比</div>
 </body>
 </html>

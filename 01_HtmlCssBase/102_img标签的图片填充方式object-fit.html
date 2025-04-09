@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /* overflow: visible; */
+        }
+        .img1{
+            /* 不保持原图片的宽高比，拉伸到宽和高正好填充满img标签 */
+            object-fit: fill;
+        }
+        .img2{
+            /* 保持原图片的宽高比，让整个图片的所有内容都在img标签内，此时可能宽充满但高没有充满，也可能高充满但宽没有充满 */
+            object-fit: contain;
+        }
+        .img3{
+            /* 保持原图片的宽高比，让图片的横向正好与img标签的左右贴边 或 纵向正好与img标签的上下贴边；结果可能图片在纵向或横向超出img标签的范围 */
+            object-fit: cover;
+        }
+        .img5{
+            /* 保持原有尺寸比例。内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。*/
+            object-fit: scale-down;
+        }
+
+        /* 还有两个：
+        
+        initial：	设置为默认值
+        inherit: 从该元素的父元素继承属性
+        */
+    </style>
+</head>
+<body>
+<div>
+    <img class="img1" src="./img/tudou.jpg"/>
+    <img class="img2" src="./img/tudou.jpg"/>
+    <img class="img3" src="./img/tudou.jpg"/>
+    <img class="img4" src="./img/tudou.jpg"/>
+    <img class="img5" src="./img/tudou.jpg"/>
+</div>
+</body>
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-<script>
-    /**
+  </head>
+  <body>
+    <script>
+      /**
      http的特点是无状态，客户端和服务端每次交流都是初次见面，Cookie就解决这个问题；
      就像你(Client)在超市(Server)买东西，结账后超市给你一个小票(Cookie)，超市不可能认识所有在他这买东西的人，但是
      他认识小票，下次如果你买的产品有质量问题你带着小票来，超市就知道这是他们的东西了。
@@ -36,17 +36,19 @@
      浏览器开发者工具操作Cookie
      F12-->Application-->左侧Storage-->Cookies-->下面的网址(如果有)选中
      上面有清除所有Cookie和清除选中Cookie按钮
-     */
-</script>
 
-<script>
-    /**
+     F12-->Network-->选中一个请求，如果有cookies则右侧会显示Cookies的tab页，
+     */
+    </script>
+
+    <script>
+      /**
      js获取Cookie
      返回一个字符串，例如："k1=v1;k2=v2;k3=v3";
      */
-    var cookies = document.cookie;
+      var cookies = document.cookie
 
-    /**
+      /**
      js设置Cookie
      注意不是赋值操作，不会覆盖原来的k-v,而是在原来的基础上追加k-v;
      也可以设置过期时间，path等之类的，但是需要自己拼成如下格式：
@@ -54,9 +56,9 @@
 
      其中的过期时间是js中Date的toGMTString()方法的输出格式
      */
-    document.cookie = "k=v";
+      document.cookie = 'k=v'
 
-    /**
+      /**
      js可以操作Cookie，因此有第三方库的替代品
      一种是基于jQuery的
      https://github.com/carhartl/jquery-cookie
@@ -64,7 +66,7 @@
      https://github.com/js-cookie/js-cookie
      */
 
-    /**
+      /**
      到现在有一个Cookie不安全的问题，用户完全可以在浏览器修改Cookie的值
      例如在浏览器的F12-->Console 中通过document.cookie = "k=v";则修改了原来的k对应的value，
 
@@ -76,7 +78,14 @@
      就相当于浏览器不在保存真实的数据，只是保存了一把钥匙。Session区别于Cookie一个很大的地方就是：Session数据存
      在了服务端而钥匙(Cookie)存在了客户端，而Cookie存在了客户端本地，存在服务端最大的优势就是，不是用户想怎么改
      就怎么改了。
+
+
+
+     参考：
+     E:\web\baseWeb\10_node\use_express\20-前后端身份认证-cookie-express-session中间件的用法.js
+     E:\web\baseWeb\10_node\22-前后端身份认证-cookie-express-session中间件的用法.js
+
      */
-</script>
-</body>
+    </script>
+  </body>
 </html>

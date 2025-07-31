@@ -1199,6 +1199,7 @@
         console.log(currentDate.getMinutes());//获取分
         console.log(currentDate.getSeconds());//获取秒
         console.log(currentDate.getDay());//获取星期 0是周日 1是周一。。。
+        console.log('嘿嘿', new Date('2025', 6, 0).getDate());//获取毫秒
 
         /*
             输出日期
@@ -1386,6 +1387,12 @@
             // return element>3;//false
             return element < 4;//true
         });
+
+        /*
+        some((item) => item > 3) 方法测试数组的某些元素是否通过了指定函数的测试,有一个通过就返回true，所有都没通过才返回false，即一真全真
+        返回值是布尔类型
+        */
+
 
         /*
             filter(func) 返回一个新数组, 所有满足func测试的元素组成一个新的数组

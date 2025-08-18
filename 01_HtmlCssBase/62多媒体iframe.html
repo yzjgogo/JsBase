@@ -5,7 +5,48 @@
 	<title>Document</title>
 </head>
 <body style="background-color: orange;">
-<!--iframe： iframe不是说用来加载多媒体播放器，而是用于在文档中加载另一个文档，网页内加载别的网页(可以是跨域的网页)-->
+<!--
+	
+iframe： iframe不是说用来加载多媒体播放器，而是用于在文档中加载另一个文档，网页内加载别的网页(可以是跨域的网页)
+
+遇到过的问题：
+外部页面访问地址是“https://zhl-test.xxfz.com.cn/113-service/debug-8080/hyper-media-editor/#/digital-module?token=794b50ba9f55508acead75e0b3198589d08b03a6f30e4c5a17edb51a5b0ac24f&book_id=1815381&catalog_id=81&control_id=RJxj_BdN0P&template_id=666895”
+
+内部的iframe访问地址是“http://125.69.0.87:8113/debug-8080/xxxx-web/smartcourseware/index.html?guid=8bc7841cec5b4f33a71eb6fd7f2e3c10&sign=ce300e6e63c89facbddee5b2e483e4c2&needTools=1&isKeTangBao=1&isPreview=1&noCache=0.8201285542973837&business_id=100001&Scope=com.zhl.shby.web”
+
+报错如下：
+Mixed Content: The page at 'https://zhl-test.xxfz.com.cn/113-service/debug-8080/hyper-media-editor/#/digital-module?token=794b50ba9f55508acead75e0b3198589d08b03a6f30e4c5a17edb51a5b0ac24f&book_id=1815381&catalog_id=81&control_id=RJxj_BdN0P&template_id=666895' was loaded over HTTPS, but requested an insecure frame 'http://125.69.0.87:8113/debug-8080/xxxx-web/smartcourseware/index.html?guid=8bc7841cec5b4f33a71eb6fd7f2e3c10&sign=ce300e6e63c89facbddee5b2e483e4c2&needTools=1&isKeTangBao=1&isPreview=1&noCache=0.8201285542973837&business_id=100001&Scope=com.zhl.shby.web'. This request has been blocked; the content must be served over HTTPS.
+
+ai的解释：
+混合内容错误解释
+这是一个"混合内容"(Mixed Content)安全错误，发生原因如下：
+
+错误原因
+您的主页面是通过安全的HTTPS协议加载的：
+
+但是，这个页面尝试加载一个使用不安全的HTTP协议的iframe：
+
+现代浏览器出于安全考虑，会阻止HTTPS页面加载HTTP资源，这就是所谓的"混合内容"问题。
+
+解决方案
+要解决此问题，您需要：
+
+将iframe的URL从HTTP更改为HTTPS
+确保服务器125.69.0.87:8113支持HTTPS
+如果无法更改为HTTPS，您可能需要：
+
+联系该服务的管理员，请求他们提供HTTPS访问
+考虑使用代理服务将HTTP内容转换为HTTPS
+在开发环境中，某些浏览器允许暂时禁用混合内容保护（但不推荐用于生产环境）
+
+
+我在代码中的解决方案：
+把iframe加载的地址改为：“//zhl-test.xxfz.com.cn/113-service/debug-8080/xxxx-web/smartcourseware/index.html?guid=8bc7841cec5b4f33a71eb6fd7f2e3c10&sign=ce300e6e63c89facbddee5b2e483e4c2&needTools=1&isKeTangBao=1&isPreview=1&noCache=0.8201285542973837&business_id=100001&Scope=com.zhl.shby.web”
+注意，我把开头的http:或https:去掉了，浏览器会自动根据当前页面的协议(外部页面的)来加载iframe。
+另外我把ip地址改为域名地址，避免了ip地址的跨域问题。
+
+
+-->
 	<iframe height=498 width=510 src='http://player.youku.com/embed/XMzQ5MTMzNjk3Mg==' frameborder=0 'allowfullscreen'></iframe>
 	<img src="img/iframe.png" alt="">
 </body>

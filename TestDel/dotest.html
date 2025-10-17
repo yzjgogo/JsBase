@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
     <style>
-        .title{
-            background-color: #E0FFFF;
-            padding: 10px;
-            color: red;
-            margin-top: 10px;
-        }
+      .title {
+        background-color: #e0ffff;
+        padding: 10px;
+        color: red;
+        margin-top: 10px;
+      }
     </style>
-    <script>
-
-
-    </script>
-</head>
-<body>
+    <script></script>
+  </head>
+  <body>
     <div class="title">1:定位正常来说不会越过border，但是会越过padding</div>
-    <div style="width: 200px;height: 200px;background-color: yellow;border: 10px solid green;padding: 10px;position: relative">
-        <div style="width: 50px;height: 50px;position: absolute;left: -10px;top: 0;background-color: #9a6e3a"></div>
+    <div
+      style="
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        border: 10px solid green;
+        padding: 10px;
+        position: relative;
+      "
+    >
+      <div
+        style="
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          left: -10px;
+          top: 0;
+          background-color: #9a6e3a;
+        "
+      ></div>
     </div>
 
-
-    <div class="title">2:数组的filter方法：原数组不变，满足条件的元素组成新的数组返回</div>
+    <div class="title">
+      2:数组的filter方法：原数组不变，满足条件的元素组成新的数组返回
+    </div>
     <script>
       /**
        filter:
@@ -34,40 +50,55 @@
         // console.log(value)
         return value == 2
       })
-      console.log(arr, result)   //[1, 2, 3, 2, 4] [2, 2]
+      console.log(arr, result) //[1, 2, 3, 2, 4] [2, 2]
     </script>
 
-
-    <div class="title">3:javascript的除法：跟java不同，结果按数学计算，该是多少就是多少</div>
+    <div class="title">
+      3:javascript的除法：跟java不同，结果按数学计算，该是多少就是多少
+    </div>
     <script>
-      console.log(1230000/100)//12300
-      console.log(1230/100)//12.3
-      console.log(12/100)//0.12
-      console.log(1/100)//0.01
-      console.log(10/3)//3.3333333333333335
-      console.log(10/0)//Infinity无限大
+      console.log(1230000 / 100) //12300
+      console.log(1230 / 100) //12.3
+      console.log(12 / 100) //0.12
+      console.log(1 / 100) //0.01
+      console.log(10 / 3) //3.3333333333333335
+      console.log(10 / 0) //Infinity无限大
     </script>
-
 
     <div class="title">4:判断一个变量是不是严格的undefined，区分null</div>
     <script>
-        let aa = undefined
-        let bb = null
+      let aa = undefined
+      let bb = null
 
-        if (typeof aa === 'undefined') {
-          console.log('a is undefined');
-        } else {
-          console.log('a is defined');
-        }
+      if (typeof aa === 'undefined') {
+        console.log('a is undefined')
+      } else {
+        console.log('a is defined')
+      }
 
-        if (typeof bb === 'undefined') {
-          console.log('bb is undefined');
-        } else {
-          console.log('bb is defined');
-        }
-
+      if (typeof bb === 'undefined') {
+        console.log('bb is undefined')
+      } else {
+        console.log('bb is defined')
+      }
     </script>
-<div class="title">5:让一个元素，例如div变为可编辑：参考善版云后台(数字出版运营-企微运营管理-企微运营-渠道激活码-欢迎语配置-新建/编辑欢迎语)：src\views\pages\publishingOperate\wechatOperate\channelCode\components\welcomeDrawer.vue</div>
-<div contenteditable="true">good <span style="color: green;border: 1px solid red;padding:0 5px;border-radius: 4px;">morning</span> class.</div>
-</body>
+    <div class="title">
+      5:让一个元素，例如div变为可编辑：参考善版云后台(数字出版运营-企微运营管理-企微运营-渠道激活码-欢迎语配置-新建/编辑欢迎语)：src\views\pages\publishingOperate\wechatOperate\channelCode\components\welcomeDrawer.vue
+    </div>
+    <div contenteditable="true">
+      good
+      <span
+        style="
+          color: green;
+          border: 1px solid red;
+          padding: 0 5px;
+          border-radius: 4px;
+        "
+        >morning</span
+      >
+      class.
+    </div>
+    
+<img src="./qw.png" alt="青蛙" title="青蛙图片" />
+  </body>
 </html>

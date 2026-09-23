@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            overflow-x: scroll;
+            /* scroll-snap-type:应用到滚动容器上
+                x:水平滚动就是x；
+                mandatory:强制吸附，必须吸附，根据面积大小吸附；
+                proximity:接近吸附点时才吸附，否则可能停留在中间状态；
+                
+            */
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .container::-webkit-scrollbar {
+            /* 隐藏滚动条 */
+            width: 0;
+        }
+        .item {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            /* scroll-snap-align
+            start:吸附到滚动容器的起始位置
+            center:吸附到滚动容器的中间位置
+            end:吸附到滚动容器的结束位置
+            none:不吸附
+            */
+            scroll-snap-align: center;
+            /* scroll-snap-stop
+                normal:（默认值） 允许用户快速滑动时越过多个吸附点。如果用户滑动速度够快、力度够大，滚动容器可能会一次性滑过好几个元素，直接停在较远的吸附点上。
+                always: 强制不能跳过。无论用户滑动多快，滚动容器都会在每一个吸附点处停留一下（除非用户连续滑动）。这确保了每次滑动最多只能前进（或后退）一个元素。
+            */
+            scroll-snap-stop: always;
+         }
+         .item:nth-child(1) {
+            background: #62c454;
+        }
+        .item:nth-child(2) {
+            background: #f5bd50;
+        }
+        .item:nth-child(3) {
+            background: #ea695d;
+        }
+        .item:nth-child(4) {
+            background: purple;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        abbr {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+abbr:hover {
+    color: #007bff;
+}
+    </style>
+    <script>
+        
+    </script>
+    
+<script>
+function toggleVisibility() {
+    const text = document.getElementById('toggleText');
+    text.hidden = !text.hidden;
+}
+</script>
+</head>
+<body>
+    <pre>
+这是预格式化文本
+    保留    所有空格
+和换行符
+</pre>
+
+<pre><code>
+function hello() {
+    console.log("Hello World!");
+}
+</code></pre>
+
+
+<pre>
+     /\_/\  
+    ( o.o ) 
+     > ^ <
+</pre>
+
+
+<details>
+    <summary>点击展开详情</summary>
+    <p>这里是详细内容，默认隐藏。</p>
+    <p>点击上方标题可以展开或收起。</p>
+</details>
+
+
+<details>
+    <summary>FAQ - 如何使用这个功能？</summary>
+    <div>
+        <h4>步骤说明：</h4>
+        <ol>
+            <li>首先打开设置页面</li>
+            <li>找到相关选项</li>
+            <li>按照提示操作</li>
+        </ol>
+        <img src="screenshot.png" alt="操作截图">
+    </div>
+</details>
+
+
+<p><abbr title="HyperText Markup Language">HTML</abbr>是网页标记语言。</p>
+<p><abbr title="Cascading Style Sheets">CSS</abbr>用于样式设计。</p>
+<p>我们公司位于<abbr title="中华人民共和国">中国</abbr>。</p>
+<p>请在<abbr title="尽快">ASAP</abbr>完成任务。</p>
+<p>
+    <abbr title="World Wide Web Consortium">W3C</abbr>
+    制定了<abbr title="HyperText Markup Language">HTML</abbr>标准。
+</p>
+
+
+
+<!-- 确定进度 -->
+<progress value="70" max="100">70%</progress>
+
+<!-- 不确定进度 -->
+<progress>加载中...</progress>
+
+<!-- 文件上传进度 -->
+<label for="upload">上传进度：</label>
+<progress id="upload" value="32" max="100">32%</progress>
+
+
+<!-- 磁盘使用量 -->
+<meter value="6" min="0" max="10">6 out of 10</meter>
+
+<!-- 温度显示 -->
+<meter value="25" min="-10" max="50" optimum="20" high="35" low="5">
+    25°C
+</meter>
+
+<!-- 电池电量 -->
+<meter value="0.6" optimum="1" high="0.9" low="0.2">60%</meter>
+
+<!--high 数字 规定范围的高值。-->
+<!--low 数字 规定范围的低值。-->
+<!--max 数字 规定范围的最大值。-->
+<!--min 数字 规定范围的最小值。默认值为 0。-->
+<!--optimum 数字 规定仪表的最佳值。-->
+<!--value-->
+
+<label for="disk_c">磁盘使用情况 C: </label>
+<meter id="disk_c" value="81" min="0" low="10" optimum="70" high="80" max="100">十分之二</meter>
+
+
+
+
+
+<p>按 <kbd>Ctrl</kbd> + <kbd>C</kbd> 复制文本。</p>
+<p>使用 <kbd>Alt</kbd> + <kbd>Tab</kbd> 切换窗口。</p>
+<p>输入命令：<kbd>npm install</kbd></p>
+
+
+<p>程序输出：<samp>Hello, World!</samp></p>
+<p>错误信息：<samp>File not found</samp></p>
+<pre><samp>
+$ ls -la
+total 64
+drwxr-xr-x  8 user  staff   256 Dec 25 10:30 .
+</samp></pre>
+
+
+<p>方程式：<var>y</var> = <var>mx</var> + <var>b</var></p>
+<p>在函数 <code>calculate(<var>x</var>, <var>y</var>)</code> 中...</p>
+<p>设 <var>n</var> 为正整数。</p>
+
+
+<p>我最近在读<cite>《JavaScript高级程序设计》</cite>这本书。</p>
+
+
+<blockquote>
+    <p>学而时习之，不亦说乎？</p>
+    <footer>—— <cite>《论语》</cite></footer>
+</blockquote>
+
+
+<p>
+    根据<cite>MDN Web Docs</cite>的说明，HTML5引入了许多新特性。
+</p>
+
+
+<p>电影<cite>《肖申克的救赎》</cite>是我最喜欢的电影之一。</p>
+<p>这首<cite>《月亮代表我的心》</cite>很好听。</p>
+
+<blockquote cite="https://example.com/article">
+    <p>这是一段引用的内容。</p>
+    <footer>来源：<cite>某某网站</cite></footer>
+</blockquote>
+
+<p>这是一个很长的URL：http://www.<wbr>example<wbr>.com/<wbr>very/<wbr>long/<wbr>path/<wbr>to/<wbr>resource</p>
+
+<script>
+    document.write("JavaScript已启用");
+</script>
+<noscript>
+    <p>您的浏览器不支持JavaScript或JavaScript已被禁用。</p>
+    <p>请启用JavaScript以获得最佳体验。</p>
+</noscript>
+
+
+<!-- 隐藏元素 -->
+<div hidden>这个div被隐藏了</div>
+
+<!-- 显示元素 -->
+<div>这个div是可见的</div>
+
+<!-- 通过JavaScript控制 -->
+<button onclick="toggleVisibility()">切换显示/隐藏</button>
+<p id="toggleText" hidden>这段文字可以切换显示状态</p>
+
+
+<!-- hidden属性 -->
+<div hidden>使用hidden属性隐藏</div>
+
+<!-- CSS display: none -->
+<div style="display: none;">使用CSS隐藏</div>
+
+<!-- CSS visibility: hidden -->
+<div style="visibility: hidden;">使用visibility隐藏（占用空间）</div>
+
+
+<!-- 正常Tab顺序（1, 2, 3） -->
+<!-- <input type="text" tabindex="1" placeholder="第一个">
+<input type="text" tabindex="2" placeholder="第二个">
+<input type="text" tabindex="3" placeholder="第三个"> -->
+
+<!-- 自定义Tab顺序（2, 1, 3） -->
+<input type="text" tabindex="2" placeholder="第二个获得焦点">
+<input type="text" tabindex="1" placeholder="第一个获得焦点">
+<input type="text" tabindex="3" placeholder="第三个获得焦点">
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input[type="checkbox"] {
+            accent-color: purple;
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="radio"] {
+            accent-color: purple;
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+        <!-- 多选按钮：多个checkbox根据需要定义相同的name -->
+    <input type="checkbox" name="hobby" checked="checked"/>
+<!--    使用label后点击“吹牛”也可以选中checkbox-->
+    <label><input type="checkbox" name="hobby" checked="checked"/>吹牛</label>
+    <input type="checkbox" name="hobby"/><br/><br/>
+
+        <!-- 单选按钮：多个radio根据需要定义相同的name -->
+    <input type="radio" name="sex"/>
+    <input type="radio" name="sex" checked="checked"/><br/><br/>
+</body>
+</html>
